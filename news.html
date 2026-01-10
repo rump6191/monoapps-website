@@ -10,280 +10,47 @@
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #333;
-            line-height: 1.6;
-            background: #f8fafc;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #6366f1;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #6366f1;
-        }
-
-        /* Hero */
-        .hero {
-            padding: 140px 20px 80px;
-            text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* Content */
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        /* News List */
-        .news-list {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .news-item {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-        }
-
-        .news-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .news-header {
-            padding: 25px 30px 20px;
-            border-bottom: 1px solid #f1f5f9;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .news-title {
-            font-size: 1.4rem;
-            color: #1e293b;
-            margin-bottom: 5px;
-        }
-
-        .news-meta {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .news-date {
-            color: #94a3b8;
-            font-size: 0.9rem;
-        }
-
-        .news-tag {
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .tag-update {
-            background: #dbeafe;
-            color: #1d4ed8;
-        }
-
-        .tag-new {
-            background: #dcfce7;
-            color: #16a34a;
-        }
-
-        .tag-fix {
-            background: #fef3c7;
-            color: #d97706;
-        }
-
-        .news-body {
-            padding: 20px 30px 25px;
-        }
-
-        .news-body p {
-            color: #64748b;
-            margin-bottom: 15px;
-        }
-
-        .news-body ul {
-            padding-left: 20px;
-            color: #64748b;
-        }
-
-        .news-body li {
-            margin-bottom: 8px;
-        }
-
-        .news-app {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 14px;
-            background: #f1f5f9;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            color: #64748b;
-        }
-
-        /* Empty State */
-        .coming-soon-card {
-            background: white;
-            border-radius: 16px;
-            padding: 60px 30px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .coming-soon-card .icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-
-        .coming-soon-card h3 {
-            font-size: 1.5rem;
-            color: #1e293b;
-            margin-bottom: 10px;
-        }
-
-        .coming-soon-card p {
-            color: #64748b;
-        }
-
-        /* Footer */
-        footer {
-            padding: 30px 20px;
-            background: #0f172a;
-            color: #64748b;
-            text-align: center;
-            font-size: 0.9rem;
-            margin-top: 60px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 15px;
-        }
-
-        .footer-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            font-size: 0.85rem;
-        }
-
-        .footer-links a:hover {
-            color: #6366f1;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                padding: 15px 20px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .news-header {
-                padding: 20px;
-            }
-
-            .news-body {
-                padding: 15px 20px 20px;
-            }
-
-            .news-title {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <nav>
+    <nav id="navbar">
         <a href="index.html" class="logo">MonoApps</a>
         <ul class="nav-links">
             <li><a href="index.html#apps">Apps</a></li>
             <li><a href="support.html">Support</a></li>
-            <li><a href="news.html">News</a></li>
+            <li><a href="news.html" class="active">News</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
         </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
-    <section class="hero">
-        <h1>뉴스 & 업데이트</h1>
-        <p>MonoApps의 최신 소식을 확인하세요</p>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html#apps">Apps</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section class="hero" style="min-height: 40vh; padding-top: 140px;">
+        <div class="hero-content">
+            <h1>뉴스 & 업데이트</h1>
+            <p>MonoApps의 최신 소식을 확인하세요</p>
+        </div>
     </section>
 
-    <main class="content">
+    <main class="content" style="max-width: 800px; margin: 0 auto; padding: 60px 20px;">
         <div class="news-list">
             <!-- News Item 1 -->
-            <article class="news-item">
+            <article class="news-item fade-in">
                 <div class="news-header">
                     <div>
                         <h2 class="news-title">QR Scanner Pro v1.0 출시 🎉</h2>
@@ -292,7 +59,7 @@
                             <span class="news-tag tag-new">New</span>
                         </div>
                     </div>
-                    <span class="news-app">📱 QR Scanner Pro</span>
+                    <span class="news-tag" style="background:#f1f5f9; color:#64748b;">📱 QR Scanner Pro</span>
                 </div>
                 <div class="news-body">
                     <p>QR Scanner Pro의 첫 번째 버전이 출시되었습니다! 빠르고 정확한 QR 코드 스캔과 생성 기능을 무료로 이용하세요.</p>
@@ -308,7 +75,7 @@
             </article>
 
             <!-- News Item 2 -->
-            <article class="news-item">
+            <article class="news-item fade-in">
                 <div class="news-header">
                     <div>
                         <h2 class="news-title">MonoApps 공식 웹사이트 오픈</h2>
@@ -325,8 +92,10 @@
             </article>
 
             <!-- Coming Soon -->
-            <div class="coming-soon-card">
-                <div class="icon">🚀</div>
+            <div class="app-card fade-in" style="margin-top: 40px;">
+                <div class="app-icon" style="background: linear-gradient(135deg, #94a3b8, #cbd5e1); font-size: 3rem;">
+                    🚀
+                </div>
                 <h3>더 많은 소식이 준비 중입니다</h3>
                 <p>새로운 앱과 업데이트 소식을 기대해주세요!</p>
             </div>
@@ -341,6 +110,49 @@
             <a href="index.html">홈으로</a>
         </div>
     </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if(mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        }
+        
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Scroll Effect for Nav
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Fade-in Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => observer.observe(el));
+    </script>
 </body>
 
 </html>

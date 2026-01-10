@@ -21,452 +21,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 100;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #6366f1;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #555;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #6366f1;
-    }
-
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 100px 20px;
-    }
-
-    .hero-content h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    .hero-content p {
-      font-size: 1.3rem;
-      opacity: 0.9;
-      margin-bottom: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 16px 32px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn-primary {
-      background: white;
-      color: #6366f1;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-    }
-
-    .btn-outline:hover {
-      background: white;
-      color: #6366f1;
-    }
-
-    /* Apps Section */
-    .apps {
-      padding: 100px 20px;
-      background: #f8fafc;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 60px;
-      color: #1e293b;
-    }
-
-    .apps-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .app-card {
-      background: white;
-      border-radius: 20px;
-      padding: 40px;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s;
-    }
-
-    .app-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    }
-
-    .app-icon {
-      width: 80px;
-      height: 80px;
-      border-radius: 20px;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-    }
-
-    .app-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      color: #1e293b;
-    }
-
-    .app-card p {
-      color: #64748b;
-      margin-bottom: 25px;
-    }
-
-    .download-buttons {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-    }
-
-    .store-btn {
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: all 0.3s;
-    }
-
-    .store-btn.ios {
-      background: #000;
-      color: white;
-    }
-
-    .store-btn.android {
-      background: #3ddc84;
-      color: white;
-    }
-
-    .store-btn:hover {
-      opacity: 0.85;
-      transform: scale(1.05);
-    }
-
-    .coming-soon {
-      display: inline-block;
-      padding: 8px 16px;
-      background: #e2e8f0;
-      color: #64748b;
-      border-radius: 20px;
-      font-size: 0.85rem;
-    }
-
-    /* About Section */
-    .about {
-      padding: 100px 20px;
-      background: white;
-    }
-
-    .about-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .about-content p {
-      font-size: 1.2rem;
-      color: #64748b;
-      margin-bottom: 20px;
-    }
-
-    .values {
-      display: flex;
-      gap: 40px;
-      justify-content: center;
-      margin-top: 50px;
-      flex-wrap: wrap;
-    }
-
-    .value-item {
-      text-align: center;
-    }
-
-    .value-icon {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-
-    .value-item h4 {
-      color: #1e293b;
-      margin-bottom: 5px;
-    }
-
-    .value-item p {
-      font-size: 0.95rem;
-      color: #94a3b8;
-    }
-
-    /* Contact Section */
-    .contact {
-      padding: 80px 20px;
-      background: #1e293b;
-      color: white;
-      text-align: center;
-    }
-
-    .contact h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .contact p {
-      color: #94a3b8;
-      margin-bottom: 30px;
-    }
-
-    .contact-email {
-      font-size: 1.3rem;
-      color: #6366f1;
-      text-decoration: none;
-    }
-
-    .contact-email:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
-    footer {
-      padding: 30px 20px;
-      background: #0f172a;
-      color: #64748b;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    /* Footer Links */
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 15px;
-    }
-
-    .footer-links a {
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 0.85rem;
-      transition: color 0.3s;
-    }
-
-    .footer-links a:hover {
-      color: #6366f1;
-    }
-
-    /* Mobile Menu Button */
-    .mobile-menu-btn {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 5px;
-    }
-
-    .mobile-menu-btn span {
-      width: 25px;
-      height: 3px;
-      background: #6366f1;
-      border-radius: 3px;
-      transition: all 0.3s;
-    }
-
-    .mobile-menu-btn.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .mobile-menu-btn.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .mobile-menu-btn.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    /* Mobile Menu Overlay */
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      top: 70px;
-      left: 0;
-      right: 0;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(20px);
-      padding: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      z-index: 99;
-    }
-
-    .mobile-menu.active {
-      display: block;
-    }
-
-    .mobile-menu ul {
-      list-style: none;
-    }
-
-    .mobile-menu li {
-      padding: 15px 0;
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    .mobile-menu a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      font-size: 1.1rem;
-    }
-
-    /* Scroll Animation */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Nav Scroll Effect */
-    nav.scrolled {
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Store Button Icons */
-    .store-btn svg {
-      width: 20px;
-      height: 20px;
-      vertical-align: middle;
-      margin-right: 5px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav {
-        padding: 15px 20px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .mobile-menu-btn {
-        display: flex;
-      }
-
-      .hero-content h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero-content p {
-        font-size: 1.1rem;
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-
-      .values {
-        gap: 30px;
-      }
-
-      .download-buttons {
-        flex-direction: column;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <nav id="navbar">
-    <div class="logo">MonoApps</div>
+    <a href="index.html" class="logo">MonoApps</a>
     <ul class="nav-links">
       <li><a href="#apps">Apps</a></li>
       <li><a href="support.html">Support</a></li>
@@ -492,8 +53,8 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h1>심플하고 유용한 디지털 서비스</h1>
-      <p>MonoApps는 일상을 더 편리하게 만드는 앱과 웹 서비스를 개발합니다.<br>복잡함 없이, 필요한 기능만 담았습니다.</p>
+      <h1>심플하고 유용한<br>디지털 서비스</h1>
+      <p>MonoApps는 일상을 더 편리하게 만드는 앱과 웹 서비스를 만듭니다.<br>복잡함 없이, 필요한 기능만 담았습니다.</p>
       <div class="hero-buttons">
         <a href="#apps" class="btn btn-primary">앱 둘러보기</a>
         <a href="#services" class="btn btn-outline">웹 서비스</a>
@@ -501,26 +62,29 @@
     </div>
   </section>
 
-
   <section class="apps" id="apps">
     <h2 class="section-title">Mobile Apps</h2>
     <div class="apps-grid">
-      <div class="app-card">
+      <div class="app-card fade-in">
         <div class="app-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">
           📱
         </div>
         <h3>QR Scanner Pro</h3>
         <p>빠르고 정확한 QR/바코드 스캐너. 스캔, 생성, 기록 관리까지 한 번에.</p>
-        <div class="download-buttons">
-          <a href="#" class="store-btn ios">App Store</a>
-          <a href="#" class="store-btn android">Google Play</a>
+        <div class="download-buttons" style="display:flex; justify-content:center; gap:10px;">
+          <a href="#" class="store-btn ios">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            App Store
+          </a>
+          <a href="#" class="store-btn android">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+            Google Play
+          </a>
         </div>
-        <a href="qr-scanner.html"
-          style="display: inline-block; margin-top: 15px; color: #6366f1; text-decoration: none; font-weight: 500;">자세히
-          보기 →</a>
+        <a href="qr-scanner.html" style="display: inline-block; margin-top: 20px; color: var(--primary-color); font-weight: 600;">자세히 보기 →</a>
       </div>
 
-      <div class="app-card">
+      <div class="app-card fade-in">
         <div class="app-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
           🎯
         </div>
@@ -535,64 +99,63 @@
     <h2 class="section-title">Web Services</h2>
     <div class="apps-grid">
       <!-- 꿈해몽 -->
-      <div class="app-card">
+      <div class="app-card fade-in">
         <div class="app-icon" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
           🌙
         </div>
         <h3>꿈해몽</h3>
         <p>어젯밤 꾼 꿈의 의미를 찾아보세요. 890가지 상세 해몽으로 무의식의 신호를 해석합니다.</p>
-        <a href="https://dreamteller.co.kr" target="_blank" class="store-btn ios" style="margin-top: 10px;">사이트 방문 →</a>
+        <a href="https://dreamteller.co.kr" target="_blank" class="store-btn ios" style="margin-top: 10px; background: #1e293b;">사이트 방문 →</a>
       </div>
 
       <!-- 21이노베이션 -->
-      <div class="app-card">
+      <div class="app-card fade-in">
         <div class="app-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
           🛒
         </div>
         <h3>21이노베이션</h3>
         <p>전문가 분석 스마트 상품 비교 플랫폼. 1757개 이상의 상품을 9개 카테고리로 비교.</p>
-        <a href="https://21innovation.org" target="_blank" class="store-btn ios" style="margin-top: 10px;">사이트 방문 →</a>
+        <a href="https://21innovation.org" target="_blank" class="store-btn ios" style="margin-top: 10px; background: #1e293b;">사이트 방문 →</a>
       </div>
 
       <!-- 사주프라임 -->
-      <div class="app-card">
+      <div class="app-card fade-in">
         <div class="app-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
           🔮
         </div>
         <h3>사주프라임</h3>
         <p>전통 사주명리학 기반 정확한 사주팔자 분석. 천간지지, 십신, 대운 해석 제공.</p>
-        <a href="https://sajuprime.co.kr" target="_blank" class="store-btn android" style="margin-top: 10px;">오픈 예정
-          🔜</a>
+        <span class="store-btn android" style="margin-top: 10px; background: #64748b; cursor: default;">오픈 예정 🔜</span>
       </div>
     </div>
   </section>
 
   <section class="about" id="about">
-    <div class="about-content">
+    <div class="about-content" style="max-width: 800px; margin: 0 auto;">
       <h2 class="section-title">About Us</h2>
-      <p>MonoApps는 사용자에게 꼭 필요한 기능만을 담은 심플한 앱과 웹 서비스를 만듭니다.</p>
-      <p>복잡한 기능보다 직관적인 사용성을, 화려한 디자인보다 깔끔한 인터페이스를 추구합니다.</p>
+      <p style="text-align: center; font-size: 1.2rem; color: var(--text-muted); margin-bottom: 20px;">MonoApps는 사용자에게 꼭 필요한 기능만을 담은 심플한 앱과 웹 서비스를 만듭니다.</p>
+      <p style="text-align: center; font-size: 1.2rem; color: var(--text-muted);">복잡한 기능보다 직관적인 사용성을, 화려한 디자인보다 깔끔한 인터페이스를 추구합니다.</p>
 
       <div class="values">
-        <div class="value-item">
+        <div class="value-item fade-in">
           <div class="value-icon">🎯</div>
-          <h4>심플함</h4>
-          <p>필요한 기능만</p>
+          <h4 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--text-main);">심플함</h4>
+          <p style="color: var(--text-light);">필요한 기능만</p>
         </div>
-        <div class="value-item">
+        <div class="value-item fade-in">
           <div class="value-icon">⚡</div>
-          <h4>빠른 속도</h4>
-          <p>가볍고 빠르게</p>
+          <h4 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--text-main);">빠른 속도</h4>
+          <p style="color: var(--text-light);">가볍고 빠르게</p>
         </div>
-        <div class="value-item">
+        <div class="value-item fade-in">
           <div class="value-icon">💎</div>
-          <h4>품질</h4>
-          <p>안정적인 서비스</p>
+          <h4 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--text-main);">품질</h4>
+          <p style="color: var(--text-light);">안정적인 서비스</p>
         </div>
-        <div class="value-item">
+        <div class="value-item fade-in">
           <div class="value-icon">🔒</div>
-          <h4>보안</h4>
-          <p>개인정보 보호</p>
+          <h4 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--text-main);">보안</h4>
+          <p style="color: var(--text-light);">개인정보 보호</p>
         </div>
       </div>
     </div>
