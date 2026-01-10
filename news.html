@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뉴스 & 업데이트 - MonoApps</title>
+    <meta name="description" content="MonoApps의 최신 소식과 앱 업데이트 정보를 확인하세요.">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #f8fafc;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #6366f1;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #6366f1;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 140px 20px 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* News List */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .news-item {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-header {
+            padding: 25px 30px 20px;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .news-title {
+            font-size: 1.4rem;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+
+        .news-meta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .news-date {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .news-tag {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .tag-update {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+
+        .tag-new {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        .tag-fix {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .news-body {
+            padding: 20px 30px 25px;
+        }
+
+        .news-body p {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .news-body ul {
+            padding-left: 20px;
+            color: #64748b;
+        }
+
+        .news-body li {
+            margin-bottom: 8px;
+        }
+
+        .news-app {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* Empty State */
+        .coming-soon-card {
+            background: white;
+            border-radius: 16px;
+            padding: 60px 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .coming-soon-card .icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .coming-soon-card h3 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .coming-soon-card p {
+            color: #64748b;
+        }
+
+        /* Footer */
+        footer {
+            padding: 30px 20px;
+            background: #0f172a;
+            color: #64748b;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 60px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: #6366f1;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .news-header {
+                padding: 20px;
+            }
+
+            .news-body {
+                padding: 15px 20px 20px;
+            }
+
+            .news-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="logo">MonoApps</a>
+        <ul class="nav-links">
+            <li><a href="index.html#apps">Apps</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="news.html">News</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>뉴스 & 업데이트</h1>
+        <p>MonoApps의 최신 소식을 확인하세요</p>
+    </section>
+
+    <main class="content">
+        <div class="news-list">
+            <!-- News Item 1 -->
+            <article class="news-item">
+                <div class="news-header">
+                    <div>
+                        <h2 class="news-title">QR Scanner Pro v1.0 출시 🎉</h2>
+                        <div class="news-meta">
+                            <span class="news-date">2026년 1월 10일</span>
+                            <span class="news-tag tag-new">New</span>
+                        </div>
+                    </div>
+                    <span class="news-app">📱 QR Scanner Pro</span>
+                </div>
+                <div class="news-body">
+                    <p>QR Scanner Pro의 첫 번째 버전이 출시되었습니다! 빠르고 정확한 QR 코드 스캔과 생성 기능을 무료로 이용하세요.</p>
+                    <p><strong>주요 기능:</strong></p>
+                    <ul>
+                        <li>초고속 QR 코드 및 바코드 스캔</li>
+                        <li>다양한 형식의 QR 코드 생성 (URL, 텍스트, WiFi, 연락처 등)</li>
+                        <li>스캔 기록 자동 저장 및 관리</li>
+                        <li>다크 모드 지원</li>
+                        <li>다국어 지원 (한국어, 영어, 중국어)</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- News Item 2 -->
+            <article class="news-item">
+                <div class="news-header">
+                    <div>
+                        <h2 class="news-title">MonoApps 공식 웹사이트 오픈</h2>
+                        <div class="news-meta">
+                            <span class="news-date">2026년 1월 10일</span>
+                            <span class="news-tag tag-new">New</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-body">
+                    <p>MonoApps 공식 웹사이트가 오픈되었습니다! 앞으로 이곳에서 앱 소식과 업데이트 정보를 확인하실 수 있습니다.</p>
+                    <p>새로운 앱 출시와 기능 업데이트가 있을 때마다 이 페이지에서 알려드리겠습니다. 많은 관심 부탁드립니다!</p>
+                </div>
+            </article>
+
+            <!-- Coming Soon -->
+            <div class="coming-soon-card">
+                <div class="icon">🚀</div>
+                <h3>더 많은 소식이 준비 중입니다</h3>
+                <p>새로운 앱과 업데이트 소식을 기대해주세요!</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MonoApps. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="privacy.html">개인정보 처리방침</a>
+            <a href="terms.html">이용약관</a>
+            <a href="index.html">홈으로</a>
+        </div>
+    </footer>
+</body>
+
+</html>
