@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Aurora</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --text: #ffffff; }
+        body { margin: 0; font-family: 'Outfit', sans-serif; background: #0f172a; color: var(--text); overflow-x: hidden; min-height: 100vh; position: relative; }
+        
+        /* Aurora Background */
+        .aurora-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: 
+                radial-gradient(at 0% 0%, rgba(100,50,255,0.4) 0px, transparent 50%),
+                radial-gradient(at 98% 1%, rgba(200,50,150,0.4) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(50,200,200,0.3) 0px, transparent 50%);
+            filter: blur(80px);
+        }
+
+        .glass-nav {
+            display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem;
+            background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: 1px; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 6rem 2rem; text-align: center; }
+        
+        h1 { font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; background: linear-gradient(135deg, #fff 0%, #ffffff80 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p { font-size: 1.2rem; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 4rem; line-height: 1.6; }
+
+        .card-container { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+        
+        .glass-card {
+            flex: 1; min-width: 280px; padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            transition: 0.4s;
+            text-align: left;
+        }
+        .glass-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.08); border-color: rgba(255,255,255,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        
+        .icon { width: 50px; height: 50px; border-radius: 12px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.5rem; }
+        .card-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .card-desc { font-size: 0.95rem; color: rgba(255,255,255,0.5); line-height: 1.5; margin-bottom: 1.5rem; }
+        
+        .btn-glow {
+            display: inline-block; padding: 12px 30px; background: linear-gradient(90deg, #8b5cf6, #ec4899); border-radius: 100px;
+            color: white; text-decoration: none; font-weight: 600; box-shadow: 0 0 20px rgba(139, 92, 246, 0.5); transition: 0.3s;
+        }
+        .btn-glow:hover { box-shadow: 0 0 40px rgba(139, 92, 246, 0.8); transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <div class="aurora-bg"></div>
+    <nav class="glass-nav">
+        <div class="logo">MonoApps</div>
+        <div style="color: rgba(255,255,255,0.6);">Menu</div>
+    </nav>
+
+    <div class="container">
+        <h1>Digital Experience<br>Reimagined</h1>
+        <p>Experience the seamless integration of design and functionality. MonoApps provides crystal clear solutions for your daily tasks.</p>
+        
+        <div class="card-container">
+            <div class="glass-card">
+                <div class="icon">✨</div>
+                <div class="card-title">QR Scanner Pro</div>
+                <div class="card-desc">Lightning fast recognition engine wrapped in a beautiful interface.</div>
+                <a href="#" class="btn-glow">Download</a>
+            </div>
+            <div class="glass-card">
+                <div class="icon">🔮</div>
+                <div class="card-title">Dream & Saju</div>
+                <div class="card-desc">Explore the depths of your destiny with our data-driven interpretation.</div>
+                <a href="#" style="color:white; text-decoration:none; font-weight:600;">Explore →</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

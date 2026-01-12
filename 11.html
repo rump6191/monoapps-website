@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Luxury</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #0a0a0a; --gold: #d4af37; --text: #f0f0f0; }
+        body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Cormorant Garamond', serif; text-align: center; overflow-x: hidden; }
+        
+        .border-frame {
+            position: fixed; top: 20px; left: 20px; right: 20px; bottom: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3); pointer-events: none; z-index: 100;
+        }
+        
+        header { padding: 4rem 0; }
+        .logo { font-family: 'Cinzel', serif; font-size: 2rem; color: var(--gold); letter-spacing: 4px; text-transform: uppercase; }
+        .tagline { font-size: 0.9rem; letter-spacing: 2px; color: #888; margin-top: 10px; text-transform: uppercase; }
+        
+        .hero { padding: 4rem 0 8rem; position: relative; }
+        h1 { font-family: 'Cinzel', serif; font-size: 4rem; color: var(--gold); margin-bottom: 2rem; font-weight: 400; }
+        .hero-desc { font-size: 1.5rem; max-width: 600px; margin: 0 auto; line-height: 1.6; font-style: italic; color: #ccc; }
+        
+        .btn-gold {
+            display: inline-block; margin-top: 3rem; padding: 15px 40px; border: 1px solid var(--gold); color: var(--gold);
+            text-decoration: none; font-family: 'Cinzel', serif; letter-spacing: 2px; transition: 0.4s;
+        }
+        .btn-gold:hover { background: var(--gold); color: var(--bg); }
+        
+        .gallery { display: flex; justify-content: center; gap: 4rem; max-width: 1200px; margin: 0 auto 8rem; padding: 0 40px; }
+        .card { flex: 1; text-align: left; }
+        .card-num { color: var(--gold); font-family: 'Cinzel', serif; font-size: 1.5rem; margin-bottom: 1rem; display: block; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .card h3 { font-size: 2rem; margin-bottom: 1rem; font-weight: 400; }
+        .card p { color: #888; line-height: 1.6; margin-bottom: 2rem; }
+        .card-link { color: var(--gold); text-decoration: none; font-style: italic; font-size: 1.1rem; }
+        .card-link:hover { text-decoration: underline; }
+        
+        footer { padding: 4rem 0; border-top: 1px solid #222; color: #444; font-size: 0.8rem; letter-spacing: 1px; }
+
+        @media (max-width: 768px) { h1 { font-size: 3rem; } .gallery { flex-direction: column; gap: 4rem; } }
+    </style>
+</head>
+<body>
+    <div class="border-frame"></div>
+    
+    <header>
+        <div class="logo">MonoApps</div>
+        <div class="tagline">Premium Digital Atelier</div>
+    </header>
+    
+    <section class="hero">
+        <h1>Timeless Elegance</h1>
+        <p class="hero-desc">"Simplicity is the ultimate sophistication." <br>We craft digital experiences that stand the test of time.</p>
+        <a href="#" class="btn-gold">Discover Collection</a>
+    </section>
+    
+    <div class="gallery">
+        <div class="card">
+            <span class="card-num">No. I</span>
+            <h3>The Scanner</h3>
+            <p>A masterpiece of efficiency. Designed for those who value precision and speed above all else.</p>
+            <a href="#" class="card-link">View Details</a>
+        </div>
+        <div class="card">
+            <span class="card-num">No. II</span>
+            <h3>The Innovator</h3>
+            <p>Data refinement at its finest. Comparing thousands of products to find the singular best.</p>
+            <a href="#" class="card-link">View Details</a>
+        </div>
+        <div class="card">
+            <span class="card-num">No. III</span>
+            <h3>The Oracle</h3>
+            <p>Dream interpretation rooted in deep data. Unveil the hidden messages of the mind.</p>
+            <a href="#" class="card-link">View Details</a>
+        </div>
+    </div>
+    
+    <footer>
+        EST. MMXXVI &middot; SEOUL &middot; MONOAPPS
+    </footer>
+</body>
+</html>
