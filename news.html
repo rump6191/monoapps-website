@@ -1,18 +1,211 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>소식 - MonoApps</title>
     <meta name="description" content="MonoApps의 최신 소식과 업데이트 정보를 확인하세요.">
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
+        .bg-gradient {
+            position: fixed;
+            width: 150vw;
+            height: 150vh;
+            top: -25vh;
+            left: -25vw;
+            background: conic-gradient(from 180deg at 50% 50%, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            filter: blur(100px);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            z-index: 100;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(90deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: white; }
+
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; transition: 0.3s; }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            z-index: 99;
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+        .hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 2rem 4rem;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+
+        .news-item {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+        .news-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255,255,255,0.15);
+        }
+        .news-header {
+            padding: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .news-tag {
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 100px;
+        }
+        .news-tag.release {
+            color: #e73c7e;
+            background: rgba(231, 60, 126, 0.15);
+        }
+        .news-tag.notice {
+            color: #23d5ab;
+            background: rgba(35, 213, 171, 0.15);
+        }
+        .news-date {
+            font-size: 0.9rem;
+            opacity: 0.5;
+        }
+        .news-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .news-header p {
+            opacity: 0.6;
+            font-size: 0.95rem;
+        }
+        .news-body {
+            padding: 2rem;
+            background: rgba(255,255,255,0.03);
+        }
+        .news-body p {
+            opacity: 0.7;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .news-body ul {
+            list-style: none;
+            padding: 0;
+        }
+        .news-body li {
+            padding: 0.5rem 0;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding-top: 100px; min-height: 40vh; }
+            .news-header, .news-body { padding: 1.5rem; }
+        }
+    </style>
+</head>
 <body>
-    <nav id="navbar">
+    <div class="bg-gradient"></div>
+
+    <nav>
         <a href="index.html" class="logo">MonoApps</a>
         <div class="nav-links">
             <a href="index.html#apps">모바일 앱</a>
@@ -28,54 +221,50 @@
     </nav>
 
     <div class="mobile-menu" id="mobileMenu">
-        <ul>
-            <li><a href="index.html#apps">모바일 앱</a></li>
-            <li><a href="index.html#services">웹 서비스</a></li>
-            <li><a href="support.html">고객지원</a></li>
-            <li><a href="news.html">소식</a></li>
-        </ul>
+        <a href="index.html#apps">모바일 앱</a>
+        <a href="index.html#services">웹 서비스</a>
+        <a href="support.html">고객지원</a>
+        <a href="news.html">소식</a>
     </div>
 
-    <section class="hero" style="min-height: 40vh;">
-        <div class="hero-content">
+    <section class="hero">
+        <div>
             <span class="hero-badge">업데이트</span>
             <h1>새로운 소식</h1>
             <p>MonoApps의 새로운 기능과 개선사항을 알려드립니다.</p>
         </div>
     </section>
 
-    <main style="max-width: 800px; margin: 0 auto; padding: 0 20px 100px;">
-        <div style="display: flex; flex-direction: column; gap: 30px;">
-            <!-- News Item 1 -->
-            <article class="bento-card fade-in" style="padding: 0; overflow: hidden;">
-                <div style="padding: 2.5rem; border-bottom: 1px solid var(--border-light);">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-                        <span style="font-size: 0.85rem; font-weight: 700; color: var(--primary); background: rgba(99,102,241,0.1); padding: 4px 12px; border-radius: 20px;">출시</span>
-                        <span style="font-size: 0.9rem; color: var(--text-muted);">2026. 01. 10</span>
-                    </div>
-                    <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem;">QR Scanner Pro v1.0 런칭</h2>
-                    <p style="color: var(--text-sub);">기다려주셔서 감사합니다. 드디어 정식 출시되었습니다.</p>
+    <main>
+        <article class="news-item">
+            <div class="news-header">
+                <div class="news-meta">
+                    <span class="news-tag release">출시</span>
+                    <span class="news-date">2026. 01. 10</span>
                 </div>
-                <div style="padding: 2.5rem; background: rgba(255,255,255,0.4);">
-                    <p style="margin-bottom: 1rem;">QR Scanner Pro는 가장 빠르고 정확한 스캔 경험을 제공하기 위해 만들어졌습니다. 이제 복잡한 설정 없이 카메라만 켜면 됩니다.</p>
-                    <ul style="padding-left: 20px; color: var(--text-sub); line-height: 1.8;">
-                        <li>🚀 <strong>초고속 엔진:</strong> 0.1초 이내 인식</li>
-                        <li>🌑 <strong>다크 모드:</strong> 눈이 편안한 UI</li>
-                        <li>💾 <strong>히스토리:</strong> 스캔 기록 자동 저장</li>
-                    </ul>
-                </div>
-            </article>
+                <h2>QR Scanner Pro v1.0 런칭</h2>
+                <p>기다려주셔서 감사합니다. 드디어 정식 출시되었습니다.</p>
+            </div>
+            <div class="news-body">
+                <p>QR Scanner Pro는 가장 빠르고 정확한 스캔 경험을 제공하기 위해 만들어졌습니다. 이제 복잡한 설정 없이 카메라만 켜면 됩니다.</p>
+                <ul>
+                    <li>🚀 <strong>초고속 엔진:</strong> 0.1초 이내 인식</li>
+                    <li>🌑 <strong>다크 모드:</strong> 눈이 편안한 UI</li>
+                    <li>💾 <strong>히스토리:</strong> 스캔 기록 자동 저장</li>
+                </ul>
+            </div>
+        </article>
 
-            <!-- News Item 2 -->
-            <article class="bento-card fade-in" style="padding: 2.5rem;">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-                    <span style="font-size: 0.85rem; font-weight: 700; color: #10b981; background: rgba(16,185,129,0.1); padding: 4px 12px; border-radius: 20px;">공지사항</span>
-                    <span style="font-size: 0.9rem; color: var(--text-muted);">2026. 01. 10</span>
+        <article class="news-item">
+            <div class="news-header">
+                <div class="news-meta">
+                    <span class="news-tag notice">공지사항</span>
+                    <span class="news-date">2026. 01. 10</span>
                 </div>
-                <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">공식 웹사이트 오픈</h2>
-                <p style="color: var(--text-sub);">MonoApps의 모든 서비스를 한곳에서 만나보실 수 있는 공식 홈페이지가 오픈되었습니다. 앞으로 더 많은 업데이트 소식으로 찾아뵙겠습니다.</p>
-            </article>
-        </div>
+                <h2>공식 웹사이트 오픈</h2>
+                <p>MonoApps의 모든 서비스를 한곳에서 만나보실 수 있는 공식 홈페이지가 오픈되었습니다. 앞으로 더 많은 업데이트 소식으로 찾아뵙겠습니다.</p>
+            </div>
+        </article>
     </main>
 
     <footer>
@@ -89,30 +278,12 @@
     </footer>
 
     <script>
-        // Toggle Mobile Menu
         const menuBtn = document.getElementById('mobileMenuBtn');
         const menu = document.getElementById('mobileMenu');
-        
-        if(menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                menu.classList.toggle('active');
-            });
-        }
-
-        // Navbar Scroll
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if(window.scrollY > 50) navbar.classList.add('scrolled');
-            else navbar.classList.remove('scrolled');
+        menuBtn.addEventListener('click', () => menu.classList.toggle('active'));
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => menu.classList.remove('active'));
         });
-
-        // Animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
