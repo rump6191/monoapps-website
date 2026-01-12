@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - SideWay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Work+Sans:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; background: #111; color: #fff; font-family: 'Work Sans', sans-serif; overflow: hidden; }
+        
+        .wrapper {
+            display: flex; width: 300vw; height: 100vh;
+            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        
+        section {
+            width: 100vw; height: 100vh; flex-shrink: 0; padding: 10vh 10vw; box-sizing: border-box;
+            display: flex; flex-direction: column; justify-content: center;
+        }
+        
+        .bg-text {
+            position: absolute; font-family: 'Syncopate', sans-serif; font-size: 20vw; font-weight: 700;
+            color: rgba(255,255,255,0.03); z-index: -1; white-space: nowrap; top: 50%; transform: translateY(-50%);
+        }
+
+        h2 { font-family: 'Syncopate', sans-serif; font-size: 5rem; text-transform: uppercase; margin: 0; line-height: 1; }
+        p { font-size: 1.5rem; max-width: 600px; margin-top: 2rem; color: #888; }
+        
+        .controls {
+            position: fixed; bottom: 5rem; left: 10vw; display: flex; gap: 2rem; z-index: 100;
+        }
+        .dot {
+            width: 50px; height: 2px; background: #333; cursor: pointer; transition: 0.3s;
+        }
+        .dot.active { background: #fff; width: 100px; }
+
+        .btn-side {
+            display: inline-block; margin-top: 3rem; color: #fff; text-decoration: none; border-bottom: 2px solid #fff;
+            padding-bottom: 5px; font-weight: 700; text-transform: uppercase;
+        }
+
+        /* Section Specifics */
+        .s1 { background: #111; }
+        .s2 { background: #1a1a1a; }
+        .s3 { background: #222; }
+    </style>
+</head>
+<body>
+    <div class="wrapper" id="wrapper">
+        <section class="s1">
+            <div class="bg-text">BEGINNING</div>
+            <h2>MonoApps<br>Studio</h2>
+            <p>We think sideways. Creating digital tools from a different perspective.</p>
+            <a href="#" class="btn-side" onclick="move(1)">Next →</a>
+        </section>
+        
+        <section class="s2">
+            <div class="bg-text">PRODUCTS</div>
+            <h2>Our<br>Software</h2>
+            <p>From QR Scanners to AI Dream analysis. Pure utility, refined.</p>
+            <a href="#" class="btn-side" onclick="move(2)">Last →</a>
+        </section>
+        
+        <section class="s3">
+            <div class="bg-text">CONNECT</div>
+            <h2>Let's<br>Talk</h2>
+            <p>Based in Seoul. Open for digital innovations 2026.</p>
+            <a href="mailto:contact@monoapps.kr" class="btn-side">Email Us</a>
+        </section>
+    </div>
+
+    <div class="controls">
+        <div class="dot active" onclick="move(0)"></div>
+        <div class="dot" onclick="move(1)"></div>
+        <div class="dot" onclick="move(2)"></div>
+    </div>
+
+    <script>
+        function move(idx) {
+            document.getElementById('wrapper').style.transform = `translateX(-${idx * 100}vw)`;
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach(d => d.classList.remove('active'));
+            dots[idx].classList.add('active');
+        }
+        
+        // Horizontal scroll with wheel
+        window.addEventListener('wheel', (e) => {
+            if (e.deltaY > 0) {
+                // handle scroll next logic if needed
+            }
+        });
+    </script>
+</body>
+</html>

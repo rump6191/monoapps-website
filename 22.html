@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Stripe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0061ff; --text: #1a1f36; --bg: #ffffff; }
+        body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
+        
+        /* Slanted Background */
+        .bg-stripe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 600px;
+            background: linear-gradient(150deg, #f6f9fc 15%, #f6f9fc 70%, #fff 94%);
+            transform: skewY(-6deg); transform-origin: top left; z-index: -1;
+        }
+
+        nav { max-width: 1100px; margin: 0 auto; padding: 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        .nav-links a { margin-left: 2rem; text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; }
+
+        .hero { max-width: 1100px; margin: 100px auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -1.5px; }
+        p { font-size: 1.1rem; color: #4f566b; line-height: 1.6; margin-bottom: 2rem; }
+        
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: 0.3s; box-shadow: 0 4px 6px rgba(50,50,93,0.11), 0 1px 3px rgba(0,0,0,0.08); }
+        .btn:hover { background: #0052d9; transform: translateY(-1px); }
+
+        .card-grid { max-width: 1100px; margin: 0 auto 100px; padding: 0 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .card { padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07); }
+        .card h3 { color: var(--primary); margin-top: 0; }
+        .card p { font-size: 0.9rem; margin-bottom: 0; }
+
+        .mockup { width: 100%; height: 400px; background: #fff; border-radius: 12px; box-shadow: 0 50px 100px -20px rgba(50,50,93,0.25), 0 30px 60px -30px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body>
+    <div class="bg-stripe"></div>
+    <nav>
+        <div class="logo">MonoApps</div>
+        <div class="nav-links">
+            <a href="#">Products</a>
+            <a href="#">Developers</a>
+            <a href="#">Support</a>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div>
+            <h1>The modern infrastructure for digital tools.</h1>
+            <p>MonoApps builds the world's most powerful and easy-to-use apps. Join thousands of companies using our platform.</p>
+            <a href="#" class="btn">Start now →</a>
+        </div>
+        <div class="mockup"></div>
+    </section>
+
+    <div class="card-grid">
+        <div class="card">
+            <h3>Unified Platform</h3>
+            <p>Everything you need for your digital journey in one place.</p>
+        </div>
+        <div class="card">
+            <h3>Fast Integration</h3>
+            <p>Zero-latency recognition and processing for all apps.</p>
+        </div>
+        <div class="card">
+            <h3>Secure Data</h3>
+            <p>Privacy-first architecture that keeps your data where it belongs.</p>
+        </div>
+    </div>
+</body>
+</html>

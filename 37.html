@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Terminal</title>
+    <style>
+        body { background: #1e1e1e; color: #00ff00; font-family: 'Courier New', monospace; padding: 40px; font-size: 1.2rem; }
+        .prompt::before { content: "$ "; color: #fff; }
+        a { color: #00ff00; text-decoration: underline; }
+        a:hover { background: #00ff00; color: #000; }
+        .cursor { display: inline-block; width: 10px; height: 20px; background: #00ff00; animation: blink 1s infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+    <div class="prompt">monoapps --init</div>
+    <br>
+    <div>Loading system modules...</div>
+    <div>[OK] Core UI</div>
+    <div>[OK] Database Connection</div>
+    <br>
+    <div class="prompt">list modules</div>
+    <br>
+    <div>
+        1. <a href="#">QR Scanner (v1.0)</a> - High speed optical recognition.<br>
+        2. <a href="#">21 Innovation</a> - Data comparison engine.<br>
+        3. <a href="#">Dream DB</a> - Subconscious query language.<br>
+    </div>
+    <br>
+    <div class="prompt"><span class="cursor"></span></div>
+</body>
+</html>

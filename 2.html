@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoApps - Soft</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #e0e5ec;
+            --text: #4a4a4a;
+            --primary: #6d5dfc;
+            --shadow-light: #ffffff;
+            --shadow-dark: #a3b1c6;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Nunito', sans-serif; padding: 2rem; }
+
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        /* Neumorphic Mixin */
+        .neu-box {
+            background: var(--bg);
+            border-radius: 30px;
+            box-shadow: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .neu-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--bg);
+            color: var(--primary);
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 6px 6px 10px var(--shadow-dark), -6px -6px 10px var(--shadow-light);
+            transition: 0.2s;
+        }
+        .neu-btn:active {
+            box-shadow: inset 6px 6px 10px var(--shadow-dark), inset -6px -6px 10px var(--shadow-light);
+        }
+
+        /* Navbar */
+        nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem; padding: 1rem 2rem; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        
+        /* Hero */
+        .hero { text-align: center; padding: 4rem 1rem; margin-bottom: 4rem; }
+        h1 { font-size: 3rem; margin-bottom: 1.5rem; color: var(--text); }
+        p { font-size: 1.2rem; margin-bottom: 2.5rem; color: #777; }
+        
+        /* Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; }
+        .card { padding: 3rem 2rem; text-align: center; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        
+        .icon-box {
+            width: 80px; height: 80px; margin: 0 auto 2rem;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; color: var(--primary);
+            box-shadow: inset 6px 6px 10px var(--shadow-dark), inset -6px -6px 10px var(--shadow-light);
+        }
+
+        h3 { margin-bottom: 1rem; font-size: 1.5rem; }
+        .card p { font-size: 0.95rem; margin-bottom: 2rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="neu-box">
+            <div class="logo">MonoApps</div>
+            <div style="font-weight: 700;">MENU</div>
+        </nav>
+
+        <section class="hero neu-box">
+            <h1>Soft & Simple</h1>
+            <p>눈이 편안한 디자인, 직관적인 사용성.<br>MonoApps가 제안하는 부드러운 디지털 라이프.</p>
+            <a href="#" class="neu-btn">Start Now</a>
+        </section>
+
+        <div class="grid">
+            <div class="card neu-box">
+                <div class="icon-box">📱</div>
+                <h3>QR Scanner</h3>
+                <p>빠르고 부드러운 스캔 경험.<br>광고 없는 쾌적한 환경.</p>
+                <a href="#" style="color:var(--primary); font-weight:700; text-decoration:none;">Download</a>
+            </div>
+            <div class="card neu-box">
+                <div class="icon-box">🌙</div>
+                <h3>Dream Teller</h3>
+                <p>당신의 꿈을 부드럽게 해석해드립니다.<br>890가지 해몽 데이터.</p>
+                <a href="#" style="color:var(--primary); font-weight:700; text-decoration:none;">Visit</a>
+            </div>
+            <div class="card neu-box">
+                <div class="icon-box">🔮</div>
+                <h3>Saju Prime</h3>
+                <p>운명의 흐름을 읽는<br>정통 사주 명리학 서비스.</p>
+                <a href="#" style="color:var(--primary); font-weight:700; text-decoration:none;">Coming Soon</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

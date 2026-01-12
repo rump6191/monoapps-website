@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Clay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #eef2f5; --shadow-light: #ffffff; --shadow-dark: #d1d9e6; --accent: #ff6b6b; --text: #4a5568; }
+        body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Fredoka', sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 2rem; box-sizing: border-box; }
+        
+        .clay-card {
+            background: var(--bg); border-radius: 30px; padding: 40px;
+            box-shadow: 20px 20px 60px var(--shadow-dark), -20px -20px 60px var(--shadow-light);
+            margin-bottom: 2rem; width: 100%; max-width: 900px; text-align: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem; color: var(--accent); margin-bottom: 2rem; font-weight: 600; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h1 { font-size: 3rem; margin-bottom: 1rem; color: #2d3748; }
+        p { font-size: 1.2rem; line-height: 1.6; margin-bottom: 3rem; color: #718096; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        .clay-btn {
+            display: inline-block; padding: 15px 40px; border-radius: 50px; background: var(--bg); color: var(--accent);
+            text-decoration: none; font-size: 1.2rem; font-weight: 600;
+            box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+            transition: 0.2s;
+        }
+        .clay-btn:hover { box-shadow: inset 8px 8px 16px var(--shadow-dark), inset -8px -8px 16px var(--shadow-light); transform: scale(0.98); }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; width: 100%; max-width: 900px; }
+        
+        .small-card {
+            background: var(--bg); border-radius: 20px; padding: 30px; text-align: center;
+            box-shadow: 10px 10px 20px var(--shadow-dark), -10px -10px 20px var(--shadow-light);
+            transition: 0.3s;
+        }
+        .small-card:hover { transform: translateY(-10px); }
+        
+        .circle {
+            width: 80px; height: 80px; border-radius: 50%; background: var(--bg); margin: 0 auto 1.5rem;
+            display: flex; align-items: center; justify-content: center; font-size: 2rem;
+            box-shadow: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
+        }
+        
+        h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: #2d3748; }
+        .small-card p { font-size: 1rem; margin-bottom: 1.5rem; }
+        
+        .link { color: var(--accent); text-decoration: none; font-weight: 600; }
+        
+        @media (max-width: 768px) { h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="logo">MonoApps</div>
+    
+    <div class="clay-card">
+        <h1>Soft & Playful</h1>
+        <p>Apps don't have to be boring. We combine powerful features with a friendly, approachable interface design.</p>
+        <a href="#" class="clay-btn">Get Started</a>
+    </div>
+    
+    <div class="grid">
+        <div class="small-card">
+            <div class="circle">📱</div>
+            <h3>QR Scan</h3>
+            <p>Fast and friendly scanning.</p>
+            <a href="#" class="link">Download</a>
+        </div>
+        <div class="small-card">
+            <div class="circle">🛍️</div>
+            <h3>Innovation</h3>
+            <p>Smart shopping helper.</p>
+            <a href="#" class="link">Visit Site</a>
+        </div>
+        <div class="small-card">
+            <div class="circle">☁️</div>
+            <h3>Dreams</h3>
+            <p>Find your meaning.</p>
+            <a href="#" class="link">Explore</a>
+        </div>
+    </div>
+</body>
+</html>

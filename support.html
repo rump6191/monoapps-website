@@ -5,24 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>고객지원 - MonoApps</title>
-    <meta name="description" content="MonoApps 고객지원 센터. 자주 묻는 질문과 문의 방법을 확인하세요.">
+    <meta name="description" content="MonoApps 고객지원 센터.">
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <nav id="navbar">
         <a href="index.html" class="logo">MonoApps</a>
-        <ul class="nav-links">
-            <li><a href="index.html#apps">Apps</a></li>
-            <li><a href="support.html" class="active">Support</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
+        <div class="nav-links">
+            <a href="index.html#apps">모바일 앱</a>
+            <a href="index.html#services">웹 서비스</a>
+            <a href="support.html" class="active">고객지원</a>
+            <a href="news.html">소식</a>
+        </div>
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴">
             <span></span>
             <span></span>
@@ -30,156 +27,100 @@
         </button>
     </nav>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="index.html#apps">Apps</a></li>
-            <li><a href="support.html">Support</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html#apps">모바일 앱</a></li>
+            <li><a href="index.html#services">웹 서비스</a></li>
+            <li><a href="support.html">고객지원</a></li>
+            <li><a href="news.html">소식</a></li>
         </ul>
     </div>
 
-    <section class="hero" style="min-height: 40vh; padding-top: 140px;">
+    <section class="hero" style="min-height: 40vh;">
         <div class="hero-content">
-            <h1>고객지원</h1>
-            <p>문제가 있으신가요? 도움이 필요하시면 알려주세요!</p>
+            <span class="hero-badge">고객지원 센터</span>
+            <h1>무엇을 도와드릴까요?</h1>
+            <p>궁금한 점이 있으신가요? 자주 묻는 질문을 확인하거나 직접 문의해주세요.</p>
         </div>
     </section>
 
-    <main class="content" style="max-width: 900px; margin: 0 auto; padding: 60px 20px;">
-        <!-- App Support -->
-        <h2 class="section-title">앱별 지원</h2>
-        <div class="app-cards">
-            <div class="app-card fade-in">
-                <div class="app-card-icon">📱</div>
-                <h3>QR Scanner Pro</h3>
-                <p>QR 코드 스캔 및 생성 앱에 대한 도움말을 확인하세요.</p>
-                <a href="qr-scanner.html" class="btn btn-primary" style="background: #6366f1; color: white; border-radius: 8px; padding: 10px 20px; font-size: 0.9rem;">자세히 보기</a>
+    <main style="max-width: 900px; margin: 0 auto; padding: 0 20px 100px;">
+        <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); margin-bottom: 60px;">
+            <div class="bento-card fade-in" style="text-align: center; align-items: center;">
+                <div class="bento-icon" style="color: #6366f1;">📱</div>
+                <h3 class="bento-title">QR Scanner Pro</h3>
+                <p class="bento-desc" style="text-align: center;">사용법 가이드 및 문제 해결</p>
+                <a href="qr-scanner.html" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">가이드 보기</a>
             </div>
-            <div class="app-card fade-in">
-                <div class="app-card-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">🎯</div>
-                <h3>Coming Soon</h3>
-                <p>새로운 앱이 준비 중입니다. 곧 만나보실 수 있습니다.</p>
-                <span style="display:inline-block; padding: 10px 20px; background: #e2e8f0; color: #64748b; border-radius: 8px; font-size: 0.9rem; font-weight: 500;">준비중</span>
+            <div class="bento-card fade-in" style="text-align: center; align-items: center;">
+                <div class="bento-icon" style="color: #9ca3af;">✉️</div>
+                <h3 class="bento-title">직접 문의하기</h3>
+                <p class="bento-desc" style="text-align: center;">해결되지 않은 문제가 있나요?</p>
+                <a href="mailto:support@monoapps.kr" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">이메일 문의</a>
             </div>
         </div>
 
-        <!-- FAQ -->
-        <h2 class="section-title" style="margin-top: 80px;">자주 묻는 질문</h2>
-        <div class="faq-list">
-            <div class="faq-item fade-in">
-                <button class="faq-question">QR Scanner Pro는 무료인가요?</button>
-                <div class="faq-answer">
-                    <p>네, QR Scanner Pro는 기본 기능을 무료로 사용하실 수 있습니다. 광고 없는 버전이나 추가 기능은 인앱 구매를 통해 이용하실 수 있습니다.</p>
+        <h2 class="section-title" style="text-align: center; font-size: 2rem; margin-bottom: 40px;">자주 묻는 질문</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            <div class="bento-card fade-in" style="padding: 0; overflow: hidden; cursor: pointer;" onclick="this.classList.toggle('active')">
+                <div style="padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 1.1rem;">
+                    무료로 사용할 수 있나요?
+                    <span style="color: var(--primary);">+</span>
+                </div>
+                <div style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: rgba(255,255,255,0.5);">
+                    <p style="padding: 1.5rem 2rem; color: var(--text-sub);">네, MonoApps의 대부분의 앱은 기본 기능을 무료로 제공합니다. 광고 제거 등 부가 기능은 인앱 결제를 통해 이용하실 수 있습니다.</p>
                 </div>
             </div>
-            <div class="faq-item fade-in">
-                <button class="faq-question">카메라가 작동하지 않아요</button>
-                <div class="faq-answer">
-                    <p>설정 > 개인정보 보호 > 카메라에서 QR Scanner Pro에 카메라 권한이 허용되어 있는지 확인해주세요. 문제가 지속되면 앱을 재시작하거나 재설치해보세요.</p>
-                </div>
-            </div>
-            <div class="faq-item fade-in">
-                <button class="faq-question">스캔 기록은 어디에 저장되나요?</button>
-                <div class="faq-answer">
-                    <p>모든 스캔 기록은 기기 내부에만 저장됩니다. 외부 서버로 전송되지 않으며, 앱을 삭제하면 기록도 함께 삭제됩니다.</p>
-                </div>
-            </div>
-            <div class="faq-item fade-in">
-                <button class="faq-question">QR 코드 생성에 제한이 있나요?</button>
-                <div class="faq-answer">
-                    <p>아니요, QR 코드 생성에는 제한이 없습니다. URL, 텍스트, WiFi, 연락처 등 다양한 형식의 QR 코드를 무제한으로 생성할 수 있습니다.</p>
-                </div>
-            </div>
-            <div class="faq-item fade-in">
-                <button class="faq-question">앱이 지원하는 언어는 무엇인가요?</button>
-                <div class="faq-answer">
-                    <p>현재 한국어, 영어, 중국어(간체)를 지원하고 있습니다. 기기 언어 설정에 따라 자동으로 언어가 변경됩니다.</p>
-                </div>
-            </div>
-            <div class="faq-item fade-in">
-                <button class="faq-question">환불은 어떻게 받나요?</button>
-                <div class="faq-answer">
-                    <p>인앱 구매 환불은 App Store 또는 Google Play를 통해 처리됩니다. 각 스토어의 환불 정책에 따라 Apple/Google에 직접 요청하시면 됩니다.</p>
-                </div>
-            </div>
-        </div>
+            <style> .bento-card.active div:last-child { max-height: 200px !important; } </style>
 
-        <!-- Contact -->
-        <div class="contact fade-in" style="margin-top: 80px; border-radius: 20px; padding: 60px;">
-            <h2 style="color: white;">추가 문의</h2>
-            <p style="color: rgba(255,255,255,0.8);">FAQ에서 해결되지 않은 문제가 있으신가요?<br>이메일로 문의해주시면 최대한 빠르게 답변드리겠습니다.</p>
-            <a href="mailto:support@monoapps.kr" class="contact-email" style="background: rgba(255,255,255,0.1); padding: 15px 30px; border-radius: 50px; text-decoration: none;">
-                ✉️ support@monoapps.kr
-            </a>
-            <p class="response-time" style="margin-top: 20px; color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 0;">평균 응답 시간: 24-48시간 이내</p>
+            <div class="bento-card fade-in" style="padding: 0; overflow: hidden; cursor: pointer;" onclick="this.classList.toggle('active')">
+                <div style="padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 1.1rem;">
+                    환불 정책이 궁금합니다.
+                    <span style="color: var(--primary);">+</span>
+                </div>
+                <div style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: rgba(255,255,255,0.5);">
+                    <p style="padding: 1.5rem 2rem; color: var(--text-sub);">App Store 및 Google Play의 환불 정책을 따릅니다. 결제 후 일정 기간 내에 해당 스토어 고객센터를 통해 환불을 요청하실 수 있습니다.</p>
+                </div>
+            </div>
+
+            <div class="bento-card fade-in" style="padding: 0; overflow: hidden; cursor: pointer;" onclick="this.classList.toggle('active')">
+                <div style="padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 1.1rem;">
+                    제휴 문의는 어떻게 하나요?
+                    <span style="color: var(--primary);">+</span>
+                </div>
+                <div style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: rgba(255,255,255,0.5);">
+                    <p style="padding: 1.5rem 2rem; color: var(--text-sub);">contact@monoapps.kr 로 이메일을 보내주시면 담당자가 검토 후 연락드리겠습니다.</p>
+                </div>
+            </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 MonoApps. All rights reserved.</p>
-        <div class="footer-links">
+        <div class="footer-nav">
             <a href="privacy.html">개인정보 처리방침</a>
             <a href="terms.html">이용약관</a>
-            <a href="index.html">홈으로</a>
+            <a href="support.html">고객지원</a>
+            <a href="mailto:contact@monoapps.kr">문의하기</a>
         </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
     </footer>
 
     <script>
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const item = button.parentElement;
-                const wasActive = item.classList.contains('active');
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        if(menuBtn) { menuBtn.addEventListener('click', () => { menu.classList.toggle('active'); }); }
 
-                // Close all
-                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-
-                // Open clicked if wasn't active
-                if (!wasActive) {
-                    item.classList.add('active');
-                }
-            });
-        });
-
-        // Mobile Menu
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        if(mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenuBtn.classList.toggle('active');
-                mobileMenu.classList.toggle('active');
-            });
-        }
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
-
-        // Scroll
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            if(window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
         });
 
-        // Fade in
-        const fadeElements = document.querySelectorAll('.fade-in');
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.1 });
-        fadeElements.forEach(el => observer.observe(el));
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
-
 </html>

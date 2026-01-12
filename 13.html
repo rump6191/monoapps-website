@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - HUD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #001529; --grid: rgba(0, 255, 255, 0.1); --line: #00a8ff; --text: #00a8ff; --text-dim: rgba(0, 168, 255, 0.6); }
+        body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Share Tech Mono', monospace; overflow-x: hidden; min-height: 100vh; }
+        
+        /* Grid Background */
+        body::before {
+            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
+            background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+            background-size: 40px 40px; z-index: -1;
+        }
+        
+        .hud-container { max-width: 1200px; margin: 0 auto; padding: 2rem; position: relative; }
+        
+        header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--line); padding-bottom: 1rem; margin-bottom: 3rem; }
+        .logo { font-size: 2rem; letter-spacing: 2px; text-transform: uppercase; }
+        .status { font-size: 0.9rem; color: var(--text-dim); }
+        
+        .hero { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 4rem; border: 1px solid var(--line); padding: 2rem; position: relative; }
+        .hero::after { content: ''; position: absolute; bottom: -5px; right: -5px; width: 20px; height: 20px; border-right: 2px solid var(--line); border-bottom: 2px solid var(--line); }
+        .hero::before { content: ''; position: absolute; top: -5px; left: -5px; width: 20px; height: 20px; border-left: 2px solid var(--line); border-top: 2px solid var(--line); }
+        
+        h1 { font-size: 3.5rem; margin: 0 0 1rem 0; text-transform: uppercase; line-height: 0.9; }
+        p { font-size: 1.1rem; color: var(--text-dim); max-width: 500px; margin-bottom: 2rem; }
+        
+        .btn-hud {
+            display: inline-block; padding: 10px 30px; border: 1px solid var(--line); background: rgba(0, 168, 255, 0.1);
+            color: var(--text); text-decoration: none; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
+        }
+        .btn-hud:hover { background: var(--line); color: var(--bg); box-shadow: 0 0 20px var(--line); }
+        
+        .data-panel { display: flex; flex-direction: column; justify-content: space-between; border-left: 1px solid var(--text-dim); padding-left: 1rem; }
+        .data-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9rem; }
+        
+        .modules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .module { border: 1px solid var(--text-dim); padding: 1.5rem; position: relative; }
+        .module:hover { border-color: var(--line); background: rgba(0, 168, 255, 0.05); }
+        .module h3 { margin: 0 0 10px 0; font-size: 1.2rem; }
+        .module p { font-size: 0.9rem; color: var(--text-dim); }
+        .mod-id { position: absolute; top: 5px; right: 5px; font-size: 0.7rem; color: var(--text-dim); }
+        
+        footer { margin-top: 4rem; border-top: 1px solid var(--text-dim); padding-top: 1rem; text-align: right; font-size: 0.8rem; }
+
+        @media (max-width: 768px) { .hero { grid-template-columns: 1fr; } .modules { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="hud-container">
+        <header>
+            <div class="logo">MonoApps_Sys</div>
+            <div class="status">STATUS: OPTIMAL<br>SECURE CONNECTION</div>
+        </header>
+        
+        <div class="hero">
+            <div>
+                <h1>Precision<br>Tools</h1>
+                <p>Advanced digital architecture for minimalists. High efficiency. Low latency.</p>
+                <a href="#" class="btn-hud">Initiate</a>
+            </div>
+            <div class="data-panel">
+                <div class="data-row"><span>CPU LOAD</span><span>12%</span></div>
+                <div class="data-row"><span>MEMORY</span><span>402MB</span></div>
+                <div class="data-row"><span>UPTIME</span><span>99.99%</span></div>
+                <div style="margin-top: auto; text-align: right;">
+                    <svg width="100" height="50">
+                        <path d="M0,50 L20,40 L40,45 L60,20 L80,30 L100,10" fill="none" stroke="#00a8ff" stroke-width="2"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modules">
+            <div class="module">
+                <span class="mod-id">MOD_01</span>
+                <h3>QR_SCAN</h3>
+                <p>Optical recognition unit. <br>Speed: 0.1s</p>
+            </div>
+            <div class="module">
+                <span class="mod-id">MOD_02</span>
+                <h3>DATA_COMP</h3>
+                <p>Comparative analysis engine. <br>Items: 1757</p>
+            </div>
+            <div class="module">
+                <span class="mod-id">MOD_03</span>
+                <h3>DREAM_AI</h3>
+                <p>Pattern interpretation. <br>Keywords: 890</p>
+            </div>
+        </div>
+        
+        <footer>
+            SYS_VER 3.0.1 // MONOAPPS CORP.
+        </footer>
+    </div>
+</body>
+</html>

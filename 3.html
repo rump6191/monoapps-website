@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoApps - Cyber</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --surface: #111;
+            --primary: #00ff9d; /* Neon Green */
+            --secondary: #ff00ff; /* Neon Pink */
+            --text: #fff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Rajdhani', sans-serif; overflow-x: hidden; }
+
+        /* Glitch Effect Text */
+        .glitch { position: relative; color: var(--text); font-size: 5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        .glitch::before, .glitch::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .glitch::before { left: 2px; text-shadow: -1px 0 var(--secondary); clip: rect(24px, 550px, 90px, 0); animation: glitch-anim-2 3s infinite linear alternate-reverse; }
+        .glitch::after { left: -2px; text-shadow: -1px 0 var(--primary); clip: rect(85px, 550px, 140px, 0); animation: glitch-anim 2.5s infinite linear alternate-reverse; }
+
+        @keyframes glitch-anim { 0% { clip: rect(10px, 9999px, 30px, 0); } 100% { clip: rect(80px, 9999px, 100px, 0); } }
+        @keyframes glitch-anim-2 { 0% { clip: rect(40px, 9999px, 60px, 0); } 100% { clip: rect(10px, 9999px, 130px, 0); } }
+
+        /* UI Elements */
+        nav { padding: 2rem; display: flex; justify-content: space-between; border-bottom: 1px solid #333; }
+        .logo { color: var(--primary); font-size: 1.5rem; letter-spacing: 2px; }
+        
+        .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle at center, #1a1a1a 0%, #000 70%); }
+        .hero p { font-size: 1.5rem; color: #888; max-width: 600px; margin: 20px 0 40px; }
+        
+        .cyber-btn {
+            padding: 15px 40px; background: transparent; color: var(--primary); border: 1px solid var(--primary);
+            font-size: 1.2rem; font-weight: 600; letter-spacing: 2px; cursor: pointer; position: relative; overflow: hidden; transition: 0.3s;
+        }
+        .cyber-btn:hover { background: var(--primary); color: #000; box-shadow: 0 0 20px var(--primary); }
+
+        .section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        
+        .cyber-card {
+            background: var(--surface); border: 1px solid #333; padding: 2rem; position: relative; transition: 0.3s;
+        }
+        .cyber-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--primary), var(--secondary)); transform: scaleX(0); transform-origin: left; transition: 0.4s; }
+        .cyber-card:hover { border-color: #555; transform: translateY(-5px); }
+        .cyber-card:hover::before { transform: scaleX(1); }
+        
+        .card-title { color: var(--primary); font-size: 1.8rem; margin-bottom: 1rem; text-transform: uppercase; }
+        .card-desc { color: #aaa; margin-bottom: 2rem; line-height: 1.6; }
+        
+        footer { border-top: 1px solid #333; padding: 3rem; text-align: center; color: #555; font-size: 0.8rem; letter-spacing: 1px; }
+
+        @media (max-width: 768px) { .glitch { font-size: 3rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">// MONOAPPS_SYSTEM</div>
+        <div style="color:var(--secondary)">V.2026</div>
+    </nav>
+
+    <section class="hero">
+        <h1 class="glitch" data-text="FUTURE READY">FUTURE READY</h1>
+        <p>Advanced digital tools for the next generation.<br>Speed, Security, Precision.</p>
+        <button class="cyber-btn">INITIALIZE</button>
+    </section>
+
+    <section class="section">
+        <div class="card-grid">
+            <div class="cyber-card">
+                <h3 class="card-title">QR_SCANNER.EXE</h3>
+                <p class="card-desc">High-speed decoding algorithm. <br>Generate and scan codes with zero latency.</p>
+                <span style="color:var(--secondary)">> EXECUTE</span>
+            </div>
+            <div class="cyber-card">
+                <h3 class="card-title">DATA_COMPARE</h3>
+                <p class="card-desc">21 Innovation Protocol. <br>Analyzing 1,757+ product data points.</p>
+                <span style="color:var(--secondary)">> ACCESS</span>
+            </div>
+            <div class="cyber-card">
+                <h3 class="card-title">DREAM_DECODER</h3>
+                <p class="card-desc">Subconscious signal interpretation system. <br>890 keywords database.</p>
+                <span style="color:var(--secondary)">> DECODE</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        SYSTEM STATUS: ONLINE <br>
+        © 2026 MONOAPPS CORP. ALL RIGHTS RESERVED.
+    </footer>
+</body>
+</html>

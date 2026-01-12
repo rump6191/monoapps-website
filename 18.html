@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Dark</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #050505; --card: #111; --text: #fff; --text-dim: #888; --glow: #3b82f6; }
+        body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        
+        /* Background Glows */
+        .glow-spot { position: fixed; width: 600px; height: 600px; background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(0,0,0,0) 70%); top: -200px; left: 50%; transform: translateX(-50%); pointer-events: none; z-index: -1; }
+        .glow-spot-2 { position: fixed; width: 400px; height: 400px; background: radial-gradient(circle, rgba(236,72,153,0.1) 0%, rgba(0,0,0,0) 70%); bottom: -100px; right: -100px; pointer-events: none; z-index: -1; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+
+        header { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; margin-bottom: 6rem; }
+        .logo { font-weight: 600; letter-spacing: -0.5px; font-size: 1.1rem; }
+        .nav a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; margin-left: 20px; transition: 0.3s; }
+        .nav a:hover { color: var(--text); }
+
+        .hero { text-align: center; margin-bottom: 8rem; }
+        .badge { display: inline-block; padding: 5px 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.8rem; color: var(--text-dim); margin-bottom: 2rem; }
+        h1 { font-size: 4rem; font-weight: 600; letter-spacing: -2px; margin: 0 0 1.5rem; background: linear-gradient(180deg, #fff 0%, #aaa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p { font-size: 1.2rem; color: var(--text-dim); max-width: 500px; margin: 0 auto 3rem; line-height: 1.6; }
+        
+        .btn-glow {
+            display: inline-block; padding: 12px 30px; background: #fff; color: #000; text-decoration: none; border-radius: 30px; font-weight: 600; font-size: 0.95rem; transition: 0.3s;
+            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+        .btn-glow:hover { box-shadow: 0 0 40px rgba(255,255,255,0.3); transform: scale(1.05); }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        
+        .dark-card {
+            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 2rem; border-radius: 16px; transition: 0.3s; position: relative; overflow: hidden;
+        }
+        .dark-card:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); transform: translateY(-5px); }
+        .dark-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.06), transparent 40%); opacity: 0; transition: 0.5s;
+        }
+        .dark-card:hover::before { opacity: 1; }
+
+        .icon { width: 40px; height: 40px; background: linear-gradient(135deg, #222, #111); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.2rem; }
+        h3 { margin: 0 0 10px; font-weight: 500; }
+        .desc { color: var(--text-dim); font-size: 0.9rem; line-height: 1.5; }
+
+        footer { text-align: center; color: #333; margin-top: 8rem; font-size: 0.8rem; }
+        
+        @media (max-width: 768px) { h1 { font-size: 3rem; } }
+    </style>
+</head>
+<body>
+    <div class="glow-spot"></div>
+    <div class="glow-spot-2"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">MonoApps</div>
+            <nav class="nav">
+                <a href="#">Products</a>
+                <a href="#">Company</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <span class="badge">Version 2.0 Now Available</span>
+            <h1>Intelligence<br>in Simplicity</h1>
+            <p>Our tools are designed to disappear, leaving only the utility you need. Experience the new standard of digital efficiency.</p>
+            <a href="#" class="btn-glow">Get Started</a>
+        </section>
+
+        <div class="grid">
+            <div class="dark-card">
+                <div class="icon">⚡</div>
+                <h3>QR Scanner Pro</h3>
+                <p class="desc">Instant recognition engine. Built for speed and privacy. No cloud dependancy.</p>
+            </div>
+            <div class="dark-card">
+                <div class="icon">📊</div>
+                <h3>21 Innovation</h3>
+                <p class="desc">Data analytics for smarter shopping decisions. Compare 1,700+ products instantly.</p>
+            </div>
+            <div class="dark-card">
+                <div class="icon">🧠</div>
+                <h3>Dream Teller</h3>
+                <p>AI-powered subconscious analysis. Interpret your dreams with deep learning.</p>
+            </div>
+        </div>
+        
+        <footer>
+            &copy; 2026 MonoApps Inc. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>

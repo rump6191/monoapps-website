@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Zen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #faf9f6; --text: #1a1a1a; --accent: #bc002d; }
+        body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Noto Serif KR', serif; overflow-x: hidden; }
+        
+        .container { max-width: 1200px; margin: 0 auto; min-height: 100vh; display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; }
+        
+        .circle {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 40vw; height: 40vw; background: var(--accent); border-radius: 50%;
+            z-index: -1; opacity: 0.03;
+        }
+
+        .vertical-text {
+            writing-mode: vertical-rl; text-orientation: mixed;
+            font-size: 5rem; font-weight: 700; line-height: 1; letter-spacing: 1rem;
+        }
+
+        .content { max-width: 400px; }
+        h2 { font-size: 2.5rem; margin-bottom: 2rem; font-weight: 700; }
+        p { font-size: 1.1rem; line-height: 2; color: #444; margin-bottom: 3rem; }
+        
+        .nav { position: fixed; top: 4rem; right: 4rem; writing-mode: vertical-rl; font-weight: 700; letter-spacing: 0.2rem; }
+        .nav a { text-decoration: none; color: var(--text); margin-bottom: 2rem; }
+        
+        .list { margin-top: 4rem; }
+        .list-item { display: flex; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid #ddd; padding-bottom: 1rem; }
+        .num { color: var(--accent); margin-right: 1.5rem; font-weight: 700; }
+        
+        footer { position: fixed; bottom: 4rem; left: 4rem; font-size: 0.8rem; letter-spacing: 0.1rem; color: #999; }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <nav class="nav">
+        <a href="#">제품 소개</a>
+        <a href="#">철학</a>
+        <a href="#">문의</a>
+    </nav>
+
+    <div class="container">
+        <div class="vertical-text">
+            單純함의 미학
+        </div>
+        
+        <div class="content">
+            <h2>MonoApps</h2>
+            <p>본질만을 남기고 모든 것을 덜어냈습니다. 고요함 속에서 피어나는 강력한 도구. MonoApps가 추구하는 디지털 선(禪)의 세계입니다.</p>
+            
+            <div class="list">
+                <div class="list-item"><span class="num">一</span> <span>QR Scanner Pro</span></div>
+                <div class="list-item"><span class="num">二</span> <span>21 Innovation</span></div>
+                <div class="list-item"><span class="num">三</span> <span>Dream Teller</span></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 MonoApps. All Rights Reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Pastel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; background: #fff5f5; font-family: 'Quicksand', sans-serif; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .shape { position: absolute; border-radius: 50%; opacity: 0.8; z-index: -1; animation: float 10s infinite alternate; }
+        .s1 { width: 300px; height: 300px; background: #ffd1dc; top: 10%; left: 10%; }
+        .s2 { width: 400px; height: 400px; background: #e2f0cb; bottom: 10%; right: 10%; }
+        .s3 { width: 200px; height: 200px; background: #c7ceea; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        @keyframes float { from { transform: translate(0,0); } to { transform: translate(20px, 20px); } }
+        
+        .card { background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); padding: 50px; border-radius: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        h1 { color: #555; font-size: 3rem; margin-bottom: 10px; }
+        p { color: #888; font-size: 1.2rem; }
+        .btn { display: inline-block; background: #ff9aa2; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="shape s3"></div>
+    <div class="card">
+        <h1>Soft & Gentle</h1>
+        <p>MonoApps for a better life.</p>
+        <a href="#" class="btn">View Collection</a>
+    </div>
+</body>
+</html>

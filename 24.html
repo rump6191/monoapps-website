@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Swiss Grid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #fff; --text: #000; --grid: #000; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+        
+        .grid-container {
+            display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: auto;
+            border-top: 2px solid var(--grid); border-left: 2px solid var(--grid);
+        }
+        
+        .cell { padding: 1.5rem; border-right: 2px solid var(--grid); border-bottom: 2px solid var(--grid); }
+        .cell-2 { grid-column: span 2; }
+        .cell-3 { grid-column: span 3; }
+        .cell-4 { grid-column: span 4; }
+
+        .logo { font-size: 2.5rem; font-weight: 900; letter-spacing: -2px; }
+        .nav-link { text-decoration: none; color: var(--text); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; }
+        
+        h1 { font-size: 8rem; font-weight: 900; line-height: 0.8; margin: 0; letter-spacing: -5px; }
+        .meta { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 2rem; display: block; }
+        
+        .num { font-size: 3rem; font-weight: 900; margin-bottom: 1rem; }
+        .title { font-size: 1.5rem; font-weight: 900; margin-bottom: 1rem; text-transform: uppercase; }
+        .desc { font-size: 1rem; line-height: 1.4; color: #555; }
+
+        .black-cell { background: #000; color: #fff; }
+        .btn-black { background: #000; color: #fff; text-decoration: none; padding: 1rem; display: block; text-align: center; font-weight: 700; text-transform: uppercase; }
+        
+        @media (max-width: 768px) {
+            .grid-container { grid-template-columns: 1fr; }
+            .cell, .cell-2, .cell-3, .cell-4 { grid-column: span 1; }
+            h1 { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <!-- Row 1 -->
+        <div class="cell cell-3"><div class="logo">MonoApps®</div></div>
+        <div class="cell"><a href="#" class="nav-link">Apps Index</a></div>
+        
+        <!-- Row 2 -->
+        <div class="cell cell-4">
+            <span class="meta">Corporate Identity 2026</span>
+            <h1>SYSTEMS<br>ORDER<br>LOGIC</h1>
+        </div>
+        
+        <!-- Row 3 -->
+        <div class="cell"><span class="meta">Info 01</span><p>We build tools based on mathematical precision and Swiss design principles.</p></div>
+        <div class="cell"><span class="meta">Info 02</span><p>Focusing on high-speed performance and user-centric minimalism.</p></div>
+        <div class="cell"><span class="meta">Info 03</span><p>Seoul based digital studio. Exploring the boundaries of utility.</p></div>
+        <div class="cell black-cell">
+            <span class="meta" style="color:#fff">Contact</span>
+            <p>contact@monoapps.kr<br>+82 2 123 4567</p>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="cell">
+            <div class="num">01</div>
+            <div class="title">QR Scanner Pro</div>
+            <div class="desc">High-speed optical recognition engine. v1.0 released.</div>
+        </div>
+        <div class="cell">
+            <div class="num">02</div>
+            <div class="title">21 Innovation</div>
+            <div class="desc">Market data analysis and comparison protocol.</div>
+        </div>
+        <div class="cell">
+            <div class="num">03</div>
+            <div class="title">Dream Teller</div>
+            <div class="desc">Psychological pattern database for dreams.</div>
+        </div>
+        <div class="cell"><a href="#" class="btn-black">Download All →</a></div>
+    </div>
+</body>
+</html>

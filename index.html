@@ -1,234 +1,409 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MonoApps - 심플하고 유용한 디지털 서비스</title>
-  <meta name="description" content="MonoApps는 일상을 더 편리하게 만드는 심플한 앱과 웹 서비스를 만듭니다. QR Scanner Pro, 꿈해몽, 21이노베이션 등">
-  <meta name="keywords" content="MonoApps, 앱 개발, QR 스캐너, 모바일 앱, iOS, Android, 꿈해몽, 상품비교, 사주">
-  <meta name="author" content="MonoApps">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoApps - 심플하고 유용한 디지털 서비스</title>
+    <meta name="description" content="MonoApps는 일상을 더 편리하게 만드는 심플한 앱과 웹 서비스를 만듭니다.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="MonoApps - 심플하고 유용한 디지털 서비스">
-  <meta property="og:description" content="MonoApps는 일상을 더 편리하게 만드는 심플한 앱과 웹 서비스를 만듭니다.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://monoapps.kr">
+        /* Rotating Gradient Background */
+        .bg-gradient {
+            position: fixed;
+            width: 150vw;
+            height: 150vh;
+            top: -25vh;
+            left: -25vw;
+            background: conic-gradient(from 180deg at 50% 50%, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            filter: blur(100px);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            z-index: 100;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(90deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: white; }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+        /* Mobile Menu */
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; transition: 0.3s; }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            z-index: 99;
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 2rem 4rem;
+        }
+        .glass-box {
+            width: 90%;
+            max-width: 1100px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 40px;
+            padding: 60px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+        .hero-desc {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #ee7752, #e73c7e);
+            color: white;
+            box-shadow: 0 0 30px rgba(231, 60, 126, 0.4);
+        }
+        .btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(231, 60, 126, 0.6); }
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            background: rgba(255,255,255,0.05);
+        }
+        .btn-outline:hover { background: rgba(255,255,255,0.15); }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+        }
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        .section-desc {
+            text-align: center;
+            opacity: 0.6;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Card Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2rem;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255,255,255,0.2);
+        }
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+        .card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .card p { font-size: 0.95rem; opacity: 0.6; line-height: 1.6; margin-bottom: 1rem; }
+        .card-link {
+            color: #e73c7e;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .card-link:hover { color: #ee7752; }
+        .card-link.muted { color: rgba(255,255,255,0.4); }
+
+        /* Featured Card */
+        .card.featured {
+            grid-column: span 2;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+        .store-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+        .store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .store-btn:hover { background: rgba(255,255,255,0.2); }
+        .store-btn svg { width: 18px; height: 18px; }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .stat-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .stat-number { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .stat-label { font-size: 0.9rem; opacity: 0.5; }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .glass-box { padding: 40px 25px; border-radius: 30px; }
+            .card.featured { grid-column: span 1; }
+            .hero { padding-top: 100px; }
+        }
+    </style>
 </head>
-
 <body>
-  <nav id="navbar">
-    <a href="index.html" class="logo">MonoApps</a>
-    <ul class="nav-links">
-      <li><a href="#apps">Apps</a></li>
-      <li><a href="support.html">Support</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
+    <div class="bg-gradient"></div>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="#apps">Apps</a></li>
-      <li><a href="support.html">Support</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
+    <nav>
+        <a href="index.html" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="#apps">모바일 앱</a>
+            <a href="#services">웹 서비스</a>
+            <a href="support.html">고객지원</a>
+            <a href="news.html">소식</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>심플하고 유용한<br>디지털 서비스</h1>
-      <p>MonoApps는 일상을 더 편리하게 만드는 앱과 웹 서비스를 만듭니다.<br>복잡함 없이, 필요한 기능만 담았습니다.</p>
-      <div class="hero-buttons">
-        <a href="#apps" class="btn btn-primary">앱 둘러보기</a>
-        <a href="#services" class="btn btn-outline">웹 서비스</a>
-      </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#apps">모바일 앱</a>
+        <a href="#services">웹 서비스</a>
+        <a href="support.html">고객지원</a>
+        <a href="news.html">소식</a>
     </div>
-  </section>
 
-  <section class="apps" id="apps">
-    <h2 class="section-title">Mobile Apps</h2>
-    <div class="apps-grid">
-      <div class="app-card fade-in">
-        <div class="app-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">
-          📱
+    <section class="hero">
+        <div class="glass-box">
+            <span class="hero-badge">✨ 단순함이 만드는 지능적인 경험</span>
+            <h1>복잡한 세상,<br>심플한 솔루션</h1>
+            <p class="hero-desc">MonoApps는 본질에 집중합니다. 불필요한 기능은 덜어내고, 사용자에게 꼭 필요한 가치만을 담아 직관적인 디지털 경험을 제공합니다.</p>
+            <div class="hero-buttons">
+                <a href="#apps" class="btn btn-primary">앱 둘러보기</a>
+                <a href="#services" class="btn btn-outline">웹 서비스</a>
+            </div>
         </div>
-        <h3>QR Scanner Pro</h3>
-        <p>빠르고 정확한 QR/바코드 스캐너. 스캔, 생성, 기록 관리까지 한 번에.</p>
-        <div class="download-buttons" style="display:flex; justify-content:center; gap:10px;">
-          <a href="#" class="store-btn ios">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            App Store
-          </a>
-          <a href="#" class="store-btn android">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
-            Google Play
-          </a>
+    </section>
+
+    <section id="apps">
+        <h2 class="section-title">모바일 앱</h2>
+        <p class="section-desc">일상의 불편함을 해결하는 스마트한 도구들</p>
+        <div class="grid">
+            <div class="card featured">
+                <div class="card-icon">📱</div>
+                <h3>QR Scanner Pro</h3>
+                <p>압도적인 속도의 QR/바코드 스캐너. 스캔부터 생성, 기록 관리까지 모든 기능을 하나의 앱에서 경험하세요.</p>
+                <div class="store-buttons">
+                    <a href="#" class="store-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        App Store
+                    </a>
+                    <a href="#" class="store-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                        Play Store
+                    </a>
+                    <a href="qr-scanner.html" class="card-link" style="margin-left: auto;">상세보기 →</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>다음 프로젝트</h3>
+                <p>새로운 혁신을 준비하고 있습니다. 곧 찾아뵙겠습니다.</p>
+                <span class="card-link muted">준비중</span>
+            </div>
         </div>
-        <a href="qr-scanner.html" style="display: inline-block; margin-top: 20px; color: var(--primary-color); font-weight: 600;">자세히 보기 →</a>
-      </div>
+    </section>
 
-      <div class="app-card fade-in">
-        <div class="app-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
-          🎯
+    <section id="services">
+        <h2 class="section-title">웹 서비스</h2>
+        <p class="section-desc">웹 브라우저에서 만나는 강력한 도구들</p>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🛒</div>
+                <h3>21이노베이션</h3>
+                <p>1,757개 이상의 상품 데이터를 분석하여 최고의 선택을 돕는 스마트 비교 플랫폼.</p>
+                <a href="https://21innovation.org" target="_blank" class="card-link">사이트 방문 →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌙</div>
+                <h3>꿈해몽 대백과</h3>
+                <p>890가지 키워드로 풀어보는 당신의 무의식. 간편하게 검색하고 해석하세요.</p>
+                <a href="https://dreamteller.co.kr" target="_blank" class="card-link">사이트 방문 →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔮</div>
+                <h3>사주프라임</h3>
+                <p>전통 명리학에 기반한 정통 사주 분석 서비스. 운명의 흐름을 읽어드립니다.</p>
+                <span class="card-link muted">오픈 예정 🔜</span>
+            </div>
         </div>
-        <h3>Coming Soon</h3>
-        <p>새로운 앱이 준비 중입니다. 곧 만나보실 수 있습니다.</p>
-        <span class="coming-soon">준비중</span>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="apps" id="services" style="background: white;">
-    <h2 class="section-title">Web Services</h2>
-    <div class="apps-grid">
-      <!-- 꿈해몽 -->
-      <div class="app-card fade-in">
-        <div class="app-icon" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
-          🌙
+    <section>
+        <h2 class="section-title">왜 MonoApps인가요?</h2>
+        <p class="section-desc">신뢰할 수 있는 디지털 파트너</p>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">운영 서비스</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">안정성</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">빠름</div>
+                <div class="stat-label">성능 중심</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">안전</div>
+                <div class="stat-label">보안 우선</div>
+            </div>
         </div>
-        <h3>꿈해몽</h3>
-        <p>어젯밤 꾼 꿈의 의미를 찾아보세요. 890가지 상세 해몽으로 무의식의 신호를 해석합니다.</p>
-        <a href="https://dreamteller.co.kr" target="_blank" class="store-btn ios" style="margin-top: 10px; background: #1e293b;">사이트 방문 →</a>
-      </div>
+    </section>
 
-      <!-- 21이노베이션 -->
-      <div class="app-card fade-in">
-        <div class="app-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
-          🛒
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">개인정보 처리방침</a>
+            <a href="terms.html">이용약관</a>
+            <a href="support.html">고객지원</a>
+            <a href="mailto:contact@monoapps.kr">문의하기</a>
         </div>
-        <h3>21이노베이션</h3>
-        <p>전문가 분석 스마트 상품 비교 플랫폼. 1757개 이상의 상품을 9개 카테고리로 비교.</p>
-        <a href="https://21innovation.org" target="_blank" class="store-btn ios" style="margin-top: 10px; background: #1e293b;">사이트 방문 →</a>
-      </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
 
-      <!-- 사주프라임 -->
-      <div class="app-card fade-in">
-        <div class="app-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
-          🔮
-        </div>
-        <h3>사주프라임</h3>
-        <p>전통 사주명리학 기반 정확한 사주팔자 분석. 천간지지, 십신, 대운 해석 제공.</p>
-        <span class="store-btn android" style="margin-top: 10px; background: #64748b; cursor: default;">오픈 예정 🔜</span>
-      </div>
-    </div>
-  </section>
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
 
-  <section class="about" id="about">
-    <div class="about-content" style="max-width: 800px; margin: 0 auto;">
-      <h2 class="section-title">About Us</h2>
-      <p style="text-align: center; font-size: 1.2rem; color: var(--text-muted); margin-bottom: 20px;">MonoApps는 사용자에게 꼭 필요한 기능만을 담은 심플한 앱과 웹 서비스를 만듭니다.</p>
-      <p style="text-align: center; font-size: 1.2rem; color: var(--text-muted);">복잡한 기능보다 직관적인 사용성을, 화려한 디자인보다 깔끔한 인터페이스를 추구합니다.</p>
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
 
-      <div class="values">
-        <div class="value-item fade-in">
-          <div class="value-icon">🎯</div>
-          <h4 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--text-main);">심플함</h4>
-          <p style="color: var(--text-light);">필요한 기능만</p>
-        </div>
-        <div class="value-item fade-in">
-          <div class="value-icon">⚡</div>
-          <h4 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--text-main);">빠른 속도</h4>
-          <p style="color: var(--text-light);">가볍고 빠르게</p>
-        </div>
-        <div class="value-item fade-in">
-          <div class="value-icon">💎</div>
-          <h4 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--text-main);">품질</h4>
-          <p style="color: var(--text-light);">안정적인 서비스</p>
-        </div>
-        <div class="value-item fade-in">
-          <div class="value-icon">🔒</div>
-          <h4 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--text-main);">보안</h4>
-          <p style="color: var(--text-light);">개인정보 보호</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>문의사항이 있으시면 이메일로 연락해주세요.</p>
-    <a href="mailto:contact@monoapps.kr" class="contact-email">contact@monoapps.kr</a>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 MonoApps. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="privacy.html">개인정보 처리방침</a>
-      <a href="terms.html">이용약관</a>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenuBtn.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking a link
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenuBtn.classList.remove('active');
-        mobileMenu.classList.remove('active');
-      });
-    });
-
-    // Scroll Effect for Nav
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Fade-in Animation on Scroll
-    const fadeElements = document.querySelectorAll('.app-card, .value-item, .section-title');
-    fadeElements.forEach(el => el.classList.add('fade-in'));
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    fadeElements.forEach(el => observer.observe(el));
-  </script>
+        // Close menu when clicking a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => menu.classList.remove('active'));
+        });
+    </script>
 </body>
-
-
 </html>

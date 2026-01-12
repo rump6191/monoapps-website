@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoApps - Fun</title>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --yellow: #FFD700;
+            --purple: #9b51e0;
+            --cyan: #00ffff;
+            --black: #000000;
+            --white: #ffffff;
+            --border: 4px solid var(--black);
+            --shadow: 8px 8px 0px var(--black);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Changa', sans-serif; background: var(--yellow); color: var(--black); padding: 2rem; }
+        
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        /* Header */
+        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem; background: var(--white); padding: 1.5rem; border: var(--border); box-shadow: var(--shadow); }
+        .logo { font-size: 2rem; font-weight: 900; transform: rotate(-2deg); background: var(--purple); color: var(--white); padding: 0.2rem 1rem; }
+        nav a { margin-left: 1.5rem; text-decoration: none; color: var(--black); font-weight: 700; font-size: 1.2rem; }
+        nav a:hover { text-decoration: underline; color: var(--purple); }
+
+        /* Hero */
+        .hero { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 5rem; }
+        h1 { font-size: 5rem; line-height: 1; margin-bottom: 1.5rem; text-shadow: 4px 4px 0px var(--white); }
+        p { font-size: 1.5rem; font-weight: 700; background: var(--white); padding: 0.5rem 1rem; border: var(--border); transform: rotate(1deg); margin-bottom: 2rem; }
+        
+        .fun-btn {
+            display: inline-block; padding: 1rem 3rem; background: var(--cyan); color: var(--black); 
+            font-size: 1.5rem; font-weight: 700; text-decoration: none; border: var(--border); box-shadow: var(--shadow); transition: 0.1s;
+        }
+        .fun-btn:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px var(--black); }
+        .fun-btn:active { transform: translate(8px, 8px); box-shadow: none; }
+
+        /* Content */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
+        
+        .card { background: var(--white); border: var(--border); padding: 2rem; position: relative; box-shadow: var(--shadow); transition: 0.2s; }
+        .card:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0px var(--black); }
+        
+        .card-tag { position: absolute; top: -20px; right: -10px; background: var(--purple); color: var(--white); padding: 0.5rem 1rem; font-weight: 700; border: var(--border); transform: rotate(3deg); }
+        
+        .card h3 { font-size: 2rem; margin-bottom: 1rem; border-bottom: 4px solid var(--yellow); display: inline-block; }
+        .card p { font-size: 1.2rem; margin-bottom: 1.5rem; line-height: 1.4; }
+        
+        .card-link { display: block; background: var(--black); color: var(--white); text-align: center; padding: 1rem; text-decoration: none; font-weight: 700; font-size: 1.2rem; }
+        .card-link:hover { background: var(--cyan); color: var(--black); }
+
+        footer { margin-top: 5rem; text-align: center; font-weight: 700; font-size: 1.2rem; }
+
+        @media (max-width: 768px) { h1 { font-size: 3.5rem; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">MonoApps!</div>
+            <nav>
+                <a href="#">APPS</a>
+                <a href="#">FUN</a>
+                <a href="#">CONTACT</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>SIMPLE<br>IS BEST!</h1>
+            <p>복잡한 건 싫어! 쉽고 빠른게 최고야.</p>
+            <a href="#" class="fun-btn">GET APPS NOW</a>
+        </section>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-tag">HOT 🔥</div>
+                <h3>QR Scanner</h3>
+                <p>0.1초만에 스캔 끝!<br>기다리지 마세요.</p>
+                <a href="#" class="card-link">DOWNLOAD</a>
+            </div>
+            <div class="card">
+                <div class="card-tag">SMART 🧠</div>
+                <h3>Innovation</h3>
+                <p>상품 비교의 끝판왕.<br>데이터로 승부합니다.</p>
+                <a href="#" class="card-link">CHECK IT</a>
+            </div>
+            <div class="card">
+                <div class="card-tag">MYSTIC 🔮</div>
+                <h3>Dream</h3>
+                <p>어제 꾼 꿈이 궁금해?<br>바로 알려줄게!</p>
+                <a href="#" class="card-link">READ MORE</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Made with 💛 by MonoApps @ 2026</p>
+        </footer>
+    </div>
+</body>
+</html>

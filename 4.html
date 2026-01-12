@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoApps - Enterprise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0052cc; /* Enterprise Blue */
+            --primary-dark: #0747a6;
+            --text: #172b4d;
+            --text-sub: #5e6c84;
+            --bg: #ffffff;
+            --bg-alt: #f4f5f7;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Roboto', sans-serif; color: var(--text); line-height: 1.5; }
+
+        /* Header */
+        header { background: var(--bg); padding: 0 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 100; }
+        .nav-container { max-width: 1200px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-weight: 700; font-size: 1.4rem; color: var(--primary); display: flex; align-items: center; gap: 8px; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.95rem; }
+        .cta-btn { background: var(--primary); color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: 500; transition: 0.2s; }
+        .cta-btn:hover { background: var(--primary-dark); }
+
+        /* Hero */
+        .hero { background: linear-gradient(180deg, #deebff 0%, #fff 100%); padding: 160px 20px 80px; text-align: center; }
+        h1 { font-size: 3rem; margin-bottom: 1.5rem; color: var(--text); }
+        .hero p { font-size: 1.25rem; color: var(--text-sub); max-width: 700px; margin: 0 auto 3rem; }
+        .hero-btns { display: flex; gap: 1rem; justify-content: center; }
+        .btn-large { padding: 12px 24px; border-radius: 4px; font-weight: 500; font-size: 1rem; cursor: pointer; border: none; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-secondary { background: white; color: var(--primary); border: 1px solid var(--primary); }
+
+        /* Features */
+        .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 3rem; font-size: 2rem; }
+        
+        .card-row { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .card { flex: 1; min-width: 300px; border: 1px solid #dfe1e6; border-radius: 8px; padding: 2rem; transition: 0.2s; background: white; }
+        .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); border-color: var(--primary); }
+        
+        .card-icon { width: 48px; height: 48px; background: #deebff; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.5rem; margin-bottom: 1.5rem; }
+        .card h3 { margin-bottom: 0.5rem; font-size: 1.2rem; }
+        .card p { color: var(--text-sub); font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .card-link { color: var(--primary); text-decoration: none; font-weight: 500; font-size: 0.9rem; }
+        
+        /* Footer */
+        footer { background: var(--text); color: white; padding: 3rem 20px; text-align: center; }
+        .footer-links { margin-bottom: 1rem; }
+        .footer-links a { color: #b3bac5; text-decoration: none; margin: 0 1rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .hero-btns { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>
+                MonoApps
+            </div>
+            <nav class="nav-links">
+                <a href="#">Products</a>
+                <a href="#">Solutions</a>
+                <a href="#">Pricing</a>
+            </nav>
+            <a href="#" class="cta-btn">Get Started</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Simplify Your Digital Workflow</h1>
+        <p>Professional tools designed for efficiency. From high-speed scanning to data analysis, we provide enterprise-grade solutions for everyone.</p>
+        <div class="hero-btns">
+            <button class="btn-large btn-primary">Download App</button>
+            <button class="btn-large btn-secondary">View Services</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Our Solutions</h2>
+        <div class="card-row">
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3>QR Scanner Pro</h3>
+                <p>Enterprise-grade scanning speed. History management and multi-format generation included.</p>
+                <a href="#" class="card-link">Learn more →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>21 Innovation</h3>
+                <p>Data-driven product comparison. Analyze market data to make informed decisions.</p>
+                <a href="#" class="card-link">Visit Platform →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">🧠</div>
+                <h3>Dream Analysis</h3>
+                <p>Psychological keyword interpretation database. Understanding subconscious patterns.</p>
+                <a href="#" class="card-link">Explore →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Support</a>
+        </div>
+        <p>© 2026 MonoApps Inc. All rights reserved.</p>
+    </footer>
+</body>
+</html>

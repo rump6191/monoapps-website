@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Blueprint</title>
+    <style>
+        body { background: #0044cc; color: #fff; font-family: monospace; padding: 40px; background-image: linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 20px 20px; }
+        .box { border: 2px solid #fff; padding: 20px; display: inline-block; position: relative; }
+        .box::before { content: ''; position: absolute; top: -10px; left: -10px; width: 10px; height: 10px; border: 1px solid #fff; border-radius: 50%; }
+        .line { width: 100px; height: 2px; background: #fff; display: inline-block; vertical-align: middle; }
+        h1 { margin: 0; font-size: 2rem; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>MonoApps Architecture</h1>
+        <p>Scale: 1:100</p>
+    </div>
+    <div class="line"></div>
+    <div class="box">
+        <p>Main Module</p>
+    </div>
+</body>
+</html>

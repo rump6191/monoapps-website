@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Flow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; background: #fff; color: #000; font-family: 'Syne', sans-serif; overflow: hidden; }
+        .flow-container { height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        .row { white-space: nowrap; font-size: 10vw; line-height: 0.9; display: flex; gap: 20px; animation: move 20s linear infinite; }
+        .row:nth-child(even) { animation-direction: reverse; color: #6366f1; }
+        @keyframes move { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #000; color: #fff; padding: 20px 40px; font-size: 2rem; mix-blend-mode: difference; z-index: 10; border-radius: 100px; }
+    </style>
+</head>
+<body>
+    <div class="overlay">MONOAPPS STUDIO</div>
+    <div class="flow-container">
+        <div class="row"><span>UTILITY PERFORMANCE SPEED SECURE PURE UTILITY PERFORMANCE SPEED SECURE PURE</span></div>
+        <div class="row"><span>DIGITAL INNOVATION MODERN APPS DIGITAL INNOVATION MODERN APPS</span></div>
+        <div class="row"><span>QR SCANNER 21 INNOVATION DREAM DB QR SCANNER 21 INNOVATION DREAM DB</span></div>
+        <div class="row"><span>FORM FOLLOWS FUNCTION MINIMALISM FORM FOLLOWS FUNCTION MINIMALISM</span></div>
+    </div>
+</body>
+</html>

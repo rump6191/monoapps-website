@@ -5,24 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Scanner Pro - MonoApps</title>
-    <meta name="description" content="빠르고 정확한 QR 코드 스캐너. QR 코드와 바코드를 즉시 스캔하고 나만의 QR 코드를 생성하세요.">
+    <meta name="description" content="빠르고 정확한 QR 코드 스캐너.">
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <nav id="navbar">
         <a href="index.html" class="logo">MonoApps</a>
-        <ul class="nav-links">
-            <li><a href="index.html#apps">Apps</a></li>
-            <li><a href="support.html">Support</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
+        <div class="nav-links">
+            <a href="index.html#apps">모바일 앱</a>
+            <a href="index.html#services">웹 서비스</a>
+            <a href="support.html">고객지원</a>
+            <a href="news.html">소식</a>
+        </div>
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴">
             <span></span>
             <span></span>
@@ -30,181 +27,105 @@
         </button>
     </nav>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="index.html#apps">Apps</a></li>
-            <li><a href="support.html">Support</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html#apps">모바일 앱</a></li>
+            <li><a href="index.html#services">웹 서비스</a></li>
+            <li><a href="support.html">고객지원</a></li>
+            <li><a href="news.html">소식</a></li>
         </ul>
     </div>
 
     <section class="hero">
         <div class="hero-content">
-            <div class="app-icon" style="width: 120px; height: 120px; font-size: 4rem; background: white; color: #6366f1; margin-bottom: 30px; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
-                📱
-            </div>
+            <div class="bento-icon" style="margin: 0 auto 30px; width: 100px; height: 100px; font-size: 3rem; color: var(--primary); box-shadow: 0 20px 40px rgba(99,102,241,0.2);">📱</div>
+            <span class="hero-badge">Ver 1.0 출시 완료</span>
             <h1>QR Scanner Pro</h1>
-            <p style="font-size: 1.5rem; margin-bottom: 40px;">빠르고 정확한 QR 코드 스캐너<br>스캔, 생성, 관리를 한 번에</p>
-            <div class="store-buttons">
-                <a href="#" class="store-btn-large fade-in">
-                    <div style="display:flex; align-items:center; gap:10px;">
-                        <svg viewBox="0 0 24 24" fill="currentColor" style="width:32px; height:32px;"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                        <div class="store-info">
-                            <span class="store-label">Download on the</span>
-                            <span class="store-name">App Store</span>
-                        </div>
-                    </div>
+            <p>세상에서 가장 빠르고 직관적인 스캐너.<br>단 0.1초 만에 인식하는 놀라운 속도를 경험하세요.</p>
+            <div class="hero-buttons">
+                <a href="#" class="store-btn ios" style="padding: 12px 24px; font-size: 1rem;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    App Store
                 </a>
-                <a href="#" class="store-btn-large fade-in" style="transition-delay: 0.1s;">
-                    <div style="display:flex; align-items:center; gap:10px;">
-                        <svg viewBox="0 0 24 24" fill="currentColor" style="width:32px; height:32px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
-                        <div class="store-info">
-                            <span class="store-label">GET IT ON</span>
-                            <span class="store-name">Google Play</span>
-                        </div>
-                    </div>
+                <a href="#" class="store-btn android" style="padding: 12px 24px; font-size: 1rem;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                    Play Store
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="features" style="background: white;">
-        <h2 class="section-title">주요 기능</h2>
-        <div class="features-grid">
-            <div class="feature-card fade-in">
-                <div class="feature-icon">⚡</div>
-                <h3>초고속 스캔</h3>
-                <p>카메라를 대면 즉시 인식. 빠르고 정확한 스캔 엔진으로 시간을 절약하세요.</p>
+    <section class="apps" style="background: white;">
+        <div class="bento-grid">
+            <div class="bento-card fade-in">
+                <div class="bento-icon" style="color: #6366f1;">⚡</div>
+                <h3 class="bento-title">초고속 인식</h3>
+                <p class="bento-desc">카메라를 켜는 순간 인식합니다. 지연 없는 즉각적인 반응속도를 제공합니다.</p>
             </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon" style="background: linear-gradient(135deg, #10b981, #059669);">🎨</div>
-                <h3>QR 코드 생성</h3>
-                <p>URL, 텍스트, WiFi, 연락처 등 다양한 형식의 QR 코드를 쉽게 만들 수 있습니다.</p>
+            <div class="bento-card fade-in">
+                <div class="bento-icon" style="color: #10b981;">🎨</div>
+                <h3 class="bento-title">QR 생성기</h3>
+                <p class="bento-desc">나만의 QR 코드를 만드세요. URL, 텍스트, 연락처 등 모든 형식을 지원합니다.</p>
             </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">📋</div>
-                <h3>기록 관리</h3>
-                <p>스캔한 모든 코드를 자동 저장. 언제든 다시 확인하고 공유할 수 있습니다.</p>
-            </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">🌙</div>
-                <h3>다크 모드</h3>
-                <p>눈이 편안한 다크 모드 지원. 시스템 설정에 따라 자동으로 전환됩니다.</p>
-            </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">🌍</div>
-                <h3>다국어 지원</h3>
-                <p>한국어, 영어, 중국어 등 여러 언어를 지원합니다.</p>
-            </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon" style="background: linear-gradient(135deg, #64748b, #475569);">🔒</div>
-                <h3>개인정보 보호</h3>
-                <p>서버로 데이터를 전송하지 않습니다. 모든 정보는 기기에만 저장됩니다.</p>
+            <div class="bento-card fade-in">
+                <div class="bento-icon" style="color: #f59e0b;">🛡️</div>
+                <h3 class="bento-title">보안 중심</h3>
+                <p class="bento-desc">스캔 데이터는 오직 당신의 기기에만 저장됩니다. 외부 서버 전송 0%.</p>
             </div>
         </div>
     </section>
 
-    <section class="screenshots" style="background: #f8fafc; padding: 100px 20px;">
-        <h2 class="section-title">스크린샷</h2>
-        <div class="screenshots-container">
-            <div class="phone-frame fade-in">
-                <div class="phone-screen">
-                    <div style="font-size: 3rem; margin-bottom: 15px;">📷</div>
-                    <div style="font-weight: 700; margin-bottom: 5px; color: #333;">스캔 화면</div>
-                    <p style="color: #666;">카메라로 쉽게 스캔</p>
-                </div>
-            </div>
-            <div class="phone-frame fade-in" style="transition-delay: 0.1s;">
-                <div class="phone-screen" style="background: linear-gradient(180deg, #10b981, #059669); color: white;">
-                    <div style="font-size: 3rem; margin-bottom: 15px;">✨</div>
-                    <div style="font-weight: 700; margin-bottom: 5px;">QR 생성</div>
-                    <p style="color: rgba(255,255,255,0.9);">나만의 QR 코드 생성</p>
-                </div>
-            </div>
-            <div class="phone-frame fade-in" style="transition-delay: 0.2s;">
-                <div class="phone-screen" style="background: linear-gradient(180deg, #f59e0b, #d97706); color: white;">
-                    <div style="font-size: 3rem; margin-bottom: 15px;">📜</div>
-                    <div style="font-weight: 700; margin-bottom: 5px;">기록 관리</div>
-                    <p style="color: rgba(255,255,255,0.9);">스캔 기록 확인</p>
-                </div>
-            </div>
+    <section class="apps" style="text-align: center;">
+        <div class="section-header fade-in">
+            <h2 class="section-title">스크린샷</h2>
         </div>
-    </section>
-
-    <section class="cta" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 100px 20px; text-align: center; color: white;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: white;">지금 바로 시작하세요</h2>
-        <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px;">무료로 다운로드하고 스마트한 QR 스캔을 경험하세요</p>
-        <div class="store-buttons">
-            <a href="#" class="store-btn-large fade-in">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <svg viewBox="0 0 24 24" fill="currentColor" style="width:32px; height:32px;"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                    <div class="store-info">
-                        <span class="store-label">Download on the</span>
-                        <span class="store-name">App Store</span>
-                    </div>
+        <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
+            <div class="fade-in" style="width: 260px; height: 520px; background: #111827; border-radius: 40px; border: 8px solid #374151; overflow: hidden; position: relative; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
+                <div style="width: 100%; height: 100%; background: #1f2937; display: flex; align-items: center; justify-content: center; color: white; flex-direction: column;">
+                    <span style="font-size: 3rem; margin-bottom: 10px;">📸</span>
+                    <span style="font-weight: 600;">스캔 화면</span>
                 </div>
-            </a>
-            <a href="#" class="store-btn-large fade-in" style="transition-delay: 0.1s;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <svg viewBox="0 0 24 24" fill="currentColor" style="width:32px; height:32px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
-                    <div class="store-info">
-                        <span class="store-label">GET IT ON</span>
-                        <span class="store-name">Google Play</span>
-                    </div>
+            </div>
+            <div class="fade-in" style="width: 260px; height: 520px; background: #111827; border-radius: 40px; border: 8px solid #374151; overflow: hidden; position: relative; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); transform: translateY(20px);">
+                <div style="width: 100%; height: 100%; background: #1f2937; display: flex; align-items: center; justify-content: center; color: white; flex-direction: column;">
+                    <span style="font-size: 3rem; margin-bottom: 10px;">✨</span>
+                    <span style="font-weight: 600;">코드 생성</span>
                 </div>
-            </a>
+            </div>
+            <div class="fade-in" style="width: 260px; height: 520px; background: #111827; border-radius: 40px; border: 8px solid #374151; overflow: hidden; position: relative; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
+                <div style="width: 100%; height: 100%; background: #1f2937; display: flex; align-items: center; justify-content: center; color: white; flex-direction: column;">
+                    <span style="font-size: 3rem; margin-bottom: 10px;">📜</span>
+                    <span style="font-weight: 600;">히스토리</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 MonoApps. All rights reserved.</p>
-        <div class="footer-links">
+        <div class="footer-nav">
             <a href="privacy.html">개인정보 처리방침</a>
             <a href="terms.html">이용약관</a>
             <a href="support.html">고객지원</a>
+            <a href="mailto:contact@monoapps.kr">문의하기</a>
         </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        if(mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenuBtn.classList.toggle('active');
-                mobileMenu.classList.toggle('active');
-            });
-        }
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        if(menuBtn) { menuBtn.addEventListener('click', () => { menu.classList.toggle('active'); }); }
 
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            if(window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
         });
 
-        const fadeElements = document.querySelectorAll('.fade-in');
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.1 });
-        fadeElements.forEach(el => observer.observe(el));
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
-
 </html>

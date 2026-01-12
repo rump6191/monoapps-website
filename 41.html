@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Water</title>
+    <style>
+        body { margin: 0; height: 100vh; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .watercolor { position: absolute; width: 800px; height: 800px; background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); filter: url(#water); opacity: 0.3; animation: flow 10s infinite alternate; }
+        @keyframes flow { 0% { transform: scale(1) rotate(0deg); } 100% { transform: scale(1.1) rotate(10deg); } }
+        h1 { font-family: serif; font-size: 4rem; z-index: 10; color: #333; mix-blend-mode: multiply; }
+    </style>
+</head>
+<body>
+    <svg style="position: absolute; width: 0; height: 0;">
+        <filter id="water">
+            <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" />
+            <feDisplacementMap in="SourceGraphic" scale="50" />
+        </filter>
+    </svg>
+    <div class="watercolor"></div>
+    <h1>MonoApps</h1>
+</body>
+</html>

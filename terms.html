@@ -4,86 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이용약관 - MonoApps</title>
+    <title>Terms of Service - MonoApps</title>
     <meta name="description" content="MonoApps 서비스 이용약관">
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <nav>
+    <nav id="navbar">
         <a href="index.html" class="logo">MonoApps</a>
-        <a href="index.html" class="back-link">← 홈으로</a>
+        <div class="nav-links">
+            <a href="index.html#apps">Apps</a>
+            <a href="index.html#services">Services</a>
+            <a href="support.html">Support</a>
+            <a href="news.html">News</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
-    <main class="legal-content">
-        <div class="legal-card fade-in">
-            <h1>서비스 이용약관</h1>
-            <p class="last-updated">최종 수정일: 2026년 1월 10일</p>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html#apps">Apps</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="news.html">News</a></li>
+        </ul>
+    </div>
 
-            <h2>제1조 (목적)</h2>
-            <p>이 약관은 MonoApps(이하 "회사")가 제공하는 모바일 애플리케이션 서비스(이하 "서비스")의 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임사항, 기타 필요한 사항을
-                규정함을 목적으로 합니다.</p>
+    <section class="hero" style="min-height: 30vh; padding-top: 120px; padding-bottom: 40px;">
+        <div class="hero-content">
+            <h1>Terms of Service</h1>
+            <p>서비스 이용약관</p>
+        </div>
+    </section>
 
-            <h2>제2조 (정의)</h2>
-            <ul>
-                <li>"서비스"란 회사가 제공하는 모바일 애플리케이션을 통해 이용자에게 제공하는 모든 서비스를 의미합니다.</li>
-                <li>"이용자"란 이 약관에 따라 회사가 제공하는 서비스를 이용하는 자를 의미합니다.</li>
-            </ul>
+    <main style="max-width: 800px; margin: 0 auto; padding: 0 20px 100px;">
+        <div class="bento-card fade-in" style="padding: 3rem;">
+            <p class="section-desc" style="margin-bottom: 2rem; font-size: 0.9rem;">최종 수정일: 2026년 1월 10일</p>
 
-            <h2>제3조 (약관의 효력 및 변경)</h2>
-            <p>이 약관은 서비스를 이용하고자 하는 모든 이용자에게 적용됩니다. 회사는 필요한 경우 관련 법령을 위배하지 않는 범위에서 이 약관을 변경할 수 있으며, 변경 시 앱 또는 웹사이트를 통해
-                공지합니다.</p>
+            <h2 style="font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--text-main);">제1조 (목적)</h2>
+            <p style="color: var(--text-sub); margin-bottom: 1rem;">이 약관은 MonoApps(이하 "회사")가 제공하는 모바일 애플리케이션 서비스의 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
 
-            <h2>제4조 (서비스의 제공)</h2>
-            <p>회사는 다음과 같은 서비스를 제공합니다:</p>
-            <ul>
-                <li>QR 코드 및 바코드 스캔 서비스</li>
-                <li>QR 코드 생성 서비스</li>
-                <li>스캔 기록 저장 및 관리 서비스</li>
-                <li>기타 회사가 개발하거나 제휴를 통해 제공하는 서비스</li>
-            </ul>
+            <h2 style="font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--text-main);">제2조 (서비스의 제공)</h2>
+            <p style="color: var(--text-sub); margin-bottom: 1rem;">회사는 QR 코드 스캔, 생성, 기록 관리 등의 서비스를 제공합니다. 서비스는 기본적으로 무료이나, 일부 기능은 유료로 제공될 수 있습니다.</p>
 
-            <h2>제5조 (서비스 이용)</h2>
-            <p>이용자는 서비스를 무료로 이용할 수 있습니다. 단, 일부 기능은 인앱 구매 또는 광고 시청을 통해 제공될 수 있습니다.</p>
+            <h2 style="font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--text-main);">제3조 (이용자의 의무)</h2>
+            <p style="color: var(--text-sub); margin-bottom: 1rem;">이용자는 관련 법령, 이 약관의 규정, 이용안내 및 주의사항을 준수하여야 하며, 기타 회사의 업무에 방해되는 행위를 하여서는 안 됩니다.</p>
 
-            <h2>제6조 (이용자의 의무)</h2>
-            <p>이용자는 다음 행위를 하여서는 안 됩니다:</p>
-            <ul>
-                <li>서비스를 이용하여 법령에 위반되는 행위</li>
-                <li>타인의 권리를 침해하는 행위</li>
-                <li>서비스의 정상적인 운영을 방해하는 행위</li>
-                <li>서비스를 이용하여 불법적인 콘텐츠를 생성, 배포하는 행위</li>
-            </ul>
+            <h2 style="font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--text-main);">제4조 (면책조항)</h2>
+            <p style="color: var(--text-sub); margin-bottom: 1rem;">회사는 천재지변 또는 이에 준하는 불가항력으로 인하여 서비스를 제공할 수 없는 경우에는 서비스 제공에 관한 책임이 면제됩니다.</p>
 
-            <h2>제7조 (지적재산권)</h2>
-            <p>서비스에 포함된 콘텐츠, 디자인, 로고, 상표 등에 대한 지적재산권은 회사에 귀속됩니다. 이용자는 회사의 사전 동의 없이 이를 상업적으로 이용할 수 없습니다.</p>
-
-            <h2>제8조 (면책조항)</h2>
-            <p>회사는 천재지변, 전쟁, 기간통신사업자의 서비스 중단 등 불가항력적인 사유로 인해 서비스를 제공하지 못하는 경우 책임이 면제됩니다. 또한, 이용자가 서비스를 이용하여 얻은 정보에 대한
-                정확성, 신뢰성에 대해서는 책임지지 않습니다.</p>
-
-            <h2>제9조 (분쟁해결)</h2>
-            <p>서비스 이용과 관련하여 발생한 분쟁에 대해서는 대한민국 법을 적용하며, 분쟁이 발생할 경우 회사의 본사 소재지를 관할하는 법원을 전속 관할법원으로 합니다.</p>
-
-            <h2>제10조 (문의)</h2>
-            <p>이용약관에 관한 문의사항은 아래 연락처로 문의해 주시기 바랍니다:</p>
-            <ul>
-                <li>이메일: contact@monoapps.kr</li>
-            </ul>
+            <h2 style="font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--text-main);">제5조 (문의)</h2>
+            <p style="color: var(--text-sub);">약관 관련 문의사항은 <a href="mailto:contact@monoapps.kr" style="color: var(--primary); font-weight: 600;">contact@monoapps.kr</a>로 문의해 주시기 바랍니다.</p>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 MonoApps. All rights reserved.</p>
+        <div class="footer-nav">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="support.html">Support</a>
+            <a href="mailto:contact@monoapps.kr">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
     </footer>
+
     <script>
-        document.querySelector('.legal-card').classList.add('visible');
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        if(menuBtn) { menuBtn.addEventListener('click', () => { menu.classList.toggle('active'); }); }
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
-
 </html>

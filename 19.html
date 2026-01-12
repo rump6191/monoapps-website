@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Kinetic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; background: #000; color: #fff; font-family: 'Teko', sans-serif; overflow-x: hidden; }
+        
+        .marquee-container {
+            width: 100%; overflow: hidden; white-space: nowrap; border-bottom: 1px solid #333; padding: 10px 0; background: #fff; color: #000;
+        }
+        .marquee { display: inline-block; animation: scroll 20s linear infinite; font-size: 1.5rem; font-weight: 600; text-transform: uppercase; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        .big-title {
+            font-size: 15vw; line-height: 0.8; font-weight: 600; text-transform: uppercase; padding: 2rem; margin: 0;
+            background: linear-gradient(90deg, #fff, #666); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            transition: 0.5s; cursor: default;
+        }
+        .big-title:hover { letter-spacing: 10px; -webkit-text-fill-color: #fff; }
+
+        .intro { display: flex; justify-content: space-between; padding: 2rem; align-items: flex-start; border-top: 1px solid #333; margin-top: 5rem; }
+        .intro p { max-width: 400px; font-size: 1.5rem; line-height: 1.4; color: #ccc; margin: 0; }
+        
+        .btn-kinetic {
+            display: inline-block; padding: 20px 60px; border: 2px solid #fff; color: #fff; text-decoration: none; font-size: 2rem; text-transform: uppercase;
+            transition: 0.3s; position: relative; overflow: hidden;
+        }
+        .btn-kinetic::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 100%; background: #fff; transition: 0.3s; z-index: -1; }
+        .btn-kinetic:hover { color: #000; }
+        .btn-kinetic:hover::before { width: 100%; }
+
+        .list { padding: 0 2rem 5rem; }
+        .list-item {
+            border-bottom: 1px solid #333; padding: 2rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: 0.3s;
+        }
+        .list-item:hover { padding-left: 2rem; background: #111; }
+        .list-num { font-size: 1.5rem; color: #555; margin-right: 2rem; }
+        .list-title { font-size: 4rem; margin: 0; text-transform: uppercase; font-weight: 300; }
+        .list-arrow { font-size: 3rem; transform: rotate(-45deg); opacity: 0; transition: 0.3s; }
+        .list-item:hover .list-arrow { opacity: 1; transform: rotate(0); }
+
+        @media (max-width: 768px) {
+            .big-title { font-size: 20vw; }
+            .intro { flex-direction: column; gap: 2rem; }
+            .list-title { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee-container">
+        <div class="marquee">MonoApps Digital Studio — Fast — Secure — Simple — MonoApps Digital Studio — Fast — Secure — Simple — </div>
+    </div>
+    
+    <h1 class="big-title">Digital<br>Utility<br>Evolved</h1>
+    
+    <div class="intro">
+        <p>We strip away the noise. We build tools that respect your intelligence and your time.</p>
+        <a href="#" class="btn-kinetic">Explore</a>
+    </div>
+
+    <div class="list">
+        <div class="list-item">
+            <div style="display:flex; align-items:center;">
+                <span class="list-num">01</span>
+                <h2 class="list-title">QR Scanner</h2>
+            </div>
+            <span class="list-arrow">→</span>
+        </div>
+        <div class="list-item">
+            <div style="display:flex; align-items:center;">
+                <span class="list-num">02</span>
+                <h2 class="list-title">Innovation</h2>
+            </div>
+            <span class="list-arrow">→</span>
+        </div>
+        <div class="list-item">
+            <div style="display:flex; align-items:center;">
+                <span class="list-num">03</span>
+                <h2 class="list-title">Dream DB</h2>
+            </div>
+            <span class="list-arrow">→</span>
+        </div>
+    </div>
+</body>
+</html>

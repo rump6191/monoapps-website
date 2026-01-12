@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Editorial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root { --text: #111; --bg: #fffbf0; }
+        body { margin: 0; font-family: 'Lato', sans-serif; background: var(--bg); color: var(--text); padding: 4rem; border: 1rem solid #111; min-height: 100vh; box-sizing: border-box; }
+        
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; }
+        
+        header { display: flex; justify-content: space-between; border-bottom: 1px solid #111; padding-bottom: 2rem; margin-bottom: 4rem; align-items: flex-end; }
+        .logo { font-size: 3rem; line-height: 0.8; font-style: italic; }
+        .meta { text-align: right; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 6rem; align-items: center; }
+        .hero-title { font-size: 5rem; line-height: 0.9; }
+        .hero-desc { font-size: 1.1rem; line-height: 1.8; text-align: justify; }
+        .hero-desc::first-letter { font-size: 3.5rem; float: left; margin-right: 10px; line-height: 0.8; font-family: 'Playfair Display', serif; }
+        
+        .divider { width: 100%; height: 1px; background: #111; margin: 4rem 0; }
+        
+        .collection { display: flex; gap: 2rem; }
+        .item { flex: 1; border-right: 1px solid #111; padding-right: 2rem; }
+        .item:last-child { border: none; padding: 0; }
+        
+        .item-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: #ccc; margin-bottom: 1rem; }
+        .item-title { font-size: 2rem; margin-bottom: 1rem; }
+        .item-link { text-decoration: none; color: #111; border-bottom: 1px solid #111; padding-bottom: 2px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .item-link:hover { color: #555; border-color: #555; }
+
+        @media (max-width: 768px) {
+            body { padding: 1rem; border-width: 5px; }
+            .hero { grid-template-columns: 1fr; }
+            .hero-title { font-size: 3.5rem; }
+            .collection { flex-direction: column; }
+            .item { border-right: none; border-bottom: 1px solid #ddd; padding-bottom: 2rem; padding-right: 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Mono<br>Apps.</div>
+        <div class="meta">Vol. 2026<br>Digital Collection</div>
+    </header>
+
+    <section class="hero">
+        <h1 class="hero-title">The Art of<br>Simplicity</h1>
+        <div class="hero-desc">
+            We believe that true sophistication lies in simplicity. MonoApps creates digital tools that strip away the unnecessary, leaving only what is essential. Our applications are designed not just to be used, but to be experienced.
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <div class="collection">
+        <div class="item">
+            <div class="item-num">01</div>
+            <h3 class="item-title">QR Scanner<br>Pro Edition</h3>
+            <p>An elegant solution for digital interaction.</p>
+            <a href="#" class="item-link">View Details</a>
+        </div>
+        <div class="item">
+            <div class="item-num">02</div>
+            <h3 class="item-title">21 Innovation<br>Platform</h3>
+            <p>Curated data analysis for the modern consumer.</p>
+            <a href="#" class="item-link">Access</a>
+        </div>
+        <div class="item">
+            <div class="item-num">03</div>
+            <h3 class="item-title">Dream<br>Interpreter</h3>
+            <p>Unlocking the narrative of your subconscious.</p>
+            <a href="#" class="item-link">Read More</a>
+        </div>
+    </div>
+</body>
+</html>

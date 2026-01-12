@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoApps - Minimal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #000000;
+            --accent: #FF3B30; /* Swiss Red */
+            --border: 1px solid #000;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.4; }
+        
+        /* Layout */
+        .container { max-width: 1400px; margin: 0 auto; border-left: var(--border); border-right: var(--border); min-height: 100vh; }
+        
+        /* Header */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 2rem; border-bottom: var(--border); }
+        .logo { font-weight: 900; font-size: 1.5rem; letter-spacing: -1px; text-transform: uppercase; }
+        nav a { margin-left: 2rem; text-decoration: none; color: var(--text); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; }
+        nav a:hover { text-decoration: underline; }
+
+        /* Hero */
+        .hero { padding: 8rem 2rem; border-bottom: var(--border); }
+        h1 { font-size: 6rem; font-weight: 900; line-height: 0.9; margin-bottom: 2rem; letter-spacing: -3px; }
+        .hero p { font-size: 1.5rem; max-width: 600px; margin-bottom: 3rem; font-weight: 300; }
+        .btn { display: inline-block; padding: 1rem 3rem; background: var(--text); color: var(--bg); text-decoration: none; font-weight: 700; border-radius: 0; transition: 0.3s; }
+        .btn:hover { background: var(--accent); }
+
+        /* Grid System */
+        .grid-section { display: grid; grid-template-columns: repeat(3, 1fr); }
+        .grid-item { border-right: var(--border); border-bottom: var(--border); padding: 4rem 2rem; height: 100%; transition: 0.3s; }
+        .grid-item:nth-child(3n) { border-right: none; }
+        .grid-item:hover { background: #f5f5f5; }
+        
+        .grid-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem; display: block; color: var(--accent); }
+        .grid-title { font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; letter-spacing: -1px; }
+        .grid-desc { font-size: 1.1rem; color: #444; margin-bottom: 2rem; }
+        
+        footer { padding: 4rem 2rem; text-align: center; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            .grid-section { grid-template-columns: 1fr; }
+            .grid-item { border-right: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">MonoApps®</div>
+            <nav>
+                <a href="#">Apps</a>
+                <a href="#">Support</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>LESS IS<br>MORE.</h1>
+            <p>복잡한 기능은 덜어내고 본질에 집중합니다.<br>MonoApps는 가장 단순하고 강력한 도구를 만듭니다.</p>
+            <a href="#" class="btn">VIEW APPS</a>
+        </section>
+
+        <div class="grid-section">
+            <div class="grid-item">
+                <span class="grid-label">Mobile App 01</span>
+                <h3 class="grid-title">QR Pro</h3>
+                <p class="grid-desc">0.1초 초고속 스캔.<br>기록 관리부터 생성까지.</p>
+                <a href="#" style="color:var(--text); font-weight:700;">DOWNLOAD →</a>
+            </div>
+            <div class="grid-item">
+                <span class="grid-label">Web Service 01</span>
+                <h3 class="grid-title">21 Innov</h3>
+                <p class="grid-desc">1,757개 데이터 분석.<br>스마트한 상품 비교.</p>
+                <a href="#" style="color:var(--text); font-weight:700;">VISIT →</a>
+            </div>
+            <div class="grid-item">
+                <span class="grid-label">Web Service 02</span>
+                <h3 class="grid-title">Dream</h3>
+                <p class="grid-desc">890가지 키워드 해석.<br>꿈해몽 대백과.</p>
+                <a href="#" style="color:var(--text); font-weight:700;">VISIT →</a>
+            </div>
+        </div>
+        
+        <footer>
+            © 2026 MonoApps. Design by Swiss Style.
+        </footer>
+    </div>
+</body>
+</html>

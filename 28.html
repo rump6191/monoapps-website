@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Soft Gradient</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; background: #fdf2f8; font-family: 'Outfit', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
+        .blob { position: absolute; width: 500px; height: 500px; border-radius: 50%; filter: blur(60px); opacity: 0.5; animation: move 10s infinite alternate; }
+        .blob-1 { background: #f9a8d4; top: -100px; left: -100px; }
+        .blob-2 { background: #93c5fd; bottom: -100px; right: -100px; animation-delay: -5s; }
+        @keyframes move { from { transform: translate(0,0) scale(1); } to { transform: translate(100px, 50px) scale(1.2); } }
+        .content { text-align: center; z-index: 10; }
+        h1 { font-size: 5rem; color: #312e81; margin: 0; font-weight: 300; }
+        h1 b { font-weight: 600; }
+        p { color: #6366f1; font-size: 1.5rem; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="content">
+        <h1><b>Soft</b> MonoApps</h1>
+        <p>편안하게 흐르는 디지털 라이프의 시작.</p>
+    </div>
+</body>
+</html>

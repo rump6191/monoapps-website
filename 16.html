@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #fdfbf7; --text: #1a1a1a; --line: #e0e0e0; }
+        body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Manrope', sans-serif; overflow-x: hidden; }
+        
+        /* Layout */
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 4vw; }
+        
+        header { padding: 3rem 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-end; }
+        .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.5px; }
+        .nav { font-size: 0.9rem; font-weight: 500; }
+        .nav a { margin-left: 2rem; text-decoration: none; color: var(--text); position: relative; }
+        .nav a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 1px; background: var(--text); transition: 0.3s; }
+        .nav a:hover::after { width: 100%; }
+
+        .hero { padding: 10rem 0 6rem; }
+        h1 { font-size: 5vw; font-weight: 300; line-height: 1.1; margin: 0; letter-spacing: -1px; }
+        h1 span { font-weight: 700; display: block; }
+        
+        .intro-text { margin-top: 4rem; max-width: 400px; font-size: 1.1rem; line-height: 1.8; color: #555; margin-left: auto; }
+
+        /* Gallery Grid */
+        .gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2rem; margin-bottom: 10rem; border-top: 1px solid var(--line); padding-top: 4rem; }
+        
+        .item { grid-column: span 4; margin-bottom: 6rem; transition: 0.5s; cursor: pointer; }
+        .item:nth-child(2) { margin-top: 10rem; }
+        .item:nth-child(3) { margin-top: 5rem; }
+        
+        .item:hover { transform: translateY(-10px); }
+        .item:hover .img-box { box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        
+        .img-box { width: 100%; aspect-ratio: 4/5; background: #eee; margin-bottom: 1.5rem; position: relative; overflow: hidden; }
+        .img-placeholder { width: 100%; height: 100%; background: #e5e5e5; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #fff; font-weight: 300; transition: 0.5s; }
+        .item:hover .img-placeholder { transform: scale(1.05); background: #d4d4d4; }
+        
+        .item-meta { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 10px; margin-bottom: 10px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+        .item h3 { margin: 0; font-size: 1.5rem; font-weight: 500; }
+        .item p { color: #666; font-size: 0.95rem; margin-top: 5px; }
+
+        .btn-minimal { display: inline-block; padding: 15px 40px; border: 1px solid var(--text); color: var(--text); text-decoration: none; font-weight: 500; transition: 0.3s; margin-bottom: 5rem; }
+        .btn-minimal:hover { background: var(--text); color: var(--bg); }
+
+        @media (max-width: 768px) {
+            .item { grid-column: span 12; margin-top: 0 !important; margin-bottom: 4rem; }
+            h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">MonoApps.</div>
+            <div class="nav">
+                <a href="#">Works</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>Curating <br><span>Digital Essence</span></h1>
+            <div class="intro-text">
+                <p>우리는 디지털 환경에서의 순수한 경험을 설계합니다. 복잡함을 걷어내고, 오직 본질적인 기능만이 남은 공간을 경험해보세요.</p>
+            </div>
+        </section>
+
+        <div class="gallery">
+            <div class="item">
+                <div class="item-meta"><span>01 / Utility</span><span>2026</span></div>
+                <div class="img-box"><div class="img-placeholder" style="background:#d1d5db">Scan</div></div>
+                <h3>QR Scanner Pro</h3>
+                <p>가장 빠르고 정확한 스캔 경험</p>
+            </div>
+            
+            <div class="item">
+                <div class="item-meta"><span>02 / Data</span><span>2026</span></div>
+                <div class="img-box"><div class="img-placeholder" style="background:#9ca3af">Comp</div></div>
+                <h3>21 Innovation</h3>
+                <p>데이터 기반 스마트 비교 분석</p>
+            </div>
+            
+            <div class="item">
+                <div class="item-meta"><span>03 / Life</span><span>2026</span></div>
+                <div class="img-box"><div class="img-placeholder" style="background:#4b5563">Mind</div></div>
+                <h3>Dream Teller</h3>
+                <p>무의식의 해석과 꿈해몽</p>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="#" class="btn-minimal">View All Projects</a>
+        </div>
+    </div>
+</body>
+</html>

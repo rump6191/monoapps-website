@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Card Stack</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; background: #f0f0f0; font-family: 'DM Sans', sans-serif; height: 100vh; display: flex; overflow: hidden; }
+        .card { min-width: 400px; height: 80vh; background: #fff; margin: auto 20px; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); padding: 40px; display: flex; flex-direction: column; justify-content: space-between; transition: 0.4s; cursor: pointer; }
+        .card:hover { transform: scale(1.02) rotate(-2deg); background: #000; color: #fff; }
+        .num { font-size: 5rem; font-weight: 700; opacity: 0.1; }
+        h2 { font-size: 2.5rem; margin: 0; }
+    </style>
+</head>
+<body>
+    <div class="card"><div class="num">01</div><h2>QR Pro</h2><p>Click to Scan</p></div>
+    <div class="card" style="margin-top:100px;"><div class="num">02</div><h2>21 Innov</h2><p>Market Analysis</p></div>
+    <div class="card"><div class="num">03</div><h2>Dream DB</h2><p>Mind Explore</p></div>
+</body>
+</html>

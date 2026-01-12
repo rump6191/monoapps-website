@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Mesh</title>
+    <style>
+        body { margin: 0; height: 100vh; background-color: #ff9a9e; background-image: radial-gradient(circle at 50% 0%, #ff9a9e 0%, #fecfef 100%); display: flex; align-items: center; justify-content: center; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+        .mesh { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.4), rgba(255,255,255,0)); filter: blur(50px); animation: pulse 5s infinite alternate; }
+        @keyframes pulse { 0% { transform: scale(1); } 100% { transform: scale(1.2); } }
+        .content { z-index: 1; text-align: center; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { font-size: 4rem; margin: 0; font-weight: 800; letter-spacing: -1px; }
+        p { font-size: 1.5rem; opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <div class="mesh"></div>
+    <div class="content">
+        <h1>Vivid Flow</h1>
+        <p>Beautiful gradients for modern apps.</p>
+    </div>
+</body>
+</html>

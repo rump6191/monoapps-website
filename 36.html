@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MonoApps - Collage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; background: #e6e2d3; overflow-x: hidden; font-family: 'Abril Fatface', cursive; }
+        .scrap { position: absolute; box-shadow: 5px 5px 15px rgba(0,0,0,0.2); transition: 0.3s; }
+        .scrap:hover { transform: scale(1.05) rotate(0deg) !important; z-index: 10; }
+        
+        .title-scrap { 
+            top: 10%; left: 50%; transform: translateX(-50%) rotate(-5deg); 
+            background: #ff4757; color: white; padding: 20px 40px; font-size: 4rem; 
+            border: 2px dashed white;
+        }
+        
+        .img-scrap-1 { top: 40%; left: 20%; width: 250px; height: 300px; background: #2f3542; transform: rotate(10deg); color: white; padding: 20px; }
+        .img-scrap-2 { top: 35%; right: 20%; width: 280px; height: 200px; background: #1e90ff; transform: rotate(-8deg); color: white; padding: 20px; }
+        .img-scrap-3 { top: 60%; left: 50%; transform: translateX(-50%) rotate(3deg); width: 300px; height: 150px; background: #ffa502; padding: 20px; }
+        
+        .tape { position: absolute; width: 100px; height: 30px; background: rgba(255,255,255,0.6); top: -15px; left: 50%; transform: translateX(-50%) rotate(-2deg); }
+        
+        h2 { font-size: 2rem; margin: 0; }
+        p { font-family: 'Permanent Marker', cursive; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+    <div class="scrap title-scrap">
+        <div class="tape"></div>
+        MONOAPPS
+    </div>
+    
+    <div class="scrap img-scrap-1">
+        <div class="tape"></div>
+        <h2>QR SCAN</h2>
+        <p>Fast & Furious Scanning!</p>
+    </div>
+    
+    <div class="scrap img-scrap-2">
+        <div class="tape"></div>
+        <h2>DATA</h2>
+        <p>Smart Analytics</p>
+    </div>
+    
+    <div class="scrap img-scrap-3">
+        <div class="tape"></div>
+        <h2>DREAMS</h2>
+        <p>What does it mean?</p>
+    </div>
+</body>
+</html>
