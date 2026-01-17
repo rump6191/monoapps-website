@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21이노베이션 - MonoApps</title>
+    <meta name="description" content="1,757개 이상의 상품 데이터를 분석하여 최고의 선택을 돕는 스마트 비교 플랫폼.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            width: 150vw;
+            height: 150vh;
+            top: -25vh;
+            left: -25vw;
+            background: conic-gradient(from 180deg at 50% 50%, #10b981, #059669, #047857, #10b981);
+            filter: blur(100px);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            z-index: 100;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(90deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: white; }
+
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            z-index: 99;
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 2rem 4rem;
+            text-align: center;
+        }
+        .hero-content { max-width: 700px; }
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            margin: 0 auto 2rem;
+            box-shadow: 0 20px 60px rgba(16, 185, 129, 0.4);
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            color: #6ee7b7;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.7;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: linear-gradient(90deg, #10b981, #059669);
+            border-radius: 14px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.4);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 50px rgba(16, 185, 129, 0.5); }
+
+        section { padding: 6rem 2rem; }
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        .section-desc {
+            text-align: center;
+            opacity: 0.6;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2rem;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+        .feature-card p { font-size: 0.95rem; opacity: 0.6; line-height: 1.6; }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .stat-card {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #10b981, #059669);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        .stat-label { font-size: 1rem; opacity: 0.6; }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .category-item {
+            background: rgba(255,255,255,0.08);
+            padding: 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+        }
+        .category-item:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateY(-3px);
+        }
+        .category-item span { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+        .category-item p { font-size: 0.9rem; opacity: 0.8; }
+
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding-top: 100px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="index.html" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="index.html#apps">모바일 앱</a>
+            <a href="index.html#services">웹 서비스</a>
+            <a href="support.html">고객지원</a>
+            <a href="news.html">소식</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#apps">모바일 앱</a>
+        <a href="index.html#services">웹 서비스</a>
+        <a href="support.html">고객지원</a>
+        <a href="news.html">소식</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="app-icon">🛒</div>
+            <span class="hero-badge">스마트 상품 비교 플랫폼</span>
+            <h1>21이노베이션</h1>
+            <p>1,757개 이상의 상품 데이터를 분석하여<br>최고의 선택을 돕는 스마트 비교 플랫폼</p>
+            <a href="https://21innovation.org" target="_blank" class="btn-primary">
+                사이트 방문하기 →
+            </a>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">플랫폼 현황</h2>
+        <p class="section-desc">방대한 데이터로 스마트한 비교를</p>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">1,757+</div>
+                <div class="stat-label">상품 데이터</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">9</div>
+                <div class="stat-label">카테고리</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">무료</div>
+                <div class="stat-label">이용 요금</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">서비스</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">상품 카테고리</h2>
+        <p class="section-desc">다양한 분야의 상품을 비교하세요</p>
+        <div class="category-grid">
+            <div class="category-item">
+                <span>📺</span>
+                <p>가전제품</p>
+            </div>
+            <div class="category-item">
+                <span>🪑</span>
+                <p>가구</p>
+            </div>
+            <div class="category-item">
+                <span>💻</span>
+                <p>디지털</p>
+            </div>
+            <div class="category-item">
+                <span>💄</span>
+                <p>뷰티/헬스</p>
+            </div>
+            <div class="category-item">
+                <span>⚽</span>
+                <p>스포츠/레저</p>
+            </div>
+            <div class="category-item">
+                <span>👔</span>
+                <p>패션</p>
+            </div>
+            <div class="category-item">
+                <span>🏠</span>
+                <p>생활용품</p>
+            </div>
+            <div class="category-item">
+                <span>👶</span>
+                <p>유아/아동</p>
+            </div>
+            <div class="category-item">
+                <span>🐕</span>
+                <p>반려동물</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">주요 기능</h2>
+        <p class="section-desc">스마트한 쇼핑을 위한 필수 기능</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(16, 185, 129, 0.2);">📊</div>
+                <h3>상세 스펙 비교</h3>
+                <p>상품의 주요 스펙과 기능을 테이블 형태로 한눈에 비교할 수 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(59, 130, 246, 0.2);">⚖️</div>
+                <h3>장단점 분석</h3>
+                <p>각 상품의 장점과 단점을 명확하게 정리하여 구매 결정에 도움을 드립니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(245, 158, 11, 0.2);">🛒</div>
+                <h3>간편한 구매 연결</h3>
+                <p>비교 후 마음에 드는 상품을 쿠팡에서 바로 구매할 수 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(236, 72, 153, 0.2);">📱</div>
+                <h3>모바일 최적화</h3>
+                <p>언제 어디서나 모바일에서 편리하게 상품을 비교하세요.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(139, 92, 246, 0.2);">🔍</div>
+                <h3>빠른 검색</h3>
+                <p>원하는 상품을 빠르게 검색하고 비교 결과를 확인하세요.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(99, 102, 241, 0.2);">📖</div>
+                <h3>구매 가이드</h3>
+                <p>각 카테고리별 구매 시 고려해야 할 사항을 안내해드립니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">개인정보 처리방침</a>
+            <a href="terms.html">이용약관</a>
+            <a href="support.html">고객지원</a>
+            <a href="mailto:contact@monoapps.kr">문의하기</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('active');
+        });
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => menu.classList.remove('active'));
+        });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
