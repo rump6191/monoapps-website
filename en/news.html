@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>소식 - MonoApps</title>
-    <meta name="description" content="MonoApps의 최신 소식과 업데이트 정보를 확인하세요.">
+    <title>News - MonoApps</title>
+    <meta name="description" content="Check out the latest news and updates from MonoApps.">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -62,10 +62,36 @@
         }
         .nav-links a:hover, .nav-links a.active { color: white; }
         .lang-selector { position: relative; margin-left: 1rem; }
-        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
-        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0,0,0,0.95);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            margin-top: 5px;
+            min-width: 120px;
+            backdrop-filter: blur(20px);
+        }
         .lang-dropdown.active { display: block; }
-        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a {
+            display: block;
+            padding: 10px 15px;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
         .lang-dropdown a:last-child { border-bottom: none; }
         .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
 
@@ -215,22 +241,22 @@
     <nav>
         <a href="index.html" class="logo">MonoApps</a>
         <div class="nav-links">
-            <a href="index.html#apps">모바일 앱</a>
-            <a href="index.html#services">웹 서비스</a>
-            <a href="support.html">고객지원</a>
-            <a href="news.html" class="active">소식</a>
+            <a href="index.html#apps">Mobile Apps</a>
+            <a href="index.html#services">Web Services</a>
+            <a href="support.html">Support</a>
+            <a href="news.html" class="active">News</a>
             <div class="lang-selector">
-                <button class="lang-btn" id="langBtn">KO</button>
+                <button class="lang-btn" id="langBtn">EN</button>
                 <div class="lang-dropdown" id="langDropdown">
-                    <a href="news.html">한국어</a>
-                    <a href="en/news.html">English</a>
-                    <a href="ja/news.html">日本語</a>
-                    <a href="zh/news.html">中文</a>
-                    <a href="es/news.html">Español</a>
+                    <a href="../news.html">한국어</a>
+                    <a href="news.html">English</a>
+                    <a href="../ja/news.html">日本語</a>
+                    <a href="../zh/news.html">中文</a>
+                    <a href="../es/news.html">Español</a>
                 </div>
             </div>
         </div>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
             <span></span>
             <span></span>
             <span></span>
@@ -238,25 +264,25 @@
     </nav>
 
     <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html#apps">모바일 앱</a>
-        <a href="index.html#services">웹 서비스</a>
-        <a href="support.html">고객지원</a>
-        <a href="news.html">소식</a>
+        <a href="index.html#apps">Mobile Apps</a>
+        <a href="index.html#services">Web Services</a>
+        <a href="support.html">Support</a>
+        <a href="news.html">News</a>
         <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 0.5rem; padding-top: 0.5rem;">
-            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">언어 선택</div>
-            <a href="news.html" style="color: #e73c7e;">한국어</a>
-            <a href="en/news.html">English</a>
-            <a href="ja/news.html">日本語</a>
-            <a href="zh/news.html">中文</a>
-            <a href="es/news.html">Español</a>
+            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">Language</div>
+            <a href="../news.html">한국어</a>
+            <a href="news.html" style="color: #e73c7e;">English</a>
+            <a href="../ja/news.html">日本語</a>
+            <a href="../zh/news.html">中文</a>
+            <a href="../es/news.html">Español</a>
         </div>
     </div>
 
     <section class="hero">
         <div>
-            <span class="hero-badge">업데이트</span>
-            <h1>새로운 소식</h1>
-            <p>MonoApps의 새로운 기능과 개선사항을 알려드립니다.</p>
+            <span class="hero-badge">Updates</span>
+            <h1>Latest News</h1>
+            <p>Stay updated with new features and improvements from MonoApps.</p>
         </div>
     </section>
 
@@ -264,18 +290,18 @@
         <article class="news-item">
             <div class="news-header">
                 <div class="news-meta">
-                    <span class="news-tag release">출시</span>
-                    <span class="news-date">2026. 01. 10</span>
+                    <span class="news-tag release">Release</span>
+                    <span class="news-date">Jan 10, 2026</span>
                 </div>
-                <h2>QR Scanner Pro v1.0 런칭</h2>
-                <p>기다려주셔서 감사합니다. 드디어 정식 출시되었습니다.</p>
+                <h2>QR Scanner Pro v1.0 Launch</h2>
+                <p>Thank you for waiting. We're officially launched!</p>
             </div>
             <div class="news-body">
-                <p>QR Scanner Pro는 가장 빠르고 정확한 스캔 경험을 제공하기 위해 만들어졌습니다. 이제 복잡한 설정 없이 카메라만 켜면 됩니다.</p>
+                <p>QR Scanner Pro was built to provide the fastest and most accurate scanning experience. Now, just turn on your camera - no complex setup needed.</p>
                 <ul>
-                    <li>🚀 <strong>초고속 엔진:</strong> 0.1초 이내 인식</li>
-                    <li>🌑 <strong>다크 모드:</strong> 눈이 편안한 UI</li>
-                    <li>💾 <strong>히스토리:</strong> 스캔 기록 자동 저장</li>
+                    <li>🚀 <strong>Ultra-fast Engine:</strong> Recognition in under 0.1 seconds</li>
+                    <li>🌑 <strong>Dark Mode:</strong> Easy on your eyes</li>
+                    <li>💾 <strong>History:</strong> Automatic scan record saving</li>
                 </ul>
             </div>
         </article>
@@ -283,21 +309,21 @@
         <article class="news-item">
             <div class="news-header">
                 <div class="news-meta">
-                    <span class="news-tag notice">공지사항</span>
-                    <span class="news-date">2026. 01. 10</span>
+                    <span class="news-tag notice">Announcement</span>
+                    <span class="news-date">Jan 10, 2026</span>
                 </div>
-                <h2>공식 웹사이트 오픈</h2>
-                <p>MonoApps의 모든 서비스를 한곳에서 만나보실 수 있는 공식 홈페이지가 오픈되었습니다. 앞으로 더 많은 업데이트 소식으로 찾아뵙겠습니다.</p>
+                <h2>Official Website Launch</h2>
+                <p>Our official website where you can find all MonoApps services is now live. Stay tuned for more updates!</p>
             </div>
         </article>
     </main>
 
     <footer>
         <div class="footer-nav">
-            <a href="privacy.html">개인정보 처리방침</a>
-            <a href="terms.html">이용약관</a>
-            <a href="support.html">고객지원</a>
-            <a href="mailto:contact@monoapps.kr">문의하기</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="support.html">Support</a>
+            <a href="mailto:contact@monoapps.kr">Contact</a>
         </div>
         <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
     </footer>
@@ -307,17 +333,21 @@
         const menu = document.getElementById('mobileMenu');
         const langBtn = document.getElementById('langBtn');
         const langDropdown = document.getElementById('langDropdown');
+
         menuBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             menu.classList.toggle('active');
         });
+
         langBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             langDropdown.classList.toggle('active');
         });
+
         menu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => menu.classList.remove('active'));
         });
+
         document.addEventListener('click', (e) => {
             if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
                 menu.classList.remove('active');

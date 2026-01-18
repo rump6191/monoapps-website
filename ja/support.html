@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>고객지원 - MonoApps</title>
-    <meta name="description" content="MonoApps 고객지원 센터.">
+    <title>サポート - MonoApps</title>
+    <meta name="description" content="MonoApps カスタマーサポートセンター">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -62,10 +62,36 @@
         }
         .nav-links a:hover, .nav-links a.active { color: white; }
         .lang-selector { position: relative; margin-left: 1rem; }
-        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
-        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0,0,0,0.95);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            margin-top: 5px;
+            min-width: 120px;
+            backdrop-filter: blur(20px);
+        }
         .lang-dropdown.active { display: block; }
-        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a {
+            display: block;
+            padding: 10px 15px;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
         .lang-dropdown a:last-child { border-bottom: none; }
         .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
 
@@ -239,22 +265,22 @@
     <nav>
         <a href="index.html" class="logo">MonoApps</a>
         <div class="nav-links">
-            <a href="index.html#apps">모바일 앱</a>
-            <a href="index.html#services">웹 서비스</a>
-            <a href="support.html" class="active">고객지원</a>
-            <a href="news.html">소식</a>
+            <a href="index.html#apps">モバイルアプリ</a>
+            <a href="index.html#services">ウェブサービス</a>
+            <a href="support.html" class="active">サポート</a>
+            <a href="news.html">ニュース</a>
             <div class="lang-selector">
-                <button class="lang-btn" id="langBtn">KO</button>
+                <button class="lang-btn" id="langBtn">JA</button>
                 <div class="lang-dropdown" id="langDropdown">
-                    <a href="support.html">한국어</a>
-                    <a href="en/support.html">English</a>
-                    <a href="ja/support.html">日本語</a>
-                    <a href="zh/support.html">中文</a>
-                    <a href="es/support.html">Español</a>
+                    <a href="../support.html">한국어</a>
+                    <a href="../en/support.html">English</a>
+                    <a href="support.html">日本語</a>
+                    <a href="../zh/support.html">中文</a>
+                    <a href="../es/support.html">Español</a>
                 </div>
             </div>
         </div>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="メニュー">
             <span></span>
             <span></span>
             <span></span>
@@ -262,25 +288,25 @@
     </nav>
 
     <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html#apps">모바일 앱</a>
-        <a href="index.html#services">웹 서비스</a>
-        <a href="support.html">고객지원</a>
-        <a href="news.html">소식</a>
+        <a href="index.html#apps">モバイルアプリ</a>
+        <a href="index.html#services">ウェブサービス</a>
+        <a href="support.html">サポート</a>
+        <a href="news.html">ニュース</a>
         <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 0.5rem; padding-top: 0.5rem;">
-            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">언어 선택</div>
-            <a href="support.html" style="color: #e73c7e;">한국어</a>
-            <a href="en/support.html">English</a>
-            <a href="ja/support.html">日本語</a>
-            <a href="zh/support.html">中文</a>
-            <a href="es/support.html">Español</a>
+            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">言語選択</div>
+            <a href="../support.html">한국어</a>
+            <a href="../en/support.html">English</a>
+            <a href="support.html" style="color: #e73c7e;">日本語</a>
+            <a href="../zh/support.html">中文</a>
+            <a href="../es/support.html">Español</a>
         </div>
     </div>
 
     <section class="hero">
         <div>
-            <span class="hero-badge">고객지원 센터</span>
-            <h1>무엇을 도와드릴까요?</h1>
-            <p>궁금한 점이 있으신가요? 자주 묻는 질문을 확인하거나 직접 문의해주세요.</p>
+            <span class="hero-badge">サポートセンター</span>
+            <h1>お困りのことはありますか？</h1>
+            <p>ご質問がありますか？よくある質問をご確認いただくか、直接お問い合わせください。</p>
         </div>
     </section>
 
@@ -289,56 +315,56 @@
             <div class="card">
                 <div class="card-icon">📱</div>
                 <h3>QR Scanner Pro</h3>
-                <p>사용법 가이드 및 문제 해결</p>
-                <a href="qr-scanner.html" class="btn btn-outline">가이드 보기</a>
+                <p>使い方ガイドとトラブルシューティング</p>
+                <a href="qr-scanner.html" class="btn btn-outline">ガイドを見る</a>
             </div>
             <div class="card">
                 <div class="card-icon">✉️</div>
-                <h3>직접 문의하기</h3>
-                <p>해결되지 않은 문제가 있나요?</p>
-                <a href="mailto:support@monoapps.kr" class="btn btn-primary">이메일 문의</a>
+                <h3>お問い合わせ</h3>
+                <p>解決できない問題がありますか？</p>
+                <a href="mailto:support@monoapps.kr" class="btn btn-primary">メールで問い合わせ</a>
             </div>
         </div>
 
-        <h2 class="section-title">자주 묻는 질문</h2>
+        <h2 class="section-title">よくある質問</h2>
 
         <div class="faq-item" onclick="this.classList.toggle('active')">
             <div class="faq-question">
-                무료로 사용할 수 있나요?
+                無料で使えますか？
                 <span>+</span>
             </div>
             <div class="faq-answer">
-                <p>네, MonoApps의 대부분의 앱은 기본 기능을 무료로 제공합니다. 광고 제거 등 부가 기능은 인앱 결제를 통해 이용하실 수 있습니다.</p>
-            </div>
-        </div>
-
-        <div class="faq-item" onclick="this.classList.toggle('active')">
-            <div class="faq-question">
-                환불 정책이 궁금합니다.
-                <span>+</span>
-            </div>
-            <div class="faq-answer">
-                <p>App Store 및 Google Play의 환불 정책을 따릅니다. 결제 후 일정 기간 내에 해당 스토어 고객센터를 통해 환불을 요청하실 수 있습니다.</p>
+                <p>はい、MonoAppsのほとんどのアプリは基本機能を無料で提供しています。広告削除などの追加機能はアプリ内課金でご利用いただけます。</p>
             </div>
         </div>
 
         <div class="faq-item" onclick="this.classList.toggle('active')">
             <div class="faq-question">
-                제휴 문의는 어떻게 하나요?
+                返金ポリシーについて教えてください。
                 <span>+</span>
             </div>
             <div class="faq-answer">
-                <p>contact@monoapps.kr 로 이메일을 보내주시면 담당자가 검토 후 연락드리겠습니다.</p>
+                <p>App StoreおよびGoogle Playの返金ポリシーに従っています。購入後の一定期間内に、各ストアのカスタマーサービスを通じて返金をリクエストできます。</p>
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">
+                提携のお問い合わせはどうすればいいですか？
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <p>contact@monoapps.kr までメールをお送りください。担当者が確認後、ご連絡いたします。</p>
             </div>
         </div>
     </main>
 
     <footer>
         <div class="footer-nav">
-            <a href="privacy.html">개인정보 처리방침</a>
-            <a href="terms.html">이용약관</a>
-            <a href="support.html">고객지원</a>
-            <a href="mailto:contact@monoapps.kr">문의하기</a>
+            <a href="privacy.html">プライバシーポリシー</a>
+            <a href="terms.html">利用規約</a>
+            <a href="support.html">サポート</a>
+            <a href="mailto:contact@monoapps.kr">お問い合わせ</a>
         </div>
         <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
     </footer>
@@ -348,17 +374,21 @@
         const menu = document.getElementById('mobileMenu');
         const langBtn = document.getElementById('langBtn');
         const langDropdown = document.getElementById('langDropdown');
+
         menuBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             menu.classList.toggle('active');
         });
+
         langBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             langDropdown.classList.toggle('active');
         });
+
         menu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => menu.classList.remove('active'));
         });
+
         document.addEventListener('click', (e) => {
             if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
                 menu.classList.remove('active');

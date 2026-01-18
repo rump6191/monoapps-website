@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私政策 - MonoApps</title>
+    <meta name="description" content="MonoApps 隐私政策">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; min-height: 100vh; overflow-x: hidden; }
+        .bg-gradient { position: fixed; width: 150vw; height: 150vh; top: -25vh; left: -25vw; background: conic-gradient(from 180deg at 50% 50%, #ee7752, #e73c7e, #23a6d5, #23d5ab); filter: blur(100px); animation: rotate 20s linear infinite; z-index: -1; opacity: 0.7; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        nav { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background: rgba(0,0,0,0.3); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero { min-height: 30vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 40px; text-align: center; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 0.5rem; }
+        .hero p { opacity: 0.6; }
+        main { max-width: 800px; margin: 0 auto; padding: 0 2rem 6rem; }
+        .content-card { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 25px; padding: 3rem; }
+        .last-updated { font-size: 0.9rem; opacity: 0.5; margin-bottom: 2rem; }
+        .content-card p { color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 1rem; }
+        .content-card h2 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; color: white; }
+        .content-card ul { padding-left: 20px; color: rgba(255,255,255,0.7); margin-bottom: 1rem; }
+        .content-card li { padding: 0.3rem 0; line-height: 1.6; }
+        .content-card a { color: #e73c7e; font-weight: 600; }
+        footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+        @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .mobile-menu-btn { display: block; } .content-card { padding: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    <nav>
+        <a href="index.html" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="index.html#apps">移动应用</a>
+            <a href="index.html#services">网页服务</a>
+            <a href="support.html">客户支持</a>
+            <a href="news.html">新闻</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">ZH</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="../privacy.html">한국어</a>
+                    <a href="../en/privacy.html">English</a>
+                    <a href="../ja/privacy.html">日本語</a>
+                    <a href="privacy.html">中文</a>
+                    <a href="../es/privacy.html">Español</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#apps">移动应用</a>
+        <a href="index.html#services">网页服务</a>
+        <a href="support.html">客户支持</a>
+        <a href="news.html">新闻</a>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 0.5rem; padding-top: 0.5rem;">
+            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">选择语言</div>
+            <a href="../privacy.html">한국어</a>
+            <a href="../en/privacy.html">English</a>
+            <a href="../ja/privacy.html">日本語</a>
+            <a href="privacy.html" style="color: #e73c7e;">中文</a>
+            <a href="../es/privacy.html">Español</a>
+        </div>
+    </div>
+    <section class="hero">
+        <div>
+            <h1>隐私政策</h1>
+            <p>我们如何处理您的数据</p>
+        </div>
+    </section>
+    <main>
+        <div class="content-card">
+            <p class="last-updated">最后更新：2026年1月16日</p>
+            <p>本隐私政策适用于MonoApps（以下简称"公司"）提供的所有移动应用程序。</p>
+
+            <h2>1. 收集和使用个人信息的目的</h2>
+            <p>公司出于以下目的收集和使用用户的个人信息：</p>
+            <ul>
+                <li>提供和运营应用服务</li>
+                <li>响应客户咨询</li>
+                <li>改进服务和开发新功能</li>
+                <li>提供个性化广告（用于广告支持的免费服务运营）</li>
+            </ul>
+
+            <h2>2. 收集的个人信息项目</h2>
+            <p>公司仅收集提供服务所需的最少信息。根据应用功能，可能会收集以下信息：</p>
+            <ul>
+                <li><strong>相机：</strong> 二维码/条形码扫描、拍照等</li>
+                <li><strong>相册：</strong> 图片选择和保存</li>
+                <li><strong>麦克风：</strong> 语音识别和录音功能</li>
+                <li><strong>位置：</strong> 基于位置的服务</li>
+                <li><strong>通讯录：</strong> 联系人相关功能</li>
+                <li><strong>存储：</strong> 文件保存和加载</li>
+            </ul>
+            <p><em>※ 每个应用仅请求必要的权限。收集的数据仅在设备上处理，不会传输到服务器。详细的权限信息可在各应用的商店页面查看。</em></p>
+            <ul>
+                <li><strong>客户咨询时：</strong> 电子邮件地址（用于客户支持）</li>
+            </ul>
+
+            <h2>3. 广告和第三方服务</h2>
+            <p>我们的应用通过Google AdMob展示广告。为提供广告服务，可能会收集以下信息：</p>
+            <ul>
+                <li><strong>广告标识符：</strong> iOS的IDFA或Android的GAID</li>
+                <li><strong>设备信息：</strong> 设备型号、操作系统版本</li>
+                <li><strong>应用使用数据：</strong> 广告展示和点击信息</li>
+            </ul>
+            <p>此信息根据Google的隐私政策进行处理。详情请参阅<a href="https://policies.google.com/privacy" target="_blank">Google隐私政策</a>。</p>
+            <p>用户可以在设备设置中限制广告跟踪或重置广告标识符。</p>
+
+            <h2>4. 个人信息的保留和使用期限</h2>
+            <p>公司在收集和使用目的达成后，会立即销毁个人信息。但是，如果相关法律要求保存，将按照该法律规定的期限保存。</p>
+            <ul>
+                <li>客户咨询记录：解决后1年</li>
+                <li>应用内存储数据：仅存储在设备上，卸载应用时一并删除</li>
+            </ul>
+
+            <h2>5. 个人信息销毁程序</h2>
+            <p>原则上，公司在个人信息处理目的达成后，会立即销毁该个人信息。销毁程序、期限和方法如下：</p>
+            <ul>
+                <li><strong>销毁程序：</strong> 目的达成后，按照内部政策保存一段时间后销毁</li>
+                <li><strong>销毁方法：</strong> 电子文件形式的信息采用无法恢复的方式永久删除</li>
+            </ul>
+
+            <h2>6. 用户权利</h2>
+            <p>用户可以行使以下权利：</p>
+            <ul>
+                <li>请求查阅个人信息</li>
+                <li>请求更正个人信息</li>
+                <li>请求删除个人信息</li>
+                <li>请求暂停处理个人信息</li>
+            </ul>
+            <p>这些权利可通过以下联系方式行使，公司将立即采取措施。</p>
+
+            <h2>7. 隐私保护负责人及联系方式</h2>
+            <p>如有关于个人信息的咨询、投诉或损害赔偿，请联系：</p>
+            <ul>
+                <li><strong>电子邮件：</strong> <a href="mailto:monoappskr@gmail.com">monoappskr@gmail.com</a></li>
+            </ul>
+
+            <h2>8. 隐私政策的变更</h2>
+            <p>本隐私政策可能会因法律或服务变更而修改。变更将通过应用或网站公告，修改后的政策自公告之日起生效。</p>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">隐私政策</a>
+            <a href="terms.html">服务条款</a>
+            <a href="support.html">客户支持</a>
+            <a href="mailto:contact@monoapps.kr">联系我们</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('active'); });
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        menu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => menu.classList.remove('active')); });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MonoApps - 심플하고 유용한 디지털 서비스</title>
-    <meta name="description" content="MonoApps는 일상을 더 편리하게 만드는 심플한 앱과 웹 서비스를 만듭니다.">
+    <title>MonoApps - Servicios Digitales Simples y Útiles</title>
+    <meta name="description" content="MonoApps crea aplicaciones y servicios web simples que hacen tu vida diaria más conveniente.">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -16,8 +16,6 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
-
-        /* Rotating Gradient Background */
         .bg-gradient {
             position: fixed;
             width: 150vw;
@@ -31,8 +29,6 @@
             opacity: 0.7;
         }
         @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -96,10 +92,8 @@
         }
         .lang-dropdown a:last-child { border-bottom: none; }
         .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
-
-        /* Mobile Menu */
         .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
-        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; transition: 0.3s; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
         .mobile-menu {
             display: none;
             position: fixed;
@@ -113,8 +107,6 @@
         }
         .mobile-menu.active { display: block; }
         .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -168,23 +160,18 @@
             color: white;
             box-shadow: 0 0 30px rgba(231, 60, 126, 0.4);
         }
-        .btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(231, 60, 126, 0.6); }
+        .btn-primary:hover { transform: scale(1.05); }
         .btn-outline {
             border: 1px solid rgba(255,255,255,0.3);
             color: white;
             background: rgba(255,255,255,0.05);
         }
         .btn-outline:hover { background: rgba(255,255,255,0.15); }
-
-        /* Sections */
-        section {
-            padding: 6rem 2rem;
-        }
+        section { padding: 6rem 2rem; }
         .section-title {
             font-size: clamp(2rem, 4vw, 3rem);
             text-align: center;
             margin-bottom: 1rem;
-            letter-spacing: -1px;
         }
         .section-desc {
             text-align: center;
@@ -192,8 +179,6 @@
             margin-bottom: 3rem;
             font-size: 1.1rem;
         }
-
-        /* Card Grid */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -212,7 +197,6 @@
         .card:hover {
             transform: translateY(-8px);
             background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(255,255,255,0.2);
         }
         .card-icon {
             width: 50px;
@@ -232,12 +216,8 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
-            transition: 0.3s;
         }
-        .card-link:hover { color: #ee7752; }
         .card-link.muted { color: rgba(255,255,255,0.4); }
-
-        /* Featured Card */
         .card.featured {
             grid-column: span 2;
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
@@ -255,13 +235,8 @@
             color: white;
             text-decoration: none;
             font-size: 0.85rem;
-            font-weight: 500;
-            transition: 0.3s;
         }
-        .store-btn:hover { background: rgba(255,255,255,0.2); }
         .store-btn svg { width: 18px; height: 18px; }
-
-        /* Stats */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -278,19 +253,15 @@
         }
         .stat-number { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
         .stat-label { font-size: 0.9rem; opacity: 0.5; }
-
-        /* Footer */
         footer {
             padding: 3rem 2rem;
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.1);
         }
         .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
-        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; }
         .footer-nav a:hover { color: white; }
         .copyright { font-size: 0.85rem; opacity: 0.4; }
-
-        /* Responsive */
         @media (max-width: 768px) {
             nav { padding: 1rem 1.5rem; }
             .nav-links { display: none; }
@@ -307,22 +278,22 @@
     <nav>
         <a href="index.html" class="logo">MonoApps</a>
         <div class="nav-links">
-            <a href="#apps">모바일 앱</a>
-            <a href="#services">웹 서비스</a>
-            <a href="support.html">고객지원</a>
-            <a href="news.html">소식</a>
+            <a href="#apps">Apps Móviles</a>
+            <a href="#services">Servicios Web</a>
+            <a href="support.html">Soporte</a>
+            <a href="news.html">Noticias</a>
             <div class="lang-selector">
-                <button class="lang-btn" id="langBtn">KO</button>
+                <button class="lang-btn" id="langBtn">ES</button>
                 <div class="lang-dropdown" id="langDropdown">
-                    <a href="index.html">한국어</a>
-                    <a href="en/index.html">English</a>
-                    <a href="ja/index.html">日本語</a>
-                    <a href="zh/index.html">中文</a>
-                    <a href="es/index.html">Español</a>
+                    <a href="../index.html">한국어</a>
+                    <a href="../en/index.html">English</a>
+                    <a href="../ja/index.html">日本語</a>
+                    <a href="../zh/index.html">中文</a>
+                    <a href="index.html">Español</a>
                 </div>
             </div>
         </div>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">
             <span></span>
             <span></span>
             <span></span>
@@ -330,121 +301,123 @@
     </nav>
 
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#apps">모바일 앱</a>
-        <a href="#services">웹 서비스</a>
-        <a href="support.html">고객지원</a>
-        <a href="news.html">소식</a>
-        <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 0.5rem; padding-top: 0.5rem;">
-            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">언어 선택</div>
-            <a href="index.html" style="color: #e73c7e;">한국어</a>
-            <a href="en/index.html">English</a>
-            <a href="ja/index.html">日本語</a>
-            <a href="zh/index.html">中文</a>
-            <a href="es/index.html">Español</a>
+        <a href="#apps">Apps Móviles</a>
+        <a href="#services">Servicios Web</a>
+        <a href="support.html">Soporte</a>
+        <a href="news.html">Noticias</a>
+        <div style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+            <span style="opacity: 0.5; font-size: 0.85rem;">Idioma:</span>
+            <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                <a href="../index.html" style="padding: 5px 10px; border: none;">KO</a>
+                <a href="../en/index.html" style="padding: 5px 10px; border: none;">EN</a>
+                <a href="../ja/index.html" style="padding: 5px 10px; border: none;">JA</a>
+                <a href="../zh/index.html" style="padding: 5px 10px; border: none;">ZH</a>
+                <a href="index.html" style="padding: 5px 10px; border: none; color: #e73c7e;">ES</a>
+            </div>
         </div>
     </div>
 
     <section class="hero">
         <div class="glass-box">
-            <span class="hero-badge">✨ 단순함이 만드는 지능적인 경험</span>
-            <h1>복잡한 세상,<br>심플한 솔루션</h1>
-            <p class="hero-desc">MonoApps는 본질에 집중합니다. 불필요한 기능은 덜어내고, 사용자에게 꼭 필요한 가치만을 담아 직관적인 디지털 경험을 제공합니다.</p>
+            <span class="hero-badge">✨ Experiencias inteligentes desde la simplicidad</span>
+            <h1>Mundo Complejo,<br>Soluciones Simples</h1>
+            <p class="hero-desc">MonoApps se enfoca en lo esencial. Eliminamos funciones innecesarias y ofrecemos experiencias digitales intuitivas con solo el valor que necesitas.</p>
             <div class="hero-buttons">
-                <a href="#apps" class="btn btn-primary">앱 둘러보기</a>
-                <a href="#services" class="btn btn-outline">웹 서비스</a>
+                <a href="#apps" class="btn btn-primary">Explorar Apps</a>
+                <a href="#services" class="btn btn-outline">Servicios Web</a>
             </div>
         </div>
     </section>
 
     <section id="apps">
-        <h2 class="section-title">모바일 앱</h2>
-        <p class="section-desc">일상의 불편함을 해결하는 스마트한 도구들</p>
+        <h2 class="section-title">Apps Móviles</h2>
+        <p class="section-desc">Herramientas inteligentes que resuelven inconvenientes diarios</p>
         <div class="grid">
             <div class="card featured">
-                <div class="card-icon" style="background: transparent;"><img src="images/qr-icon.png" alt="QR Scanner Pro" style="width: 100%; height: 100%; object-fit: contain;"></div>
+                <div class="card-icon" style="background: transparent;"><img src="../images/qr-icon.png" alt="QR Scanner Pro" style="width: 100%; height: 100%; object-fit: contain;"></div>
                 <h3>QR Scanner Pro</h3>
-                <p>압도적인 속도의 QR/바코드 스캐너. 스캔부터 생성, 기록 관리까지 모든 기능을 하나의 앱에서 경험하세요.</p>
+                <p>El escáner de QR/códigos de barras más rápido. Experimenta todas las funciones desde escaneo hasta creación y gestión de historial en una sola app.</p>
                 <div class="store-buttons">
                     <span class="store-btn" style="opacity: 0.5; cursor: default;">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                        출시 예정
+                        Próximamente
                     </span>
                     <span class="store-btn" style="opacity: 0.5; cursor: default;">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
-                        출시 예정
+                        Próximamente
                     </span>
-                    <a href="qr-scanner.html" class="card-link" style="margin-left: auto;">상세보기 →</a>
+                    <a href="qr-scanner.html" class="card-link" style="margin-left: auto;">Más Info →</a>
                 </div>
             </div>
             <div class="card">
                 <div class="card-icon">🎯</div>
-                <h3>다음 프로젝트</h3>
-                <p>새로운 혁신을 준비하고 있습니다. 곧 찾아뵙겠습니다.</p>
-                <span class="card-link muted">준비중</span>
+                <h3>Próximo Proyecto</h3>
+                <p>Estamos preparando algo nuevo e innovador. Próximamente.</p>
+                <span class="card-link muted">En Desarrollo</span>
             </div>
         </div>
     </section>
 
     <section id="services">
-        <h2 class="section-title">웹 서비스</h2>
-        <p class="section-desc">웹 브라우저에서 만나는 강력한 도구들</p>
+        <h2 class="section-title">Servicios Web</h2>
+        <p class="section-desc">Herramientas poderosas disponibles en tu navegador</p>
         <div class="grid">
             <div class="card">
                 <div class="card-icon">🛒</div>
-                <h3>21이노베이션</h3>
-                <p>1,757개 이상의 상품 데이터를 분석하여 최고의 선택을 돕는 스마트 비교 플랫폼.</p>
+                <h3>21 Innovation</h3>
+                <p>Una plataforma de comparación inteligente que analiza más de 1,757 productos para ayudarte a tomar la mejor decisión.</p>
                 <div style="display: flex; gap: 1rem; margin-top: auto;">
-                    <a href="https://21innovation.org" target="_blank" class="card-link">사이트 방문 →</a>
-                    <a href="21innovation.html" class="card-link" style="opacity: 0.6;">상세보기</a>
+                    <a href="https://21innovation.org" target="_blank" class="card-link">Visitar →</a>
+                    <a href="21innovation.html" class="card-link" style="opacity: 0.6;">Detalles</a>
                 </div>
             </div>
             <div class="card">
                 <div class="card-icon">🌙</div>
-                <h3>꿈해몽 대백과</h3>
-                <p>890가지 키워드로 풀어보는 당신의 무의식. 간편하게 검색하고 해석하세요.</p>
+                <h3>Diccionario de Sueños</h3>
+                <p>Explora tu subconsciente con 890 palabras clave. Busca e interpreta tus sueños fácilmente.</p>
                 <div style="display: flex; gap: 1rem; margin-top: auto;">
-                    <a href="https://dreamteller.co.kr" target="_blank" class="card-link">사이트 방문 →</a>
-                    <a href="dreamteller.html" class="card-link" style="opacity: 0.6;">상세보기</a>
+                    <a href="https://dreamteller.co.kr" target="_blank" class="card-link">Visitar →</a>
+                    <a href="dreamteller.html" class="card-link" style="opacity: 0.6;">Detalles</a>
                 </div>
             </div>
             <div class="card">
                 <div class="card-icon">🔮</div>
-                <h3>사주프라임</h3>
-                <p>전통 명리학에 기반한 정통 사주 분석 서비스. 운명의 흐름을 읽어드립니다.</p>
-                <span class="card-link muted">오픈 예정 🔜</span>
+                <h3>Saju Prime</h3>
+                <p>Servicio de adivinación tradicional basado en astrología oriental. Lee el flujo de tu destino.</p>
+                <span class="card-link muted">Próximamente 🔜</span>
             </div>
         </div>
     </section>
 
     <section>
-        <h2 class="section-title">왜 MonoApps인가요?</h2>
-        <p class="section-desc">신뢰할 수 있는 디지털 파트너</p>
+        <h2 class="section-title">¿Por qué MonoApps?</h2>
+        <p class="section-desc">Un socio digital en quien puedes confiar</p>
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-number">3+</div>
-                <div class="stat-label">운영 서비스</div>
+                <div class="stat-label">Servicios Activos</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">99.9%</div>
-                <div class="stat-label">안정성</div>
+                <div class="stat-label">Confiabilidad</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">빠름</div>
-                <div class="stat-label">성능 중심</div>
+                <div class="stat-number">Rápido</div>
+                <div class="stat-label">Rendimiento</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">안전</div>
-                <div class="stat-label">보안 우선</div>
+                <div class="stat-number">Seguro</div>
+                <div class="stat-label">Seguridad</div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="footer-nav">
-            <a href="privacy.html">개인정보 처리방침</a>
-            <a href="terms.html">이용약관</a>
-            <a href="support.html">고객지원</a>
-            <a href="mailto:contact@monoapps.kr">문의하기</a>
+            <a href="privacy.html">Política de Privacidad</a>
+            <a href="terms.html">Términos de Servicio</a>
+            <a href="support.html">Soporte</a>
+            <a href="mailto:contact@monoapps.kr">Contacto</a>
         </div>
         <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
     </footer>
@@ -460,18 +433,15 @@
             menu.classList.toggle('active');
         });
 
-        // Language dropdown toggle
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => menu.classList.remove('active'));
+        });
+
         langBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             langDropdown.classList.toggle('active');
         });
 
-        // Close menu when clicking a link
-        menu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => menu.classList.remove('active'));
-        });
-
-        // Close menus when clicking outside
         document.addEventListener('click', (e) => {
             if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
                 menu.classList.remove('active');
