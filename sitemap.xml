@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 메인 페이지 -->
+  <url>
+    <loc>https://monoapps.kr/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/"/>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- QR Scanner Pro -->
+  <url>
+    <loc>https://monoapps.kr/qr-scanner.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 꿈해몽 -->
+  <url>
+    <loc>https://monoapps.kr/dreamteller.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 21이노베이션 -->
+  <url>
+    <loc>https://monoapps.kr/21innovation.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 고객지원 -->
+  <url>
+    <loc>https://monoapps.kr/support.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/support.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/support.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/support.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/support.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/support.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/support.html"/>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 소식 -->
+  <url>
+    <loc>https://monoapps.kr/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/news.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/news.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/news.html"/>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 개인정보 처리방침 -->
+  <url>
+    <loc>https://monoapps.kr/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/privacy.html"/>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- 이용약관 -->
+  <url>
+    <loc>https://monoapps.kr/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/terms.html"/>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- 영어 페이지 -->
+  <url>
+    <loc>https://monoapps.kr/en/</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/en/support.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/en/news.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/en/privacy.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/en/terms.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- 일본어 페이지 -->
+  <url>
+    <loc>https://monoapps.kr/ja/</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/ja/support.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/ja/news.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/ja/privacy.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/ja/terms.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- 중국어 페이지 -->
+  <url>
+    <loc>https://monoapps.kr/zh/</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/zh/support.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/zh/news.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/zh/privacy.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/zh/terms.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- 스페인어 페이지 -->
+  <url>
+    <loc>https://monoapps.kr/es/</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/es/support.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/es/news.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/es/privacy.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/es/terms.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>
