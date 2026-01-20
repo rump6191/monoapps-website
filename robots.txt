@@ -1,4 +1,59 @@
 User-agent: *
 Allow: /
 
+# Block test/design pages
+Disallow: /1.html
+Disallow: /2.html
+Disallow: /3.html
+Disallow: /4.html
+Disallow: /5.html
+Disallow: /6.html
+Disallow: /7.html
+Disallow: /8.html
+Disallow: /9.html
+Disallow: /10.html
+Disallow: /11.html
+Disallow: /12.html
+Disallow: /13.html
+Disallow: /14.html
+Disallow: /15.html
+Disallow: /16.html
+Disallow: /17.html
+Disallow: /18.html
+Disallow: /19.html
+Disallow: /20.html
+Disallow: /21.html
+Disallow: /22.html
+Disallow: /23.html
+Disallow: /24.html
+Disallow: /25.html
+Disallow: /26.html
+Disallow: /27.html
+Disallow: /28.html
+Disallow: /29.html
+Disallow: /30.html
+Disallow: /31.html
+Disallow: /32.html
+Disallow: /33.html
+Disallow: /34.html
+Disallow: /35.html
+Disallow: /36.html
+Disallow: /37.html
+Disallow: /38.html
+Disallow: /39.html
+Disallow: /40.html
+Disallow: /41.html
+Disallow: /42.html
+Disallow: /43.html
+Disallow: /44.html
+Disallow: /45.html
+Disallow: /46.html
+Disallow: /47.html
+Disallow: /48.html
+Disallow: /49.html
+Disallow: /50.html
+
+# Block 404 page
+Disallow: /404.html
+
 Sitemap: https://monoapps.kr/sitemap.xml
