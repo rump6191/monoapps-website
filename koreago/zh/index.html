@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KoreaGo - 韩国公共交通应用</title>
-    <meta name="description" content="帮助外国人轻松使用韩国公共交通的应用。用英语搜索，用母语接收导航指引。">
+    <meta name="description" content="为访问韩国的外国人提供便捷的公共交通应用。用英语搜索,用母语获取导航。">
     <link rel="canonical" href="https://monoapps.kr/koreago/zh/">
     <link rel="alternate" hreflang="ko" href="https://monoapps.kr/koreago/">
     <link rel="alternate" hreflang="en" href="https://monoapps.kr/koreago/en/">
@@ -15,7 +15,7 @@
     <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/koreago/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -23,27 +23,28 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #00C853;
-            --primary-dark: #00A844;
-            --secondary: #0288D1;
-            --secondary-dark: #0277BD;
-            --bg: #FAFAFA;
-            --text: #1A1A1A;
-            --text-light: #6B6B6B;
-            --white: #FFFFFF;
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
-            --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.16);
-        }
-
         body {
-            font-family: 'Noto Sans SC', 'DM Sans', -apple-system, sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            font-family: 'Inter', 'Noto Sans KR', -apple-system, sans-serif;
+            background: #000;
+            color: white;
             line-height: 1.6;
             overflow-x: hidden;
         }
+
+        /* Rotating Gradient Background */
+        .bg-gradient {
+            position: fixed;
+            width: 150vw;
+            height: 150vh;
+            top: -25vh;
+            left: -25vw;
+            background: conic-gradient(from 180deg at 50% 50%, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            filter: blur(100px);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
         /* Navigation */
         nav {
@@ -51,27 +52,27 @@
             top: 0;
             left: 0;
             right: 0;
-            background: var(--white);
-            box-shadow: var(--shadow-sm);
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             z-index: 100;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1.5rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.75rem;
-            font-weight: 900;
-            color: var(--primary);
-            letter-spacing: -0.02em;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .nav-right {
@@ -85,19 +86,18 @@
         }
 
         .lang-btn {
-            background: rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            color: var(--text);
-            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 6px 12px;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 0.875rem;
-            font-weight: 600;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
         }
 
         .lang-btn:hover {
-            background: rgba(0, 0, 0, 0.08);
+            background: rgba(255,255,255,0.15);
         }
 
         .lang-dropdown {
@@ -105,12 +105,12 @@
             position: absolute;
             top: 100%;
             right: 0;
-            background: white;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            background: rgba(0,0,0,0.95);
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 8px;
-            margin-top: 0.5rem;
-            min-width: 150px;
-            box-shadow: var(--shadow-md);
+            margin-top: 5px;
+            min-width: 120px;
+            backdrop-filter: blur(20px);
         }
 
         .lang-dropdown.active {
@@ -119,12 +119,12 @@
 
         .lang-dropdown a {
             display: block;
-            padding: 0.75rem 1rem;
-            color: var(--text);
+            padding: 10px 15px;
+            color: rgba(255,255,255,0.7);
             text-decoration: none;
-            font-size: 0.875rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            transition: background 0.2s ease;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.2s ease;
         }
 
         .lang-dropdown a:last-child {
@@ -132,56 +132,40 @@
         }
 
         .lang-dropdown a:hover {
-            background: rgba(0, 200, 83, 0.1);
+            background: rgba(255,255,255,0.1);
+            color: white;
         }
 
         .lang-dropdown a.active {
-            background: rgba(0, 200, 83, 0.1);
-            color: var(--primary);
+            background: rgba(255,255,255,0.1);
+            color: #e73c7e;
             font-weight: 700;
         }
 
         .nav-cta {
-            background: var(--primary);
+            background: linear-gradient(90deg, #ee7752, #e73c7e);
             color: white;
-            padding: 0.625rem 1.5rem;
-            border-radius: 24px;
+            padding: 10px 24px;
+            border-radius: 100px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 0.9rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 12px rgba(0, 200, 83, 0.3);
+            transition: all 0.3s;
+            box-shadow: 0 0 30px rgba(231, 60, 126, 0.4);
         }
 
         .nav-cta:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 200, 83, 0.4);
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(231, 60, 126, 0.6);
         }
 
         /* Hero Section */
         .hero {
-            margin-top: 80px;
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, #F0FFF4 0%, #E8F5E9 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 200, 83, 0.1) 0%, transparent 70%);
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-30px, 30px) rotate(5deg); }
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 2rem 4rem;
         }
 
         .hero-container {
@@ -191,69 +175,60 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            position: relative;
-            z-index: 1;
+            width: 100%;
         }
 
         .hero-content {
-            animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 40px;
+            padding: 50px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
         }
 
         .hero-badge {
             display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 0.5rem 1.25rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 700;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 100px;
+            font-size: 0.85rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 200, 83, 0.3);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
             font-weight: 900;
             line-height: 1.1;
-            letter-spacing: -0.03em;
+            letter-spacing: -2px;
             margin-bottom: 1rem;
-            color: var(--text);
+            color: white;
         }
 
         .hero-tagline {
             font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--secondary);
+            font-weight: 600;
+            color: #23d5ab;
             margin-bottom: 0.75rem;
         }
 
-        .hero-tagline-en {
+        .hero-tagline-kr {
             font-size: 1.125rem;
-            color: var(--text-light);
+            color: rgba(255,255,255,0.6);
             margin-bottom: 1.5rem;
         }
 
         .hero-description {
             font-size: 1.125rem;
-            color: var(--text-light);
+            color: rgba(255,255,255,0.7);
             margin-bottom: 1rem;
             line-height: 1.7;
         }
 
-        .hero-description-en {
+        .hero-description-kr {
             font-size: 1rem;
-            color: var(--text-light);
+            color: rgba(255,255,255,0.6);
             margin-bottom: 2rem;
             line-height: 1.7;
         }
@@ -262,18 +237,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
 
         .phone-mockup {
@@ -282,7 +245,7 @@
             height: auto;
             border-radius: 32px;
             overflow: hidden;
-            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
             border: 8px solid #1A1A1A;
             background: #000;
             animation: floatPhone 6s ease-in-out infinite;
@@ -302,7 +265,6 @@
         /* Features Section */
         .features {
             padding: 6rem 2rem;
-            background: var(--white);
         }
 
         .section-header {
@@ -312,16 +274,16 @@
         }
 
         .section-title {
-            font-size: 2.75rem;
+            font-size: clamp(2rem, 4vw, 2.75rem);
             font-weight: 900;
-            letter-spacing: -0.02em;
+            letter-spacing: -1px;
             margin-bottom: 1rem;
-            color: var(--text);
+            color: white;
         }
 
         .section-subtitle {
             font-size: 1.25rem;
-            color: var(--text-light);
+            color: rgba(255,255,255,0.6);
         }
 
         .features-grid {
@@ -329,73 +291,48 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
+            gap: 2rem;
         }
 
         .feature-card {
-            background: var(--white);
-            border-radius: 24px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow-md);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        .feature-card:nth-child(1) { animation-delay: 0.1s; }
-        .feature-card:nth-child(2) { animation-delay: 0.2s; }
-        .feature-card:nth-child(3) { animation-delay: 0.3s; }
-        .feature-card:nth-child(4) { animation-delay: 0.4s; }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
         }
 
         .feature-card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255,255,255,0.2);
         }
 
         .feature-screenshot {
             width: 100%;
             border-radius: 16px;
             margin-bottom: 1.5rem;
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
         }
 
         .feature-title {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 0.75rem;
-            color: var(--text);
+            color: white;
         }
 
         .feature-description {
             font-size: 1rem;
-            color: var(--text-light);
+            color: rgba(255,255,255,0.7);
             line-height: 1.7;
         }
 
         /* User Flow Section */
         .user-flow {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, #E3F2FD 0%, #E8F5E9 100%);
             position: relative;
-            overflow: hidden;
-        }
-
-        .user-flow::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
         }
 
         .flow-container {
@@ -413,6 +350,17 @@
         .flow-step {
             text-align: center;
             position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem 1rem;
+            transition: all 0.3s;
+        }
+
+        .flow-step:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
         }
 
         .flow-step::after {
@@ -421,7 +369,7 @@
             right: -1.5rem;
             top: 40%;
             font-size: 2rem;
-            color: var(--primary);
+            color: #23d5ab;
             font-weight: 900;
         }
 
@@ -432,7 +380,7 @@
         .flow-number {
             width: 48px;
             height: 48px;
-            background: var(--primary);
+            background: linear-gradient(135deg, #ee7752, #e73c7e);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -441,7 +389,7 @@
             font-size: 1.5rem;
             font-weight: 900;
             margin: 0 auto 1rem;
-            box-shadow: 0 4px 12px rgba(0, 200, 83, 0.4);
+            box-shadow: 0 4px 12px rgba(231, 60, 126, 0.4);
         }
 
         .flow-image {
@@ -449,25 +397,24 @@
             max-width: 200px;
             margin: 0 auto 1rem;
             border-radius: 12px;
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
         }
 
         .flow-title {
             font-size: 1.125rem;
             font-weight: 700;
-            color: var(--text);
+            color: white;
             margin-bottom: 0.5rem;
         }
 
         .flow-desc {
             font-size: 0.875rem;
-            color: var(--text-light);
+            color: rgba(255,255,255,0.6);
         }
 
         /* Languages Section */
         .languages {
             padding: 6rem 2rem;
-            background: var(--white);
         }
 
         .languages-grid {
@@ -481,17 +428,17 @@
         .language-item {
             text-align: center;
             padding: 2rem 1rem;
-            background: var(--bg);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
             border-radius: 16px;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .language-item:hover {
-            background: var(--white);
-            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #23d5ab;
             transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
         }
 
         .language-flag {
@@ -502,50 +449,52 @@
         .language-name {
             font-size: 1rem;
             font-weight: 600;
-            color: var(--text);
+            color: white;
         }
 
         .coming-soon {
             max-width: 600px;
             margin: 3rem auto 0;
             padding: 2rem;
-            background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+            background: rgba(255, 152, 0, 0.15);
+            backdrop-filter: blur(10px);
             border-radius: 16px;
             text-align: center;
-            border-left: 4px solid #FF9800;
+            border: 1px solid rgba(255, 152, 0, 0.3);
         }
 
         .coming-soon-title {
             font-weight: 700;
-            color: #E65100;
+            color: #FF9800;
             margin-bottom: 0.5rem;
         }
 
         .coming-soon-langs {
-            color: #BF360C;
+            color: rgba(255,255,255,0.7);
             font-weight: 500;
         }
 
         /* API Section */
         .api-usage {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
         }
 
         .api-container {
             max-width: 800px;
             margin: 0 auto;
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             padding: 3rem;
             border-radius: 24px;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
         }
 
         .api-title {
             font-size: 1.75rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            color: var(--text);
+            color: white;
         }
 
         .api-list {
@@ -554,9 +503,9 @@
 
         .api-list li {
             padding: 1rem 0;
-            border-bottom: 1px solid #E0E0E0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             font-size: 1.125rem;
-            color: var(--text-light);
+            color: rgba(255,255,255,0.7);
         }
 
         .api-list li:last-child {
@@ -565,7 +514,7 @@
 
         .api-list li::before {
             content: '✓';
-            color: var(--primary);
+            color: #23d5ab;
             font-weight: 900;
             margin-right: 1rem;
             font-size: 1.5rem;
@@ -573,9 +522,10 @@
 
         /* Footer */
         footer {
-            background: #1A1A1A;
+            background: rgba(0,0,0,0.5);
+            border-top: 1px solid rgba(255,255,255,0.1);
             color: white;
-            padding: 4rem 2rem 2rem;
+            padding: 3rem 2rem;
         }
 
         .footer-container {
@@ -587,53 +537,60 @@
         .footer-logo {
             font-size: 2rem;
             font-weight: 900;
-            color: var(--primary);
+            background: linear-gradient(90deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 1.5rem;
         }
 
         .footer-info {
             font-size: 1rem;
-            color: #BDBDBD;
+            color: rgba(255,255,255,0.6);
             margin-bottom: 0.5rem;
         }
 
         .footer-email {
-            color: var(--primary);
+            color: #e73c7e;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .footer-email:hover {
-            color: var(--primary-dark);
+            color: #ee7752;
         }
 
         .footer-copyright {
             margin-top: 2rem;
             padding-top: 2rem;
-            border-top: 1px solid #333;
+            border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.875rem;
-            color: #757575;
+            color: rgba(255,255,255,0.4);
         }
 
         /* Responsive */
         @media (max-width: 968px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .hero {
+                padding-top: 100px;
+            }
+
             .hero-container {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-tagline {
-                font-size: 1.25rem;
+            .hero-content {
+                padding: 40px 25px;
+                border-radius: 30px;
             }
 
             .features-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 1.5rem;
             }
 
             .flow-steps {
@@ -652,10 +609,6 @@
             .languages-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
-            .section-title {
-                font-size: 2rem;
-            }
         }
 
         @media (max-width: 640px) {
@@ -663,21 +616,12 @@
                 padding: 1rem;
             }
 
-            .logo {
-                font-size: 1.5rem;
-            }
-
-            .nav-cta {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
-            }
-
             .hero {
-                padding: 3rem 1rem;
+                padding: 100px 1rem 3rem;
             }
 
-            .hero h1 {
-                font-size: 2rem;
+            .hero-content {
+                padding: 30px 20px;
             }
 
             .phone-mockup {
@@ -703,7 +647,7 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <div class="bg-gradient"></div>
     <nav>
         <div class="nav-container">
             <div class="logo">KoreaGo</div>
@@ -723,20 +667,18 @@
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-badge">公共交通导航</div>
                 <h1>KoreaGo</h1>
-                <div class="hero-tagline">为外国人设计的韩国公共交通应用</div>
-                <div class="hero-tagline-en">Navigate Korea Like a Local</div>
+                <div class="hero-tagline">韩国公共交通应用</div>
+                <div class="hero-tagline-kr">Navigate Korea Like a Local</div>
                 <p class="hero-description">
-                    帮助外国人轻松使用韩国公共交通的应用。用英语搜索，用母语接收导航指引。
+                    为访问韩国的外国人提供便捷的公共交通应用。用英语搜索,用母语获取导航。
                 </p>
-                <p class="hero-description-en">
-                    The easiest way for foreigners to use public transit in Korea. Search in English, get directions in your language.
+                <p class="hero-description-kr">
+                    The easiest way for foreigners to use public transit in Korea.
                 </p>
             </div>
             <div class="hero-image">
@@ -746,46 +688,42 @@
             </div>
         </div>
     </section>
-
-    <!-- Features Section -->
     <section class="features" id="features">
         <div class="section-header">
-            <h2 class="section-title">核心功能</h2>
-            <p class="section-subtitle">自信使用韩国公共交通系统所需的一切</p>
+            <h2 class="section-title">主要功能</h2>
+            <p class="section-subtitle">在韩国自信使用公共交通所需的一切</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
-                <img src="../images/32.jpg" alt="简易搜索" class="feature-screenshot">
-                <h3 class="feature-title">🔍 简易搜索</h3>
+                <img src="../images/32.jpg" alt="简单搜索" class="feature-screenshot">
+                <h3 class="feature-title">🔍 简单搜索</h3>
                 <p class="feature-description">
-                    <strong>多语言搜索：</strong>用英语输入，立即找到韩国车站。用英语和韩语查看站名，方便使用最近的搜索记录。
+                    <strong>双语搜索:</strong> 用英语输入,即时查找韩国站点。以英韩双语查看站名,便捷使用最近搜索历史。
                 </p>
             </div>
             <div class="feature-card">
-                <img src="../images/34.jpg" alt="智能路线选项" class="feature-screenshot">
+                <img src="../images/34.jpg" alt="智能路线" class="feature-screenshot">
                 <h3 class="feature-title">🚇 智能路线选项</h3>
                 <p class="feature-description">
-                    <strong>优化路线：</strong>在最短时间、最少换乘或最低票价中选择。详细查看每个选项的时间、换乘次数和费用。
+                    <strong>优化路线:</strong> 在最快路线、最少换乘或最低费用之间选择。查看每个选项的详细时间、换乘次数和费用。
                 </p>
             </div>
             <div class="feature-card">
-                <img src="../images/36.jpg" alt="分步导航" class="feature-screenshot">
-                <h3 class="feature-title">📍 分步导航</h3>
+                <img src="../images/36.jpg" alt="逐步指导" class="feature-screenshot">
+                <h3 class="feature-title">📍 逐步指导</h3>
                 <p class="feature-description">
-                    <strong>清晰指引：</strong>按照步行 → 地铁 → 换乘的详细说明。每一步都显示英语和韩语站名。
+                    <strong>清晰导航:</strong> 跟随详细的步行 → 地铁 → 换乘指引。每一步都显示英韩双语站名。
                 </p>
             </div>
             <div class="feature-card">
                 <img src="../images/38.jpg" alt="实时导航" class="feature-screenshot">
                 <h3 class="feature-title">🔔 实时导航</h3>
                 <p class="feature-description">
-                    <strong>到站提醒：</strong>智能下车提醒和语音导航提供实时导航。不再错过下车站。
+                    <strong>到站提醒:</strong> 智能下车提醒和语音引导提供实时导航。绝不错过下车站。
                 </p>
             </div>
         </div>
     </section>
-
-    <!-- User Flow Section -->
     <section class="user-flow">
         <div class="flow-container">
             <div class="section-header">
@@ -796,32 +734,30 @@
                 <div class="flow-step">
                     <div class="flow-number">1</div>
                     <img src="../images/32.jpg" alt="搜索" class="flow-image">
-                    <div class="flow-title">搜索车站</div>
+                    <div class="flow-title">搜索站点</div>
                     <div class="flow-desc">输入出发地和目的地</div>
                 </div>
                 <div class="flow-step">
                     <div class="flow-number">2</div>
                     <img src="../images/34.jpg" alt="选择路线" class="flow-image">
                     <div class="flow-title">选择路线</div>
-                    <div class="flow-desc">选择您偏好的选项</div>
+                    <div class="flow-desc">选择首选选项</div>
                 </div>
                 <div class="flow-step">
                     <div class="flow-number">3</div>
                     <img src="../images/36.jpg" alt="查看详情" class="flow-image">
                     <div class="flow-title">查看详情</div>
-                    <div class="flow-desc">查看分步指引</div>
+                    <div class="flow-desc">查看逐步指引</div>
                 </div>
                 <div class="flow-step">
                     <div class="flow-number">4</div>
                     <img src="../images/38.jpg" alt="导航" class="flow-image">
                     <div class="flow-title">导航</div>
-                    <div class="flow-desc">跟随实时指引</div>
+                    <div class="flow-desc">跟随实时引导</div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Languages Section -->
     <section class="languages">
         <div class="section-header">
             <h2 class="section-title">多语言支持</h2>
@@ -850,44 +786,37 @@
             <div class="coming-soon-langs">Tiếng Việt (越南语) • ภาษาไทย (泰语) • Bahasa Indonesia (印尼语)</div>
         </div>
     </section>
-
-    <!-- API Usage Section -->
     <section class="api-usage">
         <div class="api-container">
             <h2 class="api-title">Kakao API使用目的</h2>
-            <p style="color: var(--text-light); margin-bottom: 1.5rem;">
-                本应用使用Kakao API的目的：
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">
+                本应用使用Kakao API的目的:
             </p>
             <ul class="api-list">
-                <li><strong>Kakao地图API：</strong>地图显示和路线导航</li>
-                <li><strong>Kakao登录：</strong>便捷登录（可选）</li>
+                <li><strong>Kakao地图API:</strong> 地图显示和路线导航</li>
+                <li><strong>Kakao登录:</strong> 便捷登录 (可选)</li>
             </ul>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-logo">KoreaGo</div>
-            <div class="footer-info">开发: <strong>MonoApps</strong></div>
+            <div class="footer-info">开发者: <strong>MonoApps</strong></div>
             <div class="footer-info">
-                联系: <a href="mailto:monoappskr@gmail.com" class="footer-email">monoappskr@gmail.com</a>
+                联系方式: <a href="mailto:monoappskr@gmail.com" class="footer-email">monoappskr@gmail.com</a>
             </div>
             <div class="footer-copyright">
                 &copy; 2026 MonoApps. All rights reserved.
             </div>
         </div>
     </footer>
-
     <script>
         const langBtn = document.getElementById('langBtn');
         const langDropdown = document.getElementById('langDropdown');
-
         langBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             langDropdown.classList.toggle('active');
         });
-
         document.addEventListener('click', (e) => {
             if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) {
                 langDropdown.classList.remove('active');
