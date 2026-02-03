@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KoreaGo - Navigate Korea Like a Local</title>
+    <meta name="description" content="The easiest way for foreigners to use public transit in Korea. Search in English, get directions in your language.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00C853;
+            --primary-dark: #00A844;
+            --secondary: #0288D1;
+            --secondary-dark: #0277BD;
+            --bg: #FAFAFA;
+            --text: #1A1A1A;
+            --text-light: #6B6B6B;
+            --white: #FFFFFF;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.16);
+        }
+
+        body {
+            font-family: 'DM Sans', 'Noto Sans KR', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 0.625rem 1.5rem;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(0, 200, 83, 0.3);
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 200, 83, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #F0FFF4 0%, #E8F5E9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 200, 83, 0.1) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-30px, 30px) rotate(5deg); }
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 200, 83, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-tagline-kr {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .hero-description-kr {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .phone-mockup {
+            position: relative;
+            width: 280px;
+            height: auto;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+            border: 8px solid #1A1A1A;
+            background: #000;
+            animation: floatPhone 6s ease-in-out infinite;
+        }
+
+        @keyframes floatPhone {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .phone-mockup img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.75rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 24px rgba(0, 200, 83, 0.3);
+        }
+
+        .feature-screenshot {
+            width: 100%;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* User Flow Section */
+        .user-flow {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #E3F2FD 0%, #E8F5E9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .user-flow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .flow-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .flow-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .flow-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .flow-step::after {
+            content: '→';
+            position: absolute;
+            right: -1.5rem;
+            top: 40%;
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 900;
+        }
+
+        .flow-step:last-child::after {
+            display: none;
+        }
+
+        .flow-number {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin: 0 auto 1rem;
+            box-shadow: 0 4px 12px rgba(0, 200, 83, 0.4);
+        }
+
+        .flow-image {
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto 1rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .flow-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-desc {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        /* Languages Section */
+        .languages {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .languages-grid {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .language-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: var(--bg);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .language-item:hover {
+            background: var(--white);
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .language-flag {
+            font-size: 3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .language-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .coming-soon {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+            border-radius: 16px;
+            text-align: center;
+            border-left: 4px solid #FF9800;
+        }
+
+        .coming-soon-title {
+            font-weight: 700;
+            color: #E65100;
+            margin-bottom: 0.5rem;
+        }
+
+        .coming-soon-langs {
+            color: #BF360C;
+            font-weight: 500;
+        }
+
+        /* API Section */
+        .api-usage {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
+        }
+
+        .api-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .api-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .api-list {
+            list-style: none;
+        }
+
+        .api-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #E0E0E0;
+            font-size: 1.125rem;
+            color: var(--text-light);
+        }
+
+        .api-list li:last-child {
+            border-bottom: none;
+        }
+
+        .api-list li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: 900;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1A1A1A;
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-info {
+            font-size: 1rem;
+            color: #BDBDBD;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-email {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .footer-email:hover {
+            color: var(--primary-dark);
+        }
+
+        .footer-copyright {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            font-size: 0.875rem;
+            color: #757575;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.25rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .flow-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .flow-step::after {
+                content: '↓';
+                right: auto;
+                top: auto;
+                bottom: -1.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .languages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .nav-cta {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .phone-mockup {
+                width: 220px;
+            }
+
+            .features, .user-flow, .languages, .api-usage {
+                padding: 4rem 1rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .api-container {
+                padding: 2rem;
+            }
+
+            .languages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">KoreaGo</div>
+            <a href="#features" class="nav-cta">Learn More</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">Public Transit Navigation</div>
+                <h1>KoreaGo</h1>
+                <div class="hero-tagline">Navigate Korea Like a Local</div>
+                <div class="hero-tagline-kr">외국인을 위한 한국 대중교통 앱</div>
+                <p class="hero-description">
+                    The easiest way for foreigners to use public transit in Korea. Search in English, get directions in your language.
+                </p>
+                <p class="hero-description-kr">
+                    한국을 방문하는 외국인이 대중교통을 쉽게 이용할 수 있도록 돕는 앱입니다. 영어로 검색하고, 모국어로 안내받으세요.
+                </p>
+            </div>
+            <div class="hero-image">
+                <div class="phone-mockup">
+                    <img src="images/32.jpg" alt="KoreaGo App Screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2 class="section-title">Core Features</h2>
+            <p class="section-subtitle">Everything you need to navigate Korea's public transit system with confidence</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="images/32.jpg" alt="Easy Search" class="feature-screenshot">
+                <h3 class="feature-title">🔍 Easy Search</h3>
+                <p class="feature-description">
+                    <strong>Bilingual Search:</strong> Type in English, find Korean stations instantly. View station names in both English and Korean with convenient recent search history.
+                </p>
+            </div>
+            <div class="feature-card">
+                <img src="images/34.jpg" alt="Smart Route Options" class="feature-screenshot">
+                <h3 class="feature-title">🚇 Smart Route Options</h3>
+                <p class="feature-description">
+                    <strong>Optimized Routes:</strong> Choose between fastest route, fewest transfers, or cheapest fare. See detailed time, transfer count, and cost for each option.
+                </p>
+            </div>
+            <div class="feature-card">
+                <img src="images/36.jpg" alt="Step-by-Step Guidance" class="feature-screenshot">
+                <h3 class="feature-title">📍 Step-by-Step Guidance</h3>
+                <p class="feature-description">
+                    <strong>Clear Directions:</strong> Follow detailed walking → subway → transfer instructions with bilingual station names displayed at every step.
+                </p>
+            </div>
+            <div class="feature-card">
+                <img src="images/38.jpg" alt="Real-time Navigation" class="feature-screenshot">
+                <h3 class="feature-title">🔔 Real-time Navigation</h3>
+                <p class="feature-description">
+                    <strong>Arrival Alerts:</strong> Live navigation with smart alighting alerts and voice guidance. Never miss your stop again.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Flow Section -->
+    <section class="user-flow">
+        <div class="flow-container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Simple 4-step journey from search to destination</p>
+            </div>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="flow-number">1</div>
+                    <img src="images/32.jpg" alt="Search" class="flow-image">
+                    <div class="flow-title">Search Stations</div>
+                    <div class="flow-desc">Enter departure and destination</div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">2</div>
+                    <img src="images/34.jpg" alt="Choose Route" class="flow-image">
+                    <div class="flow-title">Choose Route</div>
+                    <div class="flow-desc">Select your preferred option</div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">3</div>
+                    <img src="images/36.jpg" alt="View Details" class="flow-image">
+                    <div class="flow-title">View Details</div>
+                    <div class="flow-desc">Review step-by-step directions</div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">4</div>
+                    <img src="images/38.jpg" alt="Navigate" class="flow-image">
+                    <div class="flow-title">Navigate</div>
+                    <div class="flow-desc">Follow real-time guidance</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section class="languages">
+        <div class="section-header">
+            <h2 class="section-title">Multilingual Support</h2>
+            <p class="section-subtitle">Navigate Korea in your preferred language</p>
+        </div>
+        <div class="languages-grid">
+            <div class="language-item">
+                <div class="language-flag">🇺🇸</div>
+                <div class="language-name">English</div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">🇨🇳</div>
+                <div class="language-name">简体中文</div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">🇹🇼</div>
+                <div class="language-name">繁體中文</div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">🇯🇵</div>
+                <div class="language-name">日本語</div>
+            </div>
+        </div>
+        <div class="coming-soon">
+            <div class="coming-soon-title">🚀 Coming Soon</div>
+            <div class="coming-soon-langs">Tiếng Việt (Vietnamese) • ภาษาไทย (Thai) • Bahasa Indonesia (Indonesian)</div>
+        </div>
+    </section>
+
+    <!-- API Usage Section -->
+    <section class="api-usage">
+        <div class="api-container">
+            <h2 class="api-title">카카오 API 사용 목적</h2>
+            <p style="color: var(--text-light); margin-bottom: 1.5rem;">
+                본 앱은 다음과 같은 목적으로 카카오 API를 사용합니다:
+            </p>
+            <ul class="api-list">
+                <li><strong>카카오맵 API:</strong> 지도 표시 및 경로 안내</li>
+                <li><strong>카카오 로그인:</strong> 간편 로그인 (선택사항)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">KoreaGo</div>
+            <div class="footer-info">Developed by <strong>MonoApps</strong></div>
+            <div class="footer-info">
+                Contact: <a href="mailto:monoappskr@gmail.com" class="footer-email">monoappskr@gmail.com</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2026 MonoApps. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
