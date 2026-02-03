@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KoreaGo - 외국인을 위한 한국 대중교통 앱</title>
-    <meta name="description" content="한국을 방문하는 외국인이 대중교통을 쉽게 이용할 수 있도록 돕는 앱입니다.">
-    <link rel="canonical" href="https://monoapps.kr/koreago/">
+    <title>KoreaGo - Navigate Korea Like a Local</title>
+    <meta name="description" content="The easiest way for foreigners to use public transit in Korea. Search in English, get directions in your language.">
+    <link rel="canonical" href="https://monoapps.kr/koreago/en/">
     <link rel="alternate" hreflang="ko" href="https://monoapps.kr/koreago/">
     <link rel="alternate" hreflang="en" href="https://monoapps.kr/koreago/en/">
     <link rel="alternate" hreflang="ja" href="https://monoapps.kr/koreago/ja/">
@@ -38,7 +38,7 @@
         }
 
         body {
-            font-family: 'Noto Sans KR', 'DM Sans', -apple-system, sans-serif;
+            font-family: 'DM Sans', 'Noto Sans KR', -apple-system, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
@@ -238,7 +238,7 @@
             margin-bottom: 0.75rem;
         }
 
-        .hero-tagline-en {
+        .hero-tagline-kr {
             font-size: 1.125rem;
             color: var(--text-light);
             margin-bottom: 1.5rem;
@@ -251,7 +251,7 @@
             line-height: 1.7;
         }
 
-        .hero-description-en {
+        .hero-description-kr {
             font-size: 1rem;
             color: var(--text-light);
             margin-bottom: 2rem;
@@ -358,6 +358,19 @@
         .feature-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 24px rgba(0, 200, 83, 0.3);
         }
 
         .feature-screenshot {
@@ -709,17 +722,17 @@
             <div class="logo">KoreaGo</div>
             <div class="nav-right">
                 <div class="lang-selector">
-                    <button class="lang-btn" id="langBtn">한국어 ▼</button>
+                    <button class="lang-btn" id="langBtn">English ▼</button>
                     <div class="lang-dropdown" id="langDropdown">
-                        <a href="./" class="active">한국어</a>
-                        <a href="en/">English</a>
-                        <a href="ja/">日本語</a>
-                        <a href="zh/">中文</a>
-                        <a href="es/">Español</a>
-                        <a href="pt/">Português</a>
+                        <a href="../">한국어</a>
+                        <a href="./" class="active">English</a>
+                        <a href="../ja/">日本語</a>
+                        <a href="../zh/">中文</a>
+                        <a href="../es/">Español</a>
+                        <a href="../pt/">Português</a>
                     </div>
                 </div>
-                <a href="#features" class="nav-cta">자세히 보기</a>
+                <a href="#features" class="nav-cta">Learn More</a>
             </div>
         </div>
     </nav>
@@ -728,20 +741,20 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-badge">대중교통 내비게이션</div>
+                <div class="hero-badge">Public Transit Navigation</div>
                 <h1>KoreaGo</h1>
-                <div class="hero-tagline">외국인을 위한 한국 대중교통 앱</div>
-                <div class="hero-tagline-en">Navigate Korea Like a Local</div>
+                <div class="hero-tagline">Navigate Korea Like a Local</div>
+                <div class="hero-tagline-kr">외국인을 위한 한국 대중교통 앱</div>
                 <p class="hero-description">
-                    한국을 방문하는 외국인이 대중교통을 쉽게 이용할 수 있도록 돕는 앱입니다. 영어로 검색하고, 모국어로 안내받으세요.
-                </p>
-                <p class="hero-description-en">
                     The easiest way for foreigners to use public transit in Korea. Search in English, get directions in your language.
+                </p>
+                <p class="hero-description-kr">
+                    한국을 방문하는 외국인이 대중교통을 쉽게 이용할 수 있도록 돕는 앱입니다. 영어로 검색하고, 모국어로 안내받으세요.
                 </p>
             </div>
             <div class="hero-image">
                 <div class="phone-mockup">
-                    <img src="images/32.jpg" alt="KoreaGo 앱 스크린샷">
+                    <img src="../images/32.jpg" alt="KoreaGo App Screenshot">
                 </div>
             </div>
         </div>
@@ -750,36 +763,36 @@
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="section-header">
-            <h2 class="section-title">주요 기능</h2>
-            <p class="section-subtitle">한국 대중교통을 자신감 있게 이용하는 데 필요한 모든 것</p>
+            <h2 class="section-title">Core Features</h2>
+            <p class="section-subtitle">Everything you need to navigate Korea's public transit system with confidence</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
-                <img src="images/32.jpg" alt="간편 검색" class="feature-screenshot">
-                <h3 class="feature-title">🔍 간편 검색</h3>
+                <img src="images/32.jpg" alt="Easy Search" class="feature-screenshot">
+                <h3 class="feature-title">🔍 Easy Search</h3>
                 <p class="feature-description">
-                    <strong>다국어 검색:</strong> 영문으로 입력하면 한국 역을 즉시 찾을 수 있습니다. 영문과 한글로 역 이름을 확인하고 최근 검색 기록을 편리하게 이용하세요.
+                    <strong>Bilingual Search:</strong> Type in English, find Korean stations instantly. View station names in both English and Korean with convenient recent search history.
                 </p>
             </div>
             <div class="feature-card">
-                <img src="images/34.jpg" alt="스마트 경로" class="feature-screenshot">
-                <h3 class="feature-title">🚇 스마트 경로 옵션</h3>
+                <img src="../images/34.jpg" alt="Smart Route Options" class="feature-screenshot">
+                <h3 class="feature-title">🚇 Smart Route Options</h3>
                 <p class="feature-description">
-                    <strong>최적화된 경로:</strong> 최단 시간, 최소 환승, 최저 요금 중 선택하세요. 각 옵션의 소요 시간, 환승 횟수, 요금을 상세히 확인할 수 있습니다.
+                    <strong>Optimized Routes:</strong> Choose between fastest route, fewest transfers, or cheapest fare. See detailed time, transfer count, and cost for each option.
                 </p>
             </div>
             <div class="feature-card">
-                <img src="images/36.jpg" alt="단계별 안내" class="feature-screenshot">
-                <h3 class="feature-title">📍 단계별 안내</h3>
+                <img src="../images/36.jpg" alt="Step-by-Step Guidance" class="feature-screenshot">
+                <h3 class="feature-title">📍 Step-by-Step Guidance</h3>
                 <p class="feature-description">
-                    <strong>명확한 길안내:</strong> 도보 → 지하철 → 환승까지 상세한 안내를 따라가세요. 모든 단계에서 영문과 한글 역명이 함께 표시됩니다.
+                    <strong>Clear Directions:</strong> Follow detailed walking → subway → transfer instructions with bilingual station names displayed at every step.
                 </p>
             </div>
             <div class="feature-card">
-                <img src="images/38.jpg" alt="실시간 내비게이션" class="feature-screenshot">
-                <h3 class="feature-title">🔔 실시간 내비게이션</h3>
+                <img src="../images/38.jpg" alt="Real-time Navigation" class="feature-screenshot">
+                <h3 class="feature-title">🔔 Real-time Navigation</h3>
                 <p class="feature-description">
-                    <strong>하차 알림:</strong> 스마트 하차 알림과 음성 안내로 실시간 내비게이션을 제공합니다. 내릴 역을 절대 놓치지 마세요.
+                    <strong>Arrival Alerts:</strong> Live navigation with smart alighting alerts and voice guidance. Never miss your stop again.
                 </p>
             </div>
         </div>
@@ -789,33 +802,33 @@
     <section class="user-flow">
         <div class="flow-container">
             <div class="section-header">
-                <h2 class="section-title">이용 방법</h2>
-                <p class="section-subtitle">검색부터 목적지까지 간단한 4단계</p>
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Simple 4-step journey from search to destination</p>
             </div>
             <div class="flow-steps">
                 <div class="flow-step">
                     <div class="flow-number">1</div>
-                    <img src="images/32.jpg" alt="검색" class="flow-image">
-                    <div class="flow-title">역 검색</div>
-                    <div class="flow-desc">출발지와 도착지 입력</div>
+                    <img src="images/32.jpg" alt="Search" class="flow-image">
+                    <div class="flow-title">Search Stations</div>
+                    <div class="flow-desc">Enter departure and destination</div>
                 </div>
                 <div class="flow-step">
                     <div class="flow-number">2</div>
-                    <img src="images/34.jpg" alt="경로 선택" class="flow-image">
-                    <div class="flow-title">경로 선택</div>
-                    <div class="flow-desc">선호하는 옵션 선택</div>
+                    <img src="images/34.jpg" alt="Choose Route" class="flow-image">
+                    <div class="flow-title">Choose Route</div>
+                    <div class="flow-desc">Select your preferred option</div>
                 </div>
                 <div class="flow-step">
                     <div class="flow-number">3</div>
-                    <img src="images/36.jpg" alt="상세 보기" class="flow-image">
-                    <div class="flow-title">상세 확인</div>
-                    <div class="flow-desc">단계별 길안내 확인</div>
+                    <img src="images/36.jpg" alt="View Details" class="flow-image">
+                    <div class="flow-title">View Details</div>
+                    <div class="flow-desc">Review step-by-step directions</div>
                 </div>
                 <div class="flow-step">
                     <div class="flow-number">4</div>
-                    <img src="images/38.jpg" alt="내비게이션" class="flow-image">
-                    <div class="flow-title">내비게이션</div>
-                    <div class="flow-desc">실시간 안내 따라가기</div>
+                    <img src="images/38.jpg" alt="Navigate" class="flow-image">
+                    <div class="flow-title">Navigate</div>
+                    <div class="flow-desc">Follow real-time guidance</div>
                 </div>
             </div>
         </div>
@@ -824,8 +837,8 @@
     <!-- Languages Section -->
     <section class="languages">
         <div class="section-header">
-            <h2 class="section-title">다국어 지원</h2>
-            <p class="section-subtitle">원하는 언어로 한국을 탐험하세요</p>
+            <h2 class="section-title">Multilingual Support</h2>
+            <p class="section-subtitle">Navigate Korea in your preferred language</p>
         </div>
         <div class="languages-grid">
             <div class="language-item">
@@ -846,8 +859,8 @@
             </div>
         </div>
         <div class="coming-soon">
-            <div class="coming-soon-title">🚀 출시 예정</div>
-            <div class="coming-soon-langs">Tiếng Việt (베트남어) • ภาษาไทย (태국어) • Bahasa Indonesia (인도네시아어)</div>
+            <div class="coming-soon-title">🚀 Coming Soon</div>
+            <div class="coming-soon-langs">Tiếng Việt (Vietnamese) • ภาษาไทย (Thai) • Bahasa Indonesia (Indonesian)</div>
         </div>
     </section>
 
@@ -869,9 +882,9 @@
     <footer>
         <div class="footer-container">
             <div class="footer-logo">KoreaGo</div>
-            <div class="footer-info">개발사: <strong>MonoApps</strong></div>
+            <div class="footer-info">Developed by <strong>MonoApps</strong></div>
             <div class="footer-info">
-                문의: <a href="mailto:monoappskr@gmail.com" class="footer-email">monoappskr@gmail.com</a>
+                Contact: <a href="mailto:monoappskr@gmail.com" class="footer-email">monoappskr@gmail.com</a>
             </div>
             <div class="footer-copyright">
                 &copy; 2026 MonoApps. All rights reserved.
