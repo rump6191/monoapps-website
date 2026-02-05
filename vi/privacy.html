@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Chính Sách Bảo Mật - MonoApps</title>
+    <meta name="description" content="Chính Sách Bảo Mật của MonoApps">
+    <meta name="keywords" content="MonoApps, bảo mật, quyền riêng tư, chính sách">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chính Sách Bảo Mật - MonoApps">
+    <meta property="og:description" content="Chính Sách Bảo Mật của MonoApps">
+    <meta property="og:url" content="https://monoapps.kr/vi/privacy.html">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="MonoApps">
+    <link rel="canonical" href="https://monoapps.kr/vi/privacy.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/privacy.html">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/privacy.html">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/privacy.html">
+    <link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/privacy.html">
+    <link rel="alternate" hreflang="es" href="https://monoapps.kr/es/privacy.html">
+    <link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/privacy.html">
+    <link rel="alternate" hreflang="vi" href="https://monoapps.kr/vi/privacy.html">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/privacy.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; min-height: 100vh; overflow-x: hidden; }
+        .bg-gradient { position: fixed; width: 150vw; height: 150vh; top: -25vh; left: -25vw; background: conic-gradient(from 180deg at 50% 50%, #ee7752, #e73c7e, #23a6d5, #23d5ab); filter: blur(100px); animation: rotate 20s linear infinite; z-index: -1; opacity: 0.7; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        nav { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background: rgba(0,0,0,0.3); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero { min-height: 30vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 40px; text-align: center; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 0.5rem; }
+        .hero p { opacity: 0.6; }
+        main { max-width: 800px; margin: 0 auto; padding: 0 2rem 6rem; }
+        .content-card { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 25px; padding: 3rem; }
+        .last-updated { font-size: 0.9rem; opacity: 0.5; margin-bottom: 2rem; }
+        .content-card p { color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 1rem; }
+        .content-card h2 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; color: white; }
+        .content-card ul { padding-left: 20px; color: rgba(255,255,255,0.7); margin-bottom: 1rem; }
+        .content-card li { padding: 0.3rem 0; line-height: 1.6; }
+        .content-card a { color: #e73c7e; font-weight: 600; }
+        footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+        @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .mobile-menu-btn { display: block; } .content-card { padding: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    <nav>
+        <a href="index.html" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="index.html#apps">Ứng Dụng Di Động</a>
+            <a href="index.html#services">Dịch Vụ Web</a>
+            <a href="support.html">Hỗ Trợ</a>
+            <a href="news.html">Tin Tức</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">VI</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="../privacy.html">한국어</a>
+                    <a href="../en/privacy.html">English</a>
+                    <a href="../ja/privacy.html">日本語</a>
+                    <a href="../zh/privacy.html">中文</a>
+                    <a href="../es/privacy.html">Español</a>
+                    <a href="../pt/privacy.html">Português</a>
+                    <a href="privacy.html">Tiếng Việt</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#apps">Ứng Dụng Di Động</a>
+        <a href="index.html#services">Dịch Vụ Web</a>
+        <a href="support.html">Hỗ Trợ</a>
+        <a href="news.html">Tin Tức</a>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 0.5rem; padding-top: 0.5rem;">
+            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">Ngôn ngữ</div>
+            <a href="../privacy.html">한국어</a>
+            <a href="../en/privacy.html">English</a>
+            <a href="../ja/privacy.html">日本語</a>
+            <a href="../zh/privacy.html">中文</a>
+            <a href="../es/privacy.html">Español</a>
+            <a href="../pt/privacy.html">Português</a>
+            <a href="privacy.html" style="color: #e73c7e;">Tiếng Việt</a>
+        </div>
+    </div>
+    <section class="hero">
+        <div>
+            <h1>Chính Sách Bảo Mật</h1>
+            <p>Cách chúng tôi xử lý dữ liệu của bạn</p>
+        </div>
+    </section>
+    <main>
+        <div class="content-card">
+            <p class="last-updated">Cập nhật lần cuối: 16 tháng 1 năm 2026</p>
+            <p>Chính Sách Bảo Mật này áp dụng cho tất cả các ứng dụng di động do MonoApps (sau đây gọi là "Công ty") cung cấp.</p>
+
+            <h2>1. Mục Đích Thu Thập và Sử Dụng Thông Tin Cá Nhân</h2>
+            <p>Công ty thu thập và sử dụng thông tin cá nhân cho các mục đích sau:</p>
+            <ul>
+                <li>Cung cấp và vận hành các dịch vụ ứng dụng</li>
+                <li>Phản hồi các yêu cầu của khách hàng</li>
+                <li>Cải thiện dịch vụ và phát triển các tính năng mới</li>
+                <li>Cung cấp quảng cáo được cá nhân hóa (cho các dịch vụ miễn phí có quảng cáo)</li>
+            </ul>
+
+            <h2>2. Thông Tin Cá Nhân Được Thu Thập</h2>
+            <p>Công ty chỉ thu thập thông tin tối thiểu cần thiết để cung cấp dịch vụ. Tùy thuộc vào các tính năng của ứng dụng, các thông tin sau có thể được thu thập:</p>
+            <ul>
+                <li><strong>Camera:</strong> Quét mã QR/mã vạch, chụp ảnh, v.v.</li>
+                <li><strong>Thư Viện Ảnh:</strong> Chọn và lưu hình ảnh</li>
+                <li><strong>Micrô:</strong> Các tính năng nhận dạng giọng nói và ghi âm</li>
+                <li><strong>Vị Trí:</strong> Các dịch vụ dựa trên vị trí</li>
+                <li><strong>Danh Bạ:</strong> Các tính năng liên quan đến danh bạ</li>
+                <li><strong>Bộ Nhớ:</strong> Lưu và tải tệp</li>
+            </ul>
+            <p><em>※ Mỗi ứng dụng chỉ yêu cầu các quyền cần thiết. Dữ liệu được thu thập chỉ được xử lý trên thiết bị và không được truyền đến máy chủ. Thông tin chi tiết về quyền có thể được tìm thấy trên trang cửa hàng của mỗi ứng dụng.</em></p>
+            <ul>
+                <li><strong>Yêu Cầu Của Khách Hàng:</strong> Địa chỉ email (cho mục đích hỗ trợ khách hàng)</li>
+            </ul>
+
+            <h2>3. Quảng Cáo và Dịch Vụ Bên Thứ Ba</h2>
+            <p>Các ứng dụng của chúng tôi hiển thị quảng cáo thông qua Google AdMob. Các thông tin sau có thể được thu thập cho dịch vụ quảng cáo:</p>
+            <ul>
+                <li><strong>Mã Nhận Dạng Quảng Cáo:</strong> IDFA cho iOS hoặc GAID cho Android</li>
+                <li><strong>Thông Tin Thiết Bị:</strong> Mẫu thiết bị, phiên bản hệ điều hành</li>
+                <li><strong>Dữ Liệu Sử Dụng Ứng Dụng:</strong> Thông tin về lượt hiển thị và nhấp chuột quảng cáo</li>
+            </ul>
+            <p>Thông tin này được xử lý theo Chính Sách Bảo Mật của Google. Để biết thêm chi tiết, vui lòng tham khảo <a href="https://policies.google.com/privacy" target="_blank">Chính Sách Bảo Mật của Google</a>.</p>
+            <p>Người dùng có thể giới hạn theo dõi quảng cáo hoặc đặt lại mã nhận dạng quảng cáo của họ trong cài đặt thiết bị.</p>
+
+            <h2>4. Thời Gian Lưu Giữ và Sử Dụng Thông Tin Cá Nhân</h2>
+            <p>Công ty hủy thông tin cá nhân ngay sau khi mục đích thu thập và sử dụng đã đạt được. Tuy nhiên, nếu luật pháp có liên quan yêu cầu lưu giữ, thông tin sẽ được lưu giữ trong khoảng thời gian được quy định bởi các luật đó.</p>
+            <ul>
+                <li>Hồ sơ yêu cầu của khách hàng: 1 năm sau khi giải quyết</li>
+                <li>Dữ liệu được lưu trữ trong ứng dụng: Chỉ được lưu trữ trên thiết bị và bị xóa khi gỡ cài đặt ứng dụng</li>
+            </ul>
+
+            <h2>5. Quy Trình Hủy Thông Tin Cá Nhân</h2>
+            <p>Về nguyên tắc, Công ty hủy thông tin cá nhân ngay sau khi mục đích xử lý đã đạt được. Các quy trình, thời hạn và phương pháp hủy như sau:</p>
+            <ul>
+                <li><strong>Quy Trình Hủy:</strong> Được lưu trữ trong một khoảng thời gian nhất định theo chính sách nội bộ sau khi đạt được mục đích, sau đó bị hủy</li>
+                <li><strong>Phương Pháp Hủy:</strong> Các tệp điện tử được xóa vĩnh viễn bằng các phương pháp ngăn chặn khôi phục</li>
+            </ul>
+
+            <h2>6. Quyền Của Người Dùng</h2>
+            <p>Người dùng có thể thực hiện các quyền sau:</p>
+            <ul>
+                <li>Yêu cầu truy cập thông tin cá nhân</li>
+                <li>Yêu cầu sửa thông tin cá nhân</li>
+                <li>Yêu cầu xóa thông tin cá nhân</li>
+                <li>Yêu cầu tạm dừng xử lý thông tin cá nhân</li>
+            </ul>
+            <p>Các quyền này có thể được thực hiện thông qua thông tin liên hệ bên dưới và Công ty sẽ thực hiện hành động ngay lập tức.</p>
+
+            <h2>7. Trách Nhiệm Bảo Mật và Thông Tin Liên Hệ</h2>
+            <p>Đối với các yêu cầu, khiếu nại hoặc bồi thường thiệt hại liên quan đến thông tin cá nhân, vui lòng liên hệ:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:monoappskr@gmail.com">monoappskr@gmail.com</a></li>
+            </ul>
+
+            <h2>8. Thay Đổi Chính Sách Bảo Mật</h2>
+            <p>Chính Sách Bảo Mật này có thể được sửa đổi để phản ánh những thay đổi trong luật pháp hoặc dịch vụ. Các thay đổi sẽ được thông báo thông qua ứng dụng hoặc trang web và chính sách được sửa đổi sẽ có hiệu lực kể từ ngày thông báo.</p>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">Chính Sách Bảo Mật</a>
+            <a href="terms.html">Điều Khoản Dịch Vụ</a>
+            <a href="support.html">Hỗ Trợ</a>
+            <a href="mailto:monoappskr@gmail.com">Liên Hệ</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. Bảo lưu mọi quyền.</p>
+    </footer>
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('active'); });
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        menu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => menu.classList.remove('active')); });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
