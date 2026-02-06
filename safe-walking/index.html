@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Walking - 야간 안전 보행 길찾기</title>
+    <meta name="description" content="야간 보행자를 위한 안전 경로 추천 서비스. CCTV, 가로등이 많은 안전한 길로 안내합니다.">
+    <meta name="keywords" content="Safe Walking, 야간 안전, 보행 안전, 안전 경로, CCTV, 가로등, 긴급 신고, MonoApps">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Safe Walking - 야간 안전 보행 길찾기">
+    <meta property="og:description" content="야간 보행자를 위한 안전 경로 추천 서비스. CCTV, 가로등이 많은 안전한 길로 안내합니다.">
+    <meta property="og:url" content="https://monoapps.kr/safe-walking/">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="MonoApps">
+    <link rel="canonical" href="https://monoapps.kr/safe-walking/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Inter', -apple-system, sans-serif;
+            background: #0a0a0f;
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Gradient Background */
+        .bg-gradient {
+            position: fixed;
+            width: 150vw;
+            height: 150vh;
+            top: -25vh;
+            left: -25vw;
+            background: conic-gradient(from 180deg at 50% 50%, #6366f1, #8b5cf6, #a855f7, #6366f1);
+            filter: blur(120px);
+            animation: rotate 25s linear infinite;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-cta {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(99, 102, 241, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 2rem 4rem;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            padding: 48px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            color: #a5b4fc;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #a5b4fc;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 100px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-mockup {
+            width: 300px;
+            border-radius: 36px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(99, 102, 241, 0.3);
+            border: 6px solid #1a1a2e;
+            background: #000;
+            animation: floatPhone 6s ease-in-out infinite;
+        }
+
+        @keyframes floatPhone {
+            0%, 100% { transform: translateY(0px) rotate(-2deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        .phone-mockup img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .feature-screenshot {
+            width: 100%;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: white;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+        }
+
+        /* User Flow Section */
+        .user-flow {
+            padding: 6rem 2rem;
+        }
+
+        .flow-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .flow-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .flow-step {
+            text-align: center;
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem 1rem;
+            transition: all 0.3s;
+        }
+
+        .flow-step:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .flow-step::after {
+            content: '→';
+            position: absolute;
+            right: -1.5rem;
+            top: 40%;
+            font-size: 2rem;
+            color: #a5b4fc;
+            font-weight: 900;
+        }
+
+        .flow-step:last-child::after {
+            display: none;
+        }
+
+        .flow-number {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 1rem;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.5);
+        }
+
+        .flow-image {
+            width: 100%;
+            max-width: 180px;
+            margin: 0 auto 1rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        .flow-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-desc {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Safety Features Section */
+        .safety-features {
+            padding: 6rem 2rem;
+        }
+
+        .safety-grid {
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .safety-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .safety-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .safety-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .safety-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .safety-desc {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* API Section */
+        .api-usage {
+            padding: 6rem 2rem;
+        }
+
+        .api-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .api-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .api-list {
+            list-style: none;
+        }
+
+        .api-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .api-list li:last-child {
+            border-bottom: none;
+        }
+
+        .api-list li::before {
+            content: '✓';
+            color: #a5b4fc;
+            font-weight: 900;
+            margin-right: 1rem;
+            font-size: 1.25rem;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0,0,0,0.5);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-info {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-email {
+            color: #a5b4fc;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .footer-email:hover {
+            color: #6366f1;
+        }
+
+        .footer-copyright {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-content {
+                padding: 32px 24px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .flow-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .flow-step::after {
+                content: '↓';
+                right: auto;
+                top: auto;
+                bottom: -1.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .safety-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .hero {
+                padding: 100px 1rem 3rem;
+            }
+
+            .phone-mockup {
+                width: 250px;
+            }
+
+            .features, .user-flow, .safety-features, .api-usage {
+                padding: 4rem 1rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .api-container {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">🛡️</div>
+                <span class="logo-text">Safe Walking</span>
+            </a>
+            <a href="#features" class="nav-cta">자세히 보기</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">야간 안전 보행 서비스</div>
+                <h1>Safe Walking</h1>
+                <div class="hero-tagline">야간 안전 보행 길찾기</div>
+                <p class="hero-description">
+                    야간 보행자, 여성, 1인 가구를 위한 안전 경로 추천 서비스입니다.
+                    CCTV, 가로등이 많은 안전한 길로 안내하고, 보호자에게 실시간 위치를 공유합니다.
+                </p>
+                <div class="hero-features">
+                    <span class="hero-feature">📹 CCTV 커버리지</span>
+                    <span class="hero-feature">💡 가로등 밝은 길</span>
+                    <span class="hero-feature">📍 실시간 위치 공유</span>
+                    <span class="hero-feature">🚨 긴급 신고</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="phone-mockup">
+                    <img src="images/main.png" alt="Safe Walking 앱 메인 화면">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2 class="section-title">주요 기능</h2>
+            <p class="section-subtitle">안전한 야간 귀가를 위한 모든 기능</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="images/main.png" alt="안전 경로 추천" class="feature-screenshot">
+                <h3 class="feature-title">🗺️ 안전 경로 추천</h3>
+                <p class="feature-description">
+                    CCTV, 가로등, 편의점이 많은 안전한 길을 우선 추천합니다.
+                    안전 점수로 경로의 안전도를 한눈에 확인할 수 있습니다.
+                </p>
+            </div>
+            <div class="feature-card">
+                <img src="images/safety.png" alt="안전 점수" class="feature-screenshot">
+                <h3 class="feature-title">📊 실시간 안전 점수</h3>
+                <p class="feature-description">
+                    CCTV, 가로등, 치안, 유동인구, 편의시설 등을 종합 분석하여
+                    100점 만점의 안전 점수를 제공합니다. 위험 구역은 자동 회피합니다.
+                </p>
+            </div>
+            <div class="feature-card">
+                <img src="images/start.png" alt="귀가 시작" class="feature-screenshot">
+                <h3 class="feature-title">🏠 귀가 시작</h3>
+                <p class="feature-description">
+                    귀가를 시작하면 등록된 보호자에게 실시간 위치가 공유됩니다.
+                    예상 소요 시간을 선택하고 안전하게 귀가하세요.
+                </p>
+            </div>
+            <div class="feature-card">
+                <img src="images/walking.png" alt="실시간 위치 공유" class="feature-screenshot">
+                <h3 class="feature-title">📍 실시간 위치 공유</h3>
+                <p class="feature-description">
+                    귀가 중 보호자에게 실시간으로 위치가 공유됩니다.
+                    시작 시간, 예상 도착 시간을 확인하고 안전하게 도착하세요.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Flow Section -->
+    <section class="user-flow">
+        <div class="flow-container">
+            <div class="section-header">
+                <h2 class="section-title">이용 방법</h2>
+                <p class="section-subtitle">간단한 4단계로 안전하게 귀가하세요</p>
+            </div>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="flow-number">1</div>
+                    <img src="images/login.png" alt="로그인" class="flow-image">
+                    <div class="flow-title">로그인</div>
+                    <div class="flow-desc">카카오/구글 간편 로그인</div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">2</div>
+                    <img src="images/main.png" alt="목적지 설정" class="flow-image">
+                    <div class="flow-title">목적지 설정</div>
+                    <div class="flow-desc">집, 회사 등 즐겨찾기 선택</div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">3</div>
+                    <img src="images/start.png" alt="귀가 시작" class="flow-image">
+                    <div class="flow-title">귀가 시작</div>
+                    <div class="flow-desc">보호자에게 위치 공유 시작</div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">4</div>
+                    <img src="images/walking.png" alt="안전 귀가" class="flow-image">
+                    <div class="flow-title">안전 귀가</div>
+                    <div class="flow-desc">실시간 안내 따라 귀가 완료</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Features Section -->
+    <section class="safety-features">
+        <div class="section-header">
+            <h2 class="section-title">안전 기능</h2>
+            <p class="section-subtitle">당신의 안전을 위한 다양한 기능</p>
+        </div>
+        <div class="safety-grid">
+            <div class="safety-item">
+                <div class="safety-icon">📹</div>
+                <div class="safety-title">CCTV 커버리지</div>
+                <div class="safety-desc">CCTV가 많은 안전한 경로 추천</div>
+            </div>
+            <div class="safety-item">
+                <div class="safety-icon">💡</div>
+                <div class="safety-title">가로등 밝기</div>
+                <div class="safety-desc">밝은 길 우선 안내</div>
+            </div>
+            <div class="safety-item">
+                <div class="safety-icon">🛡️</div>
+                <div class="safety-title">치안 정보</div>
+                <div class="safety-desc">경찰서, 파출소 근처 경로</div>
+            </div>
+            <div class="safety-item">
+                <div class="safety-icon">👥</div>
+                <div class="safety-title">유동인구</div>
+                <div class="safety-desc">사람 많은 길 추천</div>
+            </div>
+            <div class="safety-item">
+                <div class="safety-icon">🏪</div>
+                <div class="safety-title">편의시설</div>
+                <div class="safety-desc">편의점, 대피 장소 안내</div>
+            </div>
+            <div class="safety-item">
+                <div class="safety-icon">🚨</div>
+                <div class="safety-title">긴급 신고</div>
+                <div class="safety-desc">112 원터치 연결</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Usage Section -->
+    <section class="api-usage">
+        <div class="api-container">
+            <h2 class="api-title">카카오 API 사용 목적</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">
+                본 앱은 다음과 같은 목적으로 카카오 API를 사용합니다:
+            </p>
+            <ul class="api-list">
+                <li><strong>카카오맵 API:</strong> 지도 표시 및 안전 경로 안내</li>
+                <li><strong>카카오 로그인:</strong> 간편 로그인 및 사용자 인증</li>
+                <li><strong>카카오 메시지:</strong> 보호자에게 위치 공유 알림 전송</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">Safe Walking</div>
+            <div class="footer-info">개발사: <strong>MonoApps</strong></div>
+            <div class="footer-info">
+                문의: <a href="mailto:monoappskr@gmail.com" class="footer-email">monoappskr@gmail.com</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2026 MonoApps. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
