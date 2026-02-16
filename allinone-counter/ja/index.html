@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オールインワンカウンター - あなたの日常をすべて記録</title>
+    <meta name="description" content="オールインワンカウンターは、日常生活を体系的に管理できる多目的トラッキングアプリです。">
+    <link rel="canonical" href="https://monoapps.kr/allinone-counter/ja/">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/allinone-counter/">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/allinone-counter/en/">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/allinone-counter/ja/">
+    <link rel="alternate" hreflang="es" href="https://monoapps.kr/allinone-counter/es/">
+    <link rel="alternate" hreflang="pt" href="https://monoapps.kr/allinone-counter/pt/">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/allinone-counter/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans JP', 'Inter', -apple-system, sans-serif; background: #000; color: white; line-height: 1.6; overflow-x: hidden; }
+        .bg-gradient { position: fixed; width: 150vw; height: 150vh; top: -25vh; left: -25vw; background: conic-gradient(from 180deg at 50% 50%, #10B981, #06B6D4, #3B82F6, #8B5CF6); filter: blur(100px); animation: rotate 20s linear infinite; z-index: -1; opacity: 0.7; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 700; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
+        .lang-selector { position: relative; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; transition: all 0.3s ease; }
+        .lang-btn:hover { background: rgba(255,255,255,0.15); }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); transition: all 0.2s ease; }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .lang-dropdown a.active { background: rgba(255,255,255,0.1); color: #10B981; font-weight: 700; }
+        .nav-cta { background: linear-gradient(90deg, #10B981, #06B6D4); color: white; padding: 10px 24px; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; box-shadow: 0 0 30px rgba(16, 185, 129, 0.4); }
+        .nav-cta:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(16, 185, 129, 0.6); }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 4rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; width: 100%; }
+        .hero-content { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 40px; padding: 50px; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
+        .hero-badge { display: inline-block; padding: 8px 16px; background: rgba(255,255,255,0.1); border-radius: 100px; font-size: 0.85rem; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1); }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 900; line-height: 1.1; letter-spacing: -2px; margin-bottom: 1rem; color: white; }
+        .hero-tagline { font-size: 1.5rem; font-weight: 600; color: #10B981; margin-bottom: 1.5rem; }
+        .hero-description { font-size: 1.125rem; color: rgba(255,255,255,0.7); margin-bottom: 1rem; line-height: 1.7; }
+        .hero-image { display: flex; justify-content: center; align-items: center; }
+        .phone-mockup { position: relative; width: 280px; height: auto; border-radius: 32px; overflow: hidden; box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5); border: 8px solid #1A1A1A; background: #000; animation: floatPhone 6s ease-in-out infinite; }
+        @keyframes floatPhone { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        .phone-mockup img { width: 100%; height: auto; display: block; }
+        .features { padding: 6rem 2rem; }
+        .section-header { max-width: 800px; margin: 0 auto 4rem; text-align: center; }
+        .section-title { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 1rem; color: white; }
+        .section-subtitle { font-size: 1.25rem; color: rgba(255,255,255,0.6); }
+        .features-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .feature-card { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px); border-radius: 25px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; }
+        .feature-card:hover { transform: translateY(-8px); background: rgba(255, 255, 255, 0.12); border-color: rgba(255,255,255,0.2); }
+        .feature-screenshot { width: 100%; border-radius: 16px; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+        .feature-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; color: white; }
+        .feature-description { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.7; }
+        .user-flow { padding: 6rem 2rem; position: relative; }
+        .flow-container { max-width: 1200px; margin: 0 auto; }
+        .flow-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
+        .flow-step { text-align: center; position: relative; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem 1rem; transition: all 0.3s; }
+        .flow-step:hover { background: rgba(255, 255, 255, 0.08); transform: translateY(-5px); }
+        .flow-step::after { content: '\2192'; position: absolute; right: -1.5rem; top: 40%; font-size: 2rem; color: #10B981; font-weight: 900; }
+        .flow-step:last-child::after { display: none; }
+        .flow-number { width: 48px; height: 48px; background: linear-gradient(135deg, #10B981, #06B6D4); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900; margin: 0 auto 1rem; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4); }
+        .flow-image { width: 100%; max-width: 200px; margin: 0 auto 1rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+        footer { background: rgba(0,0,0,0.5); border-top: 1px solid rgba(255,255,255,0.1); color: white; padding: 3rem 2rem; }
+        .footer-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .footer-logo { font-size: 2rem; font-weight: 900; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem; }
+        .footer-info { font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem; }
+        .footer-email { color: #10B981; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+        .footer-email:hover { color: #06B6D4; }
+        .footer-copyright { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.875rem; color: rgba(255,255,255,0.4); }
+        @media (max-width: 968px) {
+            .nav-container { padding: 1rem 1.5rem; }
+            .hero { padding-top: 100px; }
+            .hero-container { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-content { padding: 40px 25px; border-radius: 30px; }
+            .features-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .flow-steps { grid-template-columns: 1fr; }
+            .flow-step::after { content: '\2193'; right: auto; top: auto; bottom: -1.5rem; left: 50%; transform: translateX(-50%); }
+        }
+        @media (max-width: 640px) {
+            .nav-container { padding: 1rem; }
+            .hero { padding: 100px 1rem 3rem; }
+            .hero-content { padding: 30px 20px; }
+            .phone-mockup { width: 220px; }
+            .features, .user-flow { padding: 4rem 1rem; }
+            .feature-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">オールインワンカウンター</div>
+            <div class="nav-right">
+                <div class="lang-selector">
+                    <button class="lang-btn" id="langBtn">日本語 ▼</button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <a href="../">한국어</a>
+                        <a href="../en/">English</a>
+                        <a href="./" class="active">日本語</a>
+                        <a href="../es/">Español</a>
+                        <a href="../pt/">Português</a>
+                    </div>
+                </div>
+                <a href="#features" class="nav-cta">詳しく見る</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">多目的トラッキングアプリ</div>
+                <h1>オールインワンカウンター</h1>
+                <p class="hero-tagline">あなたの日常をすべて記録</p>
+                <p class="hero-description">オールインワンカウンターは、日常生活を体系的に管理できる多目的トラッキングアプリです。タップカウンター、習慣トラッカー、水分補給、Dデーなど、さまざまな機能をひとつのアプリで管理しましょう。</p>
+            </div>
+            <div class="hero-image">
+                <div class="phone-mockup">
+                    <img src="../images/ja1.png" alt="オールインワンカウンター アプリスクリーンショット">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2 class="section-title">主な機能</h2>
+            <p class="section-subtitle">日常のすべてをひとつのアプリで管理</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="../images/ja2.png" alt="カウンター" class="feature-screenshot">
+                <h3 class="feature-title">🔢 カウンター</h3>
+                <p class="feature-description">タップカウンターと水分補給を簡単に記録しましょう。自由にカウントして目標を設定できます。</p>
+            </div>
+            <div class="feature-card">
+                <img src="../images/ja3.png" alt="Dデー & 習慣" class="feature-screenshot">
+                <h3 class="feature-title">📅 Dデー & 習慣</h3>
+                <p class="feature-description">Dデーカウントダウン、習慣トラッカー、禁煙、禁酒をまとめて管理しましょう。</p>
+            </div>
+            <div class="feature-card">
+                <img src="../images/ja4.png" alt="記録" class="feature-screenshot">
+                <h3 class="feature-title">📝 記録</h3>
+                <p class="feature-description">読書、映画、運動、睡眠など日常のすべてを記録。カテゴリ別に体系的に管理できます。</p>
+            </div>
+            <div class="feature-card">
+                <img src="../images/ja6.png" alt="記録統計" class="feature-screenshot">
+                <h3 class="feature-title">📊 記録統計</h3>
+                <p class="feature-description">読書と映画の記録を統計で確認しましょう。ビジュアルチャートで一目で把握できます。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="user-flow">
+        <div class="flow-container">
+            <div class="section-header">
+                <h2 class="section-title">使い方</h2>
+                <p class="section-subtitle">簡単な4ステップで日常を体系的に管理</p>
+            </div>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="flow-number">1</div>
+                    <img src="../images/ja1.png" alt="ダッシュボード" class="flow-image">
+                    <h3 class="flow-title">ダッシュボード</h3>
+                    <p class="flow-desc">今日の活動を一目で確認</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">2</div>
+                    <img src="../images/ja5.png" alt="健康統計" class="flow-image">
+                    <h3 class="flow-title">健康統計</h3>
+                    <p class="flow-desc">運動、睡眠パターンを分析</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">3</div>
+                    <img src="../images/ja7.png" alt="習慣統計" class="flow-image">
+                    <h3 class="flow-title">習慣統計</h3>
+                    <p class="flow-desc">習慣ストリーク、Dデー現況</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">4</div>
+                    <img src="../images/ja8.png" alt="カスタマイズ" class="flow-image">
+                    <h3 class="flow-title">カスタマイズ</h3>
+                    <p class="flow-desc">目標、実績、通知を管理</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">オールインワンカウンター</div>
+            <p class="footer-info">開発者: MonoApps</p>
+            <p class="footer-info">お問い合わせ: <a href="mailto:monoappskr@gmail.com" class="footer-email">monoappskr@gmail.com</a></p>
+            <div class="footer-copyright">
+                &copy; 2026 MonoApps. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        document.addEventListener('click', (e) => { if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) { langDropdown.classList.remove('active'); } });
+    </script>
+</body>
+</html>
