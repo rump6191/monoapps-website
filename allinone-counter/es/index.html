@@ -18,11 +18,12 @@
         body { font-family: 'Inter', -apple-system, sans-serif; background: #000; color: white; line-height: 1.6; overflow-x: hidden; }
         .bg-gradient { position: fixed; width: 150vw; height: 150vh; top: -25vh; left: -25vw; background: conic-gradient(from 180deg at 50% 50%, #10B981, #06B6D4, #3B82F6, #8B5CF6); filter: blur(100px); animation: rotate 20s linear infinite; z-index: -1; opacity: 0.7; }
         @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 700; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .nav-right { display: flex; align-items: center; gap: 1rem; }
-        .lang-selector { position: relative; }
+        nav { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
         .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; transition: all 0.3s ease; }
         .lang-btn:hover { background: rgba(255,255,255,0.15); }
         .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
@@ -31,8 +32,11 @@
         .lang-dropdown a:last-child { border-bottom: none; }
         .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
         .lang-dropdown a.active { background: rgba(255,255,255,0.1); color: #10B981; font-weight: 700; }
-        .nav-cta { background: linear-gradient(90deg, #10B981, #06B6D4); color: white; padding: 10px 24px; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; box-shadow: 0 0 30px rgba(16, 185, 129, 0.4); }
-        .nav-cta:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(16, 185, 129, 0.6); }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; transition: 0.3s; }
+        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 4rem; }
         .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; width: 100%; }
         .hero-content { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 40px; padding: 50px; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
@@ -71,7 +75,9 @@
         .footer-nav a:hover { color: white; }
         .copyright { font-size: 0.85rem; opacity: 0.4; }
         @media (max-width: 968px) {
-            .nav-container { padding: 1rem 1.5rem; }
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
             .hero { padding-top: 100px; }
             .hero-container { grid-template-columns: 1fr; gap: 3rem; }
             .hero-content { padding: 40px 25px; border-radius: 30px; }
@@ -80,7 +86,7 @@
             .flow-step::after { content: '\2193'; right: auto; top: auto; bottom: -1.5rem; left: 50%; transform: translateX(-50%); }
         }
         @media (max-width: 640px) {
-            .nav-container { padding: 1rem; }
+            nav { padding: 1rem; }
             .hero { padding: 100px 1rem 3rem; }
             .hero-content { padding: 30px 20px; }
             .phone-mockup { width: 220px; }
@@ -93,23 +99,44 @@
     <div class="bg-gradient"></div>
 
     <nav>
-        <div class="nav-container">
-            <div class="logo">Contador Todo-en-Uno</div>
-            <div class="nav-right">
-                <div class="lang-selector">
-                    <button class="lang-btn" id="langBtn">Espa&ntilde;ol &#9660;</button>
-                    <div class="lang-dropdown" id="langDropdown">
-                        <a href="../">&#54620;&#44397;&#50612;</a>
-                        <a href="../en/">English</a>
-                        <a href="../ja/">&#26085;&#26412;&#35486;</a>
-                        <a href="./" class="active">Espa&ntilde;ol</a>
-                        <a href="../pt/">Portugu&ecirc;s</a>
-                    </div>
+        <a href="../../" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="../../#apps">Apps</a>
+            <a href="../../#services">Servicios</a>
+            <a href="../../es/support.html">Soporte</a>
+            <a href="../../es/news.html">Noticias</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">ES</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="../">한국어</a>
+                    <a href="../en/">English</a>
+                    <a href="../ja/">日本語</a>
+                    <a href="./" class="active">Español</a>
+                    <a href="../pt/">Português</a>
                 </div>
-                <a href="#features" class="nav-cta">Ver m&aacute;s</a>
             </div>
         </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../../#apps">Apps</a>
+        <a href="../../#services">Servicios</a>
+        <a href="../../es/support.html">Soporte</a>
+        <a href="../../es/news.html">Noticias</a>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 0.5rem; padding-top: 0.5rem;">
+            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">Idioma</div>
+            <a href="../">한국어</a>
+            <a href="../en/">English</a>
+            <a href="../ja/">日本語</a>
+            <a href="./" style="color: #10B981;">Español</a>
+            <a href="../pt/">Português</a>
+        </div>
+    </div>
 
     <section class="hero">
         <div class="hero-container">
@@ -202,10 +229,17 @@
     </footer>
 
     <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
         const langBtn = document.getElementById('langBtn');
         const langDropdown = document.getElementById('langDropdown');
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('active'); });
         langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
-        document.addEventListener('click', (e) => { if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) { langDropdown.classList.remove('active'); } });
+        menu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => menu.classList.remove('active')); });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
     </script>
 </body>
 </html>
