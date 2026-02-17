@@ -65,13 +65,11 @@
         .flow-image { width: 100%; max-width: 200px; margin: 0 auto 1rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
         .flow-title { font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
         .flow-desc { font-size: 0.875rem; color: rgba(255,255,255,0.6); }
-        footer { background: rgba(0,0,0,0.5); border-top: 1px solid rgba(255,255,255,0.1); color: white; padding: 3rem 2rem; }
-        .footer-container { max-width: 1200px; margin: 0 auto; text-align: center; }
-        .footer-logo { font-size: 2rem; font-weight: 900; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem; }
-        .footer-info { font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem; }
-        .footer-email { color: #10B981; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
-        .footer-email:hover { color: #06B6D4; }
-        .footer-copyright { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.875rem; color: rgba(255,255,255,0.4); }
+        footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
         @media (max-width: 968px) {
             .nav-container { padding: 1rem 1.5rem; }
             .hero { padding-top: 100px; }
@@ -194,14 +192,13 @@
     </section>
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-logo">Contador Todo-en-Uno</div>
-            <p class="footer-info">Desarrollador: MonoApps</p>
-            <p class="footer-info">Contacto: <a href="mailto:monoappskr@gmail.com" class="footer-email">monoappskr@gmail.com</a></p>
-            <div class="footer-copyright">
-                &copy; 2026 MonoApps. All rights reserved.
-            </div>
+        <div class="footer-nav">
+            <a href="../../es/privacy.html">Pol&iacute;tica de Privacidad</a>
+            <a href="../../es/terms.html">T&eacute;rminos de Servicio</a>
+            <a href="../../es/support.html">Soporte</a>
+            <a href="mailto:monoappskr@gmail.com">Contacto</a>
         </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
     </footer>
 
     <script>

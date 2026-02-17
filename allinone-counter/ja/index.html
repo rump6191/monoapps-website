@@ -63,13 +63,11 @@
         .flow-step:last-child::after { display: none; }
         .flow-number { width: 48px; height: 48px; background: linear-gradient(135deg, #10B981, #06B6D4); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900; margin: 0 auto 1rem; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4); }
         .flow-image { width: 100%; max-width: 200px; margin: 0 auto 1rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
-        footer { background: rgba(0,0,0,0.5); border-top: 1px solid rgba(255,255,255,0.1); color: white; padding: 3rem 2rem; }
-        .footer-container { max-width: 1200px; margin: 0 auto; text-align: center; }
-        .footer-logo { font-size: 2rem; font-weight: 900; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem; }
-        .footer-info { font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem; }
-        .footer-email { color: #10B981; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
-        .footer-email:hover { color: #06B6D4; }
-        .footer-copyright { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.875rem; color: rgba(255,255,255,0.4); }
+        footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
         @media (max-width: 968px) {
             .nav-container { padding: 1rem 1.5rem; }
             .hero { padding-top: 100px; }
@@ -192,14 +190,13 @@
     </section>
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-logo">オールインワンカウンター</div>
-            <p class="footer-info">開発者: MonoApps</p>
-            <p class="footer-info">お問い合わせ: <a href="mailto:monoappskr@gmail.com" class="footer-email">monoappskr@gmail.com</a></p>
-            <div class="footer-copyright">
-                &copy; 2026 MonoApps. All rights reserved.
-            </div>
+        <div class="footer-nav">
+            <a href="../../ja/privacy.html">プライバシーポリシー</a>
+            <a href="../../ja/terms.html">利用規約</a>
+            <a href="../../ja/support.html">サポート</a>
+            <a href="mailto:monoappskr@gmail.com">お問い合わせ</a>
         </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
     </footer>
 
     <script>

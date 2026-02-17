@@ -400,50 +400,33 @@
 
         /* Footer */
         footer {
-            background: rgba(0,0,0,0.5);
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: white;
             padding: 3rem 2rem;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
             text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 900;
-            background: linear-gradient(90deg, #fff, #aaa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .footer-nav {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
             margin-bottom: 1.5rem;
         }
 
-        .footer-info {
-            font-size: 1rem;
-            color: rgba(255,255,255,0.6);
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-email {
-            color: #10B981;
+        .footer-nav a {
+            color: rgba(255,255,255,0.5);
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
+            font-size: 0.9rem;
+            transition: 0.3s;
         }
 
-        .footer-email:hover {
-            color: #06B6D4;
+        .footer-nav a:hover {
+            color: white;
         }
 
-        .footer-copyright {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.875rem;
-            color: rgba(255,255,255,0.4);
+        .copyright {
+            font-size: 0.85rem;
+            opacity: 0.4;
         }
 
         /* Responsive */
@@ -630,16 +613,13 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-logo">올인원 카운터</div>
-            <div class="footer-info">개발사: <strong>MonoApps</strong></div>
-            <div class="footer-info">
-                문의: <a href="mailto:monoappskr@gmail.com" class="footer-email">monoappskr@gmail.com</a>
-            </div>
-            <div class="footer-copyright">
-                &copy; 2026 MonoApps. All rights reserved.
-            </div>
+        <div class="footer-nav">
+            <a href="../privacy.html">개인정보 처리방침</a>
+            <a href="../terms.html">이용약관</a>
+            <a href="../support.html">고객지원</a>
+            <a href="mailto:monoappskr@gmail.com">문의하기</a>
         </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
     </footer>
 
     <script>
