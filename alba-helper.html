@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>알바 헬퍼 - MonoApps</title>
+    <meta name="description" content="알바생을 위한 스마트 급여 관리 앱. 근무기록부터 주휴수당, 3.3% 세금 계산까지 한 번에.">
+    <meta name="keywords" content="알바헬퍼, 알바, 급여계산, 주휴수당, 시급계산, 3.3%, 세금계산, 근무기록, MonoApps">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="알바 헬퍼 - 알바생을 위한 스마트 급여 관리">
+    <meta property="og:description" content="근무기록부터 주휴수당, 3.3% 세금 계산까지. 알바생이 꼭 필요한 모든 기능을 하나의 앱에서.">
+    <meta property="og:url" content="https://monoapps.kr/alba-helper.html">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="MonoApps">
+    <link rel="canonical" href="https://monoapps.kr/alba-helper.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            width: 150vw;
+            height: 150vh;
+            top: -25vh;
+            left: -25vw;
+            background: conic-gradient(from 180deg at 50% 50%, #059669, #10b981, #0ea5e9, #059669);
+            filter: blur(100px);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+            opacity: 0.45;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            z-index: 100;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(90deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px; left: 0; right: 0;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            z-index: 99;
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 2rem 4rem;
+            text-align: center;
+        }
+        .hero-content { max-width: 700px; }
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #059669, #10b981);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            margin: 0 auto 2rem;
+            box-shadow: 0 20px 60px rgba(16, 185, 129, 0.4);
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            color: #6ee7b7;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.7;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+        .store-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 14px;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .store-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .store-btn.disabled { opacity: 0.4; cursor: default; pointer-events: none; }
+        .store-btn svg { width: 22px; height: 22px; }
+
+        /* Sections */
+        section { padding: 6rem 2rem; }
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        .section-desc {
+            text-align: center;
+            opacity: 0.6;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.08);
+            padding: 2rem;
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        .feature-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.12); }
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+        .feature-card h3 { font-size: 1.2rem; margin-bottom: 0.7rem; }
+        .feature-card p { font-size: 0.93rem; opacity: 0.6; line-height: 1.6; }
+
+        /* Screenshots */
+        .screenshots {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+        }
+        .screenshot-item { text-align: center; flex-shrink: 0; }
+        .screenshot-frame {
+            width: 200px;
+            height: 430px;
+            background: #111;
+            border-radius: 30px;
+            border: 6px solid #222;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+        .screenshot-frame:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 35px 70px rgba(16, 185, 129, 0.25);
+        }
+        .screenshot-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .screenshot-label { margin-top: 1rem; font-size: 0.9rem; font-weight: 600; opacity: 0.7; }
+
+        /* Feature Details */
+        .feature-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto 5rem;
+        }
+        .feature-detail.reverse { direction: rtl; }
+        .feature-detail.reverse > * { direction: ltr; }
+        .feature-detail-content h3 { font-size: 1.9rem; margin-bottom: 1rem; letter-spacing: -1px; }
+        .feature-detail-content p { opacity: 0.7; line-height: 1.8; margin-bottom: 1.5rem; font-size: 1rem; }
+        .feature-list { list-style: none; }
+        .feature-list li {
+            padding: 0.55rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+        .feature-list li::before { content: "✓"; color: #10b981; font-weight: 700; }
+        .feature-detail-image { display: flex; justify-content: center; }
+        .feature-detail-image .screenshot-frame { width: 190px; height: 410px; }
+
+        /* Premium section */
+        .premium-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(14,165,233,0.15));
+            border: 1px solid rgba(16,185,129,0.3);
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+        }
+        .premium-box .premium-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .premium-box h3 { font-size: 1.6rem; margin-bottom: 0.75rem; letter-spacing: -0.5px; }
+        .premium-box p { opacity: 0.65; line-height: 1.7; margin-bottom: 1.5rem; }
+        .premium-items {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .premium-item {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+        .premium-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #6ee7b7;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding-top: 100px; }
+            .feature-detail { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            .feature-detail.reverse { direction: ltr; }
+            .feature-detail-image .screenshot-frame { width: 170px; height: 365px; }
+            .screenshot-frame { width: 160px; height: 345px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="index.html" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="apps.html">모바일 앱</a>
+            <a href="index.html#services">웹 서비스</a>
+            <a href="support.html">고객지원</a>
+            <a href="news.html">소식</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">KO</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="alba-helper.html" style="color: #10b981;">한국어</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="apps.html">모바일 앱</a>
+        <a href="index.html#services">웹 서비스</a>
+        <a href="support.html">고객지원</a>
+        <a href="news.html">소식</a>
+        <div style="border-top:1px solid rgba(255,255,255,0.1); margin-top:0.5rem; padding-top:0.5rem;">
+            <div style="font-size:0.8rem; color:rgba(255,255,255,0.4); padding:0.5rem 0;">언어 선택</div>
+            <a href="alba-helper.html" style="color:#10b981;">한국어 (KO만 지원)</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="app-icon">💼</div>
+            <span class="hero-badge">출시 예정 · 한국어 지원</span>
+            <h1>알바 헬퍼</h1>
+            <p>알바생이 꼭 알아야 할 급여 정보를 한 곳에서.<br>근무기록부터 주휴수당, 세금 계산까지 자동으로.</p>
+            <div class="store-buttons">
+                <span class="store-btn disabled">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    App Store 출시 예정
+                </span>
+                <span class="store-btn disabled">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                    Google Play 출시 예정
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section>
+        <h2 class="section-title">주요 기능</h2>
+        <p class="section-desc">알바생을 위한 모든 것</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(16,185,129,0.15);">📅</div>
+                <h3>근무기록 관리</h3>
+                <p>캘린더에서 날짜를 선택해 출퇴근 시간, 시급, 휴게시간, 메모를 기록하세요. 근무 내역이 한눈에 보입니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(14,165,233,0.15);">💰</div>
+                <h3>급여 자동 계산</h3>
+                <p>시급과 근무시간을 입력하면 이번 달 예상 급여를 실시간으로 계산해 드립니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(245,158,11,0.15);">🏖️</div>
+                <h3>주휴수당 계산</h3>
+                <p>주 15시간 이상 근무하면 발생하는 주휴수당을 자동으로 산정합니다. 근무 기록에서 주간 시간을 자동으로 불러옵니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(239,68,68,0.15);">🧾</div>
+                <h3>3.3% 세금 계산</h3>
+                <p>프리랜서·일용직 원천징수 세금을 계산합니다. 총 급여에서 실수령액이 얼마인지 바로 확인하세요.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(99,102,241,0.15);">📊</div>
+                <h3>급여일지</h3>
+                <p>월별 총 급여, 근무일수, 총 근무시간을 한눈에 확인할 수 있는 급여 상세 내역을 제공합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(236,72,153,0.15);">🔔</div>
+                <h3>급여일 알림</h3>
+                <p>급여일을 설정하면 하루 전에 알림을 보내드립니다. 급여일을 절대 잊지 마세요. (프리미엄 기능)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section>
+        <h2 class="section-title">앱 미리보기</h2>
+        <p class="section-desc">깔끔하고 직관적인 UI</p>
+        <div class="screenshots">
+            <div class="screenshot-item">
+                <div class="screenshot-frame">
+                    <img src="images/alba-helper/home.png" alt="홈 화면" loading="lazy">
+                </div>
+                <p class="screenshot-label">홈</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame">
+                    <img src="images/alba-helper/work-record.png" alt="근무기록 화면" loading="lazy">
+                </div>
+                <p class="screenshot-label">근무기록</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame">
+                    <img src="images/alba-helper/holiday-pay.png" alt="주휴수당 계산 화면" loading="lazy">
+                </div>
+                <p class="screenshot-label">주휴수당</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame">
+                    <img src="images/alba-helper/tax.png" alt="세금 계산 화면" loading="lazy">
+                </div>
+                <p class="screenshot-label">세금 계산</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame">
+                    <img src="images/alba-helper/salary-journal.png" alt="급여일지 화면" loading="lazy">
+                </div>
+                <p class="screenshot-label">급여일지</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Details -->
+    <section>
+        <div class="feature-detail">
+            <div class="feature-detail-content">
+                <h3>근무기록을 캘린더로</h3>
+                <p>매일의 근무 내역을 캘린더에 직접 기록하세요. 출퇴근 시간, 시급, 휴게시간을 입력하면 하루 급여가 자동으로 계산됩니다.</p>
+                <ul class="feature-list">
+                    <li>출퇴근 시간 & 시급 입력</li>
+                    <li>휴게시간 공제 자동 반영</li>
+                    <li>근무별 메모 기능</li>
+                    <li>캘린더에 근무일 표시</li>
+                </ul>
+            </div>
+            <div class="feature-detail-image">
+                <div class="screenshot-frame">
+                    <img src="images/alba-helper/work-record.png" alt="근무기록 화면" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-detail reverse">
+            <div class="feature-detail-content">
+                <h3>주휴수당, 이제 쉽게</h3>
+                <p>주 15시간 이상 근무하면 유급 주휴일이 발생합니다. 복잡한 계산은 앱이 대신 해드립니다. 이번 주 근무 기록에서 자동으로 시간을 불러와 계산합니다.</p>
+                <ul class="feature-list">
+                    <li>주간 근무시간 자동 집계</li>
+                    <li>주휴수당 발생 여부 즉시 확인</li>
+                    <li>추가 근무 필요 시간 안내</li>
+                    <li>계산 방식 상세 설명</li>
+                </ul>
+            </div>
+            <div class="feature-detail-image">
+                <div class="screenshot-frame">
+                    <img src="images/alba-helper/holiday-pay.png" alt="주휴수당 계산 화면" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-detail">
+            <div class="feature-detail-content">
+                <h3>3.3% 세금도 한 번에</h3>
+                <p>프리랜서나 일용직으로 일하면 3.3% 원천징수 세금이 공제됩니다. 총 급여를 입력하면 세금 내역과 실수령액을 바로 알 수 있습니다.</p>
+                <ul class="feature-list">
+                    <li>소득세 3% + 지방소득세 0.3%</li>
+                    <li>총 급여 → 실수령액 즉시 계산</li>
+                    <li>세금 내역 상세 보기</li>
+                    <li>연말정산·환급 안내 정보</li>
+                </ul>
+            </div>
+            <div class="feature-detail-image">
+                <div class="screenshot-frame">
+                    <img src="images/alba-helper/tax.png" alt="세금 계산 화면" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium -->
+    <section style="padding-top: 0;">
+        <div class="premium-box">
+            <div class="premium-icon">⭐</div>
+            <h3>프리미엄으로 더 편리하게</h3>
+            <p>광고 없이 모든 기능을 자유롭게 사용하세요.<br>급여일 알림 기능으로 중요한 날을 절대 놓치지 마세요.</p>
+            <div class="premium-items">
+                <span class="premium-item">🚫 광고 제거</span>
+                <span class="premium-item">🔔 급여일 알림</span>
+            </div>
+            <p class="premium-price">₩2,900 일회성 구매</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">개인정보 처리방침</a>
+            <a href="terms.html">이용약관</a>
+            <a href="support.html">고객지원</a>
+            <a href="mailto:monoappskr@gmail.com">문의하기</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('active'); });
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        menu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => menu.classList.remove('active')); });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "알바 헬퍼",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "FinanceApplication",
+        "description": "알바생을 위한 스마트 급여 관리 앱. 근무기록, 주휴수당, 3.3% 세금 계산.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "KRW"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "MonoApps",
+            "url": "https://monoapps.kr"
+        }
+    }
+    </script>
+</body>
+</html>
