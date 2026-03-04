@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>모바일 앱 - MonoApps</title>
+    <meta name="description" content="MonoApps의 모든 모바일 앱을 확인하세요. QR 스캐너, 올인원 카운터, 알바 헬퍼 등 다양한 앱을 제공합니다.">
+    <link rel="canonical" href="https://monoapps.kr/apps.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            width: 150vw;
+            height: 150vh;
+            top: -25vh;
+            left: -25vw;
+            background: conic-gradient(from 180deg at 50% 50%, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            filter: blur(100px);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            z-index: 100;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(90deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; transition: 0.3s; }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px; left: 0; right: 0;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            z-index: 99;
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+        /* Hero */
+        .hero {
+            min-height: 45vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 2rem 3rem;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 18px;
+            border-radius: 100px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.06);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .filter-btn:hover { background: rgba(255,255,255,0.12); color: white; }
+        .filter-btn.active {
+            background: linear-gradient(90deg, rgba(238,119,82,0.3), rgba(231,60,126,0.3));
+            border-color: rgba(231,60,126,0.5);
+            color: white;
+        }
+
+        /* App List */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+
+        .app-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+        .app-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.11);
+            border-color: rgba(255,255,255,0.18);
+        }
+        .app-card-inner {
+            padding: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .app-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 18px;
+        }
+        .app-info { flex: 1; min-width: 0; }
+        .app-title-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+        .app-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .status-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 100px;
+        }
+        .status-badge.live {
+            color: #23d5ab;
+            background: rgba(35,213,171,0.15);
+            border: 1px solid rgba(35,213,171,0.3);
+        }
+        .status-badge.soon {
+            color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .app-desc {
+            font-size: 0.95rem;
+            opacity: 0.6;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Language tags */
+        .lang-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.25rem;
+        }
+        .lang-label {
+            font-size: 0.78rem;
+            opacity: 0.4;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-right: 0.25rem;
+        }
+        .lang-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Action buttons */
+        .app-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 18px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .store-btn:hover { background: rgba(255,255,255,0.2); }
+        .store-btn svg { width: 16px; height: 16px; }
+        .detail-link {
+            color: #e73c7e;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: 0.3s;
+            margin-left: 0.25rem;
+        }
+        .detail-link:hover { color: #ee7752; }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding-top: 100px; min-height: 38vh; }
+            .app-card-inner { flex-direction: column; gap: 1rem; }
+            .app-icon { width: 60px; height: 60px; font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="index.html" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="apps.html" class="active">모바일 앱</a>
+            <a href="index.html#services">웹 서비스</a>
+            <a href="support.html">고객지원</a>
+            <a href="news.html">소식</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">KO</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="index.html">한국어</a>
+                    <a href="en/index.html">English</a>
+                    <a href="ja/index.html">日本語</a>
+                    <a href="zh/index.html">中文</a>
+                    <a href="es/index.html">Español</a>
+                    <a href="pt/index.html">Português</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="apps.html">모바일 앱</a>
+        <a href="index.html#services">웹 서비스</a>
+        <a href="support.html">고객지원</a>
+        <a href="news.html">소식</a>
+        <div style="border-top:1px solid rgba(255,255,255,0.1); margin-top:0.5rem; padding-top:0.5rem;">
+            <div style="font-size:0.8rem; color:rgba(255,255,255,0.4); padding:0.5rem 0;">언어 선택</div>
+            <a href="index.html" style="color:#e73c7e;">한국어</a>
+            <a href="en/index.html">English</a>
+            <a href="ja/index.html">日本語</a>
+            <a href="zh/index.html">中文</a>
+            <a href="es/index.html">Español</a>
+            <a href="pt/index.html">Português</a>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div>
+            <span class="hero-badge">📱 총 3개 앱</span>
+            <h1>모바일 앱</h1>
+            <p>일상을 더 편리하게 만드는 MonoApps의 모든 앱을 한눈에 확인하세요.</p>
+        </div>
+    </section>
+
+    <!-- Filter -->
+    <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">전체</button>
+        <button class="filter-btn" data-filter="live">출시됨</button>
+        <button class="filter-btn" data-filter="soon">출시 예정</button>
+    </div>
+
+    <main>
+
+        <!-- Mono QR Scanner -->
+        <article class="app-card" data-status="live">
+            <div class="app-card-inner">
+                <div class="app-icon" style="background: transparent;">
+                    <img src="images/qr-icon.png" alt="Mono QR Scanner" loading="lazy">
+                </div>
+                <div class="app-info">
+                    <div class="app-title-row">
+                        <span class="app-name">Mono QR Scanner</span>
+                        <span class="status-badge live">출시됨</span>
+                    </div>
+                    <p class="app-desc">압도적인 속도의 QR/바코드 스캐너. 스캔부터 생성, 기록 관리까지 모든 기능을 하나의 앱에서.</p>
+                    <div class="lang-row">
+                        <span class="lang-label">지원 언어</span>
+                        <span class="lang-tag">한국어</span>
+                        <span class="lang-tag">English</span>
+                        <span class="lang-tag">日本語</span>
+                        <span class="lang-tag">中文</span>
+                        <span class="lang-tag">Español</span>
+                        <span class="lang-tag">Português</span>
+                    </div>
+                    <div class="app-actions">
+                        <a href="https://apps.apple.com/kr/app/mono-qr-scanner/id6757992532" target="_blank" class="store-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            App Store
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.monoappskr.qrscannerpro" target="_blank" class="store-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                            Google Play
+                        </a>
+                        <a href="qr-scanner.html" class="detail-link">상세보기 →</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 올인원 카운터 -->
+        <article class="app-card" data-status="soon">
+            <div class="app-card-inner">
+                <div class="app-icon">🔢</div>
+                <div class="app-info">
+                    <div class="app-title-row">
+                        <span class="app-name">올인원 카운터</span>
+                        <span class="status-badge soon">출시 예정</span>
+                    </div>
+                    <p class="app-desc">탭 카운터, 습관 트래커, 물 마시기, 디데이까지. 일상의 모든 것을 기록하고 추적하는 다목적 트래킹 앱.</p>
+                    <div class="lang-row">
+                        <span class="lang-label">지원 언어</span>
+                        <span class="lang-tag">한국어</span>
+                        <span class="lang-tag">English</span>
+                        <span class="lang-tag">日本語</span>
+                        <span class="lang-tag">中文</span>
+                        <span class="lang-tag">Español</span>
+                        <span class="lang-tag">Português</span>
+                    </div>
+                    <div class="app-actions">
+                        <a href="allinone-counter/" class="detail-link">상세보기 →</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 알바 헬퍼 -->
+        <article class="app-card" data-status="soon">
+            <div class="app-card-inner">
+                <div class="app-icon">💼</div>
+                <div class="app-info">
+                    <div class="app-title-row">
+                        <span class="app-name">알바 헬퍼</span>
+                        <span class="status-badge soon">출시 예정</span>
+                    </div>
+                    <p class="app-desc">알바생을 위한 스마트 급여 관리. 근무기록부터 주휴수당, 3.3% 세금 계산까지 한 번에.</p>
+                    <div class="lang-row">
+                        <span class="lang-label">지원 언어</span>
+                        <span class="lang-tag">한국어</span>
+                    </div>
+                    <div class="app-actions">
+                        <span style="font-size:0.85rem; opacity:0.4;">스토어 링크 준비 중</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">개인정보 처리방침</a>
+            <a href="terms.html">이용약관</a>
+            <a href="support.html">고객지원</a>
+            <a href="mailto:monoappskr@gmail.com">문의하기</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('active');
+        });
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('active');
+        });
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => menu.classList.remove('active'));
+        });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
+
+        // Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const appCards = document.querySelectorAll('.app-card');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                appCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.status === filter) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
