@@ -1,0 +1,20 @@
+<svg viewBox="0 0 2560 1440" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="2560" height="1440" fill="#111" />
+
+    <!-- Decorative Elements -->
+    <circle cx="200" cy="200" r="300" fill="#1a1a1a" />
+    <circle cx="2300" cy="1200" r="400" fill="#1a1a1a" />
+
+    <!-- Central Composition (Safe Area) -->
+    <g transform="translate(1280, 720)">
+        <!-- Text -->
+        <text x="0" y="0" font-family="Arial, sans-serif" font-weight="900" font-size="200" fill="#fff"
+            text-anchor="middle" dominant-baseline="middle" letter-spacing="-5">MONOAPPS</text>
+        <text x="0" y="160" font-family="Arial, sans-serif" font-weight="400" font-size="40" fill="#888"
+            text-anchor="middle" letter-spacing="10">CREATE . CODE . CONNECT</text>
+
+        <!-- Red Dot Accent (from Option 15) -->
+        <circle cx="620" cy="-20" r="40" fill="#FF3B30" />
+    </g>
+</svg>

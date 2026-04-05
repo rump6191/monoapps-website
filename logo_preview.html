@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoApps Logo Concepts</title>
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        h1 {
+            font-weight: 300;
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .logo-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .label {
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        svg {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            /* For the app icon look */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>MonoApps Logo Concepts</h1>
+    <div class="container">
+        <!-- Option 1: Minimalist Typography -->
+        <div class="logo-box">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ee7752;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#e73c7e;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect width="200" height="200" rx="40" ry="40" fill="#000" />
+                <path d="M50 150 V50 L100 100 L150 50 V150" stroke="url(#grad1)" stroke-width="20" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="label">Option 1: Minimalist Typography</span>
+        </div>
+
+        <!-- Option 2: Abstract Symbol -->
+        <div class="logo-box">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#23a6d5;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#23d5ab;stop-opacity:1" />
+                    </linearGradient>
+                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="5" result="coloredBlur" />
+                        <feMerge>
+                            <feMergeNode in="coloredBlur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+                <rect width="200" height="200" rx="40" ry="40" fill="#000" />
+                <!-- Outer Ring -->
+                <circle cx="100" cy="100" r="60" stroke="url(#grad2)" stroke-width="10" fill="none"
+                    filter="url(#glow)" />
+                <!-- Inner Dot -->
+                <circle cx="100" cy="100" r="20" fill="url(#grad2)" filter="url(#glow)" />
+            </svg>
+            <span class="label">Option 2: Abstract Symbol (The 'Eye')</span>
+        </div>
+
+        <!-- Option 3: Vibrant Gradient App Icon -->
+        <div class="logo-box">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ee7752;stop-opacity:1" />
+                        <stop offset="33%" style="stop-color:#e73c7e;stop-opacity:1" />
+                        <stop offset="66%" style="stop-color:#23a6d5;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#23d5ab;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect width="200" height="200" rx="50" ry="50" fill="url(#grad3)" />
+                <!-- White Logo Overlay -->
+                <circle cx="100" cy="100" r="50" stroke="white" stroke-width="12" fill="none" />
+                <circle cx="100" cy="100" r="18" fill="white" />
+            </svg>
+            <span class="label">Option 3: Vibrant Gradient</span>
+        </div>
+
+
+        <!-- Option 4: Tech Nodes -->
+        <div class="logo-box">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#00f260;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#0575e6;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect width="200" height="200" rx="40" ry="40" fill="#1a1a1a" />
+                <circle cx="50" cy="140" r="10" fill="url(#grad4)" />
+                <circle cx="50" cy="60" r="10" fill="url(#grad4)" />
+                <circle cx="100" cy="110" r="10" fill="url(#grad4)" />
+                <circle cx="150" cy="60" r="10" fill="url(#grad4)" />
+                <circle cx="150" cy="140" r="10" fill="url(#grad4)" />
+                <path d="M50 140 L50 60 L100 110 L150 60 L150 140" stroke="url(#grad4)" stroke-width="6" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round" opacity="0.8" />
+            </svg>
+            <span class="label">Option 4: Tech Connection</span>
+        </div>
+
+        <!-- Option 5: Playful Media -->
+        <div class="logo-box">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad5" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#f12711;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#f5af19;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect width="200" height="200" rx="40" ry="40" fill="#111" />
+                <!-- Abstract Play Button / M shape -->
+                <path d="M60 50 L140 100 L60 150 Z" fill="url(#grad5)" opacity="0.3" transform="translate(10, 0)" />
+                <path d="M60 50 L140 100 L60 150" stroke="url(#grad5)" stroke-width="12" fill="none"
+                    stroke-linejoin="round" stroke-linecap="round" />
+                <circle cx="150" cy="100" r="15" fill="url(#grad5)" />
+            </svg>
+            <span class="label">Option 5: Media Play</span>
+        </div>
+
+        <!-- Option 6: Modern Infinity -->
+        <div class="logo-box">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#8E2DE2;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4A00E0;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect width="200" height="200" rx="40" ry="40" fill="#000" />
+                <path d="M40 130 C40 50, 100 50, 100 100 C100 150, 160 150, 160 70" stroke="url(#grad6)"
+                    stroke-width="18" fill="none" stroke-linecap="round" />
+                <circle cx="160" cy="70" r="9" fill="#FFF" />
+            </svg>
+            <span class="label">Option 6: Fluid Motion</span>
+        </div>
+
+        <!-- Option 7: Retro Pixel -->
+        <div class="logo-box">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="200" rx="40" ry="40" fill="#222" />
+                <g fill="#FF0055">
+                    <!-- Left leg -->
+                    <rect x="50" y="60" width="20" height="20" />
+                    <rect x="50" y="80" width="20" height="20" />
+                    <rect x="50" y="100" width="20" height="20" />
+                    <rect x="50" y="120" width="20" height="20" />
+                    <!-- Middle -->
+                    <rect x="70" y="80" width="20" height="20" fill="#FF5500" />
+                    <rect x="90" y="100" width="20" height="20" fill="#FFFF00" />
+                    <rect x="110" y="80" width="20" height="20" fill="#00FF55" />
+                    <!-- Right leg -->
+                    <rect x="130" y="60" width="20" height="20" fill="#00AAFF" />
+                    <rect x="130" y="80" width="20" height="20" fill="#00AAFF" />
+                    <rect x="130" y="100" width="20" height="20" fill="#00AAFF" />
+                    <rect x="130" y="120" width="20" height="20" fill="#00AAFF" />
+                </g>
+            </svg>
+            <span class="label">Option 7: Retro Pixel Stack</span>
+        </div>
+
+        <!-- Option 8: Isometric Layers -->
+        <div class="logo-box">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad8" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect width="200" height="200" rx="40" ry="40" fill="#1e1e1e" />
+                <!-- Bottom Layer -->
+                <path d="M100 160 L40 130 L100 100 L160 130 Z" fill="#333" opacity="0.5" />
+                <!-- Middle Layer -->
+                <path d="M100 130 L40 100 L100 70 L160 100 Z" fill="url(#grad8)" opacity="0.6"
+                    transform="translate(0, -15)" />
+                <!-- Top Layer -->
+                <path d="M100 100 L40 70 L100 40 L160 70 Z" fill="url(#grad8)" />
+            </svg>
+            <span class="label">Option 8: App Layers</span>
+        </div>
+
+        <!-- Option 9: Code Bracket -->
+        <div class="logo-box">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad9" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FDFC47;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#24FE41;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect width="200" height="200" rx="40" ry="40" fill="#0f0f0f" />
+                <text x="100" y="145" font-family="monospace" font-weight="bold" font-size="100" text-anchor="middle"
+                    fill="url(#grad9)">&lt;/&gt;</text>
+                <circle cx="100" cy="60" r="8" fill="#FFF" opacity="0.8" />
+            </svg>
+            <span class="label">Option 9: Code Source</span>
+        </div>
+
+        <!-- Option 10: Neon Glitch -->
+        <div class="logo-box">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="glitch">
+                        <feOffset in="SourceGraphic" dx="3" dy="0" result="red" />
+                        <feOffset in="SourceGraphic" dx="-3" dy="0" result="blue" />
+                        <feMerge>
+                            <feMergeNode in="red" />
+                            <feMergeNode in="blue" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+                <rect width="200" height="200" rx="40" ry="40" fill="#050505" />
+                <text x="100" y="145" font-family="sans-serif" font-weight="900" font-size="120" text-anchor="middle"
+                    fill="#FFF" style="text-shadow: 4px 0 #ff00de, -4px 0 #00ffff;">M</text>
+                <rect x="50" y="90" width="100" height="10" fill="#050505" opacity="0.8" />
+            </svg>
+            <span class="label">Option 10: Neon Glitch</span>
+        </div>
+
+        <!-- Option 11: Origami Fold -->
+        <div class="logo-box">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad11a" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="grad11b" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FFA500;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#FF4500;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect width="200" height="200" rx="40" ry="40" fill="#222" />
+                <!-- Left fold -->
+                <path d="M50 150 L50 50 L100 100 Z" fill="url(#grad11a)" />
+                <!-- Right fold -->
+                <path d="M150 150 L150 50 L100 100 Z" fill="url(#grad11b)" />
+                <!-- Middle overlap shadow -->
+                <path d="M100 100 L100 150 L80 130" fill="#000" opacity="0.2" />
+            </svg>
+            <span class="label">Option 11: Origami Fold</span>
+        </div>
+
+        <!-- Option 12: Organic Growth -->
+        <div class="logo-box">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad12" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#a8ff78;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#78ffd6;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect width="200" height="200" rx="40" ry="40" fill="#1b1b1b" />
+                <path d="M100 170 Q60 170 60 130 Q60 90 100 40 Q140 90 140 130 Q140 170 100 170 Z" fill="url(#grad12)"
+                    opacity="0.8" />
+                <path d="M100 160 Q70 160 70 130 Q70 100 100 60 Q130 100 130 130 Q130 160 100 160 Z" fill="none"
+                    stroke="#fff" stroke-width="2" opacity="0.5" />
+                <circle cx="100" cy="110" r="10" fill="#fff" />
+            </svg>
+            <span class="label">Option 12: Organic Growth</span>
+        </div>
+
+        <!-- Option 13: Geometric Mono -->
+        <div class="logo-box">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="200" rx="40" ry="40" fill="#f5f5f5" />
+                <path d="M60 140 L60 60 L140 140 L140 60" stroke="#000" stroke-width="1.5" fill="none" />
+                <circle cx="60" cy="60" r="8" fill="#000" />
+                <circle cx="140" cy="140" r="8" fill="#000" />
+            </svg>
+            <span class="label">Option 13: Geometric Mono</span>
+        </div>
+
+        <!-- Option 14: Negative Space Circle -->
+        <div class="logo-box">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="200" rx="40" ry="40" fill="#fff" />
+                <circle cx="100" cy="100" r="70" fill="#000" />
+                <!-- Lowercase m in negative space -->
+                <path d="M70 130 V80 Q70 70 80 70 Q90 70 90 80 V130 V80 Q90 70 100 70 Q110 70 110 80 V130" stroke="#fff"
+                    stroke-width="12" fill="none" stroke-linecap="round" />
+            </svg>
+            <span class="label">Option 14: Negative Space</span>
+        </div>
+
+        <!-- Option 15: Swiss Style Bold -->
+        <div class="logo-box">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="200" rx="40" ry="40" fill="#000" />
+                <text x="90" y="140" font-family="Arial, Roboto, sans-serif" font-weight="900" font-size="120"
+                    fill="#fff" text-anchor="middle">M</text>
+                <circle cx="145" cy="130" r="12" fill="#FF3B30" />
+            </svg>
+            <span class="label">Option 15: Swiss Bold</span>
+        </div>
+    </div>
+</body>
+
+</html>
