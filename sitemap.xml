@@ -482,7 +482,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- PlantCare (다국어 + 베트남어) -->
+  <!-- Greenmate (다국어 + 베트남어) -->
   <url>
     <loc>https://monoapps.kr/plant-care.html</loc>
     <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/plant-care.html"/>
