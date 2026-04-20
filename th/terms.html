@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>ข้อกำหนดในการให้บริการ - MonoApps</title>
+    <meta name="description" content="ข้อกำหนดในการให้บริการของ MonoApps">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ข้อกำหนดในการให้บริการ - MonoApps">
+    <meta property="og:description" content="ข้อกำหนดในการให้บริการของ MonoApps">
+    <meta property="og:url" content="https://monoapps.kr/th/terms.html">
+    <meta property="og:image" content="https://monoapps.kr/images/og-image.png">
+    <meta property="og:locale" content="th_TH">
+    <meta property="og:site_name" content="MonoApps">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ข้อกำหนดในการให้บริการ - MonoApps">
+    <meta name="twitter:description" content="ข้อกำหนดในการให้บริการของ MonoApps">
+    <meta name="twitter:image" content="https://monoapps.kr/images/og-image.png">
+    <link rel="canonical" href="https://monoapps.kr/th/terms.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/terms.html">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/terms.html">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/terms.html">
+    <link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/terms.html">
+    <link rel="alternate" hreflang="es" href="https://monoapps.kr/es/terms.html">
+    <link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/terms.html">
+    <link rel="alternate" hreflang="vi" href="https://monoapps.kr/vi/terms.html">
+    <link rel="alternate" hreflang="id" href="https://monoapps.kr/id/terms.html">
+    <link rel="alternate" hreflang="th" href="https://monoapps.kr/th/terms.html">
+    <link rel="alternate" hreflang="fr" href="https://monoapps.kr/fr/terms.html">
+    <link rel="alternate" hreflang="de" href="https://monoapps.kr/de/terms.html">
+    <link rel="alternate" hreflang="ru" href="https://monoapps.kr/ru/terms.html">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/terms.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; min-height: 100vh; overflow-x: hidden; }
+        .bg-gradient { position: fixed; width: 150vw; height: 150vh; top: -25vh; left: -25vw; background: conic-gradient(from 180deg at 50% 50%, #ee7752, #e73c7e, #23a6d5, #23d5ab); filter: blur(100px); animation: rotate 20s linear infinite; z-index: -1; opacity: 0.7; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        nav { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background: rgba(0,0,0,0.3); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero { min-height: 30vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 40px; text-align: center; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 0.5rem; }
+        .hero p { opacity: 0.6; }
+        main { max-width: 800px; margin: 0 auto; padding: 0 2rem 6rem; }
+        .content-card { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 25px; padding: 3rem; }
+        .last-updated { font-size: 0.9rem; opacity: 0.5; margin-bottom: 2rem; }
+        .content-card p { color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 1rem; }
+        .content-card h2 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; color: white; }
+        .content-card ul { padding-left: 20px; color: rgba(255,255,255,0.7); margin-bottom: 1rem; }
+        .content-card li { padding: 0.3rem 0; line-height: 1.6; }
+        .content-card a { color: #e73c7e; font-weight: 600; }
+        footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+        @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .mobile-menu-btn { display: block; } .content-card { padding: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    <nav>
+        <a href="index.html" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="index.html#apps">แอปมือถือ</a>
+            <a href="index.html#services">บริการเว็บ</a>
+            <a href="support.html">ฝ่ายสนับสนุน</a>
+            <a href="news.html">ข่าวสาร</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">TH</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="../terms.html">한국어</a>
+                    <a href="../en/terms.html">English</a>
+                    <a href="../ja/terms.html">日本語</a>
+                    <a href="../zh/terms.html">中文</a>
+                    <a href="../es/terms.html">Español</a>
+                    <a href="../pt/terms.html">Português</a>
+                    <a href="../vi/terms.html">Tiếng Việt</a>
+                    <a href="../id/terms.html">Bahasa Indonesia</a>
+                    <a href="terms.html">ไทย</a>
+                    <a href="../fr/terms.html">Français</a>
+                    <a href="../de/terms.html">Deutsch</a>
+                    <a href="../ru/terms.html">Русский</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#apps">แอปมือถือ</a>
+        <a href="index.html#services">บริการเว็บ</a>
+        <a href="support.html">ฝ่ายสนับสนุน</a>
+        <a href="news.html">ข่าวสาร</a>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 0.5rem; padding-top: 0.5rem;">
+            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">ภาษา</div>
+            <a href="../terms.html">한국어</a>
+            <a href="../en/terms.html">English</a>
+            <a href="../ja/terms.html">日本語</a>
+            <a href="../zh/terms.html">中文</a>
+            <a href="../es/terms.html">Español</a>
+            <a href="../pt/terms.html">Português</a>
+            <a href="../vi/terms.html">Tiếng Việt</a>
+            <a href="../id/terms.html">Bahasa Indonesia</a>
+            <a href="terms.html" style="color: #e73c7e;">ไทย</a>
+            <a href="../fr/terms.html">Français</a>
+            <a href="../de/terms.html">Deutsch</a>
+            <a href="../ru/terms.html">Русский</a>
+        </div>
+    </div>
+    <section class="hero">
+        <div>
+            <h1>ข้อกำหนดในการให้บริการ</h1>
+            <p>กฎสำหรับการใช้บริการของเรา</p>
+        </div>
+    </section>
+    <main>
+        <div class="content-card">
+            <p class="last-updated">อัปเดตล่าสุด: 16 มีนาคม 2026</p>
+            <p>ข้อกำหนดในการให้บริการนี้ใช้กับแอปพลิเคชันมือถือทั้งหมดที่จัดทำโดย MonoApps (ต่อไปนี้เรียกว่า "บริษัท")</p>
+
+            <h2>ข้อ 1 (วัตถุประสงค์)</h2>
+            <p>ข้อกำหนดนี้มีจุดมุ่งหมายเพื่อกำหนดสิทธิ ภาระผูกพัน และความรับผิดชอบระหว่างบริษัทและผู้ใช้เกี่ยวกับการใช้บริการแอปพลิเคชันมือถือ (ต่อไปนี้เรียกว่า "บริการ") ที่จัดทำโดยบริษัท</p>
+
+            <h2>ข้อ 2 (คำจำกัดความ)</h2>
+            <ul>
+                <li><strong>"บริการ"</strong> หมายถึงแอปพลิเคชันมือถือและบริการที่เกี่ยวข้องที่จัดทำโดยบริษัท</li>
+                <li><strong>"ผู้ใช้"</strong> หมายถึงใครก็ตามที่ได้รับบริการที่จัดทำโดยบริษัทตามข้อกำหนดนี้</li>
+                <li><strong>"เนื้อหา"</strong> หมายถึงข้อมูลที่สร้างหรือจัดเก็บโดยผู้ใช้ผ่านบริการ</li>
+            </ul>
+
+            <h2>ข้อ 3 (การจัดให้บริการ)</h2>
+            <p>บริษัทจัดให้บริการต่อไปนี้ผ่านแอปพลิเคชันมือถือต่างๆ:</p>
+            <ul>
+                <li>เครื่องมืออรรถประโยชน์ (การสแกน QR เครื่องคิดเลข การแปลงหน่วย ฯลฯ)</li>
+                <li>เครื่องมือเพิ่มประสิทธิภาพ (บันทึก การจัดการตารางเวลา ฯลฯ)</li>
+                <li>บริการไลฟ์สไตล์</li>
+                <li>บริการแอปอื่นๆ ที่พัฒนาและจัดทำโดยบริษัท</li>
+            </ul>
+            <p><em>※ รายการแอปสามารถดูได้ที่เว็บไซต์ของบริษัท (monoapps.kr) หรือแอปสโตร์</em></p>
+            <p>บริการโดยพื้นฐานแล้วฟรี แต่บางคุณสมบัติอาจมีค่าใช้จ่ายหรือมีโฆษณา</p>
+
+            <h2>ข้อ 4 (การโฆษณา)</h2>
+            <p>บริษัทอาจแสดงโฆษณาในแอปเพื่อการดำเนินการบริการ ผู้ใช้ตกลงที่จะแสดงโฆษณาเมื่อใช้บริการ สำหรับเรื่องที่เกี่ยวข้องกับการเก็บรวบรวมข้อมูลสำหรับการโฆษณา โปรดดูที่นโยบายความเป็นส่วนตัว</p>
+
+            <h2>ข้อ 5 (การซื้อภายในแอป)</h2>
+            <p>บริษัทอาจจัดให้มีเนื้อหาหรือคุณสมบัติแบบชำระเงินภายในแอป</p>
+            <ul>
+                <li><strong>วิธีการชำระเงิน:</strong> การซื้อภายในแอปจะดำเนินการผ่านระบบการชำระเงินของ Apple App Store หรือ Google Play Store</li>
+                <li><strong>การยืนยันการซื้อ:</strong> การซื้อทั้งหมดจะถูกนำไปใช้ทันทีหลังจากการชำระเงินเสร็จสิ้น</li>
+                <li><strong>บริการสมาชิก:</strong> สำหรับผลิตภัณฑ์สมัครสมาชิก การสมัครสมาชิกจะได้รับการต่ออายุโดยอัตโนมัติเมื่อสิ้นสุดระยะเวลาการสมัครสมาชิก เว้นแต่จะถูกยกเลิก</li>
+                <li><strong>การเปลี่ยนแปลงราคา:</strong> บริษัทอาจเปลี่ยนแปลงราคาของผลิตภัณฑ์ในแอปและจะแจ้งให้สมาชิกปัจจุบันทราบก่อนการต่ออายุ</li>
+            </ul>
+
+            <h2>ข้อ 6 (นโยบายการคืนเงิน)</h2>
+            <p>การคืนเงินสำหรับการซื้อภายในแอปจะดำเนินการดังต่อไปนี้:</p>
+            <ul>
+                <li><strong>เนื้อหาดิจิทัล:</strong> เนื่องจากลักษณะของเนื้อหาดิจิทัล การคืนเงินอาจมีข้อจำกัดหลังการซื้อ</li>
+                <li><strong>คำขอคืนเงิน:</strong> การคืนเงินจะดำเนินการตามนโยบายการคืนเงินของ Apple App Store หรือ Google Play Store
+                    <ul>
+                        <li>iOS: ขอคืนเงินผ่านการสนับสนุนของ Apple (reportaproblem.apple.com)</li>
+                        <li>Android: ขอคืนเงินผ่านบริการลูกค้าของ Google Play</li>
+                    </ul>
+                </li>
+                <li><strong>ปัญหาทางเทคนิค:</strong> หากคุณไม่สามารถใช้คุณสมบัติที่ซื้อมาได้เนื่องจากข้อบกพร่องทางเทคนิคในแอป โปรดติดต่อเราและเราจะตรวจสอบและดำเนินการที่เหมาะสม</li>
+            </ul>
+
+            <h2>ข้อ 7 (ภาระผูกพันของผู้ใช้)</h2>
+            <p>ผู้ใช้จะต้องไม่กระทำกิจกรรมต่อไปนี้:</p>
+            <ul>
+                <li>การขโมยข้อมูลส่วนบุคคลของผู้อื่นหรือการลงทะเบียนข้อมูลเท็จ</li>
+                <li>การสร้างเนื้อหาเพื่อวัตถุประสงค์ที่ผิดกฎหมายโดยใช้บริการ</li>
+                <li>การละเมิดสิทธิ์ทรัพย์สินทางปัญญาของบริษัท</li>
+                <li>การรบกวนการดำเนินงานของบริการหรือทำลายความเสถียร</li>
+                <li>การฝ่าฝืนกฎหมายที่เกี่ยวข้องหรือข้อกำหนดในข้อกำหนดนี้</li>
+            </ul>
+
+            <h2>ข้อ 8 (สิทธิ์ในทรัพย์สินทางปัญญา)</h2>
+            <p>ลิขสิทธิ์และสิทธิ์ในทรัพย์สินทางปัญญาสำหรับบริการเป็นของบริษัท สิทธิ์ในเนื้อหาที่สร้างโดยผู้ใช้ผ่านบริการเป็นของผู้ใช้แต่ละคน</p>
+            <p>ผู้ใช้จะต้องไม่ทำซ้ำ ส่ง เผยแพร่ แจกจ่าย ออกอากาศ หรือใช้ข้อมูลที่ได้รับผ่านบริการเพื่อวัตถุประสงค์ทางการค้าหรืออนุญาตให้บุคคลที่สามใช้ข้อมูลดังกล่าวโดยไม่ได้รับความยินยอมล่วงหน้าจากบริษัท</p>
+
+            <h2>ข้อ 9 (บริการ AI และการใช้ข้อมูล)</h2>
+            <p>แอปบางตัวของบริษัทมีคุณสมบัติที่ใช้ AI (เช่น การวินิจฉัยโรคพืช) และข้อมูลที่ผู้ใช้ให้มาอาจถูกใช้เพื่อวัตถุประสงค์นี้</p>
+            <ul>
+                <li>บริษัทอาจเก็บรวบรวมรูปภาพที่ถ่ายหรืออัปโหลดโดยผู้ใช้ (เช่น รูปพืช) เพื่อการให้บริการ AI และการปรับปรุงคุณภาพ และใช้สำหรับการฝึกฝนโมเดล AI</li>
+                <li>การใช้ข้อมูลเพื่อวัตถุประสงค์การฝึกฝน AI ต้องได้รับกระบวนการยินยอมแยกต่างหากภายในแอป และผู้ใช้สามารถถอนความยินยอมได้ตลอดเวลา</li>
+                <li>เมื่อถอนความยินยอม ข้อมูลของผู้ใช้จะไม่ถูกใช้สำหรับการฝึกฝนอีกต่อไป อย่างไรก็ตาม ข้อมูลที่ถูกใช้สำหรับการฝึกฝนโมเดล AI แล้วอาจยากทางเทคนิคในการแยกและลบออกจากโมเดล</li>
+                <li>ข้อมูลที่เก็บรวบรวมจะถูกใช้หลังจากการประมวลผลลบข้อมูลระบุตัวตน สำหรับรายละเอียด โปรดดูที่นโยบายความเป็นส่วนตัว</li>
+            </ul>
+
+            <h2>ข้อ 10 (การเปลี่ยนแปลงและการระงับบริการ)</h2>
+            <p>บริษัทอาจเปลี่ยนแปลงบริการที่ให้อยู่ตามความจำเป็นในการดำเนินงานและทางเทคนิค การเปลี่ยนแปลงเนื้อหาบริการ วิธีการใช้งาน และเวลาการใช้งานจะประกาศล่วงหน้าผ่านแอปหรือเว็บไซต์</p>
+            <p>บริษัทอาจจำกัดหรือระงับทั้งหมดหรือบางส่วนของบริการในกรณีต่อไปนี้:</p>
+            <ul>
+                <li>สถานการณ์ที่หลีกเลี่ยงไม่ได้เนื่องจากการบำรุงรักษาสิ่งอำนวยความสะดวกในการให้บริการ</li>
+                <li>เหตุสุดวิสัย เช่น ภัยพิบัติทางธรรมชาติหรือภาวะฉุกเฉินของชาติ</li>
+                <li>สถานการณ์อื่นๆ ที่ทำให้การให้บริการเป็นเรื่องยาก</li>
+            </ul>
+
+            <h2>ข้อ 11 (ข้อปฏิเสธ)</h2>
+            <ul>
+                <li>บริษัทได้รับการยกเว้นความรับผิดชอบต่อการให้บริการเมื่อไม่สามารถให้บริการได้เนื่องจากภัยพิบัติทางธรรมชาติหรือเหตุสุดวิสัยที่เทียบเท่า</li>
+                <li>บริษัทไม่รับผิดชอบต่อการหยุดชะงักของการใช้บริการเนื่องจากความผิดของผู้ใช้</li>
+                <li>บริษัทไม่รับผิดชอบต่อผู้ใช้ที่ไม่ได้รับหรือสูญเสียกำไรที่คาดหวังจากการใช้บริการ</li>
+                <li>บริษัทไม่รับผิดชอบต่อเนื้อหาที่สร้างหรือจัดเก็บโดยผู้ใช้</li>
+            </ul>
+
+            <h2>ข้อ 12 (การระงับข้อพิพาท)</h2>
+            <p>ข้อกำหนดนี้อยู่ภายใต้การควบคุมและการตีความตามกฎหมายของสาธารณรัฐเกาหลี หากมีการฟ้องคดีสำหรับข้อพิพาทที่เกิดขึ้นจากการใช้บริการ ศาลที่มีเขตอำนาจเหนือสถานที่ตั้งสำนักงานใหญ่ของบริษัทจะมีเขตอำนาจ</p>
+
+            <h2>ข้อ 13 (การเปลี่ยนแปลงข้อกำหนด)</h2>
+            <p>บริษัทอาจแก้ไขข้อกำหนดนี้เพื่อสะท้อนถึงการเปลี่ยนแปลงในกฎหมายหรือบริการ เมื่อข้อกำหนดมีการเปลี่ยนแปลง วันที่มีผลบังคับใช้และเหตุผลในการเปลี่ยนแปลงจะประกาศพร้อมกับข้อกำหนดปัจจุบันผ่านแอปหรือเว็บไซต์</p>
+
+            <h2>ข้อ 14 (การติดต่อ)</h2>
+            <p>สำหรับการสอบถามเกี่ยวกับข้อกำหนดนี้ โปรดติดต่อ <a href="mailto:monoappskr@gmail.com">monoappskr@gmail.com</a></p>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">นโยบายความเป็นส่วนตัว</a>
+            <a href="terms.html">ข้อกำหนดในการให้บริการ</a>
+            <a href="support.html">ฝ่ายสนับสนุน</a>
+            <a href="mailto:monoappskr@gmail.com">ติดต่อ</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('active'); });
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        menu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => menu.classList.remove('active')); });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
