@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>PetCare - App Tudo-em-Um para Pets | MonoApps</title>
+    <meta name="description" content="App tudo-em-um para gerir passeios, saúde e vacinas do seu pet. Com análise de saúde por IA e transformação de estilo. Em breve.">
+    <meta name="keywords" content="PetCare, pet, cão, gato, passeio, vacina, análise IA, estilo, MonoApps">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PetCare - App Tudo-em-Um para Pets">
+    <meta property="og:description" content="App tudo-em-um para gerir passeios, saúde e vacinas do seu pet.">
+    <meta property="og:url" content="https://monoapps.kr/pt/petallinone.html">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="MonoApps">
+    <meta property="og:image" content="https://monoapps.kr/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PetCare - App Tudo-em-Um para Pets">
+    <meta name="twitter:description" content="App tudo-em-um para gerir passeios, saúde e vacinas do seu pet.">
+    <meta name="twitter:image" content="https://monoapps.kr/images/og-image.png">
+    <link rel="canonical" href="https://monoapps.kr/pt/petallinone.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/petallinone.html">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/petallinone.html">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/petallinone.html">
+    <link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/petallinone.html">
+    <link rel="alternate" hreflang="es" href="https://monoapps.kr/es/petallinone.html">
+    <link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/petallinone.html">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/petallinone.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; min-height: 100vh; overflow-x: hidden; }
+
+        .bg-gradient {
+            position: fixed;
+            width: 150vw; height: 150vh;
+            top: -25vh; left: -25vw;
+            background: conic-gradient(from 180deg at 50% 50%, #22c55e, #16a34a, #4ade80, #10b981);
+            filter: blur(100px);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+            opacity: 0.4;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            z-index: 100;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(90deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px; left: 0; right: 0;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            z-index: 99;
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; padding: 1rem 0; color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+        .hero {
+            padding: 140px 2rem 5rem;
+            text-align: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .hero-content { animation: fadeInUp 0.7s; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .app-icon {
+            width: 100px; height: 100px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #22c55e, #10b981);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 20px 60px rgba(34,197,94,0.4);
+        }
+        .status-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.75);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #fff, #86efac);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.75;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .coming-soon-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: rgba(34,197,94,0.1);
+            border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 14px;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #86efac;
+        }
+
+        section { padding: 5rem 2rem; }
+        .section-title { text-align: center; font-size: 2.5rem; font-weight: 800; margin-bottom: 0.8rem; letter-spacing: -1.2px; }
+        .section-desc { text-align: center; opacity: 0.6; margin-bottom: 4rem; font-size: 1.05rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: 0.3s;
+        }
+        .feature-card:hover {
+            background: rgba(255,255,255,0.07);
+            transform: translateY(-4px);
+        }
+        .feature-icon {
+            width: 56px; height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+        .feature-card h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+        .feature-card p { font-size: 0.92rem; opacity: 0.6; line-height: 1.6; }
+
+        .screenshots {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .screenshot-item { text-align: center; flex-shrink: 0; }
+        .screenshot-frame {
+            width: 200px;
+            height: 430px;
+            background: #111;
+            border-radius: 30px;
+            border: 6px solid #222;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+        .screenshot-frame:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 35px 70px rgba(34,197,94,0.25);
+        }
+        .screenshot-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .screenshot-label { margin-top: 1rem; font-size: 0.9rem; font-weight: 600; opacity: 0.7; }
+
+        .premium-box {
+            max-width: 720px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(34,197,94,0.15), rgba(16,185,129,0.15));
+            border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+        }
+        .premium-box .premium-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .premium-box h3 { font-size: 1.6rem; margin-bottom: 0.75rem; letter-spacing: -0.5px; }
+        .premium-box p { opacity: 0.65; line-height: 1.7; margin-bottom: 1.5rem; }
+        .premium-items { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .premium-item {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .lang-row { max-width: 720px; margin: 0 auto; text-align: center; opacity: 0.7; }
+        .lang-tags { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; margin-top: 1.2rem; }
+        .lang-tag {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 100px;
+            padding: 6px 14px;
+            font-size: 0.82rem;
+        }
+
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding-top: 100px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .section-title { font-size: 1.9rem; }
+            .screenshot-frame { width: 160px; height: 345px; }
+            section { padding: 3.5rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="index.html" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="apps.html">Apps Móveis</a>
+            <a href="index.html#services">Serviços Web</a>
+            <a href="support.html">Suporte</a>
+            <a href="news.html">Notícias</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">PT</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="../petallinone.html">한국어</a>
+                    <a href="../en/petallinone.html">English</a>
+                    <a href="../ja/petallinone.html">日本語</a>
+                    <a href="../zh/petallinone.html">中文</a>
+                    <a href="../es/petallinone.html">Español</a>
+                    <a href="petallinone.html" style="color:#22c55e;">Português</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="apps.html">Apps Móveis</a>
+        <a href="index.html#services">Serviços Web</a>
+        <a href="support.html">Suporte</a>
+        <a href="news.html">Notícias</a>
+        <div style="border-top:1px solid rgba(255,255,255,0.1); margin-top:0.5rem; padding-top:0.5rem;">
+            <div style="font-size:0.8rem; color:rgba(255,255,255,0.4); padding:0.5rem 0;">Selecionar Idioma</div>
+            <a href="../petallinone.html">한국어</a>
+            <a href="../en/petallinone.html">English</a>
+            <a href="../ja/petallinone.html">日本語</a>
+            <a href="../zh/petallinone.html">中文</a>
+            <a href="../es/petallinone.html">Español</a>
+            <a href="petallinone.html" style="color:#22c55e;">Português</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="app-icon">🐾</div>
+            <div class="status-tag">Em Breve</div>
+            <h1>PetCare</h1>
+            <p>App tudo-em-um para gerir passeios, saúde e vacinas do seu pet.<br>A IA analisa pele e fezes para check-ups de saúde precoces.</p>
+            <div class="coming-soon-box">
+                🚀 Em breve na App Store / Google Play
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section>
+        <h2 class="section-title">Funcionalidades Principais</h2>
+        <p class="section-desc">Tudo o que você precisa para cuidar do seu pet</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(79,195,247,0.15);">🚶</div>
+                <h3>Registo de Passeios GPS</h3>
+                <p>Regista automaticamente rota, distância e tempo. Receba lembretes diários.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(239,68,68,0.15);">🍽️</div>
+                <h3>Calculadora de Ração</h3>
+                <p>Calcula automaticamente a quantidade de ração com base no peso e idade.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(34,197,94,0.15);">💉</div>
+                <h3>Gestão de Vacinas</h3>
+                <p>Acompanhe vacinas e receba lembretes para não perder nenhuma consulta.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(148,163,184,0.15);">⚖️</div>
+                <h3>Monitorização de Peso</h3>
+                <p>Visualize mudanças de peso em gráficos para apoiar a gestão de saúde.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(168,85,247,0.15);">🔬</div>
+                <h3>Análise de Saúde por IA</h3>
+                <p>Analise pele e fezes a partir de uma foto. Detecte sinais de alerta precoces.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(249,115,22,0.15);">✨</div>
+                <h3>Transformação de Estilo</h3>
+                <p>A IA transforma fotos de pets em estilos como rei, cavaleiro, astronauta.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(59,130,246,0.15);">🏥</div>
+                <h3>Pesquisa de Veterinários</h3>
+                <p>Encontre veterinários próximos no mapa com base na sua localização.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(234,179,8,0.15);">📚</div>
+                <h3>Informações de Raças</h3>
+                <p>Características e cuidados de 80 raças de cães e 54 de gatos, num relance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section>
+        <h2 class="section-title">Capturas</h2>
+        <p class="section-desc">Design simples, recursos ricos</p>
+        <div class="screenshots">
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="../images/petallinone/pt/screen-2.png" alt="Início"></div>
+                <p class="screenshot-label">Início</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="../images/petallinone/pt/screen-3.png" alt="Passeio"></div>
+                <p class="screenshot-label">Registo de Passeios</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="../images/petallinone/pt/screen-4.png" alt="Saúde"></div>
+                <p class="screenshot-label">Gestão de Saúde</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="../images/petallinone/pt/screen-5.png" alt="Info"></div>
+                <p class="screenshot-label">Recursos Extras</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="../images/petallinone/pt/screen-7.png" alt="Vacina"></div>
+                <p class="screenshot-label">Adicionar Vacina</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="../images/petallinone/pt/screen-1.png" alt="Adicionar Pet"></div>
+                <p class="screenshot-label">Adicionar Pet</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="../images/petallinone/pt/screen-6.png" alt="Ajustes"></div>
+                <p class="screenshot-label">Ajustes · Cópia</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium -->
+    <section>
+        <h2 class="section-title">Assinatura Premium</h2>
+        <p class="section-desc">Cuide do seu pet com recursos mais potentes</p>
+        <div class="premium-box">
+            <div class="premium-icon">✨</div>
+            <h3>PetCare Pro</h3>
+            <p>Use a Análise de Saúde por IA com mais frequência e sem anúncios.</p>
+            <div class="premium-items">
+                <div class="premium-item">🔬 Análise de Saúde por IA 50×/mês</div>
+                <div class="premium-item">✨ Transformação de Estilo 10×/mês</div>
+                <div class="premium-item">🚫 Sem Anúncios</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages -->
+    <section>
+        <h2 class="section-title">Suporte Multi-idioma</h2>
+        <p class="section-desc">UI e análise IA localizadas em 5 idiomas</p>
+        <div class="lang-row">
+            <div class="lang-tags">
+                <span class="lang-tag">🇰🇷 한국어</span>
+                <span class="lang-tag">🇺🇸 English</span>
+                <span class="lang-tag">🇯🇵 日本語</span>
+                <span class="lang-tag">🇪🇸 Español</span>
+                <span class="lang-tag">🇩🇪 Deutsch</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">Política de Privacidade</a>
+            <a href="terms.html">Termos de Serviço</a>
+            <a href="support.html">Suporte</a>
+            <a href="mailto:monoappskr@gmail.com">Contato</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => menu.classList.toggle('active'));
+
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        document.addEventListener('click', () => langDropdown.classList.remove('active'));
+    </script>
+</body>
+</html>

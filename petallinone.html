@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>펫케어 - 반려동물 올인원 관리 앱 | MonoApps</title>
+    <meta name="description" content="반려동물의 산책, 건강, 예방접종까지 한 번에 관리하는 올인원 앱. AI 건강 분석과 펫 스타일 변환 기능 제공. 출시 준비중.">
+    <meta name="keywords" content="펫케어, 반려동물, 강아지, 고양이, 산책, 예방접종, AI 건강분석, 펫 스타일, MonoApps">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="펫케어 - 반려동물 올인원 관리 앱">
+    <meta property="og:description" content="반려동물의 산책, 건강, 예방접종까지 한 번에 관리하는 올인원 앱.">
+    <meta property="og:url" content="https://monoapps.kr/petallinone.html">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="MonoApps">
+    <meta property="og:image" content="https://monoapps.kr/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="펫케어 - 반려동물 올인원 관리 앱">
+    <meta name="twitter:description" content="반려동물의 산책, 건강, 예방접종까지 한 번에 관리하는 올인원 앱.">
+    <meta name="twitter:image" content="https://monoapps.kr/images/og-image.png">
+    <link rel="canonical" href="https://monoapps.kr/petallinone.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/petallinone.html">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/petallinone.html">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/petallinone.html">
+    <link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/petallinone.html">
+    <link rel="alternate" hreflang="es" href="https://monoapps.kr/es/petallinone.html">
+    <link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/petallinone.html">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/petallinone.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; min-height: 100vh; overflow-x: hidden; }
+
+        .bg-gradient {
+            position: fixed;
+            width: 150vw; height: 150vh;
+            top: -25vh; left: -25vw;
+            background: conic-gradient(from 180deg at 50% 50%, #22c55e, #16a34a, #4ade80, #10b981);
+            filter: blur(100px);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+            opacity: 0.4;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            z-index: 100;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(90deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px; left: 0; right: 0;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            z-index: 99;
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; padding: 1rem 0; color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+        .hero {
+            padding: 140px 2rem 5rem;
+            text-align: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .hero-content { animation: fadeInUp 0.7s; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .app-icon {
+            width: 100px; height: 100px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #22c55e, #10b981);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 20px 60px rgba(34,197,94,0.4);
+        }
+        .status-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.75);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #fff, #86efac);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.75;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .coming-soon-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: rgba(34,197,94,0.1);
+            border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 14px;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #86efac;
+        }
+
+        section { padding: 5rem 2rem; }
+        .section-title { text-align: center; font-size: 2.5rem; font-weight: 800; margin-bottom: 0.8rem; letter-spacing: -1.2px; }
+        .section-desc { text-align: center; opacity: 0.6; margin-bottom: 4rem; font-size: 1.05rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: 0.3s;
+        }
+        .feature-card:hover {
+            background: rgba(255,255,255,0.07);
+            transform: translateY(-4px);
+        }
+        .feature-icon {
+            width: 56px; height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+        .feature-card h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+        .feature-card p { font-size: 0.92rem; opacity: 0.6; line-height: 1.6; }
+
+        .screenshots {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .screenshot-item { text-align: center; flex-shrink: 0; }
+        .screenshot-frame {
+            width: 200px;
+            height: 430px;
+            background: #111;
+            border-radius: 30px;
+            border: 6px solid #222;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+        .screenshot-frame:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 35px 70px rgba(34,197,94,0.25);
+        }
+        .screenshot-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .screenshot-label { margin-top: 1rem; font-size: 0.9rem; font-weight: 600; opacity: 0.7; }
+
+        .premium-box {
+            max-width: 720px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(34,197,94,0.15), rgba(16,185,129,0.15));
+            border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+        }
+        .premium-box .premium-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .premium-box h3 { font-size: 1.6rem; margin-bottom: 0.75rem; letter-spacing: -0.5px; }
+        .premium-box p { opacity: 0.65; line-height: 1.7; margin-bottom: 1.5rem; }
+        .premium-items { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .premium-item {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .lang-row { max-width: 720px; margin: 0 auto; text-align: center; opacity: 0.7; }
+        .lang-tags { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; margin-top: 1.2rem; }
+        .lang-tag {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 100px;
+            padding: 6px 14px;
+            font-size: 0.82rem;
+        }
+
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding-top: 100px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .section-title { font-size: 1.9rem; }
+            .screenshot-frame { width: 160px; height: 345px; }
+            section { padding: 3.5rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="index.html" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="apps.html">모바일 앱</a>
+            <a href="index.html#services">웹 서비스</a>
+            <a href="support.html">고객지원</a>
+            <a href="news.html">소식</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">KO</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="petallinone.html" style="color:#22c55e;">한국어</a>
+                    <a href="en/petallinone.html">English</a>
+                    <a href="ja/petallinone.html">日本語</a>
+                    <a href="zh/petallinone.html">中文</a>
+                    <a href="es/petallinone.html">Español</a>
+                    <a href="pt/petallinone.html">Português</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="apps.html">모바일 앱</a>
+        <a href="index.html#services">웹 서비스</a>
+        <a href="support.html">고객지원</a>
+        <a href="news.html">소식</a>
+        <div style="border-top:1px solid rgba(255,255,255,0.1); margin-top:0.5rem; padding-top:0.5rem;">
+            <div style="font-size:0.8rem; color:rgba(255,255,255,0.4); padding:0.5rem 0;">언어 선택</div>
+            <a href="petallinone.html" style="color:#22c55e;">한국어</a>
+            <a href="en/petallinone.html">English</a>
+            <a href="ja/petallinone.html">日本語</a>
+            <a href="zh/petallinone.html">中文</a>
+            <a href="es/petallinone.html">Español</a>
+            <a href="pt/petallinone.html">Português</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="app-icon">🐾</div>
+            <div class="status-tag">출시 준비중</div>
+            <h1>펫케어</h1>
+            <p>반려동물의 산책, 건강, 예방접종까지 한 번에 관리하는 올인원 앱.<br>AI가 피부와 대변 상태를 분석해 건강을 체크합니다.</p>
+            <div class="coming-soon-box">
+                🚀 App Store / Google Play 출시 준비 중입니다
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section>
+        <h2 class="section-title">주요 기능</h2>
+        <p class="section-desc">반려동물 관리에 필요한 모든 것</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(79,195,247,0.15);">🚶</div>
+                <h3>GPS 산책 기록</h3>
+                <p>경로, 거리, 시간을 자동 기록. 매일 산책 시간에 알림까지 받아보세요.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(239,68,68,0.15);">🍽️</div>
+                <h3>사료량 계산</h3>
+                <p>체중과 나이에 맞춰 권장 사료량을 자동 계산해 드립니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(34,197,94,0.15);">💉</div>
+                <h3>예방접종 관리</h3>
+                <p>접종 기록과 다음 일정을 놓치지 않도록 예약 알림을 보내드립니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(148,163,184,0.15);">⚖️</div>
+                <h3>체중 추적</h3>
+                <p>체중 변화를 그래프로 확인하고 건강 관리에 활용하세요.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(168,85,247,0.15);">🔬</div>
+                <h3>AI 건강 분석</h3>
+                <p>사진 한 장으로 피부와 대변 상태를 분석. 조기 이상 신호를 놓치지 마세요.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(249,115,22,0.15);">✨</div>
+                <h3>펫 스타일 변환</h3>
+                <p>왕, 기사, 우주비행사 등 다양한 스타일로 AI가 펫 사진을 변환합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(59,130,246,0.15);">🏥</div>
+                <h3>동물병원 검색</h3>
+                <p>현재 위치 기반으로 가까운 동물병원을 지도에서 확인하세요.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background:rgba(234,179,8,0.15);">📚</div>
+                <h3>품종 정보</h3>
+                <p>강아지 80종, 고양이 54종의 특성과 주의사항을 한눈에.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section>
+        <h2 class="section-title">앱 화면</h2>
+        <p class="section-desc">심플한 디자인, 풍부한 기능</p>
+        <div class="screenshots">
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="images/petallinone/ko/screen-2.png" alt="홈 화면"></div>
+                <p class="screenshot-label">홈 화면</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="images/petallinone/ko/screen-3.png" alt="산책"></div>
+                <p class="screenshot-label">산책 기록</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="images/petallinone/ko/screen-4.png" alt="건강관리"></div>
+                <p class="screenshot-label">건강 관리</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="images/petallinone/ko/screen-5.png" alt="정보"></div>
+                <p class="screenshot-label">부가 기능</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="images/petallinone/ko/screen-7.png" alt="예방접종"></div>
+                <p class="screenshot-label">예방접종 등록</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="images/petallinone/ko/screen-1.png" alt="반려동물 등록"></div>
+                <p class="screenshot-label">반려동물 등록</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="images/petallinone/ko/screen-6.png" alt="설정"></div>
+                <p class="screenshot-label">설정 · 백업</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium -->
+    <section>
+        <h2 class="section-title">프리미엄 구독</h2>
+        <p class="section-desc">더 강력한 기능으로 반려동물을 케어하세요</p>
+        <div class="premium-box">
+            <div class="premium-icon">✨</div>
+            <h3>펫케어 Pro</h3>
+            <p>AI 건강 분석을 더 자주 이용하고 광고 없이 쾌적하게 사용할 수 있습니다.</p>
+            <div class="premium-items">
+                <div class="premium-item">🔬 AI 건강 분석 월 50회</div>
+                <div class="premium-item">✨ 펫 스타일 변환 월 10회</div>
+                <div class="premium-item">🚫 광고 제거</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages -->
+    <section>
+        <h2 class="section-title">다국어 지원</h2>
+        <p class="section-desc">5개 언어로 현지화된 UI와 AI 분석</p>
+        <div class="lang-row">
+            <div class="lang-tags">
+                <span class="lang-tag">🇰🇷 한국어</span>
+                <span class="lang-tag">🇺🇸 English</span>
+                <span class="lang-tag">🇯🇵 日本語</span>
+                <span class="lang-tag">🇪🇸 Español</span>
+                <span class="lang-tag">🇩🇪 Deutsch</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">개인정보 처리방침</a>
+            <a href="terms.html">이용약관</a>
+            <a href="support.html">고객지원</a>
+            <a href="mailto:monoappskr@gmail.com">문의하기</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => menu.classList.toggle('active'));
+
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        document.addEventListener('click', () => langDropdown.classList.remove('active'));
+    </script>
+</body>
+</html>
