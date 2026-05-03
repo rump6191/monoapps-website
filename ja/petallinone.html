@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <title>ペットケア - ペット総合管理アプリ | MonoApps</title>
-    <meta name="description" content="ペットの散歩、健康、ワクチン接種まで一度に管理できるオールインワンアプリ。AI健康分析とペットスタイル変換機能を提供。発売準備中。">
+    <meta name="description" content="ペットの散歩、健康、ワクチン接種まで一度に管理できるオールインワンアプリ。AI健康分析とペットスタイル変換機能を提供。">
     <meta name="keywords" content="ペットケア, ペット, 犬, 猫, 散歩, ワクチン, AI健康分析, ペットスタイル, MonoApps">
     <meta property="og:type" content="website">
     <meta property="og:title" content="ペットケア - ペット総合管理アプリ">
@@ -135,18 +135,23 @@
             max-width: 700px;
             margin: 0 auto 2rem;
         }
-        .coming-soon-box {
+        .store-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .store-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.7rem;
-            background: rgba(34,197,94,0.1);
-            border: 1px solid rgba(34,197,94,0.3);
-            border-radius: 14px;
+            gap: 10px;
             padding: 14px 28px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 14px;
+            color: white;
+            text-decoration: none;
             font-size: 1rem;
             font-weight: 600;
-            color: #86efac;
+            transition: 0.3s;
         }
+        .store-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .store-btn svg { width: 22px; height: 22px; }
 
         section { padding: 5rem 2rem; }
         .section-title { text-align: center; font-size: 2.5rem; font-weight: 800; margin-bottom: 0.8rem; letter-spacing: -1.2px; }
@@ -310,11 +315,18 @@
     <section class="hero">
         <div class="hero-content">
             <div class="app-icon" style="background: transparent; box-shadow: none;"><img src="../images/petallinone-icon.png" alt="ペットケア" style="width: 100%; height: 100%; object-fit: contain; border-radius: 24px;"></div>
-            <div class="status-tag">発売準備中</div>
+            <div class="status-tag">リリース済み</div>
             <h1>ペットケア</h1>
             <p>ペットの散歩、健康、ワクチン接種まで一度に管理できるオールインワンアプリ。<br>AIが皮膚と便の状態を分析して健康をチェックします。</p>
-            <div class="coming-soon-box">
-                🚀 App Store / Google Playで発売準備中です
+            <div class="store-buttons">
+                <a href="https://apps.apple.com/app/id6760447687" target="_blank" class="store-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    App Store
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.monoappskr.petallinone" target="_blank" class="store-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                    Google Play
+                </a>
             </div>
         </div>
     </section>
