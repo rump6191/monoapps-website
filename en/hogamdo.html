@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Hogamdo - AI Face Analysis Across 138 Countries | MonoApps</title>
+    <meta name="description" content="Discover how 138 countries perceive your appeal through AI face analysis. Meet potential romantic friends from compatible countries.">
+    <meta name="keywords" content="Hogamdo, AI face analysis, global appeal, 138 countries, matching, MonoApps">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hogamdo - AI-powered Global Appeal Analysis">
+    <meta property="og:description" content="Discover how 138 countries perceive your appeal through AI face analysis.">
+    <meta property="og:url" content="https://monoapps.kr/en/hogamdo.html">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="MonoApps">
+    <meta property="og:image" content="https://monoapps.kr/images/hogamdo-icon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hogamdo - AI-powered Global Appeal Analysis">
+    <meta name="twitter:description" content="Discover how 138 countries perceive your appeal through AI face analysis.">
+    <meta name="twitter:image" content="https://monoapps.kr/images/hogamdo-icon.png">
+    <link rel="canonical" href="https://monoapps.kr/en/hogamdo.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/hogamdo.html">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/hogamdo.html">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/hogamdo.html">
+    <link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/hogamdo.html">
+    <link rel="alternate" hreflang="es" href="https://monoapps.kr/es/hogamdo.html">
+    <link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/hogamdo.html">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/hogamdo.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; min-height: 100vh; overflow-x: hidden; }
+        .bg-gradient { position: fixed; width: 150vw; height: 150vh; top: -25vh; left: -25vw; background: conic-gradient(from 180deg at 50% 50%, #FF5C8A, #FF8AAE, #FF6B9D, #FF5C8A); filter: blur(100px); animation: rotate 20s linear infinite; z-index: -1; opacity: 0.45; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        nav { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background: rgba(0,0,0,0.3); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; background: linear-gradient(90deg, #fff, #aaa); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 4rem; text-align: center; }
+        .hero-content { max-width: 700px; }
+        .app-icon { width: 120px; height: 120px; border-radius: 28px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; box-shadow: 0 20px 60px rgba(255, 92, 138, 0.4); overflow: hidden; }
+        .app-icon img { width: 100%; height: 100%; object-fit: contain; border-radius: 24px; }
+        .hero-badge { display: inline-block; padding: 8px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; font-size: 0.85rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.6); }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem; letter-spacing: -2px; }
+        .hero p { font-size: 1.2rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2.5rem; }
+        .coming-soon-box { display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, rgba(255,92,138,0.18), rgba(255,138,174,0.18)); border: 1px solid rgba(255,92,138,0.35); border-radius: 14px; font-size: 1rem; font-weight: 600; color: #FFB6C8; }
+        section { padding: 6rem 2rem; }
+        .section-title { font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 1rem; letter-spacing: -1px; }
+        .section-desc { text-align: center; opacity: 0.6; margin-bottom: 3rem; font-size: 1.1rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+        .feature-card { background: rgba(255,255,255,0.08); padding: 2rem; border-radius: 25px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; backdrop-filter: blur(10px); }
+        .feature-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.12); }
+        .feature-icon { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 1.2rem; }
+        .feature-card h3 { font-size: 1.2rem; margin-bottom: 0.7rem; }
+        .feature-card p { font-size: 0.93rem; opacity: 0.65; line-height: 1.6; }
+        .screenshots { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; overflow-x: auto; padding-bottom: 1rem; }
+        .screenshot-item { text-align: center; flex-shrink: 0; }
+        .screenshot-frame { width: 200px; height: 430px; background: #111; border-radius: 30px; border: 6px solid #222; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.5); transition: 0.3s; }
+        .screenshot-frame:hover { transform: translateY(-10px); box-shadow: 0 35px 70px rgba(255, 92, 138, 0.25); }
+        .screenshot-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .screenshot-label { margin-top: 1rem; font-size: 0.9rem; font-weight: 600; opacity: 0.7; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+        .stat-card { text-align: center; padding: 2.5rem 1.5rem; background: rgba(255,255,255,0.05); border-radius: 25px; border: 1px solid rgba(255,255,255,0.08); }
+        .stat-number { font-size: 3rem; font-weight: 800; background: linear-gradient(90deg, #FF5C8A, #FF8AAE); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
+        .stat-label { font-size: 1rem; opacity: 0.65; }
+        .langs-box { max-width: 800px; margin: 0 auto; padding: 2.5rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 25px; text-align: center; }
+        .langs-list { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
+        .lang-chip { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.9rem; }
+        footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding-top: 100px; }
+            .screenshot-frame { width: 160px; height: 345px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="index.html" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="apps.html">Mobile Apps</a>
+            <a href="index.html#services">Web Services</a>
+            <a href="support.html">Support</a>
+            <a href="news.html">News</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">EN</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="../hogamdo.html">한국어</a>
+                    <a href="hogamdo.html" style="color:#FF8AAE;">English</a>
+                    <a href="../ja/hogamdo.html">日本語</a>
+                    <a href="../zh/hogamdo.html">中文</a>
+                    <a href="../es/hogamdo.html">Español</a>
+                    <a href="../pt/hogamdo.html">Português</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="apps.html">Mobile Apps</a>
+        <a href="index.html#services">Web Services</a>
+        <a href="support.html">Support</a>
+        <a href="news.html">News</a>
+        <div style="border-top:1px solid rgba(255,255,255,0.1); margin-top:0.5rem; padding-top:0.5rem;">
+            <div style="font-size:0.8rem; color:rgba(255,255,255,0.4); padding:0.5rem 0;">Language</div>
+            <a href="../hogamdo.html">한국어</a>
+            <a href="hogamdo.html" style="color:#FF8AAE;">English</a>
+            <a href="../ja/hogamdo.html">日本語</a>
+            <a href="../zh/hogamdo.html">中文</a>
+            <a href="../es/hogamdo.html">Español</a>
+            <a href="../pt/hogamdo.html">Português</a>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="app-icon"><img src="../images/hogamdo-icon.png" alt="Hogamdo" loading="lazy"></div>
+            <span class="hero-badge">Coming Soon</span>
+            <h1>Hogamdo</h1>
+            <p>Where in the world does your beauty shine the brightest?<br>Discover how 138 countries perceive your appeal through AI face analysis.</p>
+            <span class="coming-soon-box">App Store · Google Play coming soon</span>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Hogamdo at a Glance</h2>
+        <p class="section-desc">AI-powered global appeal analysis</p>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">138</div>
+                <div class="stat-label">Countries Analyzed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">11</div>
+                <div class="stat-label">Facial Metrics</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Languages Supported</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Result Card Designs</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Key Features</h2>
+        <p class="section-desc">Discover your global appeal with a single photo</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(255,92,138,0.18);">🌍</div>
+                <h3>138-Country Appeal Analysis</h3>
+                <p>See how Korea, Japan, the US, France, Brazil and 130+ more cultures define attractiveness in their own unique ways.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(255,138,174,0.18);">🔬</div>
+                <h3>11 Facial Metrics</h3>
+                <p>Face ratio, jawline, eye openness, lip proportion, cheek width and more — analyzed across 11 quantitative metrics.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(255,107,157,0.18);">🥇</div>
+                <h3>Tiered Results: Rank 1 to 10</h3>
+                <p>Rank 1 with personal appeal card, ranks 2 to 5 with cultural insights, ranks 6 to 10 as quick global ranking.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(236,72,153,0.18);">💌</div>
+                <h3>Global Matching Service</h3>
+                <p>Meet potential romantic friends from compatible countries. Our team coordinates matches based on your results.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(168,85,247,0.18);">🎨</div>
+                <h3>10 Result Card Designs</h3>
+                <p>Share your results through 10 unique themes — Tarot, Movie Poster, ID Card, Visa, Neon, Ranking, Story and more.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(99,102,241,0.18);">🔒</div>
+                <h3>Strong Privacy Protection</h3>
+                <p>Photos are discarded immediately after analysis with no permanent storage. All communication is HTTPS-encrypted.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">App Preview</h2>
+        <p class="section-desc">Get your results in under a minute</p>
+        <div class="screenshots">
+            <div class="screenshot-item"><div class="screenshot-frame"><img src="../images/hogamdo/en/screen1.png" alt="Home" loading="lazy"></div><p class="screenshot-label">Home</p></div>
+            <div class="screenshot-item"><div class="screenshot-frame"><img src="../images/hogamdo/en/screen2.png" alt="Analyzing" loading="lazy"></div><p class="screenshot-label">Analyzing</p></div>
+            <div class="screenshot-item"><div class="screenshot-frame"><img src="../images/hogamdo/en/screen3.png" alt="Result" loading="lazy"></div><p class="screenshot-label">Result</p></div>
+            <div class="screenshot-item"><div class="screenshot-frame"><img src="../images/hogamdo/en/screen4.png" alt="Country Detail" loading="lazy"></div><p class="screenshot-label">Country Detail</p></div>
+            <div class="screenshot-item"><div class="screenshot-frame"><img src="../images/hogamdo/en/screen5.png" alt="Matching" loading="lazy"></div><p class="screenshot-label">Matching</p></div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Available in 10 Languages</h2>
+        <p class="section-desc">Designed for users worldwide</p>
+        <div class="langs-box">
+            <p style="opacity:0.7;">The app supports the following languages</p>
+            <div class="langs-list">
+                <span class="lang-chip">한국어</span>
+                <span class="lang-chip">English</span>
+                <span class="lang-chip">日本語</span>
+                <span class="lang-chip">中文 (简体)</span>
+                <span class="lang-chip">中文 (繁體)</span>
+                <span class="lang-chip">Tiếng Việt</span>
+                <span class="lang-chip">ไทย</span>
+                <span class="lang-chip">Español</span>
+                <span class="lang-chip">Français</span>
+                <span class="lang-chip">Português (BR)</span>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-top: 0;">
+        <p class="section-desc" style="font-style:italic; max-width:700px; margin:0 auto;">
+            The analysis results are entertainment content for fun and self-discovery.
+            They do not represent objective evaluations of physical appearance, nor do they imply any racial or ethnic hierarchy.
+        </p>
+    </section>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="support.html">Support</a>
+            <a href="mailto:monoappskr@gmail.com">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('active'); });
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        menu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => menu.classList.remove('active')); });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Hogamdo",
+        "description": "Discover how 138 countries perceive your appeal through AI face analysis.",
+        "url": "https://monoapps.kr/en/hogamdo.html",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "iOS, Android",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Organization", "name": "MonoApps", "url": "https://monoapps.kr" },
+        "inLanguage": ["ko", "en", "ja", "zh-CN", "zh-TW", "vi", "th", "es", "fr", "pt-BR"]
+    }
+    </script>
+</body>
+</html>
