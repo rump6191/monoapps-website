@@ -59,7 +59,11 @@
         .hero-badge { display: inline-block; padding: 8px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; font-size: 0.85rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.6); }
         .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem; letter-spacing: -2px; }
         .hero p { font-size: 1.2rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2.5rem; }
-        .coming-soon-box { display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, rgba(255,92,138,0.18), rgba(255,138,174,0.18)); border: 1px solid rgba(255,92,138,0.35); border-radius: 14px; font-size: 1rem; font-weight: 600; color: #FFB6C8; }
+        .store-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .store-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; color: white; text-decoration: none; font-size: 1rem; font-weight: 600; transition: 0.3s; }
+        .store-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .store-btn svg { width: 22px; height: 22px; }
+        .hero-badge.live { color: #23d5ab; background: rgba(35,213,171,0.12); border-color: rgba(35,213,171,0.3); }
         section { padding: 6rem 2rem; }
         .section-title { font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 1rem; letter-spacing: -1px; }
         .section-desc { text-align: center; opacity: 0.6; margin-bottom: 3rem; font-size: 1.1rem; }
@@ -142,10 +146,15 @@
     <section class="hero">
         <div class="hero-content">
             <div class="app-icon"><img src="../images/hogamdo-icon.png" alt="Hogamdo" loading="lazy"></div>
-            <span class="hero-badge">Coming Soon</span>
+            <span class="hero-badge live">Available Now</span>
             <h1>Hogamdo</h1>
             <p>Where in the world does your beauty shine the brightest?<br>Discover how 138 countries perceive your appeal through AI face analysis.</p>
-            <span class="coming-soon-box">App Store · Google Play coming soon</span>
+            <div class="store-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.monoappskr.hogamdo" target="_blank" class="store-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                    Google Play
+                </a>
+            </div>
         </div>
     </section>
 
