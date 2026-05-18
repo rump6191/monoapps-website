@@ -194,12 +194,14 @@
 
             <h2>5. Pemrosesan Tambahan untuk Aplikasi Hogamdo</h2>
             <p>Aplikasi Hogamdo yang disediakan oleh Perusahaan menawarkan fitur analisis gambar wajah, dan memproses informasi pribadi sebagai berikut:</p>
+            <p style="background: rgba(231,60,126,0.15); border-left: 3px solid #e73c7e; padding: 12px 16px; border-radius: 6px; margin-top: 1rem;"><strong>Data Wajah Tidak Disimpan (Face Data is Not Retained):</strong> Aplikasi Hogamdo tidak menyimpan data wajah apa pun. Gambar wajah dan setiap fitur wajah, embedding, atau data pengenalan wajah lainnya yang berasal darinya akan dihapus dari memori server segera setelah analisis selesai dan tidak pernah ditulis ke penyimpanan persisten mana pun seperti basis data atau sistem berkas.</p>
             <ul>
-                <li><strong>Data yang Dikumpulkan:</strong> Gambar wajah (untuk analisis); saat mengajukan pencocokan berdasarkan hasil analisis, alamat email, nama panggilan, tahun lahir, dan jenis kelamin.</li>
+                <li><strong>Data yang Dikumpulkan:</strong> Gambar wajah (hanya untuk analisis, tidak disimpan); saat mengajukan pencocokan berdasarkan hasil analisis, alamat email, nama panggilan, tahun lahir, dan jenis kelamin.</li>
                 <li><strong>Tujuan Pemrosesan:</strong> Gambar wajah digunakan sebagai input untuk algoritma analisis daya tarik spesifik per negara; informasi pencocokan digunakan untuk menyampaikan hasil pencocokan melalui email.</li>
-                <li><strong>Periode Penyimpanan:</strong> Gambar wajah segera diproses oleh server dan tidak disimpan secara permanen; hanya hasil analisis yang disimpan secara lokal di perangkat pengguna. Informasi pengajuan pencocokan dihancurkan segera saat layanan pencocokan berakhir, atau saat permintaan penarikan keanggotaan diajukan.</li>
-                <li><strong>Penyediaan kepada Pihak Ketiga:</strong> Gambar wajah tidak diberikan kepada pihak ketiga mana pun; pemrosesan analisis hanya dilakukan di server Perusahaan sendiri.</li>
-                <li><strong>Langkah Keamanan:</strong> Data dalam transit dilindungi oleh enkripsi HTTPS (TLS 1.2+). Foto itu sendiri tidak disimpan secara permanen di server dan dihapus dari memori setelah analisis.</li>
+                <li><strong>Penyimpanan Data Wajah:</strong> Tidak disimpan. Gambar wajah dan data fitur wajah dihapus dari memori server segera setelah analisis dan tidak pernah disimpan secara persisten dalam bentuk apa pun. Hanya hasil analisis (informasi non-biometrik seperti skor dan teks interpretasi) yang disimpan secara lokal di perangkat pengguna.</li>
+                <li><strong>Penyimpanan Informasi Pencocokan:</strong> Email, nama panggilan, tahun lahir, dan jenis kelamin yang diberikan saat pengajuan pencocokan dihancurkan segera saat layanan pencocokan berakhir, atau saat permintaan penarikan keanggotaan diajukan.</li>
+                <li><strong>Penyediaan kepada Pihak Ketiga:</strong> Gambar wajah dan data wajah tidak diberikan kepada pihak ketiga mana pun; pemrosesan analisis hanya dilakukan di server Perusahaan sendiri.</li>
+                <li><strong>Langkah Keamanan:</strong> Data dalam transit dilindungi oleh enkripsi HTTPS (TLS 1.2+). Foto itu sendiri tidak disimpan di server dan dihapus dari memori segera setelah analisis.</li>
                 <li><strong>Hak Pengguna:</strong> Permintaan penghapusan data dapat dikirim ke <a href="mailto:monoappskr@gmail.com">monoappskr@gmail.com</a>. Penarikan pengajuan pencocokan juga dapat diminta melalui alamat email yang sama.</li>
             </ul>
 

@@ -195,12 +195,14 @@
 
             <h2>5. Xử Lý Bổ Sung Đối Với Ứng Dụng Hogamdo</h2>
             <p>Ứng dụng Hogamdo do Công ty cung cấp có chức năng phân tích hình ảnh khuôn mặt và xử lý thông tin cá nhân như sau:</p>
+            <p style="background: rgba(231,60,126,0.15); border-left: 3px solid #e73c7e; padding: 12px 16px; border-radius: 6px; margin-top: 1rem;"><strong>Dữ Liệu Khuôn Mặt Không Được Lưu Giữ (Face Data is Not Retained):</strong> Ứng dụng Hogamdo không lưu giữ bất kỳ dữ liệu khuôn mặt nào. Hình ảnh khuôn mặt và mọi đặc điểm khuôn mặt, embedding hoặc dữ liệu nhận dạng khuôn mặt khác được trích xuất từ đó sẽ bị xóa khỏi bộ nhớ máy chủ ngay sau khi hoàn tất phân tích và không bao giờ được ghi vào bất kỳ kho lưu trữ liên tục nào như cơ sở dữ liệu hoặc hệ thống tệp.</p>
             <ul>
-                <li><strong>Dữ Liệu Thu Thập:</strong> Hình ảnh khuôn mặt (để phân tích); khi đăng ký ghép đôi dựa trên kết quả phân tích, địa chỉ email, biệt danh, năm sinh và giới tính.</li>
+                <li><strong>Dữ Liệu Thu Thập:</strong> Hình ảnh khuôn mặt (chỉ để phân tích, không lưu giữ); khi đăng ký ghép đôi dựa trên kết quả phân tích, địa chỉ email, biệt danh, năm sinh và giới tính.</li>
                 <li><strong>Mục Đích Xử Lý:</strong> Hình ảnh khuôn mặt được sử dụng làm đầu vào cho thuật toán phân tích mức độ thiện cảm theo từng quốc gia; thông tin ghép đôi được sử dụng để gửi kết quả ghép đôi qua email.</li>
-                <li><strong>Thời Gian Lưu Giữ:</strong> Hình ảnh khuôn mặt được máy chủ xử lý ngay lập tức và không được lưu trữ vĩnh viễn; chỉ kết quả phân tích được lưu cục bộ trên thiết bị của người dùng. Thông tin đăng ký ghép đôi sẽ bị hủy ngay khi dịch vụ ghép đôi kết thúc, hoặc ngay khi có yêu cầu hủy thành viên.</li>
-                <li><strong>Cung Cấp Cho Bên Thứ Ba:</strong> Hình ảnh khuôn mặt không được cung cấp cho bất kỳ bên thứ ba nào; việc xử lý phân tích chỉ diễn ra trên máy chủ của Công ty.</li>
-                <li><strong>Biện Pháp Bảo Mật:</strong> Dữ liệu khi truyền được bảo vệ bằng mã hóa HTTPS (TLS 1.2+). Bản thân các bức ảnh không được lưu trữ vĩnh viễn trên máy chủ và được xóa khỏi bộ nhớ sau khi phân tích.</li>
+                <li><strong>Lưu Giữ Dữ Liệu Khuôn Mặt:</strong> Không lưu giữ. Hình ảnh khuôn mặt và dữ liệu đặc điểm khuôn mặt bị xóa khỏi bộ nhớ máy chủ ngay sau khi phân tích và không bao giờ được lưu trữ liên tục dưới bất kỳ hình thức nào. Chỉ kết quả phân tích (thông tin phi sinh trắc học như điểm số và văn bản diễn giải) được lưu cục bộ trên thiết bị của người dùng.</li>
+                <li><strong>Lưu Giữ Thông Tin Ghép Đôi:</strong> Email, biệt danh, năm sinh và giới tính được cung cấp khi đăng ký ghép đôi sẽ bị hủy ngay khi dịch vụ ghép đôi kết thúc, hoặc ngay khi có yêu cầu hủy thành viên.</li>
+                <li><strong>Cung Cấp Cho Bên Thứ Ba:</strong> Hình ảnh khuôn mặt và dữ liệu khuôn mặt không được cung cấp cho bất kỳ bên thứ ba nào; việc xử lý phân tích chỉ diễn ra trên máy chủ của Công ty.</li>
+                <li><strong>Biện Pháp Bảo Mật:</strong> Dữ liệu khi truyền được bảo vệ bằng mã hóa HTTPS (TLS 1.2+). Bản thân các bức ảnh không được lưu trữ trên máy chủ và được xóa khỏi bộ nhớ ngay sau khi phân tích.</li>
                 <li><strong>Quyền Của Người Dùng:</strong> Yêu cầu xóa dữ liệu có thể gửi đến <a href="mailto:monoappskr@gmail.com">monoappskr@gmail.com</a>. Việc rút lại đăng ký ghép đôi cũng có thể được yêu cầu qua cùng địa chỉ email này.</li>
             </ul>
 

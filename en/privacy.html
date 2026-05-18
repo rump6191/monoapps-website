@@ -194,12 +194,14 @@
 
             <h2>5. Additional Processing for the Hogamdo App</h2>
             <p>The Hogamdo app provided by the Company offers a facial image analysis feature, and processes personal information as follows:</p>
+            <p style="background: rgba(231,60,126,0.15); border-left: 3px solid #e73c7e; padding: 12px 16px; border-radius: 6px; margin-top: 1rem;"><strong>Face Data is Not Retained:</strong> The Hogamdo app does not retain any face data. Facial images and any facial features, embeddings, or other face-recognition data derived from them are deleted from server memory immediately upon completion of the analysis and are never written to any persistent storage such as a database or file system.</p>
             <ul>
-                <li><strong>Data Collected:</strong> Facial images (for analysis); when applying for matching based on the analysis result, email address, nickname, year of birth, and gender.</li>
+                <li><strong>Data Collected:</strong> Facial images (for analysis only, not retained); when applying for matching based on the analysis result, email address, nickname, year of birth, and gender.</li>
                 <li><strong>Purpose of Processing:</strong> Facial images are used as input to the country-specific likability analysis algorithm; matching information is used to deliver matching results via email.</li>
-                <li><strong>Retention Period:</strong> Facial images are processed by the server immediately and are not permanently stored — only the analysis result is stored locally on the user's device. Matching application information is destroyed immediately when the matching service ends, or upon a withdrawal request.</li>
-                <li><strong>Third-Party Provision:</strong> Facial images are not provided to any third party; analysis processing takes place only on the Company's own servers.</li>
-                <li><strong>Security Measures:</strong> Data in transit is protected by HTTPS (TLS 1.2+) encryption. Photos themselves are not permanently stored on the server and are removed from memory after analysis.</li>
+                <li><strong>Face Data Retention:</strong> Face data is not retained. Facial images and facial feature data are deleted from server memory immediately after analysis and are never persistently stored in any form. Only the analysis result (non-biometric information such as scores and interpretation text) is stored locally on the user's device.</li>
+                <li><strong>Matching Information Retention:</strong> Email, nickname, year of birth, and gender provided during matching application are destroyed immediately when the matching service ends or upon a withdrawal request.</li>
+                <li><strong>Third-Party Provision:</strong> Facial images and face data are not provided to any third party; analysis processing takes place only on the Company's own servers.</li>
+                <li><strong>Security Measures:</strong> Data in transit is protected by HTTPS (TLS 1.2+) encryption. Photos themselves are not stored on the server and are removed from memory immediately after analysis.</li>
                 <li><strong>User Rights:</strong> Data deletion requests can be sent to <a href="mailto:monoappskr@gmail.com">monoappskr@gmail.com</a>. Matching application withdrawal can also be requested at the same email address.</li>
             </ul>
 
