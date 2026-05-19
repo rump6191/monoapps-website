@@ -194,11 +194,12 @@
 
             <h2>5. 好感度（Hogamdo）应用相关附加处理事项</h2>
             <p>本公司提供的好感度（Hogamdo）应用提供面部图像分析功能，并按以下方式处理个人信息。</p>
-            <p style="background: rgba(231,60,126,0.15); border-left: 3px solid #e73c7e; padding: 12px 16px; border-radius: 6px; margin-top: 1rem;"><strong>面部数据不予保留（Face Data is Not Retained）：</strong>好感度（Hogamdo）应用不保留任何面部数据。面部图像及由此提取的面部特征点、嵌入向量（embedding）等所有面部识别相关数据，在分析处理完成后立即从服务器内存中删除，绝不写入数据库、文件系统等任何持久化存储介质。</p>
+            <p style="background: rgba(231,60,126,0.15); border-left: 3px solid #e73c7e; padding: 12px 16px; border-radius: 6px; margin-top: 1rem;"><strong>服务器端面部数据不予保留（Face Data is Not Retained on Our Servers）：</strong>好感度（Hogamdo）应用不在服务器上保留任何面部数据。面部图像及由此提取的面部特征点、嵌入向量（embedding）等所有面部识别相关数据，在分析处理完成后立即从服务器内存中删除，绝不写入服务器端的任何持久化存储介质（数据库、文件系统等）。</p>
             <ul>
-                <li><strong>收集项目：</strong> 面部图像（仅用于分析，不予保留）；申请基于分析结果的匹配时收集邮箱、昵称、出生年份、性别。</li>
+                <li><strong>收集项目：</strong> 面部图像（仅用于分析，不在服务器保留）；申请基于分析结果的匹配时收集邮箱、昵称、出生年份、性别。</li>
                 <li><strong>处理目的：</strong> 面部图像作为各国好感度分析算法的输入值使用；匹配信息用于通过电子邮件向用户告知匹配结果。</li>
-                <li><strong>面部数据保留：</strong> 不予保留。面部图像及面部特征数据在分析后立即从服务器内存中删除，绝不以任何形式持久化存储。仅分析结果（分数、解读文本等非生物特征信息）本地保存于用户设备。</li>
+                <li><strong>服务器端面部数据保留：</strong> 不予保留。面部图像及面部特征数据在分析后立即从服务器内存中删除，绝不以任何形式在服务器端持久化存储。</li>
+                <li><strong>设备本地存储（为用户便利目的）：</strong> 已分析的面部图像和结果分数会以最近 10 条为上限，保存于本应用的私有沙盒（Application Documents/history_images/）。此本地数据不会离开设备，其他应用无法访问，并在用户点击"设置 &gt; 清除记录"或卸载应用时被完全删除。</li>
                 <li><strong>匹配信息保留：</strong> 匹配申请时提供的邮箱、昵称、出生年份、性别信息在匹配服务结束后立即销毁，会员注销请求时立即销毁。</li>
                 <li><strong>第三方提供：</strong> 面部图像及面部数据均不向任何第三方提供，分析处理仅在本公司服务器内完成。</li>
                 <li><strong>安全保障措施：</strong> 传输区段采用HTTPS（TLS 1.2+）加密保护；照片本身不会存储在服务器上，分析完成后立即从内存中移除。</li>
