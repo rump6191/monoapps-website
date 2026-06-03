@@ -531,6 +531,34 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <p class="section-desc">Todo lo que quieres saber sobre Greenmate</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">&iquest;Qu&eacute; es Greenmate?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Greenmate es una app coach de cuidado y riego de plantas de interior. Reconoce plantas a partir de fotos, env&iacute;a recordatorios de riego inteligentes seg&uacute;n el clima y adem&aacute;s ofrece diagn&oacute;stico de enfermedades con IA, registros de cuidado y monitoreo del entorno.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">&iquest;Puede identificar plantas a partir de una foto?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">S&iacute;. Toma una foto con la c&aacute;mara o elige una de tu galer&iacute;a y la IA reconoce autom&aacute;ticamente la especie de la planta. Puedes ver la tasa de reconocimiento junto con el nombre com&uacute;n y el nombre cient&iacute;fico.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">&iquest;C&oacute;mo funcionan los recordatorios de riego?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Greenmate tiene en cuenta el clima, la humedad, el tama&ntilde;o de la maceta y la ubicaci&oacute;n para sugerir el mejor momento para regar. Usa datos meteorol&oacute;gicos en tiempo real para ajustar autom&aacute;ticamente el ciclo de riego, y una cuenta regresiva D-day muestra el pr&oacute;ximo riego de un vistazo.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">&iquest;En qu&eacute; dispositivos est&aacute; disponible?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Greenmate es compatible con iOS y Android. Puedes descargarlo en la App Store y en Google Play.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">&iquest;Es gratis?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">S&iacute;, Greenmate es gratuito para descargar y usar. Con Premium (₩4,400/mes o ₩19,000/a&ntilde;o) obtienes reconocimiento de plantas y diagn&oacute;stico de enfermedades sin anuncios, con 15 reconocimientos sin anuncios al mes.</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">Pol&iacute;tica de Privacidad</a>
@@ -568,12 +596,30 @@
             "price": "0",
             "priceCurrency": "KRW"
         },
+        "featureList": [
+            "Reconocimiento de plantas con IA",
+            "Recordatorios de riego inteligentes",
+            "Ajuste de riego según el clima",
+            "Diagnóstico de enfermedades de plantas con IA",
+            "Registro de cuidados",
+            "Monitoreo del entorno"
+        ],
         "author": {
             "@type": "Organization",
             "name": "MonoApps",
             "url": "https://monoapps.kr"
         }
     }
+    </script>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "es", "mainEntity": [
+        { "@type": "Question", "name": "¿Qué es Greenmate?", "acceptedAnswer": { "@type": "Answer", "text": "Greenmate es una app coach de cuidado y riego de plantas de interior. Reconoce plantas a partir de fotos, envía recordatorios de riego inteligentes según el clima y además ofrece diagnóstico de enfermedades con IA, registros de cuidado y monitoreo del entorno." } },
+        { "@type": "Question", "name": "¿Puede identificar plantas a partir de una foto?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Toma una foto con la cámara o elige una de tu galería y la IA reconoce automáticamente la especie de la planta. Puedes ver la tasa de reconocimiento junto con el nombre común y el nombre científico." } },
+        { "@type": "Question", "name": "¿Cómo funcionan los recordatorios de riego?", "acceptedAnswer": { "@type": "Answer", "text": "Greenmate tiene en cuenta el clima, la humedad, el tamaño de la maceta y la ubicación para sugerir el mejor momento para regar. Usa datos meteorológicos en tiempo real para ajustar automáticamente el ciclo de riego, y una cuenta regresiva D-day muestra el próximo riego de un vistazo." } },
+        { "@type": "Question", "name": "¿En qué dispositivos está disponible?", "acceptedAnswer": { "@type": "Answer", "text": "Greenmate es compatible con iOS y Android. Puedes descargarlo en la App Store y en Google Play." } },
+        { "@type": "Question", "name": "¿Es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, Greenmate es gratuito para descargar y usar. Con Premium (₩4,400/mes o ₩19,000/año) obtienes reconocimiento de plantas y diagnóstico de enfermedades sin anuncios, con 15 reconocimientos sin anuncios al mes." } }
+    ] }
     </script>
 </body>
 </html>

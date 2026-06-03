@@ -30,6 +30,38 @@
     <link rel="alternate" hreflang="es" href="https://monoapps.kr/es/sajuprime.html">
     <link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/sajuprime.html">
     <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/sajuprime.html">
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "四柱命理",
+        "description": "基于东方传统命理学的四柱八字分析服务。解读您的命运流向。",
+        "url": "https://sajuprime.co.kr",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "KRW"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "MonoApps",
+            "url": "https://monoapps.kr"
+        },
+        "inLanguage": ["ko", "en", "ja", "zh", "es", "pt"],
+        "featureList": [
+            "四柱八字分析",
+            "个性化解读",
+            "日运/月运/年运",
+            "配对分析",
+            "事业运·财运·爱情运·健康运·家庭运分析",
+            "多语言支持",
+            "全天候免费使用"
+        ]
+    }
+    </script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -183,6 +215,34 @@
             </div>
         </div>
     </section>
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">常见问题</h2>
+        <p class="section-desc">关于四柱命理的常见问题</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">四柱命理是什么样的服务？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">这是一项基于东方传统命理学的四柱八字分析网络服务。它使用传统的四柱推命方法分析您的命运，解读您的命运流向。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">获取分析需要哪些信息？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">分析基于您的出生日期和时间。输入准确的出生日期和时间后，服务即可分析您的四柱八字。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">它分析哪些类别？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">涵盖事业运、财运、爱情运、家庭运、健康运和年运等多种类别。此外还提供按日、月、年的详细运势分析，以及与伴侣、同事和朋友的配对分析。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">使用是否收费？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">服务在线提供，您可以随时随地全天候访问。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">是否支持中文以外的语言？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">是的，支持韩语、英语、日语、中文、西班牙语和葡萄牙语。并根据您的独特信息提供个性化的命运分析。</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">隐私政策</a>
@@ -204,6 +264,15 @@
             if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
             if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
         });
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "zh", "mainEntity": [
+        { "@type": "Question", "name": "四柱命理是什么样的服务？", "acceptedAnswer": { "@type": "Answer", "text": "这是一项基于东方传统命理学的四柱八字分析网络服务。它使用传统的四柱推命方法分析您的命运，解读您的命运流向。" } },
+        { "@type": "Question", "name": "获取分析需要哪些信息？", "acceptedAnswer": { "@type": "Answer", "text": "分析基于您的出生日期和时间。输入准确的出生日期和时间后，服务即可分析您的四柱八字。" } },
+        { "@type": "Question", "name": "它分析哪些类别？", "acceptedAnswer": { "@type": "Answer", "text": "涵盖事业运、财运、爱情运、家庭运、健康运和年运等多种类别。此外还提供按日、月、年的详细运势分析，以及与伴侣、同事和朋友的配对分析。" } },
+        { "@type": "Question", "name": "使用是否收费？", "acceptedAnswer": { "@type": "Answer", "text": "服务在线提供，您可以随时随地全天候访问。" } },
+        { "@type": "Question", "name": "是否支持中文以外的语言？", "acceptedAnswer": { "@type": "Answer", "text": "是的，支持韩语、英语、日语、中文、西班牙语和葡萄牙语。并根据您的独特信息提供个性化的命运分析。" } }
+    ] }
     </script>
 </body>
 </html>

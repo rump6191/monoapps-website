@@ -26,6 +26,16 @@
         "operatingSystem": "Android, iOS",
         "applicationCategory": "LifestyleApplication",
         "description": "강아지·고양이의 산책, 건강, 예방접종을 한 번에. GPS 산책 기록, 사료량 계산, AI 건강 분석, 펫 스타일 변환까지 제공하는 올인원 앱.",
+        "featureList": [
+            "GPS 산책 기록",
+            "사료량 계산",
+            "예방접종 관리",
+            "체중 추적",
+            "AI 건강 분석",
+            "펫 스타일 변환",
+            "동물병원 검색",
+            "품종 정보"
+        ],
         "offers": {
             "@type": "Offer",
             "price": "0",
@@ -465,6 +475,34 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">자주 묻는 질문</h2>
+        <p class="section-desc">펫케어에 대해 궁금한 점을 모았습니다</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">펫케어는 어떤 앱인가요?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">반려동물의 산책, 건강, 예방접종을 한 번에 관리하는 올인원 앱입니다. GPS 산책 기록, 사료량 계산, 체중 추적, 예방접종 알림, AI 건강 분석, 동물병원 검색, 품종 정보까지 제공합니다.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">강아지와 고양이 모두 사용할 수 있나요?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">네. 강아지와 고양이 모두 관리할 수 있으며, 강아지 80종과 고양이 54종의 품종 정보와 주의사항을 제공합니다.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">어떤 기기에서 사용할 수 있나요?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">App Store와 Google Play에서 내려받을 수 있어 iOS와 Android 기기 모두에서 사용할 수 있습니다.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">무료로 사용할 수 있나요?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">네, 무료로 내려받아 사용할 수 있습니다. AI 건강 분석을 더 자주 이용하고 광고를 제거하려면 펫케어 Pro 프리미엄 구독을 이용할 수 있습니다.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">AI 건강 분석은 어떻게 작동하나요?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">사진 한 장으로 반려동물의 피부와 대변 상태를 분석해 조기 이상 신호를 확인할 수 있습니다. Pro 구독 시 월 50회까지 이용할 수 있습니다.</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">개인정보 처리방침</a>
@@ -484,6 +522,20 @@
         const langDropdown = document.getElementById('langDropdown');
         langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
         document.addEventListener('click', () => langDropdown.classList.remove('active'));
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "ko",
+      "mainEntity": [
+        { "@type": "Question", "name": "펫케어는 어떤 앱인가요?", "acceptedAnswer": { "@type": "Answer", "text": "반려동물의 산책, 건강, 예방접종을 한 번에 관리하는 올인원 앱입니다. GPS 산책 기록, 사료량 계산, 체중 추적, 예방접종 알림, AI 건강 분석, 동물병원 검색, 품종 정보까지 제공합니다." } },
+        { "@type": "Question", "name": "강아지와 고양이 모두 사용할 수 있나요?", "acceptedAnswer": { "@type": "Answer", "text": "네. 강아지와 고양이 모두 관리할 수 있으며, 강아지 80종과 고양이 54종의 품종 정보와 주의사항을 제공합니다." } },
+        { "@type": "Question", "name": "어떤 기기에서 사용할 수 있나요?", "acceptedAnswer": { "@type": "Answer", "text": "App Store와 Google Play에서 내려받을 수 있어 iOS와 Android 기기 모두에서 사용할 수 있습니다." } },
+        { "@type": "Question", "name": "무료로 사용할 수 있나요?", "acceptedAnswer": { "@type": "Answer", "text": "네, 무료로 내려받아 사용할 수 있습니다. AI 건강 분석을 더 자주 이용하고 광고를 제거하려면 펫케어 Pro 프리미엄 구독을 이용할 수 있습니다." } },
+        { "@type": "Question", "name": "AI 건강 분석은 어떻게 작동하나요?", "acceptedAnswer": { "@type": "Answer", "text": "사진 한 장으로 반려동물의 피부와 대변 상태를 분석해 조기 이상 신호를 확인할 수 있습니다. Pro 구독 시 월 50회까지 이용할 수 있습니다." } }
+      ]
+    }
     </script>
 </body>
 </html>

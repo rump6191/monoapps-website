@@ -228,6 +228,34 @@
         </p>
     </section>
 
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">Perguntas frequentes</h2>
+        <p class="section-desc">Tudo o que você pode querer saber sobre o Hogamdo</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">O que é o Hogamdo?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">O Hogamdo é um app de entretenimento que usa análise facial com IA para medir o quanto você é percebido como atraente pelas culturas de 138 países. Você obtém seus resultados em menos de um minuto a partir de uma única foto.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Em quais dispositivos posso usá-lo?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">O Hogamdo funciona tanto no iOS quanto no Android e está disponível na App Store e no Google Play. Você também pode experimentá-lo diretamente na web, sem instalar nada.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">O Hogamdo é gratuito?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Sim, o Hogamdo é gratuito para baixar e usar.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Como minha foto é tratada?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Sua foto é descartada automaticamente logo após a análise e nunca é armazenada permanentemente. Toda a comunicação é criptografada via HTTPS.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">O que é a análise de atratividade em 138 países?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Ela calcula uma pontuação de atratividade com base nos padrões estéticos das culturas de 138 países, incluindo Coreia, Japão, Estados Unidos, França e Brasil, e os apresenta como um ranking de países do 1.º ao 10.º lugar. A análise é baseada em 11 métricas faciais.</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">Política de privacidade</a>
@@ -258,12 +286,28 @@
         "@type": "MobileApplication",
         "name": "Hogamdo",
         "description": "Descubra como 138 países percebem sua atratividade através da análise facial com IA.",
+        "featureList": ["Análise de atratividade em 138 países", "Análise de 11 métricas faciais", "Ranking de países por níveis do 1.º ao 10.º", "Dicas para destacar sua atratividade", "Serviço de matching global", "10 designs de cartões de resultado para compartilhar nas redes", "As fotos são descartadas imediatamente após a análise"],
         "url": "https://monoapps.kr/pt/hogamdo.html",
         "applicationCategory": "EntertainmentApplication",
         "operatingSystem": "iOS, Android",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
         "author": { "@type": "Organization", "name": "MonoApps", "url": "https://monoapps.kr" },
         "inLanguage": ["ko", "en", "ja", "zh-CN", "zh-TW", "vi", "th", "es", "fr", "pt-BR"]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "pt",
+      "mainEntity": [
+        { "@type": "Question", "name": "O que é o Hogamdo?", "acceptedAnswer": { "@type": "Answer", "text": "O Hogamdo é um app de entretenimento que usa análise facial com IA para medir o quanto você é percebido como atraente pelas culturas de 138 países. Você obtém seus resultados em menos de um minuto a partir de uma única foto." } },
+        { "@type": "Question", "name": "Em quais dispositivos posso usá-lo?", "acceptedAnswer": { "@type": "Answer", "text": "O Hogamdo funciona tanto no iOS quanto no Android e está disponível na App Store e no Google Play. Você também pode experimentá-lo diretamente na web, sem instalar nada." } },
+        { "@type": "Question", "name": "O Hogamdo é gratuito?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, o Hogamdo é gratuito para baixar e usar." } },
+        { "@type": "Question", "name": "Como minha foto é tratada?", "acceptedAnswer": { "@type": "Answer", "text": "Sua foto é descartada automaticamente logo após a análise e nunca é armazenada permanentemente. Toda a comunicação é criptografada via HTTPS." } },
+        { "@type": "Question", "name": "O que é a análise de atratividade em 138 países?", "acceptedAnswer": { "@type": "Answer", "text": "Ela calcula uma pontuação de atratividade com base nos padrões estéticos das culturas de 138 países, incluindo Coreia, Japão, Estados Unidos, França e Brasil, e os apresenta como um ranking de países do 1.º ao 10.º lugar. A análise é baseada em 11 métricas faciais." } }
+      ]
     }
     </script>
 </body>

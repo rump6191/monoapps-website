@@ -29,6 +29,16 @@
         "operatingSystem": "Android, iOS",
         "applicationCategory": "UtilitiesApplication",
         "description": "Digitalize códigos QR e de barras em um segundo, crie-os e gerencie o histórico. Leitura da galeria, flash e modo escuro num app leve.",
+        "featureList": [
+            "Digitalização rápida de códigos QR e de barras",
+            "Criação de códigos QR de texto, URL, WiFi, e-mail, telefone, SMS, contato e localização",
+            "Leitura de imagens da galeria",
+            "Salvamento e gerenciamento automático do histórico de leituras",
+            "Flash para locais escuros",
+            "Suporte a modo escuro",
+            "Suporte a vários idiomas",
+            "Gratuito e sem anúncios"
+        ],
         "offers": {
             "@type": "Offer",
             "price": "0",
@@ -560,6 +570,34 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">Perguntas frequentes</h2>
+        <p class="section-desc">Tudo o que você precisa saber sobre o Mono QR Scanner</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">O que o Mono QR Scanner pode digitalizar?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Ele reconhece códigos QR e códigos de barras ao mesmo tempo. Basta apontar a câmera para o código para reconhecê-lo na hora, e ligar o flash para digitalizar em locais escuros.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Que tipos de códigos QR posso criar?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Você pode criar códigos QR de texto, URL, WiFi, e-mail, telefone, SMS, contato e localização. Personalize-os com 6 temas de cor e compartilhe na hora.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">É possível digitalizar imagens salvas na minha galeria?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Sim, ele consegue reconhecer códigos QR em imagens salvas na sua galeria. Você também pode digitalizar facilmente as capturas de tela que tiver salvo.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Em quais plataformas está disponível?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">O Mono QR Scanner chegará em breve à App Store e à Play Store. Após o lançamento, estará disponível tanto no iOS quanto no Android.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">É pago? Tem anúncios?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">O Mono QR Scanner é gratuito. Você pode usá-lo de forma leve sem se preocupar com anúncios, e ele oferece suporte a modo escuro e vários idiomas.</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">Política de Privacidade</a>
@@ -582,6 +620,15 @@
             if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
             if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
         });
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "pt", "mainEntity": [
+        { "@type": "Question", "name": "O que o Mono QR Scanner pode digitalizar?", "acceptedAnswer": { "@type": "Answer", "text": "Ele reconhece códigos QR e códigos de barras ao mesmo tempo. Basta apontar a câmera para o código para reconhecê-lo na hora, e ligar o flash para digitalizar em locais escuros." } },
+        { "@type": "Question", "name": "Que tipos de códigos QR posso criar?", "acceptedAnswer": { "@type": "Answer", "text": "Você pode criar códigos QR de texto, URL, WiFi, e-mail, telefone, SMS, contato e localização. Personalize-os com 6 temas de cor e compartilhe na hora." } },
+        { "@type": "Question", "name": "É possível digitalizar imagens salvas na minha galeria?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, ele consegue reconhecer códigos QR em imagens salvas na sua galeria. Você também pode digitalizar facilmente as capturas de tela que tiver salvo." } },
+        { "@type": "Question", "name": "Em quais plataformas está disponível?", "acceptedAnswer": { "@type": "Answer", "text": "O Mono QR Scanner chegará em breve à App Store e à Play Store. Após o lançamento, estará disponível tanto no iOS quanto no Android." } },
+        { "@type": "Question", "name": "É pago? Tem anúncios?", "acceptedAnswer": { "@type": "Answer", "text": "O Mono QR Scanner é gratuito. Você pode usá-lo de forma leve sem se preocupar com anúncios, e ele oferece suporte a modo escuro e vários idiomas." } }
+    ] }
     </script>
 </body>
 </html>

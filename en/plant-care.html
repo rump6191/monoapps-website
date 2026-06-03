@@ -531,6 +531,34 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Everything you want to know about Greenmate</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">What is Greenmate?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Greenmate is an indoor plant watering care coach app. It recognizes plants from photos, sends weather-aware smart watering reminders, and also offers AI disease diagnosis, care logs, and environment monitoring.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Can it identify plants from a photo?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Yes. Take a photo with the camera or pick one from your gallery, and the AI automatically recognizes the plant species. You can see the recognition rate along with the common name and scientific name.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">How do the watering reminders work?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Greenmate factors in weather, humidity, pot size, and location to suggest the best time to water. It uses real-time weather data to automatically adjust the watering cycle, and a D-day countdown shows the next watering at a glance.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Which devices is it available on?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Greenmate supports both iOS and Android. You can download it from the App Store and Google Play.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Is it free to use?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Yes, Greenmate is free to download and use. With Premium (₩4,400/month or ₩19,000/year) you get ad-free plant recognition and disease diagnosis, including 15 ad-free recognitions per month.</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">Privacy Policy</a>
@@ -568,12 +596,30 @@
             "price": "0",
             "priceCurrency": "KRW"
         },
+        "featureList": [
+            "AI plant recognition",
+            "Smart watering reminders",
+            "Weather-based watering adjustment",
+            "AI plant disease diagnosis",
+            "Care log tracking",
+            "Environment monitoring"
+        ],
         "author": {
             "@type": "Organization",
             "name": "MonoApps",
             "url": "https://monoapps.kr"
         }
     }
+    </script>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [
+        { "@type": "Question", "name": "What is Greenmate?", "acceptedAnswer": { "@type": "Answer", "text": "Greenmate is an indoor plant watering care coach app. It recognizes plants from photos, sends weather-aware smart watering reminders, and also offers AI disease diagnosis, care logs, and environment monitoring." } },
+        { "@type": "Question", "name": "Can it identify plants from a photo?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Take a photo with the camera or pick one from your gallery, and the AI automatically recognizes the plant species. You can see the recognition rate along with the common name and scientific name." } },
+        { "@type": "Question", "name": "How do the watering reminders work?", "acceptedAnswer": { "@type": "Answer", "text": "Greenmate factors in weather, humidity, pot size, and location to suggest the best time to water. It uses real-time weather data to automatically adjust the watering cycle, and a D-day countdown shows the next watering at a glance." } },
+        { "@type": "Question", "name": "Which devices is it available on?", "acceptedAnswer": { "@type": "Answer", "text": "Greenmate supports both iOS and Android. You can download it from the App Store and Google Play." } },
+        { "@type": "Question", "name": "Is it free to use?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Greenmate is free to download and use. With Premium (₩4,400/month or ₩19,000/year) you get ad-free plant recognition and disease diagnosis, including 15 ad-free recognitions per month." } }
+    ] }
     </script>
 </body>
 </html>

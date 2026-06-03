@@ -29,6 +29,16 @@
         "operatingSystem": "Android, iOS",
         "applicationCategory": "UtilitiesApplication",
         "description": "一秒扫描二维码与条形码，生成二维码并管理记录。支持相册扫描、闪光灯与深色模式的轻量 Mono QR Scanner。",
+        "featureList": [
+            "快速扫描二维码与条形码",
+            "生成文本、网址、WiFi、邮件、电话、短信、联系人与位置二维码",
+            "相册图片扫描",
+            "自动保存与管理扫描记录",
+            "暗处扫描的闪光灯支持",
+            "深色模式支持",
+            "多语言支持",
+            "免费且无广告"
+        ],
         "offers": {
             "@type": "Offer",
             "price": "0",
@@ -554,6 +564,34 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">常见问题</h2>
+        <p class="section-desc">关于 Mono QR Scanner 您需要了解的一切</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Mono QR Scanner 可以扫描什么？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">它可同时识别二维码和条形码。只需将摄像头对准代码即可即时识别，在光线较暗的地方还可打开闪光灯进行扫描。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">可以生成哪些类型的二维码？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">您可以生成文本、网址、WiFi、电子邮件、电话号码、短信、联系人和位置等多种格式的二维码。可使用 6 种配色主题进行自定义并即时分享。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">可以扫描相册中保存的图片吗？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">可以，它能够识别相册中保存图片里的二维码。您截取的屏幕截图也可以轻松扫描。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">支持哪些平台？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Mono QR Scanner 即将在 App Store 和 Play Store 上线。发布后将同时支持 iOS 和 Android。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">需要付费吗？有广告吗？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Mono QR Scanner 完全免费。您无需担心广告即可轻松使用，并支持深色模式和多语言。</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">隐私政策</a>
@@ -576,6 +614,15 @@
             if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
             if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
         });
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "zh", "mainEntity": [
+        { "@type": "Question", "name": "Mono QR Scanner 可以扫描什么？", "acceptedAnswer": { "@type": "Answer", "text": "它可同时识别二维码和条形码。只需将摄像头对准代码即可即时识别，在光线较暗的地方还可打开闪光灯进行扫描。" } },
+        { "@type": "Question", "name": "可以生成哪些类型的二维码？", "acceptedAnswer": { "@type": "Answer", "text": "您可以生成文本、网址、WiFi、电子邮件、电话号码、短信、联系人和位置等多种格式的二维码。可使用 6 种配色主题进行自定义并即时分享。" } },
+        { "@type": "Question", "name": "可以扫描相册中保存的图片吗？", "acceptedAnswer": { "@type": "Answer", "text": "可以，它能够识别相册中保存图片里的二维码。您截取的屏幕截图也可以轻松扫描。" } },
+        { "@type": "Question", "name": "支持哪些平台？", "acceptedAnswer": { "@type": "Answer", "text": "Mono QR Scanner 即将在 App Store 和 Play Store 上线。发布后将同时支持 iOS 和 Android。" } },
+        { "@type": "Question", "name": "需要付费吗？有广告吗？", "acceptedAnswer": { "@type": "Answer", "text": "Mono QR Scanner 完全免费。您无需担心广告即可轻松使用，并支持深色模式和多语言。" } }
+    ] }
     </script>
 </body>
 </html>

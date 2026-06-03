@@ -228,6 +228,34 @@
         </p>
     </section>
 
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">よくある質問</h2>
+        <p class="section-desc">Hogamdo についての疑問を解消しましょう</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Hogamdo はどんなアプリですか？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Hogamdo は、AI 顔分析であなたへの好感度を 138 カ国の文化圏の視点から測定するエンターテインメントアプリです。写真 1 枚で 1 分以内に結果を確認できます。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">どの端末で使えますか？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">iOS と Android の両方で利用でき、App Store と Google Play からダウンロードできます。インストールせずにウェブ上で体験することも可能です。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Hogamdo は無料ですか？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">はい、Hogamdo は無料でダウンロードしてご利用いただけます。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">写真はどのように扱われますか？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">写真は分析直後に自動的に破棄され、永久保存されることはありません。すべての通信は HTTPS で暗号化されています。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">138 カ国の好感度分析とは何ですか？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">韓国、日本、アメリカ、フランス、ブラジルなど 138 カ国の文化圏の美的基準に基づいて好感度スコアを算出し、1 位から 10 位までの国ランキングで表示します。分析は 11 の顔メトリクスに基づいて行われます。</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">プライバシーポリシー</a>
@@ -258,12 +286,28 @@
         "@type": "MobileApplication",
         "name": "Hogamdo",
         "description": "AI顔分析であなたへの好感度を138カ国の視点から測定します。",
+        "featureList": ["138カ国の好感度分析", "11の顔メトリクス分析", "1位~10位の段階別国ランキング", "魅力アピールヒント", "グローバルマッチング", "10種類の結果カードでSNS共有", "写真は分析直後に自動破棄"],
         "url": "https://monoapps.kr/ja/hogamdo.html",
         "applicationCategory": "EntertainmentApplication",
         "operatingSystem": "iOS, Android",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
         "author": { "@type": "Organization", "name": "MonoApps", "url": "https://monoapps.kr" },
         "inLanguage": ["ko", "en", "ja", "zh-CN", "zh-TW", "vi", "th", "es", "fr", "pt-BR"]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "ja",
+      "mainEntity": [
+        { "@type": "Question", "name": "Hogamdo はどんなアプリですか？", "acceptedAnswer": { "@type": "Answer", "text": "Hogamdo は、AI 顔分析であなたへの好感度を 138 カ国の文化圏の視点から測定するエンターテインメントアプリです。写真 1 枚で 1 分以内に結果を確認できます。" } },
+        { "@type": "Question", "name": "どの端末で使えますか？", "acceptedAnswer": { "@type": "Answer", "text": "iOS と Android の両方で利用でき、App Store と Google Play からダウンロードできます。インストールせずにウェブ上で体験することも可能です。" } },
+        { "@type": "Question", "name": "Hogamdo は無料ですか？", "acceptedAnswer": { "@type": "Answer", "text": "はい、Hogamdo は無料でダウンロードしてご利用いただけます。" } },
+        { "@type": "Question", "name": "写真はどのように扱われますか？", "acceptedAnswer": { "@type": "Answer", "text": "写真は分析直後に自動的に破棄され、永久保存されることはありません。すべての通信は HTTPS で暗号化されています。" } },
+        { "@type": "Question", "name": "138 カ国の好感度分析とは何ですか？", "acceptedAnswer": { "@type": "Answer", "text": "韓国、日本、アメリカ、フランス、ブラジルなど 138 カ国の文化圏の美的基準に基づいて好感度スコアを算出し、1 位から 10 位までの国ランキングで表示します。分析は 11 の顔メトリクスに基づいて行われます。" } }
+      ]
     }
     </script>
 </body>

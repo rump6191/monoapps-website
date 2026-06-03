@@ -29,6 +29,16 @@
         "operatingSystem": "Android, iOS",
         "applicationCategory": "UtilitiesApplication",
         "description": "Scan QR codes and barcodes in one second, create QR codes, and manage history. Gallery scan, flash, and dark mode in a lightweight app.",
+        "featureList": [
+            "Fast QR code and barcode scanning",
+            "Create text, URL, WiFi, email, phone, SMS, contact, and location QR codes",
+            "Gallery image scanning",
+            "Automatic scan history saving and management",
+            "Flash support for dark places",
+            "Dark mode support",
+            "Multilingual support",
+            "Free and ad-free"
+        ],
         "offers": {
             "@type": "Offer",
             "price": "0",
@@ -554,6 +564,34 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Everything you need to know about Mono QR Scanner</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">What can Mono QR Scanner scan?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">It recognizes both QR codes and barcodes at the same time. Just point your camera at the code for instant recognition, and turn on the flash to scan in dark places.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">What types of QR codes can I create?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">You can create QR codes for text, URL, WiFi, email, phone number, SMS, contact, and location. Customize them with 6 color themes and share right away.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Can it scan images saved in my gallery?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Yes, it can recognize QR codes from images saved in your gallery. You can easily scan screenshots you have captured too.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">On which platforms is it available?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Mono QR Scanner is coming soon to the App Store and Play Store. After launch it will be available on both iOS and Android.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Is it paid? Are there ads?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Mono QR Scanner is free. You can use it lightly without worrying about ads, and it supports dark mode and multiple languages.</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">Privacy Policy</a>
@@ -576,6 +614,15 @@
             if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
             if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
         });
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [
+        { "@type": "Question", "name": "What can Mono QR Scanner scan?", "acceptedAnswer": { "@type": "Answer", "text": "It recognizes both QR codes and barcodes at the same time. Just point your camera at the code for instant recognition, and turn on the flash to scan in dark places." } },
+        { "@type": "Question", "name": "What types of QR codes can I create?", "acceptedAnswer": { "@type": "Answer", "text": "You can create QR codes for text, URL, WiFi, email, phone number, SMS, contact, and location. Customize them with 6 color themes and share right away." } },
+        { "@type": "Question", "name": "Can it scan images saved in my gallery?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, it can recognize QR codes from images saved in your gallery. You can easily scan screenshots you have captured too." } },
+        { "@type": "Question", "name": "On which platforms is it available?", "acceptedAnswer": { "@type": "Answer", "text": "Mono QR Scanner is coming soon to the App Store and Play Store. After launch it will be available on both iOS and Android." } },
+        { "@type": "Question", "name": "Is it paid? Are there ads?", "acceptedAnswer": { "@type": "Answer", "text": "Mono QR Scanner is free. You can use it lightly without worrying about ads, and it supports dark mode and multiple languages." } }
+    ] }
     </script>
 </body>
 </html>

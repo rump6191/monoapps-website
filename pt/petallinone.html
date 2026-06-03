@@ -26,6 +26,16 @@
         "operatingSystem": "Android, iOS",
         "applicationCategory": "LifestyleApplication",
         "description": "Gerencie passeios, saúde e vacinas do seu cão ou gato em um app. Registo GPS, cálculo de ração, análise de saúde por IA e mudança de estilo.",
+        "featureList": [
+            "Registo de passeios GPS",
+            "Calculadora de ração",
+            "Gestão de vacinas",
+            "Monitorização de peso",
+            "Análise de saúde por IA",
+            "Transformação de estilo",
+            "Pesquisa de veterinários",
+            "Informações de raças"
+        ],
         "offers": {
             "@type": "Offer",
             "price": "0",
@@ -465,6 +475,34 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">Perguntas frequentes</h2>
+        <p class="section-desc">Perguntas comuns sobre o PetCare</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">O que é o PetCare?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">O PetCare é um app tudo-em-um para gerir os passeios, a saúde e as vacinas do seu pet. Oferece registo de passeios GPS, calculadora de ração, monitorização de peso, lembretes de vacinas, análise de saúde por IA, pesquisa de veterinários e informações de raças.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Serve para cães e gatos?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Sim. Pode gerir tanto cães como gatos, e o app oferece características e cuidados de 80 raças de cães e 54 de gatos.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Em quais dispositivos posso usar?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">O PetCare está disponível para iOS e Android, com downloads na App Store e no Google Play.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">É gratuito?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Sim, o PetCare é gratuito para baixar e usar. Para usar a análise de saúde por IA com mais frequência e sem anúncios, pode assinar o PetCare Pro.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Como funciona a análise de saúde por IA?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Com uma única foto, o app analisa a pele e as fezes do seu pet para detetar sinais de alerta precoces. Com a assinatura Pro, tem até 50 análises por mês.</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">Política de Privacidade</a>
@@ -484,6 +522,20 @@
         const langDropdown = document.getElementById('langDropdown');
         langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
         document.addEventListener('click', () => langDropdown.classList.remove('active'));
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "pt",
+      "mainEntity": [
+        { "@type": "Question", "name": "O que é o PetCare?", "acceptedAnswer": { "@type": "Answer", "text": "O PetCare é um app tudo-em-um para gerir os passeios, a saúde e as vacinas do seu pet. Oferece registo de passeios GPS, calculadora de ração, monitorização de peso, lembretes de vacinas, análise de saúde por IA, pesquisa de veterinários e informações de raças." } },
+        { "@type": "Question", "name": "Serve para cães e gatos?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Pode gerir tanto cães como gatos, e o app oferece características e cuidados de 80 raças de cães e 54 de gatos." } },
+        { "@type": "Question", "name": "Em quais dispositivos posso usar?", "acceptedAnswer": { "@type": "Answer", "text": "O PetCare está disponível para iOS e Android, com downloads na App Store e no Google Play." } },
+        { "@type": "Question", "name": "É gratuito?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, o PetCare é gratuito para baixar e usar. Para usar a análise de saúde por IA com mais frequência e sem anúncios, pode assinar o PetCare Pro." } },
+        { "@type": "Question", "name": "Como funciona a análise de saúde por IA?", "acceptedAnswer": { "@type": "Answer", "text": "Com uma única foto, o app analisa a pele e as fezes do seu pet para detetar sinais de alerta precoces. Com a assinatura Pro, tem até 50 análises por mês." } }
+      ]
+    }
     </script>
 </body>
 </html>

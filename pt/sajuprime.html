@@ -30,6 +30,38 @@
     <link rel="alternate" hreflang="es" href="https://monoapps.kr/es/sajuprime.html">
     <link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/sajuprime.html">
     <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/sajuprime.html">
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Saju Prime",
+        "description": "Serviço tradicional de adivinhação baseado em astrologia oriental. Leia o fluxo do seu destino.",
+        "url": "https://sajuprime.co.kr",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "KRW"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "MonoApps",
+            "url": "https://monoapps.kr"
+        },
+        "inLanguage": ["ko", "en", "ja", "zh", "es", "pt"],
+        "featureList": [
+            "Análise dos Quatro Pilares (Saju)",
+            "Leitura personalizada do destino",
+            "Fortuna diária, mensal e anual",
+            "Análise de compatibilidade",
+            "Leituras de carreira, riqueza, amor, família e saúde",
+            "Suporte multi-idioma",
+            "Disponível 24/7 gratuitamente"
+        ]
+    }
+    </script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -183,6 +215,34 @@
             </div>
         </div>
     </section>
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">Perguntas frequentes</h2>
+        <p class="section-desc">Perguntas comuns sobre o Saju Prime</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">O que é o Saju Prime?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">O Saju Prime é um serviço web tradicional de adivinhação baseado na astrologia oriental. Ele analisa o seu destino usando o método tradicional dos Quatro Pilares (Saju) para ler o fluxo do seu futuro.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Quais informações preciso para obter uma leitura?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">A análise é baseada na sua data e hora de nascimento. Insira a sua data e hora exatas de nascimento e o serviço analisará os seus Quatro Pilares.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Quais categorias ele analisa?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Abrange carreira, riqueza, amor, família, saúde e fortuna anual. Você também recebe leituras diárias, mensais e anuais, além de análise de compatibilidade com parceiros, colegas e amigos.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Há algum custo para usá-lo?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">O serviço está disponível online e pode ser acessado a qualquer hora e em qualquer lugar, 24 horas por dia.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Quais idiomas são suportados?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">O Saju Prime está disponível em coreano, inglês, japonês, chinês, espanhol e português, e oferece conselhos personalizados com base nos resultados da sua análise.</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">Política de Privacidade</a>
@@ -204,6 +264,15 @@
             if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
             if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
         });
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "pt", "mainEntity": [
+        { "@type": "Question", "name": "O que é o Saju Prime?", "acceptedAnswer": { "@type": "Answer", "text": "O Saju Prime é um serviço web tradicional de adivinhação baseado na astrologia oriental. Ele analisa o seu destino usando o método tradicional dos Quatro Pilares (Saju) para ler o fluxo do seu futuro." } },
+        { "@type": "Question", "name": "Quais informações preciso para obter uma leitura?", "acceptedAnswer": { "@type": "Answer", "text": "A análise é baseada na sua data e hora de nascimento. Insira a sua data e hora exatas de nascimento e o serviço analisará os seus Quatro Pilares." } },
+        { "@type": "Question", "name": "Quais categorias ele analisa?", "acceptedAnswer": { "@type": "Answer", "text": "Abrange carreira, riqueza, amor, família, saúde e fortuna anual. Você também recebe leituras diárias, mensais e anuais, além de análise de compatibilidade com parceiros, colegas e amigos." } },
+        { "@type": "Question", "name": "Há algum custo para usá-lo?", "acceptedAnswer": { "@type": "Answer", "text": "O serviço está disponível online e pode ser acessado a qualquer hora e em qualquer lugar, 24 horas por dia." } },
+        { "@type": "Question", "name": "Quais idiomas são suportados?", "acceptedAnswer": { "@type": "Answer", "text": "O Saju Prime está disponível em coreano, inglês, japonês, chinês, espanhol e português, e oferece conselhos personalizados com base nos resultados da sua análise." } }
+    ] }
     </script>
 </body>
 </html>

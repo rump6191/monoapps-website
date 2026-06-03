@@ -26,6 +26,16 @@
         "operatingSystem": "Android, iOS",
         "applicationCategory": "LifestyleApplication",
         "description": "Manage your dog or cat's walks, health, and vaccinations in one app. GPS walk tracking, food calculator, AI health analysis, and pet style.",
+        "featureList": [
+            "GPS walk tracking",
+            "Feed calculator",
+            "Vaccination management",
+            "Weight tracking",
+            "AI health analysis",
+            "Pet style transform",
+            "Vet hospital search",
+            "Breed information"
+        ],
         "offers": {
             "@type": "Offer",
             "price": "0",
@@ -465,6 +475,34 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Common questions about PetCare</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">What is PetCare?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">PetCare is an all-in-one app for managing your pet's walks, health, and vaccinations. It offers GPS walk tracking, a feed calculator, weight tracking, vaccination reminders, AI health analysis, vet hospital search, and breed information.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Can I use it for both dogs and cats?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Yes. You can manage both dogs and cats, and the app provides traits and care notes for 80 dog breeds and 54 cat breeds.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Which devices can I use it on?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">PetCare is available on both iOS and Android, with downloads on the App Store and Google Play.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Is it free to use?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Yes, PetCare is free to download and use. For more frequent AI health analysis and an ad-free experience, you can subscribe to PetCare Pro.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">How does AI health analysis work?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">A single photo lets the app analyze your pet's skin and stool conditions so you can catch early warning signs. With a Pro subscription you get up to 50 analyses per month.</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">Privacy Policy</a>
@@ -484,6 +522,20 @@
         const langDropdown = document.getElementById('langDropdown');
         langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
         document.addEventListener('click', () => langDropdown.classList.remove('active'));
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is PetCare?", "acceptedAnswer": { "@type": "Answer", "text": "PetCare is an all-in-one app for managing your pet's walks, health, and vaccinations. It offers GPS walk tracking, a feed calculator, weight tracking, vaccination reminders, AI health analysis, vet hospital search, and breed information." } },
+        { "@type": "Question", "name": "Can I use it for both dogs and cats?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can manage both dogs and cats, and the app provides traits and care notes for 80 dog breeds and 54 cat breeds." } },
+        { "@type": "Question", "name": "Which devices can I use it on?", "acceptedAnswer": { "@type": "Answer", "text": "PetCare is available on both iOS and Android, with downloads on the App Store and Google Play." } },
+        { "@type": "Question", "name": "Is it free to use?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, PetCare is free to download and use. For more frequent AI health analysis and an ad-free experience, you can subscribe to PetCare Pro." } },
+        { "@type": "Question", "name": "How does AI health analysis work?", "acceptedAnswer": { "@type": "Answer", "text": "A single photo lets the app analyze your pet's skin and stool conditions so you can catch early warning signs. With a Pro subscription you get up to 50 analyses per month." } }
+      ]
+    }
     </script>
 </body>
 </html>

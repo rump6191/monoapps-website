@@ -265,6 +265,34 @@
         </p>
     </section>
 
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Everything you might want to know about Hogamdo</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">What is Hogamdo?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Hogamdo is an entertainment app that uses AI face analysis to measure how appealing you are perceived to be across 138 different country cultures. You can get your results in under a minute from a single photo.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Which devices can I use it on?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Hogamdo runs on both iOS and Android, and is available on the App Store and Google Play. You can also try it directly on the web without installing anything.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Is Hogamdo free?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Yes, Hogamdo is free to download and use.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">How is my photo handled?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Your photo is discarded automatically right after analysis and is never stored permanently. All communication is encrypted over HTTPS.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">What is the 138-country appeal analysis?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">It calculates an appeal score based on the aesthetic standards of 138 country cultures, including Korea, Japan, the US, France and Brazil, and presents them as a country ranking from 1st to 10th. The analysis is based on 11 facial metrics.</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">Privacy Policy</a>
@@ -295,12 +323,28 @@
         "@type": "MobileApplication",
         "name": "Hogamdo",
         "description": "Discover how 138 countries perceive your appeal through AI face analysis.",
+        "featureList": ["138-country appeal analysis", "11 facial metrics analysis", "Tiered country ranking from 1st to 10th", "Cultural appeal tips", "Global matching service", "10 result card designs for social sharing", "Photos discarded immediately after analysis"],
         "url": "https://monoapps.kr/en/hogamdo.html",
         "applicationCategory": "EntertainmentApplication",
         "operatingSystem": "iOS, Android",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "author": { "@type": "Organization", "name": "MonoApps", "url": "https://monoapps.kr" },
         "inLanguage": ["ko", "en", "ja", "zh-CN", "zh-TW", "vi", "th", "es", "fr", "pt-BR"]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is Hogamdo?", "acceptedAnswer": { "@type": "Answer", "text": "Hogamdo is an entertainment app that uses AI face analysis to measure how appealing you are perceived to be across 138 different country cultures. You can get your results in under a minute from a single photo." } },
+        { "@type": "Question", "name": "Which devices can I use it on?", "acceptedAnswer": { "@type": "Answer", "text": "Hogamdo runs on both iOS and Android, and is available on the App Store and Google Play. You can also try it directly on the web without installing anything." } },
+        { "@type": "Question", "name": "Is Hogamdo free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Hogamdo is free to download and use." } },
+        { "@type": "Question", "name": "How is my photo handled?", "acceptedAnswer": { "@type": "Answer", "text": "Your photo is discarded automatically right after analysis and is never stored permanently. All communication is encrypted over HTTPS." } },
+        { "@type": "Question", "name": "What is the 138-country appeal analysis?", "acceptedAnswer": { "@type": "Answer", "text": "It calculates an appeal score based on the aesthetic standards of 138 country cultures, including Korea, Japan, the US, France and Brazil, and presents them as a country ranking from 1st to 10th. The analysis is based on 11 facial metrics." } }
+      ]
     }
     </script>
 </body>

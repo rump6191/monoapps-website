@@ -321,6 +321,34 @@
         </p>
     </section>
 
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">자주 묻는 질문</h2>
+        <p class="section-desc">호감도에 대해 궁금한 점을 확인하세요</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">호감도는 어떤 앱인가요?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">호감도는 AI 얼굴 분석으로 138개국 문화권이 본 당신의 호감도를 측정하는 엔터테인먼트 앱입니다. 사진 한 장으로 1분 안에 결과를 확인할 수 있습니다.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">어떤 기기에서 사용할 수 있나요?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">iOS와 Android 모두에서 사용할 수 있으며 App Store와 Google Play에서 내려받을 수 있습니다. 별도 설치 없이 웹에서 체험해 볼 수도 있습니다.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">호감도는 무료인가요?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">네, 호감도는 무료로 내려받아 사용할 수 있습니다.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">제 사진은 어떻게 처리되나요?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">사진은 분석 직후 자동으로 폐기되며 영구 저장하지 않습니다. 모든 통신은 HTTPS로 암호화되어 전송됩니다.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">138개국 호감도 분석은 무엇인가요?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">한국, 일본, 미국, 프랑스, 브라질 등 138개국 문화권의 미적 기준에 따라 호감도 점수를 산출하고, 1위부터 10위까지 국가 랭킹으로 보여줍니다. 11가지 얼굴 메트릭을 기반으로 분석합니다.</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">개인정보 처리방침</a>
@@ -352,12 +380,28 @@
         "name": "호감도",
         "alternateName": "Hogamdo",
         "description": "AI 얼굴 분석으로 138개국이 본 당신의 호감도를 측정합니다.",
+        "featureList": ["138개국 호감도 분석", "11가지 얼굴 메트릭 분석", "1위~10위 단계별 국가 랭킹", "매력 어필 팁", "글로벌 매칭 신청", "10가지 결과 카드 SNS 공유", "사진 분석 직후 자동 폐기"],
         "url": "https://monoapps.kr/hogamdo.html",
         "applicationCategory": "EntertainmentApplication",
         "operatingSystem": "iOS, Android",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
         "author": { "@type": "Organization", "name": "MonoApps", "url": "https://monoapps.kr" },
         "inLanguage": ["ko", "en", "ja", "zh-CN", "zh-TW", "vi", "th", "es", "fr", "pt-BR"]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "ko",
+      "mainEntity": [
+        { "@type": "Question", "name": "호감도는 어떤 앱인가요?", "acceptedAnswer": { "@type": "Answer", "text": "호감도는 AI 얼굴 분석으로 138개국 문화권이 본 당신의 호감도를 측정하는 엔터테인먼트 앱입니다. 사진 한 장으로 1분 안에 결과를 확인할 수 있습니다." } },
+        { "@type": "Question", "name": "어떤 기기에서 사용할 수 있나요?", "acceptedAnswer": { "@type": "Answer", "text": "iOS와 Android 모두에서 사용할 수 있으며 App Store와 Google Play에서 내려받을 수 있습니다. 별도 설치 없이 웹에서 체험해 볼 수도 있습니다." } },
+        { "@type": "Question", "name": "호감도는 무료인가요?", "acceptedAnswer": { "@type": "Answer", "text": "네, 호감도는 무료로 내려받아 사용할 수 있습니다." } },
+        { "@type": "Question", "name": "제 사진은 어떻게 처리되나요?", "acceptedAnswer": { "@type": "Answer", "text": "사진은 분석 직후 자동으로 폐기되며 영구 저장하지 않습니다. 모든 통신은 HTTPS로 암호화되어 전송됩니다." } },
+        { "@type": "Question", "name": "138개국 호감도 분석은 무엇인가요?", "acceptedAnswer": { "@type": "Answer", "text": "한국, 일본, 미국, 프랑스, 브라질 등 138개국 문화권의 미적 기준에 따라 호감도 점수를 산출하고, 1위부터 10위까지 국가 랭킹으로 보여줍니다. 11가지 얼굴 메트릭을 기반으로 분석합니다." } }
+      ]
     }
     </script>
 </body>

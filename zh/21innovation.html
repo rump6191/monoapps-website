@@ -30,6 +30,29 @@
     <link rel="alternate" hreflang="es" href="https://monoapps.kr/es/21innovation.html">
     <link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/21innovation.html">
     <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/21innovation.html">
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "21创新",
+        "description": "分析1,757多个商品数据，帮助您做出最佳选择的智能比较平台。",
+        "url": "https://21innovation.org",
+        "applicationCategory": "ShoppingApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "MonoApps",
+            "url": "https://monoapps.kr"
+        },
+        "featureList": ["详细规格比较", "优缺点分析", "便捷购买链接", "移动端优化", "快速搜索", "购买指南"]
+    }
+    </script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -438,6 +461,34 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">常见问题</h2>
+        <p class="section-desc">关于21创新最常见的问题</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">21创新是什么样的服务？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">这是一个智能商品比较网页平台，分析1,757多个商品数据，帮助您做出最佳选择。无需安装，直接在网页浏览器中即可使用。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">商品比较是如何进行的？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">以表格形式一目了然地比较商品的主要规格和功能，并整理各商品的优缺点，帮助您做出购买决定。喜欢的商品可直接连接到Coupang购买。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">涵盖哪些商品类别？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">您可以比较家电、家具、数码、美妆/健康、运动/休闲、时尚、生活用品、母婴/儿童、宠物等9个类别的商品。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">适合哪些人使用？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">适合想要比较多个商品的规格和优缺点以做出明智购买的用户。还提供各类别的购买指南，让首次购买的用户也能轻松决定。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">使用需要付费吗？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">免费使用，全天候24小时随时可访问。针对移动端进行了优化，无论是电脑还是手机都能方便地进行比较。</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">隐私政策</a>
@@ -460,6 +511,15 @@
             if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
             if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
         });
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "zh", "mainEntity": [
+        { "@type": "Question", "name": "21创新是什么样的服务？", "acceptedAnswer": { "@type": "Answer", "text": "这是一个智能商品比较网页平台，分析1,757多个商品数据，帮助您做出最佳选择。无需安装，直接在网页浏览器中即可使用。" } },
+        { "@type": "Question", "name": "商品比较是如何进行的？", "acceptedAnswer": { "@type": "Answer", "text": "以表格形式一目了然地比较商品的主要规格和功能，并整理各商品的优缺点，帮助您做出购买决定。喜欢的商品可直接连接到Coupang购买。" } },
+        { "@type": "Question", "name": "涵盖哪些商品类别？", "acceptedAnswer": { "@type": "Answer", "text": "您可以比较家电、家具、数码、美妆/健康、运动/休闲、时尚、生活用品、母婴/儿童、宠物等9个类别的商品。" } },
+        { "@type": "Question", "name": "适合哪些人使用？", "acceptedAnswer": { "@type": "Answer", "text": "适合想要比较多个商品的规格和优缺点以做出明智购买的用户。还提供各类别的购买指南，让首次购买的用户也能轻松决定。" } },
+        { "@type": "Question", "name": "使用需要付费吗？", "acceptedAnswer": { "@type": "Answer", "text": "免费使用，全天候24小时随时可访问。针对移动端进行了优化，无论是电脑还是手机都能方便地进行比较。" } }
+    ] }
     </script>
 </body>
 </html>

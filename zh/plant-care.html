@@ -531,6 +531,34 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">常见问题</h2>
+        <p class="section-desc">关于绿伴的常见疑问</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">绿伴是什么应用？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">绿伴是一款室内植物浇水护理教练应用。它能通过照片识别植物，根据天气提供智能浇水提醒，并支持AI病害诊断、护理记录和环境监测功能。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">可以用照片识别植物吗？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">可以。用相机拍摄或从相册中选择照片，AI便会自动识别植物种类。您可以查看识别率以及植物的通用名和学名。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">浇水提醒是如何工作的？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">绿伴会综合考虑天气、湿度、花盆大小和位置等因素，提示最佳浇水时机。它会根据实时天气数据自动调整浇水周期，并通过D-day倒计时让您一目了然。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">支持哪些设备？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">绿伴同时支持iOS和Android。您可以在App Store和Google Play上下载。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">可以免费使用吗？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">可以，绿伴可免费下载使用。开通高级版（每月₩4,400或每年₩19,000）后，可无广告使用植物识别和病害诊断，并享有每月15次无广告识别。</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-nav">
             <a href="privacy.html">隐私政策</a>
@@ -568,12 +596,30 @@
             "price": "0",
             "priceCurrency": "KRW"
         },
+        "featureList": [
+            "AI植物识别",
+            "智能浇水提醒",
+            "天气联动浇水调整",
+            "AI植物病害诊断",
+            "护理记录管理",
+            "环境监测"
+        ],
         "author": {
             "@type": "Organization",
             "name": "MonoApps",
             "url": "https://monoapps.kr"
         }
     }
+    </script>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "zh", "mainEntity": [
+        { "@type": "Question", "name": "绿伴是什么应用？", "acceptedAnswer": { "@type": "Answer", "text": "绿伴是一款室内植物浇水护理教练应用。它能通过照片识别植物，根据天气提供智能浇水提醒，并支持AI病害诊断、护理记录和环境监测功能。" } },
+        { "@type": "Question", "name": "可以用照片识别植物吗？", "acceptedAnswer": { "@type": "Answer", "text": "可以。用相机拍摄或从相册中选择照片，AI便会自动识别植物种类。您可以查看识别率以及植物的通用名和学名。" } },
+        { "@type": "Question", "name": "浇水提醒是如何工作的？", "acceptedAnswer": { "@type": "Answer", "text": "绿伴会综合考虑天气、湿度、花盆大小和位置等因素，提示最佳浇水时机。它会根据实时天气数据自动调整浇水周期，并通过D-day倒计时让您一目了然。" } },
+        { "@type": "Question", "name": "支持哪些设备？", "acceptedAnswer": { "@type": "Answer", "text": "绿伴同时支持iOS和Android。您可以在App Store和Google Play上下载。" } },
+        { "@type": "Question", "name": "可以免费使用吗？", "acceptedAnswer": { "@type": "Answer", "text": "可以，绿伴可免费下载使用。开通高级版（每月₩4,400或每年₩19,000）后，可无广告使用植物识别和病害诊断，并享有每月15次无广告识别。" } }
+    ] }
     </script>
 </body>
 </html>
