@@ -1,0 +1,29 @@
+# MonoApps
+
+> MonoApps(모노앱스)는 일상을 더 편리하게 만드는 심플하고 유용한 모바일 앱과 웹 서비스를 만드는 1인 개발 스튜디오입니다. 모든 서비스는 한국어·영어·일본어·중국어·스페인어·포르투갈어 6개 언어를 지원합니다. 공식 사이트: https://monoapps.kr
+
+## 모바일 앱 (Mobile Apps)
+
+- [호감도 (Hogamdo)](https://monoapps.kr/hogamdo.html): AI 얼굴 분석으로 138개국 문화권이 본 호감도를 측정하는 iOS 앱. 11가지 얼굴 메트릭, 국가별 호감도 랭킹, 매력 어필 팁, 글로벌 매칭 제공. 사진은 분석 직후 자동 폐기됩니다.
+- [펫케어 (PetAllinOne)](https://monoapps.kr/petallinone.html): 반려동물의 산책·건강·예방접종을 한 번에 관리하는 올인원 앱. GPS 산책 기록, 사료량 계산, 체중 추적, 예방접종 알림, AI 건강 분석, 동물병원 검색.
+- [그린메이트 (Plant Care)](https://monoapps.kr/plant-care.html): 사진 한 장으로 식물을 인식하고 날씨에 맞춘 스마트 물주기 알림을 주는 실내식물 케어 앱. AI 식물 인식·질병 진단, 케어 기록, 환경 모니터링.
+- [Mono QR Scanner](https://monoapps.kr/qr-scanner.html): 빠르고 정확한 QR·바코드 스캐너. 1초 스캔, QR 코드 생성, 스캔 기록 관리, 갤러리 이미지 스캔, 플래시·다크 모드·다국어 지원. 광고 없는 가벼운 유틸리티.
+- [알바 헬퍼 (Alba Helper)](https://monoapps.kr/alba-helper.html): 알바생을 위한 스마트 급여 관리 앱. 캘린더 근무기록 기반 시급 급여 자동 계산, 주휴수당과 3.3% 세금 계산, 급여일 알림. (한국어 전용)
+
+## 웹 서비스 (Web Services)
+
+- [21이노베이션 (21 Innovation)](https://monoapps.kr/21innovation.html): 1,757개 이상의 상품 데이터를 분석해 최고의 선택을 돕는 스마트 비교 플랫폼.
+- [사주프라임 (Saju Prime)](https://monoapps.kr/sajuprime.html): 전통 명리학에 기반한 정통 사주 분석 서비스.
+
+## 정보 (Information)
+
+- [전체 앱 목록](https://monoapps.kr/apps.html): MonoApps의 모든 앱과 웹 서비스 모음.
+- [고객지원](https://monoapps.kr/support.html): 문의 및 도움말.
+- [소식](https://monoapps.kr/news.html): 업데이트 및 출시 소식.
+- [개인정보 처리방침](https://monoapps.kr/privacy.html)
+- [이용약관](https://monoapps.kr/terms.html)
+
+## 연락처 (Contact)
+
+- 이메일: monoappskr@gmail.com
+- 사이트맵: https://monoapps.kr/sitemap.xml
