@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>SkinScan Privacy Policy - MonoApps</title>
+    <meta name="description" content="Privacy Policy for SkinScan, an AI skin analysis app by MonoApps. How your photos and data are handled.">
+    <meta name="keywords" content="SkinScan, skin analysis, privacy, policy, MonoApps">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SkinScan Privacy Policy - MonoApps">
+    <meta property="og:description" content="Privacy Policy for SkinScan, an AI skin analysis app by MonoApps.">
+    <meta property="og:url" content="https://monoapps.kr/en/skinscan-privacy.html">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="MonoApps">
+    <link rel="canonical" href="https://monoapps.kr/en/skinscan-privacy.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/skinscan-privacy.html">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/skinscan-privacy.html">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/skinscan-privacy.html">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/skinscan-privacy.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; min-height: 100vh; overflow-x: hidden; }
+        .bg-gradient { position: fixed; width: 150vw; height: 150vh; top: -25vh; left: -25vw; background: conic-gradient(from 180deg at 50% 50%, #ee7752, #e73c7e, #23a6d5, #23d5ab); filter: blur(100px); animation: rotate 20s linear infinite; z-index: -1; opacity: 0.7; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        nav { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background: rgba(0,0,0,0.3); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero { min-height: 30vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 40px; text-align: center; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 0.5rem; }
+        .hero p { opacity: 0.6; }
+        main { max-width: 800px; margin: 0 auto; padding: 0 2rem 6rem; }
+        .content-card { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 25px; padding: 3rem; }
+        .last-updated { font-size: 0.9rem; opacity: 0.5; margin-bottom: 2rem; }
+        .content-card p { color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 1rem; }
+        .content-card h2 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; color: white; }
+        .content-card ul { padding-left: 20px; color: rgba(255,255,255,0.7); margin-bottom: 1rem; }
+        .content-card li { padding: 0.3rem 0; line-height: 1.6; }
+        .content-card a { color: #e73c7e; font-weight: 600; }
+        .highlight { background: rgba(231,60,126,0.15); border-left: 3px solid #e73c7e; padding: 12px 16px; border-radius: 6px; margin-top: 1rem; }
+        footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+        @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .mobile-menu-btn { display: block; } .content-card { padding: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    <nav>
+        <a href="/en/" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="index.html#apps">Mobile Apps</a>
+            <a href="index.html#services">Web Services</a>
+            <a href="support.html">Support</a>
+            <a href="news.html">News</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">EN</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="../skinscan-privacy.html">한국어</a>
+                    <a href="skinscan-privacy.html">English</a>
+                    <a href="../ja/skinscan-privacy.html">日本語</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#apps">Mobile Apps</a>
+        <a href="index.html#services">Web Services</a>
+        <a href="support.html">Support</a>
+        <a href="news.html">News</a>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 0.5rem; padding-top: 0.5rem;">
+            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">Language</div>
+            <a href="../skinscan-privacy.html">한국어</a>
+            <a href="skinscan-privacy.html" style="color: #e73c7e;">English</a>
+            <a href="../ja/skinscan-privacy.html">日本語</a>
+        </div>
+    </div>
+    <section class="hero">
+        <div>
+            <h1>SkinScan Privacy Policy</h1>
+            <p>SkinScan · AI Skin Analysis App</p>
+        </div>
+    </section>
+    <main>
+        <div class="content-card">
+            <p class="last-updated">Last updated: June 22, 2026</p>
+            <p>This Privacy Policy applies to <strong>SkinScan</strong>, an AI skin analysis app provided by MonoApps (the "Company"). We take your privacy seriously and comply with applicable laws (Korea PIPA, GDPR, Japan APPI, and others).</p>
+
+            <h2>1. Purpose of Collection and Use</h2>
+            <ul>
+                <li>Providing the AI skin analysis service (analyzing the skin condition in photos you take or select)</li>
+                <li>Offering tailored information and product recommendations based on results</li>
+                <li>Service stability analysis and daily usage-limit management</li>
+                <li>Serving personalized ads (to operate the ad-supported free service)</li>
+                <li>(With separate consent) Improving the AI model and analysis quality</li>
+            </ul>
+
+            <h2>2. Information We Collect</h2>
+            <ul>
+                <li><strong>Face photos:</strong> Images taken with the camera or chosen from the gallery for skin analysis. They are sent to the Company's server (<a href="https://api.monoapps.kr" target="_blank">api.monoapps.kr</a>) for analysis.</li>
+                <li><strong>Analysis results:</strong> Outputs such as skin scores and skin type.</li>
+                <li><strong>Service identifier (device-id):</strong> An anonymous device identifier used for usage limits and service stability analysis. It is reset when the app is uninstalled and is not linked to information that directly identifies you (name, contact, etc.).</li>
+                <li><strong>Self-reported skin info:</strong> Skin type (e.g., sensitive skin) that you enter in Settings.</li>
+                <li><strong>Advertising identifier:</strong> IDFA on iOS or GAID on Android (for ad delivery).</li>
+                <li><strong>Purchase/billing info:</strong> Receipt data (transaction ID, product ID, purchase date) when you subscribe. Payment method details are handled by the App Store/Google Play billing systems; the Company does not access them.</li>
+            </ul>
+
+            <h2>3. How Face Photos Are Handled (Key Point)</h2>
+            <p class="highlight"><strong>Default principle — photos are not stored on our servers:</strong> Face photos sent for analysis are used only for processing and are <strong>discarded immediately after analysis completes</strong>. Unless you separately consent to AI training, photos are never written to any permanent server storage (database, file system, etc.). Only the analysis results are stored on your device.</p>
+            <ul>
+                <li><strong>Transport protection:</strong> Photo uploads are protected with HTTPS (TLS) encryption.</li>
+                <li><strong>Local on-device storage:</strong> For your convenience, recent analyzed photos and results may be stored locally in the app's private sandbox. This data is not transmitted off the device, cannot be accessed by other apps, and is fully removed when you clear history in the app or uninstall it.</li>
+                <li><strong>No third-party sharing:</strong> Face photos are not provided to third parties; analysis takes place only on our own servers.</li>
+            </ul>
+
+            <h2>4. Data Use for AI Training (Optional · Opt-in)</h2>
+            <p>To improve the skin-analysis AI model, the Company may use face photos for training <strong>only if you separately opt in within the app</strong>. You can fully use the analysis service without consenting.</p>
+            <ul>
+                <li><strong>Scope:</strong> Only when you consent, your photo may be used to train and improve the AI model.</li>
+                <li><strong>De-identification:</strong> Training data is processed after removing identifiable information such as location (EXIF).</li>
+                <li><strong>Retention:</strong> Training data is retained for up to 730 days, then destroyed upon expiry or once the purpose is achieved.</li>
+                <li><strong>Withdrawal and deletion:</strong> You can withdraw consent and request deletion of server-side training data at any time via <strong>Settings &gt; Delete Data</strong> (or by withdrawing training consent) in the app. After withdrawal, the data is no longer used for training. However, data already incorporated into a trained model may be technically difficult to separate and delete individually.</li>
+            </ul>
+
+            <h2>5. Advertising and Third-Party Services</h2>
+            <p>The app serves ads through Google AdMob. For ad delivery, the advertising identifier (IDFA/GAID), device info (model, OS version), and ad impression/click data may be collected. See the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a> for details. You can limit ad tracking or reset your advertising identifier in device settings.</p>
+            <p>Subscriptions and in-app purchases are managed via RevenueCat, which may receive receipt data (transaction ID, product ID, purchase/expiry dates), an anonymous identifier for purchase restoration, and platform info (iOS/Android). RevenueCat does not process payment method details. See the <a href="https://www.revenuecat.com/privacy/" target="_blank">RevenueCat Privacy Policy</a> for details.</p>
+
+            <h2>6. App Permissions</h2>
+            <ul>
+                <li><strong>Camera:</strong> Taking face photos for skin analysis</li>
+                <li><strong>Photos/Gallery:</strong> Loading an image to analyze</li>
+            </ul>
+            <p>Permissions are active only when the relevant feature is used and can be revoked anytime in device settings. Revoking them may limit related features.</p>
+
+            <h2>7. Data Security</h2>
+            <ul>
+                <li><strong>Encrypted communication:</strong> All communication with the server is protected with HTTPS (TLS).</li>
+                <li><strong>No-photo-retention principle:</strong> Unless you consent to training, photos are not stored on the server and are discarded right after analysis.</li>
+                <li><strong>Access restriction:</strong> On-device data is stored in the app's private sandbox and cannot be accessed by other apps.</li>
+            </ul>
+
+            <h2>8. Retention Periods</h2>
+            <ul>
+                <li>Face photos for analysis (server): discarded right after analysis (not stored)</li>
+                <li>Training data (if consented): up to 730 days</li>
+                <li>Customer inquiry records: 1 year after resolution</li>
+                <li>In-app stored data: stored only on the device and deleted when the app is uninstalled</li>
+            </ul>
+
+            <h2>9. Your Rights and How to Delete Data</h2>
+            <p>You may request access, correction, deletion, and suspension of processing of your personal data. Data deletion is available as follows:</p>
+            <ul>
+                <li><strong>In the app:</strong> Use <strong>Settings &gt; Delete Data</strong> to directly request deletion of server-side data and withdraw training consent.</li>
+                <li><strong>By email:</strong> Contact <a href="mailto:monoappskr@gmail.com">monoappskr@gmail.com</a> and we will act without delay.</li>
+            </ul>
+
+            <h2>10. Data Protection Contact</h2>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:monoappskr@gmail.com">monoappskr@gmail.com</a></li>
+            </ul>
+
+            <h2>11. Changes to This Policy</h2>
+            <p>This policy may be updated to reflect legal or service changes, and we will announce changes through the app or website.</p>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-nav">
+            <a href="skinscan-privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="support.html">Support</a>
+            <a href="mailto:monoappskr@gmail.com">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('active'); });
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        menu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => menu.classList.remove('active')); });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>스킨스캔 개인정보 처리방침 - MonoApps</title>
+    <meta name="description" content="스킨스캔(SkinScan) AI 피부 분석 앱 개인정보 처리방침. 사진·데이터 처리 안내.">
+    <meta name="keywords" content="스킨스캔, SkinScan, 피부 분석, 개인정보, 처리방침">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="스킨스캔 개인정보 처리방침 - MonoApps">
+    <meta property="og:description" content="스킨스캔(SkinScan) AI 피부 분석 앱 개인정보 처리방침.">
+    <meta property="og:url" content="https://monoapps.kr/skinscan-privacy.html">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="MonoApps">
+    <link rel="canonical" href="https://monoapps.kr/skinscan-privacy.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/skinscan-privacy.html">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/skinscan-privacy.html">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/skinscan-privacy.html">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/skinscan-privacy.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; min-height: 100vh; overflow-x: hidden; }
+        .bg-gradient { position: fixed; width: 150vw; height: 150vh; top: -25vh; left: -25vw; background: conic-gradient(from 180deg at 50% 50%, #ee7752, #e73c7e, #23a6d5, #23d5ab); filter: blur(100px); animation: rotate 20s linear infinite; z-index: -1; opacity: 0.7; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        nav { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background: rgba(0,0,0,0.3); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero { min-height: 30vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 40px; text-align: center; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 0.5rem; }
+        .hero p { opacity: 0.6; }
+        main { max-width: 800px; margin: 0 auto; padding: 0 2rem 6rem; }
+        .content-card { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 25px; padding: 3rem; }
+        .last-updated { font-size: 0.9rem; opacity: 0.5; margin-bottom: 2rem; }
+        .content-card p { color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 1rem; }
+        .content-card h2 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; color: white; }
+        .content-card ul { padding-left: 20px; color: rgba(255,255,255,0.7); margin-bottom: 1rem; }
+        .content-card li { padding: 0.3rem 0; line-height: 1.6; }
+        .content-card a { color: #e73c7e; font-weight: 600; }
+        .highlight { background: rgba(231,60,126,0.15); border-left: 3px solid #e73c7e; padding: 12px 16px; border-radius: 6px; margin-top: 1rem; }
+        footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+        @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .mobile-menu-btn { display: block; } .content-card { padding: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    <nav>
+        <a href="/" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="index.html#apps">모바일 앱</a>
+            <a href="index.html#services">웹 서비스</a>
+            <a href="support.html">고객지원</a>
+            <a href="news.html">소식</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">KO</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="skinscan-privacy.html">한국어</a>
+                    <a href="en/skinscan-privacy.html">English</a>
+                    <a href="ja/skinscan-privacy.html">日本語</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#apps">모바일 앱</a>
+        <a href="index.html#services">웹 서비스</a>
+        <a href="support.html">고객지원</a>
+        <a href="news.html">소식</a>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 0.5rem; padding-top: 0.5rem;">
+            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">언어 선택</div>
+            <a href="skinscan-privacy.html" style="color: #e73c7e;">한국어</a>
+            <a href="en/skinscan-privacy.html">English</a>
+            <a href="ja/skinscan-privacy.html">日本語</a>
+        </div>
+    </div>
+    <section class="hero">
+        <div>
+            <h1>스킨스캔 개인정보 처리방침</h1>
+            <p>SkinScan · AI 피부 분석 앱</p>
+        </div>
+    </section>
+    <main>
+        <div class="content-card">
+            <p class="last-updated">최종 수정일: 2026년 6월 22일</p>
+            <p>본 개인정보 처리방침은 MonoApps(이하 "회사")가 제공하는 <strong>스킨스캔(SkinScan)</strong> AI 피부 분석 앱(이하 "앱")에 적용됩니다. 회사는 이용자의 개인정보를 중요하게 생각하며, 관련 법령(개인정보보호법, GDPR, 일본 APPI 등)을 준수합니다.</p>
+
+            <h2>1. 수집 및 이용 목적</h2>
+            <ul>
+                <li>AI 피부 분석 서비스 제공 (촬영·선택한 얼굴 사진의 피부 상태 분석)</li>
+                <li>분석 결과에 기반한 맞춤형 정보 및 제품 추천 제공</li>
+                <li>서비스 안정성 분석 및 일일 이용 한도 관리</li>
+                <li>맞춤형 광고 제공 (광고 기반 무료 서비스 운영)</li>
+                <li>(별도 동의 시) AI 모델 학습 및 분석 품질 개선</li>
+            </ul>
+
+            <h2>2. 수집하는 정보 항목</h2>
+            <ul>
+                <li><strong>얼굴 사진:</strong> 피부 분석을 위해 카메라로 촬영하거나 갤러리에서 선택한 이미지. 분석을 위해 회사 서버(<a href="https://api.monoapps.kr" target="_blank">api.monoapps.kr</a>)로 전송됩니다.</li>
+                <li><strong>분석 결과 데이터:</strong> 피부 점수, 피부 타입 등 분석 산출물.</li>
+                <li><strong>서비스 이용 식별자 (device-id):</strong> 사용량 제한 및 서비스 안정성 분석을 위한 익명 기기 식별자. 앱 삭제 시 초기화됩니다. 이름·연락처 등 개인을 직접 식별하는 정보와 연결되지 않습니다.</li>
+                <li><strong>피부 관련 자가 입력 정보:</strong> 사용자가 설정에서 직접 입력한 피부 타입(예: 민감성 여부) 등.</li>
+                <li><strong>광고 식별자:</strong> iOS의 IDFA 또는 Android의 GAID (광고 제공 목적).</li>
+                <li><strong>구매/결제 정보:</strong> 구독 이용 시 영수증 정보(트랜잭션 ID, 상품 ID, 구매 일시). 신용카드 등 결제 수단 정보는 App Store/Google Play 결제 시스템에서 처리되며 회사는 접근하지 않습니다.</li>
+            </ul>
+
+            <h2>3. 얼굴 사진의 처리 (핵심 사항)</h2>
+            <p class="highlight"><strong>기본 원칙 — 사진은 서버에 저장되지 않습니다:</strong> 분석을 위해 전송된 얼굴 사진은 서버에서 분석 처리에만 사용되며, <strong>분석 완료 직후 즉시 폐기</strong>됩니다. 별도의 학습 동의가 없는 한, 사진은 서버의 어떠한 영구 저장소(데이터베이스·파일 시스템 등)에도 저장되지 않습니다. 기기에는 분석 결과만 저장됩니다.</p>
+            <ul>
+                <li><strong>전송 구간 보호:</strong> 사진 전송은 HTTPS(TLS) 암호화로 보호됩니다.</li>
+                <li><strong>기기 내 로컬 저장:</strong> 분석된 사진과 결과는 이용자 편의를 위해 앱의 비공개 샌드박스 영역에 최근 일부만 로컬 저장될 수 있습니다. 이 데이터는 기기 외부로 전송되지 않으며, 다른 앱에서 접근할 수 없고, 앱 내 기록 삭제 또는 앱 삭제 시 완전히 제거됩니다.</li>
+                <li><strong>제3자 제공 없음:</strong> 얼굴 사진은 제3자에게 제공되지 않으며, 분석은 자사 서버에서만 이루어집니다.</li>
+            </ul>
+
+            <h2>4. AI 학습을 위한 데이터 활용 (선택 · 옵트인)</h2>
+            <p>회사는 피부 분석 AI 모델의 품질 개선을 위해, <strong>이용자가 앱 내에서 별도로 동의한 경우에 한해</strong> 얼굴 사진을 학습 목적으로 활용할 수 있습니다. 동의하지 않아도 분석 서비스는 정상적으로 이용할 수 있습니다.</p>
+            <ul>
+                <li><strong>활용 범위:</strong> 학습에 동의한 경우에 한해, 해당 사진이 AI 모델 학습·개선에 사용됩니다.</li>
+                <li><strong>비식별화 처리:</strong> 학습용 데이터는 위치 정보(EXIF) 등 식별 가능 정보를 제거한 후 활용됩니다.</li>
+                <li><strong>보유 기간:</strong> 학습 목적 보유 기간은 최대 730일이며, 기간 경과 또는 목적 달성 시 파기됩니다.</li>
+                <li><strong>동의 철회 및 삭제:</strong> 이용자는 언제든지 앱 <strong>설정 &gt; 데이터 삭제</strong>(또는 학습 동의 철회)를 통해 동의를 철회하고 서버에 보관된 학습용 데이터의 삭제를 요청할 수 있습니다. 철회 시 해당 데이터는 더 이상 학습에 활용되지 않습니다. 단, 이미 학습이 완료된 데이터는 기술적 특성상 AI 모델에서 개별적으로 분리·삭제가 어려울 수 있습니다.</li>
+            </ul>
+
+            <h2>5. 광고 및 제3자 서비스</h2>
+            <p>앱은 Google AdMob을 통해 광고를 게재합니다. 광고 제공을 위해 광고 식별자(IDFA/GAID), 기기 정보(모델, OS 버전), 광고 노출·클릭 정보가 수집될 수 있습니다. 자세한 내용은 <a href="https://policies.google.com/privacy" target="_blank">Google 개인정보 처리방침</a>을 참조하세요. 이용자는 기기 설정에서 광고 추적을 제한하거나 광고 식별자를 재설정할 수 있습니다.</p>
+            <p>구독 및 인앱 구매는 RevenueCat을 통해 관리되며, 영수증 데이터(트랜잭션 ID, 상품 ID, 구매·만료 일시), 구매 복원용 익명 식별자, 플랫폼 정보(iOS/Android)가 전송될 수 있습니다. RevenueCat은 결제 수단 정보를 처리하지 않습니다. 자세한 내용은 <a href="https://www.revenuecat.com/privacy/" target="_blank">RevenueCat 개인정보 처리방침</a>을 참조하세요.</p>
+
+            <h2>6. 앱 권한 사용 목적</h2>
+            <ul>
+                <li><strong>카메라:</strong> 피부 분석용 얼굴 사진 촬영</li>
+                <li><strong>사진/갤러리:</strong> 분석할 이미지 불러오기</li>
+            </ul>
+            <p>권한은 해당 기능 사용 시에만 활성화되며, 기기 설정에서 언제든지 철회할 수 있습니다. 철회 시 관련 기능 사용이 제한될 수 있습니다.</p>
+
+            <h2>7. 데이터 보안</h2>
+            <ul>
+                <li><strong>암호화 통신:</strong> 서버와의 모든 통신은 HTTPS(TLS) 암호화로 보호됩니다.</li>
+                <li><strong>사진 비저장 원칙:</strong> 학습 동의가 없는 한 사진은 서버에 저장되지 않고 분석 직후 폐기됩니다.</li>
+                <li><strong>접근 제한:</strong> 기기 내 데이터는 앱 전용 샌드박스에 저장되어 다른 앱에서 접근할 수 없습니다.</li>
+            </ul>
+
+            <h2>8. 보유 및 이용 기간</h2>
+            <ul>
+                <li>분석용 얼굴 사진(서버): 분석 직후 폐기 (비저장)</li>
+                <li>학습용 데이터(동의 시): 최대 730일</li>
+                <li>고객 문의 기록: 문의 해결 후 1년</li>
+                <li>앱 내 저장 데이터: 기기에만 저장되며 앱 삭제 시 함께 삭제</li>
+            </ul>
+
+            <h2>9. 이용자의 권리 및 데이터 삭제 방법</h2>
+            <p>이용자는 개인정보 열람·정정·삭제·처리정지를 요청할 수 있습니다. 데이터 삭제는 다음 방법으로 가능합니다:</p>
+            <ul>
+                <li><strong>앱 내에서:</strong> <strong>설정 &gt; 데이터 삭제</strong> 메뉴에서 직접 서버 보관 데이터의 삭제 및 학습 동의 철회를 요청할 수 있습니다.</li>
+                <li><strong>이메일로:</strong> <a href="mailto:monoappskr@gmail.com">monoappskr@gmail.com</a>으로 요청하시면 지체 없이 조치합니다.</li>
+            </ul>
+
+            <h2>10. 개인정보 보호책임자 및 문의처</h2>
+            <ul>
+                <li><strong>이메일:</strong> <a href="mailto:monoappskr@gmail.com">monoappskr@gmail.com</a></li>
+            </ul>
+
+            <h2>11. 처리방침 변경</h2>
+            <p>본 방침은 법령이나 서비스 변경사항을 반영하기 위해 수정될 수 있으며, 변경 시 앱 또는 웹사이트를 통해 공지합니다.</p>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-nav">
+            <a href="skinscan-privacy.html">개인정보 처리방침</a>
+            <a href="terms.html">이용약관</a>
+            <a href="support.html">고객지원</a>
+            <a href="mailto:monoappskr@gmail.com">문의하기</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('active'); });
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        menu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => menu.classList.remove('active')); });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
