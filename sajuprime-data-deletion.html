@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사주프라임 데이터 삭제 요청 | MonoApps</title>
+    <meta name="description" content="사주프라임(SajuPrime) 앱의 계정 및 사용자 데이터 삭제 요청 안내.">
+    <meta property="og:title" content="사주프라임 데이터 삭제 요청 | MonoApps">
+    <meta property="og:description" content="사주프라임(SajuPrime) 앱의 계정 및 사용자 데이터 삭제 요청 안내.">
+    <meta property="og:url" content="https://monoapps.kr/sajuprime-data-deletion.html">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="MonoApps">
+    <link rel="canonical" href="https://monoapps.kr/sajuprime-data-deletion.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔮</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fafafa;
+            color: #222;
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            background: white;
+            padding: 48px 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .app-icon {
+            width: 56px; height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #7c3aed, #4f46e5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+        }
+        .app-meta h2 { font-size: 1.15rem; color: #222; }
+        .app-meta p { font-size: 0.9rem; color: #666; margin-top: 4px; }
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        .subtitle { color: #555; margin-bottom: 36px; }
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 36px 0 14px;
+            color: #1a1a1a;
+        }
+        h3 { font-size: 1.05rem; margin: 20px 0 8px; color: #333; }
+        p, li { color: #444; font-size: 0.98rem; }
+        ol, ul { padding-left: 24px; margin: 10px 0; }
+        li { margin-bottom: 8px; }
+        .box {
+            background: #f5f3ff;
+            border: 1px solid #ddd6fe;
+            border-radius: 10px;
+            padding: 16px 18px;
+            margin: 20px 0;
+        }
+        .box.warning {
+            background: #fffbeb;
+            border-color: #fde68a;
+        }
+        .box strong { color: #5b21b6; }
+        .box.warning strong { color: #854d0e; }
+        code {
+            background: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+            color: #6d28d9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            background: #f9fafb;
+            font-weight: 600;
+        }
+        a { color: #7c3aed; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .cta-email {
+            display: inline-block;
+            background: #7c3aed;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 12px 0;
+        }
+        .cta-email:hover { background: #6d28d9; text-decoration: none; }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #888;
+            font-size: 0.88rem;
+        }
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        .lang-switch a { margin-left: 10px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switch">
+            <strong>한국어</strong>
+            <a href="#en">English</a>
+        </div>
+
+        <div class="app-header">
+            <div class="app-icon">🔮</div>
+            <div class="app-meta">
+                <h2>사주프라임 (SajuPrime)</h2>
+                <p>개발자: MonoApps · 패키지: <code>com.monoappskr.sajuprime</code></p>
+            </div>
+        </div>
+
+        <h1>계정 및 데이터 삭제 요청</h1>
+        <p class="subtitle">사주프라임 앱에서 수집한 계정 및 사용자 데이터를 삭제하는 방법을 안내합니다.</p>
+
+        <h2>1. 앱 내에서 로컬 데이터 삭제</h2>
+        <p>기기에 저장된 <strong>분석 기록과 사진</strong>은 앱에서 즉시 삭제할 수 있습니다:</p>
+        <ol>
+            <li>사주프라임 앱 실행</li>
+            <li><strong>설정</strong> 화면으로 이동</li>
+            <li><strong>기록 삭제</strong> 선택 후 확인</li>
+        </ol>
+
+        <div class="box">
+            <strong>✓ 즉시 삭제되는 데이터(로컬)</strong><br>
+            분석 기록, 관상 분석 결과 이미지(기기 내 저장본), 입력했던 사주 정보, 앱 설정. 앱을 삭제하면 기기의 모든 로컬 데이터가 함께 제거됩니다.
+        </div>
+
+        <h2>2. 계정 및 서버 데이터 삭제 요청 (이메일)</h2>
+        <p>소셜 로그인으로 만든 계정 정보, 코인 잔액, 서버 측 데이터는 이메일 요청으로 삭제할 수 있습니다.</p>
+
+        <p><strong>이메일 수신자</strong>:</p>
+        <a href="mailto:admin@monoapps.kr?subject=[사주프라임] 계정 삭제 요청&body=앱: 사주프라임 (com.monoappskr.sajuprime)%0D%0A로그인 이메일: (가입에 사용한 이메일)%0D%0A%0D%0A계정 및 모든 서버 데이터 삭제를 요청합니다." class="cta-email">admin@monoapps.kr</a>
+
+        <p><strong>요청 시 포함 내용</strong>:</p>
+        <ul>
+            <li>제목: <code>[사주프라임] 계정 삭제 요청</code></li>
+            <li>가입에 사용한 <strong>로그인 이메일</strong>(구글/애플/카카오/라인)</li>
+            <li>게스트로 이용한 경우, 가능하면 구매 영수증 정보</li>
+        </ul>
+
+        <p>저희는 <strong>14영업일 이내</strong>에 계정·서버 데이터를 삭제하고 완료 확인 이메일을 보내드립니다.</p>
+
+        <h2>3. 삭제되는 데이터 유형 및 보관 기간</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>데이터 유형</th>
+                    <th>삭제 방법</th>
+                    <th>추가 보관 기간</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>분석 기록 / 입력한 사주 정보 (로컬)</td>
+                    <td>앱 내 '기록 삭제' 또는 앱 삭제</td>
+                    <td>없음 (즉시 삭제)</td>
+                </tr>
+                <tr>
+                    <td>관상 분석 결과 이미지 (기기 내 저장)</td>
+                    <td>앱 내 '기록 삭제' 또는 앱 삭제</td>
+                    <td>없음 (즉시 삭제)</td>
+                </tr>
+                <tr>
+                    <td>계정 정보 (소셜 로그인 식별자·이메일)</td>
+                    <td>이메일 요청</td>
+                    <td>없음 (즉시 삭제)</td>
+                </tr>
+                <tr>
+                    <td>코인 잔액 / 보유·사용 내역</td>
+                    <td>이메일 요청 (계정 삭제 시)</td>
+                    <td>없음 (즉시 삭제)</td>
+                </tr>
+                <tr>
+                    <td>얼굴 사진 (관상 분석용)</td>
+                    <td>서버 비보관 — 분석 직후 즉시 삭제</td>
+                    <td>해당 없음 (서버에 저장하지 않음)</td>
+                </tr>
+                <tr>
+                    <td>결제 / 거래 기록</td>
+                    <td>이메일 요청</td>
+                    <td>전자상거래법 등 법정 보존기간(최대 5년) 경과 후 삭제</td>
+                </tr>
+                <tr>
+                    <td>광고 ID (AdMob)</td>
+                    <td>기기 설정에서 직접 리셋</td>
+                    <td>해당 없음 (Google이 관리)</td>
+                </tr>
+                <tr>
+                    <td>앱 크래시 로그 및 진단 정보</td>
+                    <td>앱 삭제 시 수집 중단</td>
+                    <td>최대 90일 후 자동 삭제</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="box warning">
+            <strong>⚠️ 주의사항</strong><br>
+            • 앱을 삭제하면 기기의 로컬 데이터는 모두 삭제되지만, 서버 데이터(계정·코인 등)는 자동 삭제되지 않으므로 위 이메일 요청이 필요합니다.<br>
+            • 정기결제는 없으나, 구매한 코인 잔액은 계정 삭제 시 함께 소멸되며 환불되지 않습니다.<br>
+            • 법령에 따라 보관이 의무화된 데이터(예: 전자상거래법상 거래 기록)는 보관 기간이 경과한 후 삭제됩니다.
+        </div>
+
+        <h2>4. 문의</h2>
+        <p>
+            데이터 삭제 관련 추가 문의:<br>
+            📧 <a href="mailto:admin@monoapps.kr">admin@monoapps.kr</a><br>
+            🌐 <a href="https://monoapps.kr/support.html">https://monoapps.kr/support.html</a>
+        </p>
+
+        <!-- English Section -->
+        <hr style="margin: 60px 0 40px; border: none; border-top: 2px solid #e5e7eb;">
+
+        <h1 id="en">Account &amp; Data Deletion Request</h1>
+        <p class="subtitle">How to delete your account and data collected by the SajuPrime app.</p>
+
+        <h2>1. Delete local data within the app</h2>
+        <ol>
+            <li>Open the SajuPrime app</li>
+            <li>Go to <strong>Settings</strong></li>
+            <li>Select <strong>Clear History</strong> and confirm</li>
+        </ol>
+        <div class="box">
+            <strong>✓ Data deleted immediately (local)</strong><br>
+            Analysis history, physiognomy result images stored on the device, entered Saju details, and app settings. Uninstalling the app removes all local data on the device.
+        </div>
+
+        <h2>2. Request account &amp; server data deletion (email)</h2>
+        <p>Account information created via social login, coin balance, and server-side data can be deleted by email request.</p>
+        <p><strong>Recipient</strong>: <a href="mailto:admin@monoapps.kr">admin@monoapps.kr</a></p>
+        <ul>
+            <li>Subject: <code>[SajuPrime] Account Deletion Request</code></li>
+            <li>The <strong>login email</strong> used to sign in (Google / Apple / Kakao / LINE)</li>
+            <li>If you used the app as a guest, include a purchase receipt if available</li>
+        </ul>
+        <p>We will delete your account and server data within <strong>14 business days</strong> and send a confirmation email.</p>
+
+        <h2>3. Data types and retention periods</h2>
+        <table>
+            <thead>
+                <tr><th>Data Type</th><th>Deletion Method</th><th>Retention After Request</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Analysis history / entered Saju details (local)</td><td>In-app 'Clear History' or uninstall</td><td>None (immediate)</td></tr>
+                <tr><td>Physiognomy result images (stored on device)</td><td>In-app 'Clear History' or uninstall</td><td>None (immediate)</td></tr>
+                <tr><td>Account info (social login identifier / email)</td><td>Email request</td><td>None (immediate)</td></tr>
+                <tr><td>Coin balance / usage history</td><td>Email request (account deletion)</td><td>None (immediate)</td></tr>
+                <tr><td>Face photo (for physiognomy analysis)</td><td>Not retained — deleted right after analysis</td><td>N/A (never stored on servers)</td></tr>
+                <tr><td>Payment / transaction records</td><td>Email request</td><td>Up to 5 years (legal / tax obligations)</td></tr>
+                <tr><td>Advertising ID (AdMob)</td><td>Reset in device settings</td><td>N/A (managed by Google)</td></tr>
+                <tr><td>Crash logs and diagnostics</td><td>Stops on app uninstall</td><td>Auto-deleted after max 90 days</td></tr>
+            </tbody>
+        </table>
+
+        <div class="box warning">
+            <strong>⚠️ Notes</strong><br>
+            • Uninstalling the app deletes local device data but not server data (account, coins). Use the email request above to delete server data.<br>
+            • There are no subscriptions, but any purchased coin balance is forfeited upon account deletion and is non-refundable.<br>
+            • Data required by law (e.g., e-commerce transaction records) is retained for the legally mandated period before deletion.
+        </div>
+
+        <h2>4. Contact</h2>
+        <p>
+            For questions about data deletion:<br>
+            📧 <a href="mailto:admin@monoapps.kr">admin@monoapps.kr</a><br>
+            🌐 <a href="https://monoapps.kr/support.html">https://monoapps.kr/support.html</a>
+        </p>
+
+        <div class="footer">
+            최종 업데이트: 2026년 6월 22일 · Last updated: June 22, 2026<br>
+            © 2026 MonoApps. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
