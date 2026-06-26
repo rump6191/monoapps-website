@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>隱私權政策 - MonoApps</title>
+    <meta name="description" content="MonoApps 隱私權政策">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="隱私權政策 - MonoApps">
+    <meta property="og:description" content="MonoApps 隱私權政策">
+    <meta property="og:url" content="https://monoapps.kr/zh-Hant/privacy.html">
+    <meta property="og:image" content="https://monoapps.kr/images/og-image.png">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:site_name" content="MonoApps">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="隱私權政策 - MonoApps">
+    <meta name="twitter:description" content="MonoApps 隱私權政策">
+    <meta name="twitter:image" content="https://monoapps.kr/images/og-image.png">
+    <link rel="canonical" href="https://monoapps.kr/zh-Hant/privacy.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/privacy.html">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/privacy.html">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/privacy.html">
+    <link rel="alternate" hreflang="zh-Hans" href="https://monoapps.kr/zh/privacy.html">
+    <link rel="alternate" hreflang="zh-Hant" href="https://monoapps.kr/zh-Hant/privacy.html">
+    <link rel="alternate" hreflang="es" href="https://monoapps.kr/es/privacy.html">
+    <link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/privacy.html">
+    <link rel="alternate" hreflang="vi" href="https://monoapps.kr/vi/privacy.html">
+    <link rel="alternate" hreflang="id" href="https://monoapps.kr/id/privacy.html">
+    <link rel="alternate" hreflang="th" href="https://monoapps.kr/th/privacy.html">
+    <link rel="alternate" hreflang="fr" href="https://monoapps.kr/fr/privacy.html">
+    <link rel="alternate" hreflang="de" href="https://monoapps.kr/de/privacy.html">
+    <link rel="alternate" hreflang="ru" href="https://monoapps.kr/ru/privacy.html">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/privacy.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; min-height: 100vh; overflow-x: hidden; }
+        .bg-gradient { position: fixed; width: 150vw; height: 150vh; top: -25vh; left: -25vw; background: conic-gradient(from 180deg at 50% 50%, #ee7752, #e73c7e, #23a6d5, #23d5ab); filter: blur(100px); animation: rotate 20s linear infinite; z-index: -1; opacity: 0.7; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        nav { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background: rgba(0,0,0,0.3); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero { min-height: 30vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 40px; text-align: center; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 0.5rem; }
+        .hero p { opacity: 0.6; }
+        main { max-width: 800px; margin: 0 auto; padding: 0 2rem 6rem; }
+        .content-card { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 25px; padding: 3rem; }
+        .last-updated { font-size: 0.9rem; opacity: 0.5; margin-bottom: 2rem; }
+        .content-card p { color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 1rem; }
+        .content-card h2 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; color: white; }
+        .content-card ul { padding-left: 20px; color: rgba(255,255,255,0.7); margin-bottom: 1rem; }
+        .content-card li { padding: 0.3rem 0; line-height: 1.6; }
+        .content-card a { color: #e73c7e; font-weight: 600; }
+        footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+        @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .mobile-menu-btn { display: block; } .content-card { padding: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    <nav>
+        <a href="/zh-Hant/" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="index.html#apps">行動應用程式</a>
+            <a href="index.html#services">網頁服務</a>
+            <a href="support.html">客戶支援</a>
+            <a href="news.html">最新消息</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">繁</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="../privacy.html">한국어</a>
+                    <a href="../en/privacy.html">English</a>
+                    <a href="../ja/privacy.html">日本語</a>
+                    <a href="../zh/privacy.html">中文（简体）</a>
+                    <a href="privacy.html">中文（繁體）</a>
+                    <a href="../es/privacy.html">Español</a>
+                    <a href="../pt/privacy.html">Português</a>
+                    <a href="../vi/privacy.html">Tiếng Việt</a>
+                    <a href="../id/privacy.html">Bahasa Indonesia</a>
+                    <a href="../th/privacy.html">ไทย</a>
+                    <a href="../fr/privacy.html">Français</a>
+                    <a href="../de/privacy.html">Deutsch</a>
+                    <a href="../ru/privacy.html">Русский</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="選單"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#apps">行動應用程式</a>
+        <a href="index.html#services">網頁服務</a>
+        <a href="support.html">客戶支援</a>
+        <a href="news.html">最新消息</a>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 0.5rem; padding-top: 0.5rem;">
+            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">選擇語言</div>
+            <a href="../privacy.html">한국어</a>
+            <a href="../en/privacy.html">English</a>
+            <a href="../ja/privacy.html">日本語</a>
+            <a href="../zh/privacy.html">中文（简体）</a>
+            <a href="privacy.html" style="color: #e73c7e;">中文（繁體）</a>
+            <a href="../es/privacy.html">Español</a>
+            <a href="../pt/privacy.html">Português</a>
+            <a href="../vi/privacy.html">Tiếng Việt</a>
+            <a href="../id/privacy.html">Bahasa Indonesia</a>
+            <a href="../th/privacy.html">ไทย</a>
+            <a href="../fr/privacy.html">Français</a>
+            <a href="../de/privacy.html">Deutsch</a>
+            <a href="../ru/privacy.html">Русский</a>
+        </div>
+    </div>
+    <section class="hero">
+        <div>
+            <h1>隱私權政策</h1>
+            <p>我們如何處理您的資料</p>
+        </div>
+    </section>
+    <main>
+        <div class="content-card">
+            <p class="last-updated">最後更新：2026年5月10日</p>
+            <p>本隱私權政策適用於 MonoApps（以下簡稱「本公司」）所提供的所有行動應用程式。</p>
+
+            <h2>1. 蒐集與使用個人資料的目的</h2>
+            <p>本公司基於下列目的蒐集並使用使用者的個人資料：</p>
+            <ul>
+                <li>提供與營運應用程式服務</li>
+                <li>回應客戶諮詢</li>
+                <li>改善服務及開發新功能</li>
+                <li>提供個人化廣告（用於以廣告支持的免費服務營運）</li>
+            </ul>
+
+            <h2>2. 蒐集的個人資料項目</h2>
+            <p>本公司僅蒐集提供服務所需的最少資料。視應用程式功能而定，可能會蒐集下列資料：</p>
+            <ul>
+                <li><strong>相機：</strong> QR 碼／條碼掃描、拍照等</li>
+                <li><strong>相簿：</strong> 圖片選擇與儲存</li>
+                <li><strong>麥克風：</strong> 語音辨識與錄音功能</li>
+                <li><strong>位置：</strong> 以位置為基礎的服務</li>
+                <li><strong>通訊錄：</strong> 聯絡人相關功能</li>
+                <li><strong>儲存空間：</strong> 檔案儲存與載入</li>
+            </ul>
+            <p><em>※ 每個應用程式僅要求必要的權限。大部分資料僅在裝置上處理。但部分應用程式為提供服務及提升品質，資料可能會傳輸至伺服器，屆時將於應用程式內另行徵得同意。詳細的權限資訊可於各應用程式的商店頁面查看。</em></p>
+            <ul>
+                <li><strong>客戶諮詢時：</strong> 電子郵件地址（用於客戶支援）</li>
+                <li><strong>服務使用識別碼 (x-device-id)：</strong> 部分應用程式在進行 API 請求時，會將匿名裝置識別碼傳送至伺服器，用於使用限制、服務穩定性分析及匿名統計蒐集。解除安裝應用程式時，該識別碼將被重設。</li>
+                <li><strong>語音錄製資料（具備 STT 功能的應用程式）：</strong> 對於包含語音轉文字功能的應用程式，錄製的音訊可能會傳送至外部 STT 伺服器進行轉換處理，處理完成後立即刪除。</li>
+                <li><strong>購買／付款資訊：</strong> 對於提供付費訂閱或應用程式內購買的應用程式，將蒐集收據資訊（交易 ID、商品 ID、購買日期）以管理購買紀錄。信用卡等支付方式資訊由 Apple App Store 或 Google Play Store 的支付系統直接處理，本公司不會存取此類資訊。</li>
+            </ul>
+
+            <h2>3. 廣告與第三方服務</h2>
+            <p>本公司的應用程式透過 Google AdMob 顯示廣告。為提供廣告服務，可能會蒐集下列資訊：</p>
+            <ul>
+                <li><strong>廣告識別碼：</strong> iOS 的 IDFA 或 Android 的 GAID</li>
+                <li><strong>裝置資訊：</strong> 裝置型號、作業系統版本</li>
+                <li><strong>應用程式使用資料：</strong> 廣告顯示與點擊資訊</li>
+            </ul>
+            <p>此資訊依據 Google 的隱私權政策進行處理。詳情請參閱 <a href="https://policies.google.com/privacy" target="_blank">Google 隱私權政策</a>。</p>
+            <p>使用者可於裝置設定中限制廣告追蹤或重設廣告識別碼。</p>
+
+            <p>本公司提供付費服務的應用程式透過 RevenueCat 管理訂閱與應用程式內購買。下列資訊可能會傳送至 RevenueCat：</p>
+            <ul>
+                <li><strong>收據資料：</strong> 交易 ID、商品 ID、購買與到期日期</li>
+                <li><strong>匿名識別碼：</strong> 用於購買還原與跨平台同步的識別碼</li>
+                <li><strong>平台資訊：</strong> iOS 或 Android</li>
+            </ul>
+            <p>RevenueCat 不會處理支付方式資訊（如信用卡號），付款僅透過 Apple App Store 或 Google Play Store 的支付系統處理。詳情請參閱 <a href="https://www.revenuecat.com/privacy/" target="_blank">RevenueCat 隱私權政策</a>。</p>
+
+            <h2>4. AI 服務及資料利用</h2>
+            <p>本公司部分應用程式提供以 AI 為基礎的功能（例如：植物病害診斷等），為提升服務品質，可能會利用使用者提供的資料。</p>
+            <ul>
+                <li><strong>蒐集項目：</strong> 使用者在使用服務過程中拍攝或上傳的圖片（例如：植物照片）</li>
+                <li><strong>使用目的：</strong> 提供以 AI 為基礎的診斷服務，以及 AI 模型的訓練與改善</li>
+                <li><strong>去識別化處理：</strong> 蒐集的圖片會在去除位置資訊（EXIF）等可識別個人身分的資訊後才會被使用。</li>
+                <li><strong>個別同意：</strong> 用於 AI 訓練目的之資料使用，須於應用程式內取得個別同意，使用者可隨時於應用程式設定中撤回同意。</li>
+                <li><strong>保留期限：</strong> 資料保留至 AI 訓練目的達成為止，撤回同意後該資料將不再用於訓練。但已用於訓練的資料因技術特性，可能難以自 AI 模型中單獨分離及刪除。</li>
+            </ul>
+
+            <h2>5. 好感度（Hogamdo）應用程式相關附加處理事項</h2>
+            <p>本公司提供的好感度（Hogamdo）應用程式提供臉部影像分析功能，並依下列方式處理個人資料。</p>
+            <p style="background: rgba(231,60,126,0.15); border-left: 3px solid #e73c7e; padding: 12px 16px; border-radius: 6px; margin-top: 1rem;"><strong>伺服器端不保留臉部資料（Face Data is Not Retained on Our Servers）：</strong>好感度（Hogamdo）應用程式不會在伺服器上保留任何臉部資料。臉部影像，以及由此擷取的臉部特徵點、嵌入向量（embedding）等所有臉部辨識相關資料，皆於分析處理完成後立即自伺服器記憶體中刪除，絕不寫入伺服器端的任何永久性儲存媒介（資料庫、檔案系統等）。</p>
+            <ul>
+                <li><strong>蒐集項目：</strong> 臉部影像（僅用於分析，不於伺服器保留）；申請以分析結果為基礎的配對時，蒐集電子郵件、暱稱、出生年份、性別。</li>
+                <li><strong>處理目的：</strong> 臉部影像作為各國好感度分析演算法的輸入值使用；配對資訊用於透過電子郵件向使用者告知配對結果。</li>
+                <li><strong>伺服器端臉部資料保留：</strong> 不予保留。臉部影像及臉部特徵資料於分析後立即自伺服器記憶體中刪除，絕不以任何形式於伺服器端永久儲存。</li>
+                <li><strong>裝置本機儲存（為使用者便利之目的）：</strong> 已分析的臉部影像與結果分數會以最近 10 筆為上限，儲存於本應用程式的私有沙箱（Application Documents/history_images/）。此本機資料不會離開裝置，其他應用程式無法存取，並於使用者點選「設定 &gt; 清除紀錄」或解除安裝應用程式時被完全刪除。</li>
+                <li><strong>配對資訊保留：</strong> 申請配對時提供的電子郵件、暱稱、出生年份、性別資訊，於配對服務結束後立即銷毀，會員註銷請求時立即銷毀。</li>
+                <li><strong>提供第三方：</strong> 臉部影像及臉部資料均不會提供給任何第三方，分析處理僅於本公司伺服器內完成。</li>
+                <li><strong>安全保障措施：</strong> 傳輸區段採用 HTTPS（TLS 1.2+）加密保護；照片本身不會儲存於伺服器，分析完成後立即自記憶體中移除。</li>
+                <li><strong>使用者權利：</strong> 資料刪除請求可寄送至 <a href="mailto:monoappskr@gmail.com">monoappskr@gmail.com</a>。撤回配對申請亦可透過同一電子郵件提出。</li>
+            </ul>
+
+            <h2>6. 應用程式權限使用目的</h2>
+            <p>本公司的應用程式為提供服務，可能會要求下列裝置權限：</p>
+            <ul>
+                <li><strong>相機：</strong> 提供 QR 碼與條碼掃描功能</li>
+                <li><strong>照片／儲存空間：</strong> 自相簿載入圖片、儲存 QR 碼圖片</li>
+                <li><strong>震動：</strong> 掃描完成時提供觸覺回饋</li>
+            </ul>
+            <p>這些權限僅於使用相關功能時啟用，使用者可隨時於裝置設定中撤銷權限。撤銷權限可能會限制相關功能的使用。</p>
+
+            <h2>7. 資料安全</h2>
+            <p>本公司採取下列安全措施以保護使用者的個人資料：</p>
+            <ul>
+                <li><strong>本機儲存：</strong> 掃描紀錄、產生的 QR 碼等使用者資料僅儲存於裝置內，不會傳輸至外部伺服器。</li>
+                <li><strong>加密通訊：</strong> 與外部服務通訊時使用 SSL/TLS 加密。</li>
+                <li><strong>存取限制：</strong> 應用程式資料僅能由該應用程式存取，其他應用程式無法存取。</li>
+            </ul>
+
+            <h2>8. 個人資料的保留與使用期限</h2>
+            <p>本公司於蒐集與使用目的達成後，會立即銷毀個人資料。但若相關法令要求保存，將依該法令所定期限保存。</p>
+            <ul>
+                <li>客戶諮詢紀錄：解決後 1 年</li>
+                <li>應用程式內儲存資料：僅儲存於裝置上，解除安裝應用程式時一併刪除</li>
+            </ul>
+
+            <h2>9. 個人資料銷毀程序</h2>
+            <p>原則上，本公司於個人資料處理目的達成後，會立即銷毀該個人資料。銷毀程序、期限與方法如下：</p>
+            <ul>
+                <li><strong>銷毀程序：</strong> 目的達成後，依內部政策保存一段期間後銷毀</li>
+                <li><strong>銷毀方法：</strong> 電子檔案形式的資訊採用無法還原的方式永久刪除</li>
+            </ul>
+
+            <h2>10. 使用者權利</h2>
+            <p>使用者可行使下列權利：</p>
+            <ul>
+                <li>請求查閱個人資料</li>
+                <li>請求更正個人資料</li>
+                <li>請求刪除個人資料</li>
+                <li>請求停止處理個人資料</li>
+            </ul>
+            <p>上述權利可透過下列聯絡方式行使，本公司將立即採取措施。</p>
+
+            <h2>11. 個人資料保護負責人及聯絡方式</h2>
+            <p>如有關於個人資料的諮詢、申訴或損害賠償，請聯絡：</p>
+            <ul>
+                <li><strong>電子郵件：</strong> <a href="mailto:monoappskr@gmail.com">monoappskr@gmail.com</a></li>
+            </ul>
+
+            <h2>12. 隱私權政策的變更</h2>
+            <p>本隱私權政策可能會因法令或服務變更而修訂。變更將透過應用程式或網站公告，修訂後的政策自公告之日起生效。</p>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">隱私權政策</a>
+            <a href="terms.html">服務條款</a>
+            <a href="support.html">客戶支援</a>
+            <a href="mailto:monoappskr@gmail.com">聯絡我們</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('active'); });
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        menu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => menu.classList.remove('active')); });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
