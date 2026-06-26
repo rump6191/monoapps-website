@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>MonoApps - 簡單實用的數位服務</title>
+    <meta name="description" content="MonoApps 打造簡單實用的應用程式與網頁服務，讓您的日常生活更加便利。涵蓋好感度 AI 臉部分析、寵物照護、綠伴植物養護、打工助手薪資計算、全能計數器和 QR 碼掃描器，6 款應用程式支援 6 種語言。">
+    <meta name="keywords" content="MonoApps, 應用程式, 網頁服務, QR碼掃描器, 實用工具">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MonoApps - 簡單實用的數位服務">
+    <meta property="og:description" content="MonoApps 打造簡單實用的應用程式與網頁服務，讓您的日常生活更加便利。涵蓋好感度 AI 臉部分析、寵物照護、綠伴植物養護、打工助手薪資計算、全能計數器和 QR 碼掃描器，6 款應用程式支援 6 種語言。">
+    <meta property="og:url" content="https://monoapps.kr/zh-Hant/index.html">
+    <meta property="og:image" content="https://monoapps.kr/images/og-image.png">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:site_name" content="MonoApps">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MonoApps - 簡單實用的數位服務">
+    <meta name="twitter:description" content="MonoApps 打造簡單實用的應用程式與網頁服務，讓您的日常生活更加便利。涵蓋好感度 AI 臉部分析、寵物照護、綠伴植物養護、打工助手薪資計算、全能計數器和 QR 碼掃描器，6 款應用程式支援 6 種語言。">
+    <meta name="twitter:image" content="https://monoapps.kr/images/og-image.png">
+    <link rel="canonical" href="https://monoapps.kr/zh-Hant/index.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://monoapps.kr/zh/index.html">
+    <link rel="alternate" hreflang="zh-Hant" href="https://monoapps.kr/zh-Hant/index.html">
+    <link rel="alternate" hreflang="es" href="https://monoapps.kr/es/">
+    <link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/">
+    <link rel="alternate" hreflang="vi" href="https://monoapps.kr/vi/">
+    <link rel="alternate" hreflang="id" href="https://monoapps.kr/id/">
+    <link rel="alternate" hreflang="th" href="https://monoapps.kr/th/">
+    <link rel="alternate" hreflang="fr" href="https://monoapps.kr/fr/">
+    <link rel="alternate" hreflang="de" href="https://monoapps.kr/de/">
+    <link rel="alternate" hreflang="ru" href="https://monoapps.kr/ru/">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/index.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: #000;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-gradient {
+            position: fixed;
+            width: 150vw;
+            height: 150vh;
+            top: -25vh;
+            left: -25vw;
+            background: conic-gradient(from 180deg at 50% 50%, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            filter: blur(100px);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            z-index: 100;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(90deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0,0,0,0.95);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            margin-top: 5px;
+            min-width: 120px;
+            backdrop-filter: blur(20px);
+        }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a {
+            display: block;
+            padding: 10px 15px;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            z-index: 99;
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 2rem 4rem;
+        }
+        .glass-box {
+            width: 90%;
+            max-width: 1100px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 40px;
+            padding: 60px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+        .hero-desc {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #ee7752, #e73c7e);
+            color: white;
+            box-shadow: 0 0 30px rgba(231, 60, 126, 0.4);
+        }
+        .btn-primary:hover { transform: scale(1.05); }
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            background: rgba(255,255,255,0.05);
+        }
+        .btn-outline:hover { background: rgba(255,255,255,0.15); }
+        section { padding: 6rem 2rem; }
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .section-desc {
+            text-align: center;
+            opacity: 0.6;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2rem;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+        .card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .card p { font-size: 0.95rem; opacity: 0.6; line-height: 1.6; margin-bottom: 1rem; }
+        .card-link {
+            color: #e73c7e;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .card-link.muted { color: rgba(255,255,255,0.4); }
+        .card.featured {
+            grid-column: span 2;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+        .store-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+        .store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .store-btn svg { width: 18px; height: 18px; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .stat-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .stat-number { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .stat-label { font-size: 0.9rem; opacity: 0.5; }
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .glass-box { padding: 40px 25px; border-radius: 30px; }
+            .card.featured { grid-column: span 1; }
+            .hero { padding-top: 100px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="/zh-Hant/" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="#apps">行動應用程式</a>
+            <a href="#services">網頁服務</a>
+            <a href="support.html">支援</a>
+            <a href="news.html">最新消息</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">繁</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="../index.html">한국어</a>
+                    <a href="../en/index.html">English</a>
+                    <a href="../ja/index.html">日本語</a>
+                    <a href="../zh/index.html">中文（简体）</a>
+                    <a href="index.html" style="color: #e73c7e;">中文（繁體）</a>
+                    <a href="../es/index.html">Español</a>
+                    <a href="../pt/index.html">Português</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="選單">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#apps">行動應用程式</a>
+        <a href="#services">網頁服務</a>
+        <a href="support.html">支援</a>
+        <a href="news.html">最新消息</a>
+        <div style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+            <span style="opacity: 0.5; font-size: 0.85rem;">語言：</span>
+            <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                <a href="../index.html" style="padding: 5px 10px; border: none;">KO</a>
+                <a href="../en/index.html" style="padding: 5px 10px; border: none;">EN</a>
+                <a href="../ja/index.html" style="padding: 5px 10px; border: none;">JA</a>
+                <a href="../zh/index.html" style="padding: 5px 10px; border: none;">简</a>
+                <a href="index.html" style="padding: 5px 10px; border: none; color: #e73c7e;">繁</a>
+                <a href="../es/index.html" style="padding: 5px 10px; border: none;">ES</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="glass-box">
+            <span class="hero-badge">✨ 簡約創造智慧體驗</span>
+            <h1>複雜世界，<br>簡單方案</h1>
+            <p class="hero-desc">MonoApps 專注於本質。去除不必要的功能，只為使用者提供所需的價值，帶來直覺的數位體驗。</p>
+            <div class="hero-buttons">
+                <a href="#apps" class="btn btn-primary">瀏覽應用程式</a>
+                <a href="#services" class="btn btn-outline">網頁服務</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="apps">
+        <h2 class="section-title">行動應用程式</h2>
+        <p class="section-desc">解決日常不便的智慧工具</p>
+
+        <!-- 查看全部應用程式按鈕 -->
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <a href="../zh/apps.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px; font-size: 1rem;">
+                查看全部應用程式
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+
+        <div style="max-width: 1100px; margin: 1.5rem auto 0;">
+                        <a href="../zh/hogamdo.html" style="display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; text-decoration: none; transition: 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+                <img src="../images/hogamdo-icon.png" alt="Hogamdo" style="width: 44px; height: 44px; border-radius: 10px; object-fit: contain; flex-shrink: 0;">
+                <div style="flex: 1; min-width: 0;">
+                    <div style="font-weight: 600; font-size: 0.95rem; color: white;">Hogamdo</div>
+                    <div style="font-size: 0.82rem; opacity: 0.75; margin-top: 2px;">AI 臉部分析 · 138 個國家 · 全球配對</div>
+                </div>
+                <span style="font-size: 0.75rem; font-weight: 600; padding: 4px 10px; border-radius: 100px; color: #23d5ab; background: rgba(35,213,171,0.12); border: 1px solid rgba(35,213,171,0.25); flex-shrink: 0;">已上線</span>
+            </a>
+
+            <a href="../zh/petallinone.html" style="display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; text-decoration: none; transition: 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+                <img src="../images/petallinone-icon.png" alt="寵物照護" style="width: 44px; height: 44px; border-radius: 10px; object-fit: contain; flex-shrink: 0;">
+                <div style="flex: 1; min-width: 0;">
+                    <div style="font-weight: 600; font-size: 0.95rem; color: white;">寵物照護</div>
+                    <div style="font-size: 0.82rem; opacity: 0.75; margin-top: 2px;">散步 · 健康 · 疫苗 · AI 分析</div>
+                </div>
+                <span style="font-size: 0.75rem; font-weight: 600; padding: 4px 10px; border-radius: 100px; color: #23d5ab; background: rgba(35,213,171,0.12); border: 1px solid rgba(35,213,171,0.25); flex-shrink: 0;">已發布</span>
+            </a>
+
+            <a href="../zh/plant-care.html" style="display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; text-decoration: none; transition: 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+                <img src="../images/plant-care-icon.png" alt="綠伴" style="width: 44px; height: 44px; border-radius: 10px; object-fit: contain; flex-shrink: 0;">
+                <div style="flex: 1; min-width: 0;">
+                    <div style="font-weight: 600; font-size: 0.95rem; color: white;">綠伴</div>
+                    <div style="font-size: 0.82rem; opacity: 0.75; margin-top: 2px;">植物辨識 · 澆水 · 病害診斷</div>
+                </div>
+                <span style="font-size: 0.75rem; font-weight: 600; padding: 4px 10px; border-radius: 100px; color: #23d5ab; background: rgba(35,213,171,0.12); border: 1px solid rgba(35,213,171,0.25); flex-shrink: 0;">已上線</span>
+            </a>
+        </div>
+        <div class="grid">
+            <div class="card featured">
+                <div class="card-icon" style="background: transparent;"><img src="../images/allinone-counter-icon.png" alt="全能計數器" style="width: 100%; height: 100%; object-fit: contain;"></div>
+                <h3>全能計數器</h3>
+                <p>記錄並追蹤日常生活一切的多功能追蹤應用程式。點擊計數器、習慣追蹤、飲水記錄、倒數計時等功能集於一身。</p>
+                <div class="store-buttons">
+                    <a href="https://apps.apple.com/app/id6759270598" target="_blank" class="store-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        App Store
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.monoappskr.allinonecounter" target="_blank" class="store-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                        Google Play
+                    </a>
+                    <a href="../allinone-counter/" class="card-link" style="margin-left: auto;">了解更多 →</a>
+                </div>
+            </div>
+            <div class="card featured">
+                <div class="card-icon" style="background: transparent;"><img src="../images/qr-icon.png" alt="Mono QR Scanner" style="width: 100%; height: 100%; object-fit: contain;"></div>
+                <h3>Mono QR Scanner</h3>
+                <p>速度驚人的 QR 碼／條碼掃描器。從掃描到建立、歷史紀錄管理，一個應用程式體驗所有功能。</p>
+                <div class="store-buttons">
+                    <a href="https://apps.apple.com/kr/app/mono-qr-scanner/id6757992532" target="_blank" class="store-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        App Store
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.monoappskr.qrscannerpro" target="_blank" class="store-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                        Google Play
+                    </a>
+                    <a href="../zh/qr-scanner.html" class="card-link" style="margin-left: auto;">了解更多 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">網頁服務</h2>
+        <p class="section-desc">瀏覽器中的強大工具</p>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🛒</div>
+                <h3>21創新</h3>
+                <p>分析 1,757 多種產品資料，協助您做出最佳選擇的智慧比較平台。</p>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <a href="https://21innovation.org" target="_blank" class="card-link">造訪網站 →</a>
+                    <a href="../zh/21innovation.html" class="card-link" style="opacity: 0.6;">詳情</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔥</div>
+                <h3>Where Am I Hot?</h3>
+                <p>你的魅力在哪個國家最閃耀？AI 分析的全球魅力指數。</p>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <a href="https://whereamihot.me" target="_blank" class="card-link">造訪網站 →</a>
+                    <a href="../zh/hogamdo.html" class="card-link" style="opacity: 0.6;">詳情</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔮</div>
+                <h3>八字算命</h3>
+                <p>基於傳統命理學的正統八字分析服務。為您解讀命運的走向。</p>
+                <div style="display: flex; gap: 1rem; margin-top: auto;">
+                    <a href="https://sajuprime.co.kr" target="_blank" class="card-link">造訪網站 →</a>
+                    <a href="../zh/sajuprime.html" class="card-link" style="opacity: 0.6;">詳情</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">為什麼選擇 MonoApps？</h2>
+        <p class="section-desc">值得信賴的數位夥伴</p>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">營運服務</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">穩定性</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">快速</div>
+                <div class="stat-label">效能優先</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">安全</div>
+                <div class="stat-label">安全第一</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">隱私權政策</a>
+            <a href="terms.html">服務條款</a>
+            <a href="support.html">支援</a>
+            <a href="mailto:monoappskr@gmail.com">聯絡我們</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('active');
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => menu.classList.remove('active'));
+        });
+
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) {
+                langDropdown.classList.remove('active');
+            }
+        });
+    </script>
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MonoApps",
+        "url": "https://monoapps.kr",
+        "logo": "https://monoapps.kr/images/og-image.png",
+        "description": "MonoApps 打造簡單實用的應用程式與網頁服務，讓您的日常生活更加便利。涵蓋好感度 AI 臉部分析、寵物照護、綠伴植物養護、打工助手薪資計算、全能計數器和 QR 碼掃描器，6 款應用程式支援 6 種語言。",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "monoappskr@gmail.com",
+            "contactType": "customer service"
+        },
+        "sameAs": []
+    }
+    </script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "MonoApps",
+      "url": "https://monoapps.kr/zh-Hant/",
+      "inLanguage": "zh-Hant",
+      "publisher": { "@type": "Organization", "name": "MonoApps", "url": "https://monoapps.kr" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "MonoApps 應用程式與服務",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "好感度",
+          "url": "https://monoapps.kr/zh-Hant/hogamdo.html",
+          "description": "基於 138 個國家測量好感度的 AI 臉部分析應用程式。" },
+        { "@type": "ListItem", "position": 2, "name": "寵物照護",
+          "url": "https://monoapps.kr/zh-Hant/petallinone.html",
+          "description": "涵蓋遛狗、健康與疫苗接種的一體化寵物照護應用程式。" },
+        { "@type": "ListItem", "position": 3, "name": "綠伴",
+          "url": "https://monoapps.kr/zh-Hant/plant-care.html",
+          "description": "具備照片辨識與智慧澆水提醒的室內植物養護應用程式。" },
+        { "@type": "ListItem", "position": 4, "name": "Mono QR Scanner",
+          "url": "https://monoapps.kr/zh-Hant/qr-scanner.html",
+          "description": "快速、無廣告並支援 QR 碼生成的 QR 碼與條碼掃描器。" },
+        { "@type": "ListItem", "position": 5, "name": "打工助手",
+          "url": "https://monoapps.kr/alba-helper.html",
+          "description": "計算打工工資與薪酬的薪資計算器。" },
+        { "@type": "ListItem", "position": 6, "name": "21創新",
+          "url": "https://monoapps.kr/zh-Hant/21innovation.html",
+          "description": "智慧產品比較平台。" },
+        { "@type": "ListItem", "position": 7, "name": "四柱Prime",
+          "url": "https://monoapps.kr/zh-Hant/sajuprime.html",
+          "description": "傳統韓國四柱（命理）分析服務。" }
+      ]
+    }
+    </script>
+</body>
+</html>

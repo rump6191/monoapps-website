@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>最新消息 - MonoApps</title>
+    <meta name="description" content="查看 MonoApps 的最新消息與更新資訊。">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="最新消息 - MonoApps">
+    <meta property="og:description" content="查看 MonoApps 的最新消息與更新資訊。">
+    <meta property="og:url" content="https://monoapps.kr/zh-Hant/news.html">
+    <meta property="og:image" content="https://monoapps.kr/images/og-image.png">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:site_name" content="MonoApps">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="最新消息 - MonoApps">
+    <meta name="twitter:description" content="查看 MonoApps 的最新消息與更新資訊。">
+    <meta name="twitter:image" content="https://monoapps.kr/images/og-image.png">
+    <link rel="canonical" href="https://monoapps.kr/zh-Hant/news.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/news.html">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/news.html">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/news.html">
+    <link rel="alternate" hreflang="zh-Hans" href="https://monoapps.kr/zh/news.html">
+    <link rel="alternate" hreflang="zh-Hant" href="https://monoapps.kr/zh-Hant/news.html">
+    <link rel="alternate" hreflang="es" href="https://monoapps.kr/es/news.html">
+    <link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/news.html">
+    <link rel="alternate" hreflang="vi" href="https://monoapps.kr/vi/news.html">
+    <link rel="alternate" hreflang="id" href="https://monoapps.kr/id/news.html">
+    <link rel="alternate" hreflang="th" href="https://monoapps.kr/th/news.html">
+    <link rel="alternate" hreflang="fr" href="https://monoapps.kr/fr/news.html">
+    <link rel="alternate" hreflang="de" href="https://monoapps.kr/de/news.html">
+    <link rel="alternate" hreflang="ru" href="https://monoapps.kr/ru/news.html">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/news.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            width: 150vw;
+            height: 150vh;
+            top: -25vh;
+            left: -25vw;
+            background: conic-gradient(from 180deg at 50% 50%, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            filter: blur(100px);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            z-index: 100;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(90deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0,0,0,0.95);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            margin-top: 5px;
+            min-width: 120px;
+            backdrop-filter: blur(20px);
+        }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a {
+            display: block;
+            padding: 10px 15px;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; transition: 0.3s; }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            z-index: 99;
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+        .hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 2rem 4rem;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+
+        .news-item {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+        .news-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255,255,255,0.15);
+        }
+        .news-header {
+            padding: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .news-tag {
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 100px;
+        }
+        .news-tag.release {
+            color: #e73c7e;
+            background: rgba(231, 60, 126, 0.15);
+        }
+        .news-tag.notice {
+            color: #23d5ab;
+            background: rgba(35, 213, 171, 0.15);
+        }
+        .news-date {
+            font-size: 0.9rem;
+            opacity: 0.5;
+        }
+        .news-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .news-header p {
+            opacity: 0.6;
+            font-size: 0.95rem;
+        }
+        .news-body {
+            padding: 2rem;
+            background: rgba(255,255,255,0.03);
+        }
+        .news-body p {
+            opacity: 0.7;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .news-body ul {
+            list-style: none;
+            padding: 0;
+        }
+        .news-body li {
+            padding: 0.5rem 0;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding-top: 100px; min-height: 40vh; }
+            .news-header, .news-body { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="/zh-Hant/" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="index.html#apps">行動應用程式</a>
+            <a href="index.html#services">網頁服務</a>
+            <a href="support.html">客戶支援</a>
+            <a href="news.html" class="active">最新消息</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">繁</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="../news.html">한국어</a>
+                    <a href="../en/news.html">English</a>
+                    <a href="../ja/news.html">日本語</a>
+                    <a href="../zh/news.html">中文（简体）</a>
+                    <a href="news.html" style="color: #e73c7e;">中文（繁體）</a>
+                    <a href="../es/news.html">Español</a>
+                    <a href="../pt/news.html">Português</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="選單">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#apps">行動應用程式</a>
+        <a href="index.html#services">網頁服務</a>
+        <a href="support.html">客戶支援</a>
+        <a href="news.html">最新消息</a>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 0.5rem; padding-top: 0.5rem;">
+            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">選擇語言</div>
+            <a href="../news.html">한국어</a>
+            <a href="../en/news.html">English</a>
+            <a href="../ja/news.html">日本語</a>
+            <a href="../zh/news.html">中文（简体）</a>
+            <a href="news.html" style="color: #e73c7e;">中文（繁體）</a>
+            <a href="../es/news.html">Español</a>
+                    <a href="../pt/news.html">Português</a>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div>
+            <span class="hero-badge">更新</span>
+            <h1>最新消息</h1>
+            <p>了解 MonoApps 的新功能與改進。</p>
+        </div>
+    </section>
+
+    <main>
+        <article class="news-item">
+            <div class="news-header">
+                <div class="news-meta">
+                    <span class="news-tag update">已發布</span>
+                    <span class="news-date">2026年3月4日</span>
+                </div>
+                <h2>全合一計數器 已上線 Google Play</h2>
+                <p>一款記錄與追蹤日常生活中一切的多功能追蹤應用程式已在 Google Play 上線。</p>
+            </div>
+            <div class="news-body">
+                <p>全合一計數器讓您在一個應用程式中管理點擊計數器、習慣追蹤器、飲水記錄、倒數計時等多種功能。</p>
+                <ul>
+                    <li>🔢 <strong>點擊計數器：</strong> 輕鬆計數任何事物</li>
+                    <li>💧 <strong>飲水記錄：</strong> 管理每日水分攝取</li>
+                    <li>📅 <strong>倒數計時 & 習慣：</strong> 追蹤重要日期與習慣</li>
+                    <li>📊 <strong>統計：</strong> 一目了然查看記錄</li>
+                </ul>
+                <p style="margin-top: 1rem;"><a href="https://play.google.com/store/apps/details?id=com.monoappskr.allinonecounter" target="_blank" style="color: #23d5ab;">在 Google Play 下載 →</a></p>
+            </div>
+        </article>
+
+        <article class="news-item">
+            <div class="news-header">
+                <div class="news-meta">
+                    <span class="news-tag notice">即將推出</span>
+                    <span class="news-date">Coming Soon</span>
+                </div>
+                <h2>Mono QR Scanner v1.0 即將推出</h2>
+                <p>最快、最準確的 QR 掃描器即將到來。敬請期待！</p>
+            </div>
+            <div class="news-body">
+                <p>Mono QR Scanner 旨在提供最快、最準確的掃描體驗。只需開啟相機，無需複雜設定。</p>
+                <ul>
+                    <li>🚀 <strong>超高速引擎：</strong> 0.1秒內辨識</li>
+                    <li>🌑 <strong>深色模式：</strong> 護眼介面</li>
+                    <li>💾 <strong>歷史記錄：</strong> 自動儲存掃描記錄</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="news-item">
+            <div class="news-header">
+                <div class="news-meta">
+                    <span class="news-tag notice">公告</span>
+                    <span class="news-date">2026年1月10日</span>
+                </div>
+                <h2>官方網站上線</h2>
+                <p>MonoApps 官方網站正式上線，您可以在這裡找到我們所有的服務。敬請期待更多更新！</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">隱私權政策</a>
+            <a href="terms.html">服務條款</a>
+            <a href="support.html">客戶支援</a>
+            <a href="mailto:monoappskr@gmail.com">聯絡我們</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('active');
+        });
+
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('active');
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => menu.classList.remove('active'));
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) {
+                langDropdown.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
