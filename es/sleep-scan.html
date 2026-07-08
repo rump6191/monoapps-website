@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>SleepGuard - Análisis del sueño con el móvil | MonoApps</title>
+    <meta name="description" content="SleepGuard, la app de análisis del sueño que registra ronquidos y respiración con solo el micrófono y los sensores del móvil y evalúa el riesgo de apnea del sueño. Con puntuación de sueño, eficiencia e informes de tendencia del riesgo. Sin wearables, próximamente.">
+    <meta name="keywords" content="SleepGuard, análisis del sueño, ronquidos, apnea del sueño, puntuación de sueño, seguimiento del sueño, MonoApps">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SleepGuard - Análisis del sueño con el móvil">
+    <meta property="og:description" content="Registra ronquidos y respiración solo con el móvil y evalúa el riesgo del sueño. Sin wearables. Próximamente.">
+    <meta property="og:url" content="https://monoapps.kr/es/sleep-scan.html">
+    <meta property="og:image" content="https://monoapps.kr/images/sleep-scan-icon.png">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="MonoApps">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SleepGuard - Análisis del sueño con el móvil">
+    <meta name="twitter:description" content="Registra ronquidos y respiración solo con el móvil y evalúa el riesgo del sueño. Sin wearables. Próximamente.">
+    <meta name="twitter:image" content="https://monoapps.kr/images/sleep-scan-icon.png">
+    <link rel="canonical" href="https://monoapps.kr/es/sleep-scan.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/sleep-scan.html">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/sleep-scan.html">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/sleep-scan.html">
+    <link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/sleep-scan.html">
+    <link rel="alternate" hreflang="es" href="https://monoapps.kr/es/sleep-scan.html">
+    <link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/sleep-scan.html">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/sleep-scan.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>😴</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; min-height: 100vh; overflow-x: hidden; }
+        .bg-gradient { position: fixed; width: 150vw; height: 150vh; top: -25vh; left: -25vw; background: conic-gradient(from 180deg at 50% 50%, #6366f1, #8b5cf6, #38bdf8, #6366f1); filter: blur(100px); animation: rotate 20s linear infinite; z-index: -1; opacity: 0.45; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        nav { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 4rem; text-align: center; }
+        .hero-content { max-width: 700px; }
+        .app-icon { width: 120px; height: 120px; border-radius: 28px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; box-shadow: 0 20px 60px rgba(99, 102, 241, 0.4); overflow: hidden; }
+        .hero-badge { display: inline-block; padding: 8px 16px; background: rgba(99, 102, 241, 0.2); border: 1px solid rgba(99, 102, 241, 0.35); border-radius: 100px; font-size: 0.85rem; margin-bottom: 1.5rem; color: #c7d2fe; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem; letter-spacing: -2px; }
+        .hero p { font-size: 1.2rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2.5rem; }
+        .store-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .store-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; color: white; text-decoration: none; font-size: 1rem; font-weight: 600; transition: 0.3s; }
+        .store-btn.disabled { opacity: 0.5; cursor: default; }
+        .store-btn svg { width: 22px; height: 22px; }
+        section { padding: 6rem 2rem; }
+        .section-title { font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 1rem; letter-spacing: -1px; }
+        .section-desc { text-align: center; opacity: 0.6; margin-bottom: 3rem; font-size: 1.1rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+        .feature-card { background: rgba(255, 255, 255, 0.08); padding: 2rem; border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; backdrop-filter: blur(10px); }
+        .feature-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.12); }
+        .feature-icon { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 1.2rem; }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+        .feature-card p { font-size: 0.95rem; opacity: 0.6; line-height: 1.6; }
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+        .step-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 22px; padding: 2rem; text-align: center; }
+        .step-num { width: 44px; height: 44px; border-radius: 50%; background: rgba(99,102,241,0.25); border: 1px solid rgba(99,102,241,0.4); display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 1.2rem; color: #c7d2fe; }
+        .step-card h3 { font-size: 1.2rem; margin-bottom: 0.7rem; }
+        .step-card p { opacity: 0.65; line-height: 1.65; font-size: 0.95rem; }
+        .note-box { max-width: 820px; margin: 0 auto; background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: 18px; padding: 1.5rem 1.75rem; opacity: 0.85; line-height: 1.8; font-size: 0.95rem; }
+        .note-box ul { margin: 0.8rem 0 0; padding-left: 1.1rem; }
+        .note-box li { margin-bottom: 0.4rem; }
+        footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding-top: 100px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="/es/" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="index.html#apps">Apps móviles</a>
+            <a href="index.html#services">Servicios web</a>
+            <a href="support.html">Soporte</a>
+            <a href="news.html">Novedades</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">ES</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="../sleep-scan.html">한국어</a>
+                    <a href="../en/sleep-scan.html">English</a>
+                    <a href="../ja/sleep-scan.html">日本語</a>
+                    <a href="../zh/sleep-scan.html">中文</a>
+                    <a href="sleep-scan.html">Español</a>
+                    <a href="../pt/sleep-scan.html">Português</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#apps">Apps móviles</a>
+        <a href="index.html#services">Servicios web</a>
+        <a href="support.html">Soporte</a>
+        <a href="news.html">Novedades</a>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 0.5rem; padding-top: 0.5rem;">
+            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">Seleccionar idioma</div>
+            <a href="../sleep-scan.html">한국어</a>
+            <a href="../en/sleep-scan.html">English</a>
+            <a href="../ja/sleep-scan.html">日本語</a>
+            <a href="../zh/sleep-scan.html">中文</a>
+            <a href="sleep-scan.html" style="color: #818cf8;">Español</a>
+            <a href="../pt/sleep-scan.html">Português</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="app-icon"><img src="../images/sleep-scan-icon.png" alt="SleepGuard" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;"></div>
+            <span class="hero-badge">Próximamente</span>
+            <h1>SleepGuard</h1>
+            <p>Sin wearables, solo con tu móvil.<br>Registra tus ronquidos y tu respiración durante toda la noche y evalúa el riesgo de apnea del sueño.</p>
+            <div class="store-buttons">
+                <span class="store-btn disabled">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    App Store — próximamente
+                </span>
+                <span class="store-btn disabled">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                    Play Store — próximamente
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section>
+        <h2 class="section-title">Presentación</h2>
+        <div style="max-width: 820px; margin: 0 auto; opacity: 0.8; line-height: 1.85; font-size: 1.05rem;">
+            <p style="margin-bottom: 1.2rem;">SleepGuard es una app de análisis del sueño que registra y analiza tu descanso durante la noche usando únicamente el micrófono y el acelerómetro de tu móvil. Sin necesidad de un smartwatch, una banda de sueño u otro dispositivo wearable, basta con dejar el móvil en la mesilla para que registre los ronquidos, los sonidos de la respiración y los movimientos, y evalúe el riesgo de apnea obstructiva del sueño (AOS). Está diseñada para ayudarte a detectar señales de alerta a tiempo y a decidir si conviene acudir a una clínica del sueño.</p>
+            <p style="margin-bottom: 1.2rem;">Su uso es muy sencillo. Antes de dormir, inicia el seguimiento del sueño y deja el móvil en la mesilla; la app analizará los sonidos y los movimientos durante toda la noche. Al despertar, cuando finalices el seguimiento, obtendrás un informe que muestra de un vistazo la puntuación de sueño, la eficiencia del sueño, el número estimado de episodios de apnea y las fases del sueño. El riesgo se presenta de forma clara en niveles: normal, bajo, precaución y alto.</p>
+            <p>A medida que se acumulan los registros diarios, podrás comprobar cómo evoluciona tu salud del sueño mediante tendencias diarias y semanales. SleepGuard es una app de bienestar y cribado, no un dispositivo médico, por lo que ofrece una evaluación del riesgo y recomendaciones de consulta con un profesional, no un diagnóstico. Actualmente estamos preparando su lanzamiento y pronto estará disponible en iOS y Android.</p>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section>
+        <h2 class="section-title">Funciones principales</h2>
+        <p class="section-desc">Comprueba tu salud del sueño solo con el móvil</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(99, 102, 241, 0.2);">🎙️</div>
+                <h3>Análisis de ronquidos y respiración</h3>
+                <p>Registra los ronquidos y los sonidos de la respiración durante toda la noche con el micrófono y analiza sus patrones. Detecta los tramos con sospecha de apnea.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(139, 92, 246, 0.2);">🫁</div>
+                <h3>Cribado del riesgo de apnea</h3>
+                <p>A partir de los datos de respiración y movimiento, evalúa el riesgo de apnea del sueño en niveles: normal, bajo, precaución y alto.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(56, 189, 248, 0.2);">📉</div>
+                <h3>Análisis de movimiento e inquietud</h3>
+                <p>Con el acelerómetro detecta el movimiento nocturno, las reacciones de despertar y los cambios de postura para saber cuánto te has movido.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(99, 102, 241, 0.2);">🌙</div>
+                <h3>Puntuación y eficiencia del sueño</h3>
+                <p>Reúne en un único informe la puntuación de sueño, la eficiencia del sueño, el número estimado de episodios de apnea y las fases del sueño.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(139, 92, 246, 0.2);">📊</div>
+                <h3>Informe de tendencia del riesgo</h3>
+                <p>Con los registros diarios y semanales sigue la evolución de tu puntuación de sueño y de tu nivel de riesgo para entender tus hábitos.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(56, 189, 248, 0.2);">⌚</div>
+                <h3>Sin wearables</h3>
+                <p>No necesitas smartwatch ni banda. Basta con dejar el móvil en la mesilla para que empiece la medición.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section>
+        <h2 class="section-title">Así se usa</h2>
+        <p class="section-desc">Mide tu sueño en tres pasos</p>
+        <div class="steps">
+            <div class="step-card">
+                <div class="step-num">1</div>
+                <h3>Inicia antes de dormir</h3>
+                <p>Antes de acostarte, inicia el seguimiento del sueño y deja el móvil en la mesilla. No hace falta ninguna configuración complicada.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">2</div>
+                <h3>Análisis automático nocturno</h3>
+                <p>El micrófono y el acelerómetro registran los ronquidos, la respiración y el movimiento, y los analizan dentro del dispositivo.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">3</div>
+                <h3>Consulta el informe por la mañana</h3>
+                <p>Al despertar, cuando finalices el seguimiento, podrás consultar la puntuación de sueño, el nivel de riesgo y el informe de tendencia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer note -->
+    <section style="padding-top: 0;">
+        <div class="note-box">
+            <strong>Aviso importante ·</strong> SleepGuard es una app de bienestar y cribado para la salud del sueño, y no es un dispositivo médico.
+            <ul>
+                <li>La evaluación de riesgo que ofrece es una estimación con fines de cribado.</li>
+                <li>Para un diagnóstico preciso es necesaria una prueba en un centro médico, como una polisomnografía (PSG).</li>
+                <li>Si sospechas que tienes un problema de salud, consulta siempre a un profesional médico.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <p class="section-desc">Resuelve tus dudas sobre SleepGuard</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">¿Cómo mide el sueño SleepGuard?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Antes de dormir, inicia el seguimiento y deja el móvil en la mesilla: el micrófono registra los ronquidos y los sonidos de la respiración, y el acelerómetro registra el movimiento y la inquietud para analizarlos. No necesitas ningún dispositivo wearable.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">¿Puede diagnosticar la apnea del sueño?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">No. SleepGuard es una app de bienestar que hace cribado del riesgo, no es un dispositivo médico y no ofrece diagnósticos. Si el riesgo resulta alto, te recomendamos una prueba precisa en un centro médico, como una polisomnografía (PSG), y una consulta con un profesional.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">¿Necesito un dispositivo wearable?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">No hace falta. Mide solo con el móvil, sin smartwatch ni banda de sueño. Basta con dejar el móvil en la mesilla.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">¿Cómo se tratan los sonidos grabados?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">El análisis del sueño está diseñado para procesarse dentro del dispositivo. Los detalles sobre el tratamiento y la conservación de los datos se explicarán en la política de privacidad que se publicará junto con el lanzamiento.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">¿Cuándo se lanza?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">SleepGuard está actualmente en preparación para su lanzamiento. Podrás enterarte de las novedades antes que nadie en la página de novedades de MonoApps.</p>
+            </details>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">Política de privacidad</a>
+            <a href="terms.html">Términos</a>
+            <a href="support.html">Soporte</a>
+            <a href="mailto:monoappskr@gmail.com">Contacto</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('active'); });
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        menu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => menu.classList.remove('active')); });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
+    </script>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SleepGuard",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "HealthApplication",
+        "description": "App de análisis del sueño que registra ronquidos y respiración con solo el micrófono y los sensores del móvil y evalúa el riesgo de apnea del sueño. Sin wearables.",
+        "featureList": [
+            "Análisis de ronquidos y respiración",
+            "Cribado del riesgo de apnea del sueño (normal, bajo, precaución, alto)",
+            "Análisis de movimiento e inquietud",
+            "Puntuación de sueño, eficiencia del sueño y número estimado de episodios de apnea",
+            "Informe de tendencia del riesgo diario y semanal",
+            "No requiere dispositivos wearables"
+        ],
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "author": { "@type": "Organization", "name": "MonoApps", "url": "https://monoapps.kr" }
+    }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "es", "mainEntity": [
+        { "@type": "Question", "name": "¿Cómo mide el sueño SleepGuard?", "acceptedAnswer": { "@type": "Answer", "text": "Antes de dormir, inicia el seguimiento y deja el móvil en la mesilla: el micrófono registra los ronquidos y los sonidos de la respiración, y el acelerómetro registra el movimiento y la inquietud para analizarlos. No necesitas ningún dispositivo wearable." } },
+        { "@type": "Question", "name": "¿Puede diagnosticar la apnea del sueño?", "acceptedAnswer": { "@type": "Answer", "text": "No. SleepGuard es una app de bienestar que hace cribado del riesgo, no es un dispositivo médico y no ofrece diagnósticos. Si el riesgo resulta alto, te recomendamos una prueba precisa en un centro médico, como una polisomnografía (PSG), y una consulta con un profesional." } },
+        { "@type": "Question", "name": "¿Necesito un dispositivo wearable?", "acceptedAnswer": { "@type": "Answer", "text": "No hace falta. Mide solo con el móvil, sin smartwatch ni banda de sueño. Basta con dejar el móvil en la mesilla." } },
+        { "@type": "Question", "name": "¿Cómo se tratan los sonidos grabados?", "acceptedAnswer": { "@type": "Answer", "text": "El análisis del sueño está diseñado para procesarse dentro del dispositivo. Los detalles sobre el tratamiento y la conservación de los datos se explicarán en la política de privacidad que se publicará junto con el lanzamiento." } },
+        { "@type": "Question", "name": "¿Cuándo se lanza?", "acceptedAnswer": { "@type": "Answer", "text": "SleepGuard está actualmente en preparación para su lanzamiento. Podrás enterarte de las novedades antes que nadie en la página de novedades de MonoApps." } }
+    ] }
+    </script>
+</body>
+</html>

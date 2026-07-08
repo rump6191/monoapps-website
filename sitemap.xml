@@ -1454,4 +1454,116 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+
+  <!-- 스킨스캔 (출시 준비 중, ko/en/ja) -->
+  <url>
+    <loc>https://monoapps.kr/skinscan.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/skinscan.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/skinscan.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/skinscan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/skinscan.html"/>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/en/skinscan.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/skinscan.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/skinscan.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/skinscan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/skinscan.html"/>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/ja/skinscan.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/skinscan.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/skinscan.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/skinscan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/skinscan.html"/>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 수면지킴이 (출시 준비 중, ko/en/ja/zh/es/pt) -->
+  <url>
+    <loc>https://monoapps.kr/sleep-scan.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/sleep-scan.html"/>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/en/sleep-scan.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/sleep-scan.html"/>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/ja/sleep-scan.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/sleep-scan.html"/>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/zh/sleep-scan.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/sleep-scan.html"/>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/es/sleep-scan.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/sleep-scan.html"/>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/pt/sleep-scan.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/sleep-scan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/sleep-scan.html"/>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

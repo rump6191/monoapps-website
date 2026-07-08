@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>SkinScan - AI Skin Analysis | MonoApps</title>
+    <meta name="description" content="SkinScan analyzes acne, pigmentation, dryness, wrinkles and pores from a single photo. Get an overall skin score, day-by-day trends and personalized routine and ingredient tips. Coming soon.">
+    <meta name="keywords" content="SkinScan, AI skin analysis, skin score, acne, pores, wrinkles, skincare, MonoApps">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SkinScan - AI Skin Analysis">
+    <meta property="og:description" content="Analyze your skin from one photo and get an overall score with a personalized routine. Coming soon.">
+    <meta property="og:url" content="https://monoapps.kr/en/skinscan.html">
+    <meta property="og:image" content="https://monoapps.kr/images/skinscan-icon.svg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="MonoApps">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SkinScan - AI Skin Analysis">
+    <meta name="twitter:description" content="Analyze your skin from one photo and get an overall score with a personalized routine. Coming soon.">
+    <meta name="twitter:image" content="https://monoapps.kr/images/skinscan-icon.svg">
+    <link rel="canonical" href="https://monoapps.kr/en/skinscan.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/skinscan.html">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/skinscan.html">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/skinscan.html">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/skinscan.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; min-height: 100vh; overflow-x: hidden; }
+        .bg-gradient { position: fixed; width: 150vw; height: 150vh; top: -25vh; left: -25vw; background: conic-gradient(from 180deg at 50% 50%, #f472b6, #fb7185, #f9a8d4, #f472b6); filter: blur(100px); animation: rotate 20s linear infinite; z-index: -1; opacity: 0.45; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        nav { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 4rem; text-align: center; }
+        .hero-content { max-width: 700px; }
+        .app-icon { width: 120px; height: 120px; border-radius: 28px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; box-shadow: 0 20px 60px rgba(244, 114, 182, 0.4); }
+        .hero-badge { display: inline-block; padding: 8px 16px; background: rgba(244, 114, 182, 0.2); border: 1px solid rgba(244, 114, 182, 0.35); border-radius: 100px; font-size: 0.85rem; margin-bottom: 1.5rem; color: #fbcfe8; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem; letter-spacing: -2px; }
+        .hero p { font-size: 1.2rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2.5rem; }
+        .store-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .store-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; color: white; text-decoration: none; font-size: 1rem; font-weight: 600; transition: 0.3s; }
+        .store-btn.disabled { opacity: 0.5; cursor: default; }
+        .store-btn svg { width: 22px; height: 22px; }
+        section { padding: 6rem 2rem; }
+        .section-title { font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 1rem; letter-spacing: -1px; }
+        .section-desc { text-align: center; opacity: 0.6; margin-bottom: 3rem; font-size: 1.1rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+        .feature-card { background: rgba(255, 255, 255, 0.08); padding: 2rem; border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; backdrop-filter: blur(10px); }
+        .feature-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.12); }
+        .feature-icon { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 1.2rem; }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+        .feature-card p { font-size: 0.95rem; opacity: 0.6; line-height: 1.6; }
+        .screenshots { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+        .screenshot-item { text-align: center; }
+        .screenshot-frame { width: 220px; height: 440px; background: #1a1a2e; border-radius: 30px; border: 6px solid #2d2d44; overflow: hidden; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4); transition: 0.3s; }
+        .screenshot-frame:hover { transform: translateY(-10px); box-shadow: 0 35px 70px rgba(244, 114, 182, 0.3); }
+        .screenshot-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .screenshot-label { margin-top: 1rem; font-size: 0.95rem; font-weight: 600; opacity: 0.8; }
+        .feature-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto 6rem; }
+        .feature-detail.reverse { direction: rtl; }
+        .feature-detail.reverse > * { direction: ltr; }
+        .feature-detail-content h3 { font-size: 2rem; margin-bottom: 1rem; letter-spacing: -1px; }
+        .feature-detail-content p { opacity: 0.7; line-height: 1.8; margin-bottom: 1.5rem; }
+        .feature-list { list-style: none; }
+        .feature-list li { padding: 0.6rem 0; display: flex; align-items: center; gap: 0.8rem; opacity: 0.8; }
+        .feature-list li::before { content: "✓"; color: #f472b6; font-weight: 700; }
+        .feature-detail-image { display: flex; justify-content: center; }
+        .feature-detail-image .screenshot-frame { width: 200px; height: 400px; }
+        .note-box { max-width: 820px; margin: 0 auto; background: rgba(244, 114, 182, 0.08); border: 1px solid rgba(244, 114, 182, 0.25); border-radius: 18px; padding: 1.5rem 1.75rem; opacity: 0.85; line-height: 1.75; font-size: 0.95rem; }
+        footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding-top: 100px; }
+            .feature-detail { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            .feature-detail.reverse { direction: ltr; }
+            .screenshot-frame { width: 180px; height: 360px; }
+            .feature-detail-image .screenshot-frame { width: 160px; height: 320px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="/en/" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="index.html#apps">Mobile Apps</a>
+            <a href="index.html#services">Web Services</a>
+            <a href="support.html">Support</a>
+            <a href="news.html">News</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">EN</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="../skinscan.html">한국어</a>
+                    <a href="skinscan.html">English</a>
+                    <a href="../ja/skinscan.html">日本語</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#apps">Mobile Apps</a>
+        <a href="index.html#services">Web Services</a>
+        <a href="support.html">Support</a>
+        <a href="news.html">News</a>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 0.5rem; padding-top: 0.5rem;">
+            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">Language</div>
+            <a href="../skinscan.html">한국어</a>
+            <a href="skinscan.html" style="color: #f472b6;">English</a>
+            <a href="../ja/skinscan.html">日本語</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="app-icon"><img src="../images/skinscan-icon.svg" alt="SkinScan" style="width: 100%; height: 100%; object-fit: contain;"></div>
+            <span class="hero-badge">Coming soon</span>
+            <h1>SkinScan</h1>
+            <p>One photo is all it takes.<br>AI analyzes your skin today and gives you an overall score with a personalized routine.</p>
+            <div class="store-buttons">
+                <span class="store-btn disabled">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    App Store — coming soon
+                </span>
+                <span class="store-btn disabled">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                    Play Store — coming soon
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section>
+        <h2 class="section-title">Overview</h2>
+        <div style="max-width: 820px; margin: 0 auto; opacity: 0.8; line-height: 1.85; font-size: 1.05rem;">
+            <p style="margin-bottom: 1.2rem;">SkinScan is an AI skin analysis app that reads your skin from a single selfie. Without expensive measuring devices or a trip to a store, your phone camera checks key concerns — acne, pigmentation, dryness, wrinkles and pores — and gives you an overall skin score from 0 to 100. It turns a quick daily self-check into an easy habit for tracking how your skin changes over time.</p>
+            <p style="margin-bottom: 1.2rem;">It's simple to use. Tap the capture button on the home screen and face the camera in natural light — a quick analysis finishes in about 10 seconds. Want more detail? A precise analysis takes three photos (front, left and right) to detect left-right asymmetry. An on-screen photo guide walks you through lighting, distance and angle so every scan is taken under consistent conditions.</p>
+            <p>Once the analysis is done, SkinScan shows a score for each concern, compares it against your previous records to reveal the trend, and recommends a morning and evening skincare routine along with ingredients worth looking for (hyaluronic acid, ceramides, vitamin C and more) and ones to avoid. SkinScan is currently getting ready for launch and will arrive soon on iOS and Android.</p>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section>
+        <h2 class="section-title">Key Features</h2>
+        <p class="section-desc">Skincare that starts with a single scan</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(244, 114, 182, 0.2);">📷</div>
+                <h3>AI Skin Analysis</h3>
+                <p>Analyze acne, pigmentation, dryness, wrinkles and pores from one photo. A quick front-facing scan takes about 10 seconds.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(251, 113, 133, 0.2);">💯</div>
+                <h3>Overall Skin Score</h3>
+                <p>See your skin at a glance on a 0–100 scale, with per-concern grades that show exactly what needs more care.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(236, 72, 153, 0.2);">📈</div>
+                <h3>Day-by-Day Trends</h3>
+                <p>Compare against your past records to track how your score changes — see the effect of your skincare in data.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(244, 114, 182, 0.2);">🔬</div>
+                <h3>Precise Analysis</h3>
+                <p>Capture front, left and right photos to detect left-right asymmetry. A more detailed result in about 30 seconds.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(251, 113, 133, 0.2);">🧴</div>
+                <h3>Personalized Routine &amp; Ingredients</h3>
+                <p>Get a morning and evening routine tailored to your skin, plus ingredients to look for and ones to avoid.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(236, 72, 153, 0.2);">🌐</div>
+                <h3>Multilingual</h3>
+                <p>Supports Korean, English and Japanese, with an in-app language switch you can toggle any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section>
+        <h2 class="section-title">App Preview</h2>
+        <p class="section-desc">A soft, intuitive pink-toned UI</p>
+        <div class="screenshots">
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="../images/skinscan-home-en.png" alt="Home screen" loading="lazy"></div>
+                <p class="screenshot-label">Home</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="../images/skinscan-guide-en.png" alt="Photo guide" loading="lazy"></div>
+                <p class="screenshot-label">Photo Guide</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="../images/skinscan-score-en.png" alt="Overall skin score" loading="lazy"></div>
+                <p class="screenshot-label">Skin Score</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Details -->
+    <section>
+        <div class="feature-detail">
+            <div class="feature-detail-content">
+                <h3>Analysis in a single photo</h3>
+                <p>No complicated setup — just tap capture. The photo guide walks you through lighting, distance and angle so every scan is consistent.</p>
+                <ul class="feature-list">
+                    <li>Quick scan · 1 front photo · ~10 seconds</li>
+                    <li>Precise scan · 3 photos · asymmetry detection</li>
+                    <li>Photo guide (natural light · 30cm · face front · no filters)</li>
+                    <li>Take a photo or pick from your gallery</li>
+                </ul>
+            </div>
+            <div class="feature-detail-image">
+                <div class="screenshot-frame"><img src="../images/skinscan-guide-en.png" alt="Photo guide" loading="lazy"></div>
+            </div>
+        </div>
+
+        <div class="feature-detail reverse">
+            <div class="feature-detail-content">
+                <h3>Per-concern scores and trends</h3>
+                <p>Alongside the overall score, SkinScan grades acne, pigmentation, dryness, wrinkles and pores, and compares against past records to show whether things are improving.</p>
+                <ul class="feature-list">
+                    <li>0–100 overall skin score</li>
+                    <li>Grades across 5 core concerns</li>
+                    <li>Trend tracking against other days</li>
+                    <li>Analysis accuracy feedback</li>
+                </ul>
+            </div>
+            <div class="feature-detail-image">
+                <div class="screenshot-frame"><img src="../images/skinscan-score-en.png" alt="Overall skin score" loading="lazy"></div>
+            </div>
+        </div>
+
+        <div class="feature-detail">
+            <div class="feature-detail-content">
+                <h3>Care tailored to your skin</h3>
+                <p>Based on your results, SkinScan suggests a morning and evening routine and lays out ingredients worth using and ones to avoid.</p>
+                <ul class="feature-list">
+                    <li>Personalized morning &amp; evening routine</li>
+                    <li>Recommended ingredients (hyaluronic acid, ceramides, vitamin C)</li>
+                    <li>Ingredients to avoid</li>
+                    <li>Product references matched to your skin</li>
+                </ul>
+            </div>
+            <div class="feature-detail-image">
+                <div class="screenshot-frame"><img src="../images/skinscan-home-en.png" alt="Home screen" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Note -->
+    <section style="padding-top: 0;">
+        <div class="note-box">
+            SkinScan is a wellness app for beauty and self-care reference only. It is not a medical device and is not intended to diagnose or treat any condition. Results are for reference; if you suspect a skin condition, please consult a dermatologist.
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Everything you want to know about SkinScan</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">How does SkinScan analyze my skin?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Take a face photo and the AI analyzes acne, pigmentation, dryness, wrinkles and pores, showing a 0–100 overall score plus per-concern grades. A quick single-photo scan takes about 10 seconds; a 3-photo precise scan about 30 seconds.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">How should I take the photo for accurate results?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Use natural light or a bright room, hold the camera about 30cm away, face it directly, avoid filters or edits, and keep hair away from your face. The in-app photo guide walks you through each of these.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Is SkinScan a medical diagnosis app?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">No. SkinScan is a wellness app for beauty and self-care reference only. It is not a medical device and does not diagnose or treat conditions. If you suspect a skin condition, please see a dermatologist.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Which languages and platforms are supported?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">SkinScan supports Korean, English and Japanese, switchable inside the app. It is being prepared for release on iOS and Android.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">When does it launch?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">SkinScan is currently getting ready for launch. Watch the MonoApps News page to hear about the release first.</p>
+            </details>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="skinscan-privacy.html">SkinScan Privacy Policy</a>
+            <a href="terms.html">Terms</a>
+            <a href="support.html">Support</a>
+            <a href="mailto:monoappskr@gmail.com">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('active'); });
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        menu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => menu.classList.remove('active')); });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
+    </script>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SkinScan",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "LifestyleApplication",
+        "description": "AI skin analysis app that reads acne, pigmentation, dryness, wrinkles and pores from a single photo, with an overall skin score and personalized routine.",
+        "featureList": [
+            "AI skin analysis (acne, pigmentation, dryness, wrinkles, pores)",
+            "0-100 overall skin score",
+            "Day-by-day trend comparison",
+            "Quick single-photo scan and 3-photo precise scan",
+            "Personalized morning and evening routine",
+            "Recommended and avoid ingredient guidance",
+            "Multilingual (Korean, English, Japanese)"
+        ],
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Organization", "name": "MonoApps", "url": "https://monoapps.kr" }
+    }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [
+        { "@type": "Question", "name": "How does SkinScan analyze my skin?", "acceptedAnswer": { "@type": "Answer", "text": "Take a face photo and the AI analyzes acne, pigmentation, dryness, wrinkles and pores, showing a 0-100 overall score plus per-concern grades. A quick single-photo scan takes about 10 seconds; a 3-photo precise scan about 30 seconds." } },
+        { "@type": "Question", "name": "How should I take the photo for accurate results?", "acceptedAnswer": { "@type": "Answer", "text": "Use natural light or a bright room, hold the camera about 30cm away, face it directly, avoid filters or edits, and keep hair away from your face. The in-app photo guide walks you through each of these." } },
+        { "@type": "Question", "name": "Is SkinScan a medical diagnosis app?", "acceptedAnswer": { "@type": "Answer", "text": "No. SkinScan is a wellness app for beauty and self-care reference only. It is not a medical device and does not diagnose or treat conditions. If you suspect a skin condition, please see a dermatologist." } },
+        { "@type": "Question", "name": "Which languages and platforms are supported?", "acceptedAnswer": { "@type": "Answer", "text": "SkinScan supports Korean, English and Japanese, switchable inside the app. It is being prepared for release on iOS and Android." } },
+        { "@type": "Question", "name": "When does it launch?", "acceptedAnswer": { "@type": "Answer", "text": "SkinScan is currently getting ready for launch. Watch the MonoApps News page to hear about the release first." } }
+    ] }
+    </script>
+</body>
+</html>
