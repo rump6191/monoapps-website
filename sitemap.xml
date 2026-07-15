@@ -1566,4 +1566,48 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://monoapps.kr/sajuprime-app.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/sajuprime-app.html"/>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/en/sajuprime-app.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/sajuprime-app.html"/>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/ja/sajuprime-app.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/sajuprime-app.html"/>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://monoapps.kr/zh/sajuprime-app.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/sajuprime-app.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/sajuprime-app.html"/>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

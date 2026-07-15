@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>SajuPrime アプリ - AI 四柱推命・紫微斗数・タロット | MonoApps</title>
+    <meta name="description" content="生年月日時ひとつで四柱推命・紫微斗数・相性・タロットを占うAI占いアプリ SajuPrime。五行バランスと用神、大限・流年の流れ、AI導師さま相談まで。日本語・한국어・English・中文対応。現在ストア審査中です。">
+    <meta name="keywords" content="SajuPrime, 四柱推命, 紫微斗数, 占い, 相性, タロット, AI占い, 用神, 大限, 流年, MonoApps">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SajuPrime アプリ - AI 四柱推命・紫微斗数・タロット">
+    <meta property="og:description" content="生年月日時ひとつで四柱推命・紫微斗数・相性・タロットを占い、AI導師さまに相談できます。現在ストア審査中です。">
+    <meta property="og:url" content="https://monoapps.kr/ja/sajuprime-app.html">
+    <meta property="og:image" content="https://monoapps.kr/images/sajuprime-app-icon.png">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="MonoApps">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SajuPrime アプリ - AI 四柱推命・紫微斗数・タロット">
+    <meta name="twitter:description" content="生年月日時ひとつで四柱推命・紫微斗数・相性・タロットを占い、AI導師さまに相談できます。現在ストア審査中です。">
+    <meta name="twitter:image" content="https://monoapps.kr/images/sajuprime-app-icon.png">
+    <link rel="canonical" href="https://monoapps.kr/ja/sajuprime-app.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/sajuprime-app.html">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/sajuprime-app.html">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/sajuprime-app.html">
+    <link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/sajuprime-app.html">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/sajuprime-app.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔮</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #050f11; color: white; min-height: 100vh; overflow-x: hidden; }
+        .bg-gradient { position: fixed; width: 150vw; height: 150vh; top: -25vh; left: -25vw; background: conic-gradient(from 180deg at 50% 50%, #23d5ab, #6d5efc, #23a0d5, #23d5ab); filter: blur(110px); animation: rotate 22s linear infinite; z-index: -1; opacity: 0.35; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        nav { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background: rgba(5, 15, 17, 0.4); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(5,15,17,0.97); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(5,15,17,0.97); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 4rem; text-align: center; }
+        .hero-content { max-width: 720px; }
+        .app-icon { width: 120px; height: 120px; border-radius: 28px; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; box-shadow: 0 20px 60px rgba(35, 213, 171, 0.35); }
+        .hero-badge { display: inline-block; padding: 8px 16px; background: rgba(251, 191, 36, 0.16); border: 1px solid rgba(251, 191, 36, 0.4); border-radius: 100px; font-size: 0.85rem; margin-bottom: 1.5rem; color: #fcd34d; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem; letter-spacing: -2px; }
+        .hero p { font-size: 1.2rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2.5rem; }
+        .store-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .store-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; color: white; text-decoration: none; font-size: 1rem; font-weight: 600; transition: 0.3s; }
+        .store-btn.disabled { opacity: 0.5; cursor: default; }
+        .store-btn svg { width: 22px; height: 22px; }
+        section { padding: 6rem 2rem; }
+        .section-title { font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 1rem; letter-spacing: -1px; }
+        .section-desc { text-align: center; opacity: 0.6; margin-bottom: 3rem; font-size: 1.1rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+        .feature-card { background: rgba(255, 255, 255, 0.06); padding: 2rem; border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; backdrop-filter: blur(10px); }
+        .feature-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.1); }
+        .feature-icon { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 1.2rem; }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+        .feature-card p { font-size: 0.95rem; opacity: 0.6; line-height: 1.6; }
+        .screenshots { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+        .screenshot-item { text-align: center; }
+        .screenshot-frame { width: 220px; height: 440px; background: #0a1a1d; border-radius: 30px; border: 6px solid #16303a; overflow: hidden; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45); transition: 0.3s; }
+        .screenshot-frame:hover { transform: translateY(-10px); box-shadow: 0 35px 70px rgba(35, 213, 171, 0.28); }
+        .screenshot-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .screenshot-label { margin-top: 1rem; font-size: 0.95rem; font-weight: 600; opacity: 0.8; }
+        .feature-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto 6rem; }
+        .feature-detail.reverse { direction: rtl; }
+        .feature-detail.reverse > * { direction: ltr; }
+        .feature-detail-content h3 { font-size: 2rem; margin-bottom: 1rem; letter-spacing: -1px; }
+        .feature-detail-content p { opacity: 0.7; line-height: 1.8; margin-bottom: 1.5rem; }
+        .feature-list { list-style: none; }
+        .feature-list li { padding: 0.6rem 0; display: flex; align-items: center; gap: 0.8rem; opacity: 0.8; }
+        .feature-list li::before { content: "✓"; color: #23d5ab; font-weight: 700; }
+        .feature-detail-image { display: flex; justify-content: center; }
+        .feature-detail-image .screenshot-frame { width: 200px; height: 400px; }
+        .note-box { max-width: 820px; margin: 0 auto; background: rgba(35, 213, 171, 0.07); border: 1px solid rgba(35, 213, 171, 0.22); border-radius: 18px; padding: 1.5rem 1.75rem; opacity: 0.85; line-height: 1.75; font-size: 0.95rem; }
+        footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding-top: 100px; }
+            .feature-detail { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            .feature-detail.reverse { direction: ltr; }
+            .screenshot-frame { width: 180px; height: 360px; }
+            .feature-detail-image .screenshot-frame { width: 160px; height: 320px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="/ja/" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="index.html#apps">モバイルアプリ</a>
+            <a href="index.html#services">Webサービス</a>
+            <a href="support.html">サポート</a>
+            <a href="news.html">お知らせ</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">JA</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="../sajuprime-app.html">한국어</a>
+                    <a href="../en/sajuprime-app.html">English</a>
+                    <a href="sajuprime-app.html">日本語</a>
+                    <a href="../zh/sajuprime-app.html">中文</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="メニュー">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#apps">モバイルアプリ</a>
+        <a href="index.html#services">Webサービス</a>
+        <a href="support.html">サポート</a>
+        <a href="news.html">お知らせ</a>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 0.5rem; padding-top: 0.5rem;">
+            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.4); padding: 0.5rem 0;">言語選択</div>
+            <a href="../sajuprime-app.html">한국어</a>
+            <a href="../en/sajuprime-app.html">English</a>
+            <a href="sajuprime-app.html" style="color: #23d5ab;">日本語</a>
+            <a href="../zh/sajuprime-app.html">中文</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="app-icon"><img src="../images/sajuprime-app-icon.png" alt="SajuPrime" style="width: 100%; height: 100%; object-fit: cover;"></div>
+            <span class="hero-badge">🔎 ストア審査中・公開準備中</span>
+            <h1>SajuPrime</h1>
+            <p>生まれた瞬間、天が記した物語。<br>生年月日時ひとつで四柱推命・紫微斗数・相性・タロットを占い、AI導師さまに相談できます。</p>
+            <div class="store-buttons">
+                <span class="store-btn disabled">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    App Store・審査中
+                </span>
+                <span class="store-btn disabled">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                    Google Play・準備中
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section>
+        <h2 class="section-title">概要</h2>
+        <div style="max-width: 820px; margin: 0 auto; opacity: 0.8; line-height: 1.85; font-size: 1.05rem;">
+            <p style="margin-bottom: 1.2rem;">SajuPrime は、東洋の命理学のエッセンスを一つにまとめた AI 占いアプリです。生年月日時を入力すると四柱推命の命式を立て、五行のバランスや日干の強弱、用神まで自動で算出。あなたが生まれ持った気のバランスを一目で見渡せます。難しい万年暦を知らなくても、生まれた瞬間に刻まれた物語をやさしく、深く読み解きます。</p>
+            <p style="margin-bottom: 1.2rem;">占いは四柱推命だけにとどまりません。人生を十二宮で読み解く紫微斗数の命盤、二人の相性スコアと五行の相生・相剋、そして今日の問いに答えるタロットまで一つのアプリに。タロットや運勢の解釈は単なるカードの意味づけにとどまらず、あなたの四柱（日干・用神）と結びつけた AI 深層リーディングで、今のあなたに必要なメッセージを導きます。</p>
+            <p>毎朝は今日の運勢スコアと吉凶（宜・忌）を確認し、気になることがあれば AI 導師さまに直接相談できます。SajuPrime は日本語・한국어・English・中文の4言語に対応し、現在ストアの審査を進めています。公開が決まり次第、このページでダウンロードリンクをご案内します。</p>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section>
+        <h2 class="section-title">主な機能</h2>
+        <p class="section-desc">四柱推命から紫微斗数・相性・タロット・AI相談まで、一つのアプリで</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(35, 213, 171, 0.18);">✦</div>
+                <h3>四柱推命の分析</h3>
+                <p>年・月・日・時の四柱を立て、五行の分布、日干の身強・身弱、用神・喜神を自動で分析し、生まれ持った気のバランスを示します。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(109, 94, 252, 0.18);">🪐</div>
+                <h3>紫微斗数の命盤</h3>
+                <p>命宮・財帛・官禄など十二宮に配された主星・補佐星と四化（化禄・化権・化科・化忌）を命盤で確認し、大限・流年・流月・流日の流れまで追えます。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(244, 114, 182, 0.18);">💕</div>
+                <h3>相性診断</h3>
+                <p>二人の命式を並べて比較し、100点満点の相性スコアと五行の相生・相剋の関係、関係で気をつけたい点を読み解きます。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(35, 160, 213, 0.18);">🃏</div>
+                <h3>タロット・AI深層リーディング</h3>
+                <p>正位置・逆位置のカードを引き、あなたの四柱（日干・用神）と結びつけた AI 深層リーディングで総合メッセージとカード別の解釈を受け取れます。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(168, 85, 247, 0.18);">🔮</div>
+                <h3>AI導師さま相談</h3>
+                <p>「今年、転職してもいい？」といった悩みを尋ねると、四柱や紫微斗数・流年を根拠に導師さまが最適な助言をくれます。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(251, 191, 36, 0.18);">📅</div>
+                <h3>今日の運勢・吉凶</h3>
+                <p>毎日更新される今日の運勢スコアと吉凶（宜・忌）、今日すると良いこと・控えたいことをホームですぐ確認できます。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(35, 213, 171, 0.18);">📤</div>
+                <h3>結果の保存・共有</h3>
+                <p>分析結果を画像・PDFで保存して共有でき、過去の分析は履歴からいつでも見返せます。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(35, 160, 213, 0.18);">🌐</div>
+                <h3>4言語対応</h3>
+                <p>日本語・한국어・English・中文に対応し、アプリ内で言語をすぐ切り替えられます。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section>
+        <h2 class="section-title">アプリプレビュー</h2>
+        <p class="section-desc">深海オーロラの神秘的なUI</p>
+        <div class="screenshots">
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="../images/sajuprime-home-ja.png" alt="ホーム" loading="lazy"></div>
+                <p class="screenshot-label">ホーム</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="../images/sajuprime-saju-ja.png" alt="四柱推命の分析" loading="lazy"></div>
+                <p class="screenshot-label">四柱推命</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="../images/sajuprime-ziwei-ja.png" alt="紫微斗数の命盤" loading="lazy"></div>
+                <p class="screenshot-label">紫微斗数</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="../images/sajuprime-compat-ja.png" alt="相性結果" loading="lazy"></div>
+                <p class="screenshot-label">相性</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Details -->
+    <section>
+        <div class="feature-detail">
+            <div class="feature-detail-content">
+                <h3>自分の命式を、五行で読む</h3>
+                <p>生年月日時を入力するだけで四柱が立ち、木・火・土・金・水の五行分布がレーダーチャートで一目に。日干の強弱とともに用神・喜神も示され、何が過剰で何が不足しているかを理解できます。</p>
+                <ul class="feature-list">
+                    <li>年・月・日・時の四柱を自動算出</li>
+                    <li>五行分布のレーダーチャート</li>
+                    <li>日干の身強・身弱の判定</li>
+                    <li>用神・喜神の導出と解説</li>
+                </ul>
+            </div>
+            <div class="feature-detail-image">
+                <div class="screenshot-frame"><img src="../images/sajuprime-saju-ja.png" alt="四柱推命の分析" loading="lazy"></div>
+            </div>
+        </div>
+
+        <div class="feature-detail reverse">
+            <div class="feature-detail-content">
+                <h3>人生を映す紫微斗数</h3>
+                <p>命宮を中心に、兄弟・夫妻・財帛・官禄・福徳など十二宮に配された星と四化を命盤で表示。命盤だけでなく大限（10年）・流年・流月・流日まで切り替えて、時期ごとの流れを見渡せます。</p>
+                <ul class="feature-list">
+                    <li>十二宮の主星・補佐星の配置</li>
+                    <li>化禄・化権・化科・化忌の四化を表示</li>
+                    <li>命盤／大限／流年／流月／流日の切替</li>
+                    <li>宮ごとの詳しい読み解き</li>
+                </ul>
+            </div>
+            <div class="feature-detail-image">
+                <div class="screenshot-frame"><img src="../images/sajuprime-ziwei-ja.png" alt="紫微斗数の命盤" loading="lazy"></div>
+            </div>
+        </div>
+
+        <div class="feature-detail">
+            <div class="feature-detail-content">
+                <h3>四柱とつながるタロット・AI深層リーディング</h3>
+                <p>カードを引くと核となるカードの正位置・逆位置とキーワードを表示し、そこにあなたの四柱（日干・用神）を組み合わせた AI 深層リーディングを加えます。総合メッセージとカード別の解釈で、今必要な助言を届けます。</p>
+                <ul class="feature-list">
+                    <li>正位置・逆位置のカードリーディング</li>
+                    <li>自分の四柱と結びつけた AI 深層リーディング</li>
+                    <li>総合メッセージ＋カード別の解釈</li>
+                    <li>結果を画像・PDFで保存</li>
+                </ul>
+            </div>
+            <div class="feature-detail-image">
+                <div class="screenshot-frame"><img src="../images/sajuprime-tarot-ja.png" alt="タロットのリーディング結果" loading="lazy"></div>
+            </div>
+        </div>
+
+        <div class="feature-detail reverse">
+            <div class="feature-detail-content">
+                <h3>迷ったら、AI導師さまへ</h3>
+                <p>転職・恋愛・金運・健康など、人生の悩みを自然な文章で尋ねてみてください。導師さまがあなたの四柱や紫微斗数、今年の流年を根拠に状況を読み解き、時期と方向についての最適な助言を届けます。</p>
+                <ul class="feature-list">
+                    <li>対話形式のAI占い相談</li>
+                    <li>四柱・紫微斗数・流年を根拠に提示</li>
+                    <li>転職・恋愛・金運・健康など幅広く</li>
+                    <li>参考用の助言で方向を定める</li>
+                </ul>
+            </div>
+            <div class="feature-detail-image">
+                <div class="screenshot-frame"><img src="../images/sajuprime-ai-ja.png" alt="AI導師さま相談" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Note -->
+    <section style="padding-top: 0;">
+        <div class="note-box">
+            SajuPrime は伝統的な四柱推命・紫微斗数・タロットに基づく、エンターテインメント・自己理解のための参考用アプリです。提供される運勢や助言は参考用であり、医療・法律・財務などの専門的判断や重要な意思決定に代わるものではありません。現在アプリはストア審査中で、公開時期は審査結果により変わる場合があります。
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">よくある質問</h2>
+        <p class="section-desc">SajuPrime についての疑問にお答えします</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">SajuPrime は何を占ってくれますか？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">生年月日時を入力すると、四柱推命と五行分布、日干の強弱や用神を分析します。さらに紫微斗数の命盤、二人の相性、タロットのリーディング、今日の運勢・吉凶、AI導師さま相談まで一つのアプリで利用できます。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">タロットと四柱推命はどうつながるのですか？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">SajuPrime のタロットはカードの意味づけにとどまらず、あなたの四柱の日干・用神の情報と組み合わせた AI 深層リーディングを提供します。同じカードでも、あなたの気の状態に合わせた総合メッセージとカード別の解釈を受け取れます。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">対応している言語は？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">日本語・한국어・English・中文の4言語に対応し、アプリ内ですぐ切り替えられます。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">占い結果はそのまま信じてよいですか？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">SajuPrime は自己理解と娯楽のための参考用アプリです。提供される運勢や助言は参考用であり、医療・法律・財務などの専門的判断や重要な決定に代わるものではありません。</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">今すぐダウンロードできますか？</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">現在 SajuPrime アプリはストア審査中です。公開が決まり次第、このページに App Store・Google Play のダウンロードリンクをご案内します。</p>
+            </details>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">プライバシーポリシー</a>
+            <a href="../sajuprime-data-deletion.html">データ削除について</a>
+            <a href="terms.html">利用規約</a>
+            <a href="support.html">サポート</a>
+            <a href="mailto:monoappskr@gmail.com">お問い合わせ</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('active'); });
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        menu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => menu.classList.remove('active')); });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
+    </script>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SajuPrime",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "LifestyleApplication",
+        "description": "生年月日時で四柱推命・紫微斗数・相性・タロットを占うAI占いアプリ。五行バランスと用神、大限・流年の流れ、AI導師さま相談に対応。",
+        "featureList": [
+            "四柱推命の分析（五行分布・日干の強弱・用神）",
+            "紫微斗数の命盤（十二宮・四化・大限・流年）",
+            "相性診断（100点満点・五行の相生相剋）",
+            "タロットと四柱連携のAI深層リーディング",
+            "AI導師さまの対話型占い相談",
+            "今日の運勢・吉凶",
+            "結果を画像・PDFで保存・共有",
+            "多言語対応（日本語・한국어・English・中文）"
+        ],
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+        "author": { "@type": "Organization", "name": "MonoApps", "url": "https://monoapps.kr" }
+    }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "ja", "mainEntity": [
+        { "@type": "Question", "name": "SajuPrime は何を占ってくれますか？", "acceptedAnswer": { "@type": "Answer", "text": "生年月日時を入力すると、四柱推命と五行分布、日干の強弱や用神を分析します。さらに紫微斗数の命盤、二人の相性、タロットのリーディング、今日の運勢・吉凶、AI導師さま相談まで一つのアプリで利用できます。" } },
+        { "@type": "Question", "name": "タロットと四柱推命はどうつながるのですか？", "acceptedAnswer": { "@type": "Answer", "text": "SajuPrime のタロットは、あなたの四柱の日干・用神の情報と組み合わせた AI 深層リーディングを提供します。同じカードでも、あなたの気の状態に合わせた総合メッセージとカード別の解釈を受け取れます。" } },
+        { "@type": "Question", "name": "対応している言語は？", "acceptedAnswer": { "@type": "Answer", "text": "日本語・韓国語・英語・中国語の4言語に対応し、アプリ内ですぐ切り替えられます。" } },
+        { "@type": "Question", "name": "占い結果はそのまま信じてよいですか？", "acceptedAnswer": { "@type": "Answer", "text": "SajuPrime は自己理解と娯楽のための参考用アプリです。提供される運勢や助言は参考用であり、専門的判断や重要な決定に代わるものではありません。" } },
+        { "@type": "Question", "name": "今すぐダウンロードできますか？", "acceptedAnswer": { "@type": "Answer", "text": "現在 SajuPrime アプリはストア審査中です。公開が決まり次第、このページに App Store・Google Play のダウンロードリンクをご案内します。" } }
+    ] }
+    </script>
+</body>
+</html>
