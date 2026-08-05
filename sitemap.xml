@@ -659,6 +659,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://monoapps.kr/salary-calculator.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://monoapps.kr/support.html</loc>
     <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/support.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/support.html"/>

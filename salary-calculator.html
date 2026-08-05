@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>급여계산기 - 연봉·4대보험·퇴직금·연말정산 계산 | MonoApps</title>
+    <meta name="description" content="연봉 실수령액부터 4대보험, 퇴직금, 연말정산 예상 환급액까지 한 앱에서 계산하는 급여계산기. 2026년 요율과 근로소득 간이세액표를 반영한 10가지 계산기, 월별 급여 기록, PDF 저장까지. 현재 출시 준비 중입니다.">
+    <meta name="keywords" content="급여계산기, 연봉계산기, 실수령액, 4대보험 계산기, 퇴직금 계산기, 연말정산 계산기, 주휴수당, 야근수당, 프리랜서 3.3%, 최저시급, 2026년 요율, MonoApps">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="급여계산기 - 연봉·4대보험·퇴직금·연말정산 계산">
+    <meta property="og:description" content="연봉 실수령액부터 4대보험·퇴직금·연말정산까지, 2026년 요율을 반영한 10가지 급여 계산기를 한 앱에서. 현재 출시 준비 중입니다.">
+    <meta property="og:url" content="https://monoapps.kr/salary-calculator.html">
+    <meta property="og:image" content="https://monoapps.kr/images/salary-calculator-icon.png">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="MonoApps">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="급여계산기 - 연봉·4대보험·퇴직금·연말정산 계산">
+    <meta name="twitter:description" content="연봉 실수령액부터 4대보험·퇴직금·연말정산까지, 2026년 요율을 반영한 10가지 급여 계산기를 한 앱에서. 현재 출시 준비 중입니다.">
+    <meta name="twitter:image" content="https://monoapps.kr/images/salary-calculator-icon.png">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://monoapps.kr/salary-calculator.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/salary-calculator.html">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/salary-calculator.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #060b14; color: white; min-height: 100vh; overflow-x: hidden; }
+        .bg-gradient { position: fixed; width: 150vw; height: 150vh; top: -25vh; left: -25vw; background: conic-gradient(from 180deg at 50% 50%, #3b82f6, #6366f1, #fbbf24, #3b82f6); filter: blur(110px); animation: rotate 22s linear infinite; z-index: -1; opacity: 0.28; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        nav { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background: rgba(6, 11, 20, 0.45); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(6,11,20,0.97); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(6,11,20,0.97); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 4rem; text-align: center; }
+        .hero-content { max-width: 720px; }
+        .app-icon { width: 120px; height: 120px; border-radius: 28px; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; box-shadow: 0 20px 60px rgba(59, 130, 246, 0.4); }
+        .hero-badge { display: inline-block; padding: 8px 16px; background: rgba(251, 191, 36, 0.16); border: 1px solid rgba(251, 191, 36, 0.4); border-radius: 100px; font-size: 0.85rem; margin-bottom: 1.5rem; color: #fcd34d; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem; letter-spacing: -2px; }
+        .hero p { font-size: 1.2rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2.5rem; }
+        .store-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .store-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; color: white; text-decoration: none; font-size: 1rem; font-weight: 600; transition: 0.3s; }
+        .store-btn.disabled { opacity: 0.5; cursor: default; }
+        .store-btn svg { width: 22px; height: 22px; }
+        section { padding: 6rem 2rem; }
+        .section-title { font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 1rem; letter-spacing: -1px; }
+        .section-desc { text-align: center; opacity: 0.6; margin-bottom: 3rem; font-size: 1.1rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+        .feature-card { background: rgba(255, 255, 255, 0.06); padding: 2rem; border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; backdrop-filter: blur(10px); }
+        .feature-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.1); }
+        .feature-icon { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 1.2rem; }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+        .feature-card p { font-size: 0.95rem; opacity: 0.6; line-height: 1.6; }
+        .screenshots { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+        .screenshot-item { text-align: center; }
+        .screenshot-frame { width: 220px; height: 440px; background: #0b1220; border-radius: 30px; border: 6px solid #1b2740; overflow: hidden; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45); transition: 0.3s; }
+        .screenshot-frame:hover { transform: translateY(-10px); box-shadow: 0 35px 70px rgba(59, 130, 246, 0.3); }
+        .screenshot-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .screenshot-label { margin-top: 1rem; font-size: 0.95rem; font-weight: 600; opacity: 0.8; }
+        .feature-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto 6rem; }
+        .feature-detail.reverse { direction: rtl; }
+        .feature-detail.reverse > * { direction: ltr; }
+        .feature-detail-content h3 { font-size: 2rem; margin-bottom: 1rem; letter-spacing: -1px; }
+        .feature-detail-content p { opacity: 0.7; line-height: 1.8; margin-bottom: 1.5rem; }
+        .feature-list { list-style: none; }
+        .feature-list li { padding: 0.6rem 0; display: flex; align-items: center; gap: 0.8rem; opacity: 0.8; }
+        .feature-list li::before { content: "✓"; color: #3b82f6; font-weight: 700; }
+        .feature-detail-image { display: flex; justify-content: center; }
+        .feature-detail-image .screenshot-frame { width: 200px; height: 400px; }
+        .calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; max-width: 1100px; margin: 0 auto; }
+        .calc-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.1rem 1.3rem; }
+        .calc-item strong { display: block; font-size: 1rem; margin-bottom: 0.35rem; }
+        .calc-item span { font-size: 0.85rem; opacity: 0.6; line-height: 1.5; }
+        .rate-table { max-width: 720px; margin: 0 auto; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; overflow: hidden; }
+        .rate-row { display: flex; justify-content: space-between; align-items: center; padding: 0.95rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; }
+        .rate-row:last-child { border-bottom: none; }
+        .rate-row span:first-child { opacity: 0.75; }
+        .rate-row span:last-child { font-weight: 700; color: #93c5fd; }
+        .note-box { max-width: 820px; margin: 0 auto; background: rgba(59, 130, 246, 0.07); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 18px; padding: 1.5rem 1.75rem; opacity: 0.85; line-height: 1.75; font-size: 0.95rem; }
+        footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding-top: 100px; }
+            .feature-detail { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            .feature-detail.reverse { direction: ltr; }
+            .feature-list li { justify-content: center; }
+            .screenshot-frame { width: 180px; height: 360px; }
+            .feature-detail-image .screenshot-frame { width: 160px; height: 320px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="/" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="apps.html">모바일 앱</a>
+            <a href="index.html#services">웹 서비스</a>
+            <a href="support.html">고객지원</a>
+            <a href="news.html">소식</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">KO</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="salary-calculator.html" style="color: #60a5fa;">한국어</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="apps.html">모바일 앱</a>
+        <a href="index.html#services">웹 서비스</a>
+        <a href="support.html">고객지원</a>
+        <a href="news.html">소식</a>
+        <div style="border-top:1px solid rgba(255,255,255,0.1); margin-top:0.5rem; padding-top:0.5rem;">
+            <div style="font-size:0.8rem; color:rgba(255,255,255,0.4); padding:0.5rem 0;">언어 선택</div>
+            <a href="salary-calculator.html" style="color:#60a5fa;">한국어 (KO만 지원)</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="app-icon"><img src="images/salary-calculator-icon.png" alt="급여계산기" style="width: 100%; height: 100%; object-fit: cover;"></div>
+            <span class="hero-badge">🛠️ 출시 준비 중</span>
+            <h1>급여계산기</h1>
+            <p>내 통장에 실제로 꽂히는 돈은 얼마일까.<br>연봉·4대보험·퇴직금·연말정산까지, 흩어져 있던 계산을 한 앱에 담았습니다.</p>
+            <div class="store-buttons">
+                <span class="store-btn disabled">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.79 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    App Store · 준비 중
+                </span>
+                <span class="store-btn disabled">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                    Google Play · 준비 중
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section>
+        <h2 class="section-title">소개</h2>
+        <div style="max-width: 820px; margin: 0 auto; opacity: 0.8; line-height: 1.85; font-size: 1.05rem;">
+            <p style="margin-bottom: 1.2rem;">급여계산기는 직장인이 급여와 관련해 궁금해하는 거의 모든 숫자를 한 앱에서 계산해 주는 도구입니다. 연봉을 입력하면 4대보험과 소득세·지방소득세를 차례로 떼어낸 뒤 월 실수령액을 알려주고, 어떤 항목에서 얼마가 빠져나갔는지 공제 내역을 한 줄씩 펼쳐 보여줍니다. 비과세액(식대 등)과 부양가족 수, 8세~20세 자녀 수까지 반영하기 때문에 실제 급여명세서에 가까운 결과를 확인할 수 있습니다.</p>
+            <p style="margin-bottom: 1.2rem;">계산기는 연봉 하나로 끝나지 않습니다. 월급↔연봉 환산, 시급 계산, 주휴수당, 야근수당 같은 급여 계산부터 4대보험, 퇴직금, 연말정산 예상 환급액, 프리랜서 3.3% 원천징수, 최저시급 확인까지 총 10가지 계산기를 갖췄습니다. 4대보험 요율은 2026년 기준(국민연금 4.75%, 건강보험 3.595%, 장기요양 건강보험료의 13.14%, 고용보험 0.9%)을 반영했으며, 지난 연도 요율로도 전환해 계산할 수 있습니다.</p>
+            <p>계산으로 끝내지 않고 기록으로 남깁니다. 매월 실수령액을 월별 급여 기록에 저장하면 연간 합계와 월 평균이 자동으로 정리되고, 계산 결과는 PDF로 저장하거나 바로 공유할 수 있습니다. 급여일과 연말정산 시즌 알림, 홈 화면 위젯으로 급여일 D-day와 최근 실수령액을 확인하는 기능도 함께 준비했습니다. 현재 출시 준비 중이며, App Store와 Google Play 등록이 완료되는 대로 이 페이지에서 안내해 드리겠습니다.</p>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section>
+        <h2 class="section-title">주요 기능</h2>
+        <p class="section-desc">연봉부터 퇴직금·연말정산까지, 한 앱에서</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(59, 130, 246, 0.18);">💰</div>
+                <h3>연봉 실수령액 계산</h3>
+                <p>연봉과 비과세액, 부양가족·자녀 수를 입력하면 4대보험과 세금을 차감한 월 실수령액과 공제 내역을 한눈에 보여줍니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(139, 92, 246, 0.18);">🛡️</div>
+                <h3>4대보험 계산</h3>
+                <p>국민연금·건강보험·장기요양보험·고용보험 본인부담분을 항목별로 계산하고, 적용 연도를 바꿔가며 비교할 수 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(244, 114, 182, 0.18);">🐷</div>
+                <h3>퇴직금 계산</h3>
+                <p>일평균임금과 입사일·마지막 근무일만 넣으면 재직기간과 재직일수를 자동 산출해 예상 퇴직금을 계산합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(34, 197, 94, 0.18);">📋</div>
+                <h3>연말정산 예상</h3>
+                <p>기납부 소득세와 추가 소득공제·세액공제를 반영해 예상 환급액 또는 추가 납부액과 산출 과정을 보여줍니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(251, 191, 36, 0.18);">⏱️</div>
+                <h3>시급 · 주휴수당 · 야근수당</h3>
+                <p>시급 기반 급여와 주 15시간 이상 근무 시 주휴수당, 연장·야간·휴일 근로 가산수당까지 계산합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(14, 165, 233, 0.18);">📊</div>
+                <h3>월별 급여 기록</h3>
+                <p>매월 실수령액을 기록하면 연간 합계와 월 평균이 자동으로 정리되어 한 해 급여 흐름을 확인할 수 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(59, 130, 246, 0.18);">📄</div>
+                <h3>PDF 저장 · 공유</h3>
+                <p>계산 결과를 PDF로 내보내거나 바로 공유할 수 있고, 지난 계산은 기록에서 다시 열어볼 수 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(139, 92, 246, 0.18);">🔔</div>
+                <h3>알림 · 홈 위젯</h3>
+                <p>급여일과 연말정산 시즌 알림을 받고, 홈 화면 위젯에서 급여일 D-day와 최근 실수령액을 바로 확인합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- All calculators -->
+    <section style="padding-top: 0;">
+        <h2 class="section-title">10가지 계산기</h2>
+        <p class="section-desc">급여 계산기 5종 · 세금/보험 계산기 5종</p>
+        <div class="calc-grid">
+            <div class="calc-item"><strong>연봉계산기</strong><span>연봉 → 월 실수령액, 공제 내역</span></div>
+            <div class="calc-item"><strong>월급 ↔ 연봉</strong><span>월급과 연봉을 서로 환산</span></div>
+            <div class="calc-item"><strong>시급 계산기</strong><span>시급 기준 급여 계산</span></div>
+            <div class="calc-item"><strong>주휴수당</strong><span>주 15시간 이상 시 주휴수당 계산</span></div>
+            <div class="calc-item"><strong>야근수당</strong><span>연장·야간·휴일 근로 가산수당</span></div>
+            <div class="calc-item"><strong>4대보험</strong><span>국민연금·건강·장기요양·고용 계산</span></div>
+            <div class="calc-item"><strong>퇴직금</strong><span>근무기간, 평균임금 → 예상 퇴직금</span></div>
+            <div class="calc-item"><strong>연말정산 계산기</strong><span>예상 환급액 / 추가 납부액 계산</span></div>
+            <div class="calc-item"><strong>프리랜서 3.3%</strong><span>원천징수액, 실수령액</span></div>
+            <div class="calc-item"><strong>최저시급 확인</strong><span>연도별 최저시급과 월 환산액</span></div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section>
+        <h2 class="section-title">앱 미리보기</h2>
+        <p class="section-desc">숫자에 집중할 수 있는 다크 톤 UI</p>
+        <div class="screenshots">
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="images/salary-annual-ko.png" alt="연봉계산기 화면" loading="lazy"></div>
+                <p class="screenshot-label">연봉계산기</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="images/salary-deduction-ko.png" alt="공제 내역 상세" loading="lazy"></div>
+                <p class="screenshot-label">공제 내역</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="images/salary-insurance-ko.png" alt="4대보험 계산" loading="lazy"></div>
+                <p class="screenshot-label">4대보험</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-frame"><img src="images/salary-yearend-result-ko.png" alt="연말정산 예상 환급액" loading="lazy"></div>
+                <p class="screenshot-label">연말정산</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Details -->
+    <section>
+        <div class="feature-detail">
+            <div class="feature-detail-content">
+                <h3>연봉에서 실수령액까지, 한 화면에</h3>
+                <p>연봉과 월 비과세액, 부양가족 수, 8세~20세 자녀 수를 입력하고 계산하기를 누르면 월 실수령액이 바로 나옵니다. 급여 상세에서는 세전 월급과 비과세액을, 공제 항목에서는 4대보험과 소득세·지방소득세가 각각 얼마인지 확인할 수 있습니다.</p>
+                <ul class="feature-list">
+                    <li>연봉 → 월 실수령액 즉시 계산</li>
+                    <li>비과세액(식대 등) 반영</li>
+                    <li>부양가족·자녀 수에 따른 세액 반영</li>
+                    <li>공제 항목별 금액 상세 표시</li>
+                </ul>
+            </div>
+            <div class="feature-detail-image">
+                <div class="screenshot-frame"><img src="images/salary-annual-ko.png" alt="연봉계산기 화면" loading="lazy"></div>
+            </div>
+        </div>
+
+        <div class="feature-detail reverse">
+            <div class="feature-detail-content">
+                <h3>어디서 얼마가 빠져나갔는지</h3>
+                <p>총 공제액만 보여주고 끝내지 않습니다. 국민연금·건강보험·장기요양보험·고용보험을 요율과 함께 한 줄씩 보여주고, 소득세와 지방소득세도 따로 표시합니다. 소득세는 근로소득 간이세액표를 기준으로 계산합니다.</p>
+                <ul class="feature-list">
+                    <li>4대보험 항목별 요율·금액 표시</li>
+                    <li>소득세 · 지방소득세(10%) 구분</li>
+                    <li>근로소득 간이세액표 기준 계산</li>
+                    <li>적용 연도 전환 지원</li>
+                </ul>
+            </div>
+            <div class="feature-detail-image">
+                <div class="screenshot-frame"><img src="images/salary-deduction-ko.png" alt="공제 내역 상세" loading="lazy"></div>
+            </div>
+        </div>
+
+        <div class="feature-detail">
+            <div class="feature-detail-content">
+                <h3>연말정산, 미리 계산해 보기</h3>
+                <p>연봉과 부양가족 정보에 기납부 소득세, 신용카드 등 추가 소득공제와 연금저축·월세 등 세액공제를 더하면 예상 환급액을 알려줍니다. 총급여에서 근로소득공제·인적공제·연금보험료공제를 거쳐 결정세액이 나오기까지의 산출 과정도 함께 보여줍니다.</p>
+                <ul class="feature-list">
+                    <li>예상 환급액 / 추가 납부액 계산</li>
+                    <li>기납부 소득세 자동 추정 지원</li>
+                    <li>추가 소득공제 · 세액공제 반영</li>
+                    <li>단계별 산출 과정 공개</li>
+                </ul>
+            </div>
+            <div class="feature-detail-image">
+                <div class="screenshot-frame"><img src="images/salary-yearend-result-ko.png" alt="연말정산 예상 환급액" loading="lazy"></div>
+            </div>
+        </div>
+
+        <div class="feature-detail reverse">
+            <div class="feature-detail-content">
+                <h3>퇴직금과 4대보험도 정확하게</h3>
+                <p>퇴직금은 일평균임금과 입사일·마지막 근무일만 입력하면 재직기간과 재직일수를 자동으로 계산해 예상 금액을 산출합니다. 4대보험은 월급만 넣으면 본인부담분 합계와 공제 후 금액을 바로 확인할 수 있습니다.</p>
+                <ul class="feature-list">
+                    <li>입사일·퇴사일 기준 재직일수 자동 산출</li>
+                    <li>일평균임금 기준 예상 퇴직금</li>
+                    <li>4대보험 본인부담분 합계</li>
+                    <li>보험료 공제 후 실수령액 표시</li>
+                </ul>
+            </div>
+            <div class="feature-detail-image">
+                <div class="screenshot-frame"><img src="images/salary-severance-ko.png" alt="퇴직금 계산" loading="lazy"></div>
+            </div>
+        </div>
+
+        <div class="feature-detail">
+            <div class="feature-detail-content">
+                <h3>한 해 급여를 기록으로</h3>
+                <p>매월 실수령액을 기록해 두면 연간 합계와 월 평균이 자동으로 계산됩니다. 월별 막대로 흐름을 확인하고, 기록은 언제든 추가·수정할 수 있습니다.</p>
+                <ul class="feature-list">
+                    <li>월별 실수령액 기록 · 관리</li>
+                    <li>연간 합계 · 월 평균 자동 집계</li>
+                    <li>계산 기록 저장 및 다시 열기</li>
+                    <li>PDF 저장 · 공유</li>
+                </ul>
+            </div>
+            <div class="feature-detail-image">
+                <div class="screenshot-frame"><img src="images/salary-history-ko.png" alt="월별 급여 기록" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2026 rates -->
+    <section style="padding-top: 0;">
+        <h2 class="section-title">2026년 기준 요율</h2>
+        <p class="section-desc">4대보험 본인부담분과 최저시급을 최신 기준으로 반영했습니다</p>
+        <div class="rate-table">
+            <div class="rate-row"><span>국민연금 (본인부담분)</span><span>4.75%</span></div>
+            <div class="rate-row"><span>건강보험 (본인부담분)</span><span>3.595%</span></div>
+            <div class="rate-row"><span>장기요양보험</span><span>건강보험료의 13.14%</span></div>
+            <div class="rate-row"><span>고용보험 (본인부담분)</span><span>0.9%</span></div>
+            <div class="rate-row"><span>2026년 최저시급</span><span>10,320원</span></div>
+            <div class="rate-row"><span>최저임금 월 환산 기준시간</span><span>209시간</span></div>
+        </div>
+    </section>
+
+    <!-- Note -->
+    <section style="padding-top: 0;">
+        <div class="note-box">
+            급여계산기는 대한민국 근로기준법·4대보험 요율·근로소득 간이세액표를 기준으로 한 참고용 계산 도구입니다. 실제 급여는 회사 정책과 추가 수당·공제 항목에 따라 달라질 수 있으며, 연말정산 결과 역시 실제 신고 내역과 차이가 있을 수 있습니다. 현재 앱은 출시 준비 중이며, 스토어 등록이 완료되는 대로 이 페이지에 다운로드 링크를 안내해 드리겠습니다.
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">자주 묻는 질문</h2>
+        <p class="section-desc">급여계산기에 대해 궁금한 점을 확인하세요</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">어떤 계산기를 제공하나요?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">연봉계산기, 월급↔연봉 환산, 시급 계산기, 주휴수당, 야근수당 등 급여 계산기 5종과 4대보험, 퇴직금, 연말정산 계산기, 프리랜서 3.3%, 최저시급 확인 등 세금·보험 계산기 5종, 총 10가지 계산기를 제공합니다.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">계산 기준은 언제 기준인가요?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">4대보험은 2026년 요율(국민연금 4.75%, 건강보험 3.595%, 장기요양 건강보험료의 13.14%, 고용보험 0.9%)을 기본으로 적용하며, 앱에서 적용 연도를 바꿔 지난 연도 기준으로도 계산할 수 있습니다. 소득세는 근로소득 간이세액표를 기준으로 계산합니다.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">계산 결과가 실제 급여와 똑같나요?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">참고용 계산 결과입니다. 실제 급여는 회사의 급여 정책, 추가 수당, 비과세 항목 구성, 개인별 공제 내역에 따라 달라질 수 있습니다. 정확한 금액은 급여명세서와 원천징수영수증을 확인해 주세요.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">계산 결과를 저장하거나 공유할 수 있나요?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">네. 계산 결과는 앱에 기록으로 저장되며, PDF로 내보내거나 메신저 등으로 바로 공유할 수 있습니다. 월별 실수령액은 월별 급여 기록에 모아 연간 합계와 월 평균으로 확인할 수 있습니다.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">언제 다운로드할 수 있나요?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">현재 출시 준비 중입니다. App Store와 Google Play 등록이 완료되는 대로 이 페이지와 소식 페이지를 통해 다운로드 링크를 안내해 드리겠습니다.</p>
+            </details>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">개인정보 처리방침</a>
+            <a href="terms.html">이용약관</a>
+            <a href="support.html">고객지원</a>
+            <a href="mailto:monoappskr@gmail.com">문의하기</a>
+        </div>
+        <p class="copyright">&copy; 2026 MonoApps. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('active'); });
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        menu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => menu.classList.remove('active')); });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
+    </script>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "급여계산기",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "FinanceApplication",
+        "description": "연봉 실수령액, 4대보험, 퇴직금, 연말정산 예상 환급액을 계산하는 급여 계산 앱. 2026년 요율과 근로소득 간이세액표를 반영한 10가지 계산기를 제공합니다.",
+        "featureList": [
+            "연봉 실수령액 계산 (비과세·부양가족 반영)",
+            "4대보험 계산 (국민연금·건강·장기요양·고용)",
+            "퇴직금 계산 (재직일수 자동 산출)",
+            "연말정산 예상 환급액 계산",
+            "시급·주휴수당·야근수당 계산",
+            "프리랜서 3.3% 원천징수 계산",
+            "연도별 최저시급 확인",
+            "월별 급여 기록 및 연간 합계",
+            "계산 결과 PDF 저장 및 공유",
+            "급여일·연말정산 알림, 홈 화면 위젯"
+        ],
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
+        "author": { "@type": "Organization", "name": "MonoApps", "url": "https://monoapps.kr" }
+    }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "ko", "mainEntity": [
+        { "@type": "Question", "name": "어떤 계산기를 제공하나요?", "acceptedAnswer": { "@type": "Answer", "text": "연봉계산기, 월급↔연봉 환산, 시급 계산기, 주휴수당, 야근수당 등 급여 계산기 5종과 4대보험, 퇴직금, 연말정산 계산기, 프리랜서 3.3%, 최저시급 확인 등 세금·보험 계산기 5종, 총 10가지 계산기를 제공합니다." } },
+        { "@type": "Question", "name": "계산 기준은 언제 기준인가요?", "acceptedAnswer": { "@type": "Answer", "text": "4대보험은 2026년 요율(국민연금 4.75%, 건강보험 3.595%, 장기요양 건강보험료의 13.14%, 고용보험 0.9%)을 기본으로 적용하며, 앱에서 적용 연도를 바꿔 지난 연도 기준으로도 계산할 수 있습니다. 소득세는 근로소득 간이세액표를 기준으로 계산합니다." } },
+        { "@type": "Question", "name": "계산 결과가 실제 급여와 똑같나요?", "acceptedAnswer": { "@type": "Answer", "text": "참고용 계산 결과입니다. 실제 급여는 회사의 급여 정책, 추가 수당, 비과세 항목 구성, 개인별 공제 내역에 따라 달라질 수 있습니다. 정확한 금액은 급여명세서와 원천징수영수증을 확인해 주세요." } },
+        { "@type": "Question", "name": "계산 결과를 저장하거나 공유할 수 있나요?", "acceptedAnswer": { "@type": "Answer", "text": "네. 계산 결과는 앱에 기록으로 저장되며, PDF로 내보내거나 메신저 등으로 바로 공유할 수 있습니다. 월별 실수령액은 월별 급여 기록에 모아 연간 합계와 월 평균으로 확인할 수 있습니다." } },
+        { "@type": "Question", "name": "언제 다운로드할 수 있나요?", "acceptedAnswer": { "@type": "Answer", "text": "현재 출시 준비 중입니다. App Store와 Google Play 등록이 완료되는 대로 이 페이지와 소식 페이지를 통해 다운로드 링크를 안내해 드리겠습니다." } }
+    ] }
+    </script>
+</body>
+</html>
