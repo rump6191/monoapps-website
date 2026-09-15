@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>โฮกัมโด - วิเคราะห์ใบหน้าด้วย AI ใน 138 ประเทศ | MonoApps</title>
+    <meta name="description" content="ค้นพบว่า 138 ประเทศมองเสน่ห์ของคุณอย่างไรด้วยการวิเคราะห์ใบหน้าจาก AI">
+    <meta name="keywords" content="โฮกัมโด, AI, 138, MonoApps">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="โฮกัมโด - วิเคราะห์ใบหน้าด้วย AI ใน 138 ประเทศ">
+    <meta property="og:description" content="ค้นพบว่า 138 ประเทศมองเสน่ห์ของคุณอย่างไรด้วยการวิเคราะห์ใบหน้าจาก AI">
+    <meta property="og:url" content="https://monoapps.kr/th/hogamdo.html">
+    <meta property="og:locale" content="th_TH">
+    <meta property="og:site_name" content="MonoApps">
+    <meta property="og:image" content="https://monoapps.kr/images/hogamdo-icon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="โฮกัมโด - วิเคราะห์ใบหน้าด้วย AI ใน 138 ประเทศ">
+    <meta name="twitter:description" content="ค้นพบว่า 138 ประเทศมองเสน่ห์ของคุณอย่างไรด้วยการวิเคราะห์ใบหน้าจาก AI">
+    <meta name="twitter:image" content="https://monoapps.kr/images/hogamdo-icon.png">
+    <link rel="canonical" href="https://monoapps.kr/th/hogamdo.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/hogamdo.html">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/hogamdo.html">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/hogamdo.html">
+    <link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/hogamdo.html">
+    <link rel="alternate" hreflang="zh-Hant" href="https://monoapps.kr/zh-Hant/hogamdo.html">
+    <link rel="alternate" hreflang="vi" href="https://monoapps.kr/vi/hogamdo.html">
+    <link rel="alternate" hreflang="th" href="https://monoapps.kr/th/hogamdo.html">
+    <link rel="alternate" hreflang="es" href="https://monoapps.kr/es/hogamdo.html">
+    <link rel="alternate" hreflang="fr" href="https://monoapps.kr/fr/hogamdo.html">
+    <link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/hogamdo.html">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/hogamdo.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; min-height: 100vh; overflow-x: hidden; }
+        .bg-gradient { position: fixed; width: 150vw; height: 150vh; top: -25vh; left: -25vw; background: conic-gradient(from 180deg at 50% 50%, #FF5C8A, #FF8AAE, #FF6B9D, #FF5C8A); filter: blur(100px); animation: rotate 20s linear infinite; z-index: -1; opacity: 0.45; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        nav { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background: rgba(0,0,0,0.3); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; background: linear-gradient(90deg, #fff, #aaa); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 160px; max-height: calc(100dvh - 100px); overflow-y: auto; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu { max-height: calc(100dvh - 70px); overflow-y: auto; display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 4rem; text-align: center; }
+        .hero-content { max-width: 700px; }
+        .app-icon { width: 120px; height: 120px; border-radius: 28px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; box-shadow: 0 20px 60px rgba(255, 92, 138, 0.4); overflow: hidden; }
+        .app-icon img { width: 100%; height: 100%; object-fit: contain; border-radius: 24px; }
+        .hero-badge { display: inline-block; padding: 8px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; font-size: 0.85rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.6); }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem; letter-spacing: -2px; }
+        .hero p { font-size: 1.2rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2.5rem; }
+        .store-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .store-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; color: white; text-decoration: none; font-size: 1rem; font-weight: 600; transition: 0.3s; }
+        .store-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .store-btn svg { width: 22px; height: 22px; }
+        .hero-badge.live { color: #23d5ab; background: rgba(35,213,171,0.12); border-color: rgba(35,213,171,0.3); }
+        section { padding: 6rem 2rem; }
+        .section-title { font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 1rem; letter-spacing: -1px; }
+        .section-desc { text-align: center; opacity: 0.6; margin-bottom: 3rem; font-size: 1.1rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+        .feature-card { background: rgba(255,255,255,0.08); padding: 2rem; border-radius: 25px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; backdrop-filter: blur(10px); }
+        .feature-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.12); }
+        .feature-icon { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 1.2rem; }
+        .feature-card h3 { font-size: 1.2rem; margin-bottom: 0.7rem; }
+        .feature-card p { font-size: 0.93rem; opacity: 0.65; line-height: 1.6; }
+        .screenshots { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; overflow-x: auto; padding-bottom: 1rem; }
+        .screenshot-item { text-align: center; flex-shrink: 0; }
+        .screenshot-frame { width: 200px; height: 430px; background: #111; border-radius: 30px; border: 6px solid #222; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.5); transition: 0.3s; }
+        .screenshot-frame:hover { transform: translateY(-10px); box-shadow: 0 35px 70px rgba(255, 92, 138, 0.25); }
+        .screenshot-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .screenshot-label { margin-top: 1rem; font-size: 0.9rem; font-weight: 600; opacity: 0.7; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+        .stat-card { text-align: center; padding: 2.5rem 1.5rem; background: rgba(255,255,255,0.05); border-radius: 25px; border: 1px solid rgba(255,255,255,0.08); }
+        .stat-number { font-size: 3rem; font-weight: 800; background: linear-gradient(90deg, #FF5C8A, #FF8AAE); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
+        .stat-label { font-size: 1rem; opacity: 0.65; }
+        .langs-box { max-width: 800px; margin: 0 auto; padding: 2.5rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 25px; text-align: center; }
+        .langs-list { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
+        .lang-chip { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.9rem; }
+        footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding-top: 100px; }
+            .screenshot-frame { width: 160px; height: 345px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="/en/" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="/en/apps.html">แอปมือถือ</a>
+            <a href="/en/index.html#services">บริการเว็บ</a>
+            <a href="/en/support.html">ฝ่ายสนับสนุน</a>
+            <a href="/en/news.html">ข่าวสาร</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">TH</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="/hogamdo.html">한국어</a>
+                    <a href="/en/hogamdo.html">English</a>
+                    <a href="/ja/hogamdo.html">日本語</a>
+                    <a href="/zh/hogamdo.html">简体中文</a>
+                    <a href="/zh-Hant/hogamdo.html">繁體中文</a>
+                    <a href="/vi/hogamdo.html">Tiếng Việt</a>
+                    <a href="/th/hogamdo.html" style="color:#FF8AAE;" aria-current="page">ภาษาไทย</a>
+                    <a href="/es/hogamdo.html">Español</a>
+                    <a href="/fr/hogamdo.html">Français</a>
+                    <a href="/pt/hogamdo.html">Português (Brasil)</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="เมนู">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/en/apps.html">แอปมือถือ</a>
+        <a href="/en/index.html#services">บริการเว็บ</a>
+        <a href="/en/support.html">ฝ่ายสนับสนุน</a>
+        <a href="/en/news.html">ข่าวสาร</a>
+        <div style="border-top:1px solid rgba(255,255,255,0.1); margin-top:0.5rem; padding-top:0.5rem;">
+            <div style="font-size:0.8rem; color:rgba(255,255,255,0.4); padding:0.5rem 0;">ภาษา</div>
+            <a href="/hogamdo.html">한국어</a>
+            <a href="/en/hogamdo.html">English</a>
+            <a href="/ja/hogamdo.html">日本語</a>
+            <a href="/zh/hogamdo.html">简体中文</a>
+            <a href="/zh-Hant/hogamdo.html">繁體中文</a>
+            <a href="/vi/hogamdo.html">Tiếng Việt</a>
+            <a href="/th/hogamdo.html" style="color:#FF8AAE;" aria-current="page">ภาษาไทย</a>
+            <a href="/es/hogamdo.html">Español</a>
+            <a href="/fr/hogamdo.html">Français</a>
+            <a href="/pt/hogamdo.html">Português (Brasil)</a>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="app-icon"><img src="../images/hogamdo-icon.png" alt="โฮกัมโด" loading="lazy"></div>
+            <span class="hero-badge live">พร้อมใช้งานแล้ว</span>
+            <h1>โฮกัมโด</h1>
+            <p>ความงามของคุณเปล่งประกายที่สุดในประเทศไหน?<br>ค้นพบว่า 138 ประเทศมองเสน่ห์ของคุณอย่างไรด้วยการวิเคราะห์ใบหน้าจาก AI</p>
+            <div class="store-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.monoappskr.hogamdo" target="_blank" class="store-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                    Google Play
+                </a>
+                <a href="https://apps.apple.com/app/id6767780068" target="_blank" class="store-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    App Store
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section>
+        <h2 class="section-title">เกี่ยวกับแอป</h2>
+        <div style="max-width: 820px; margin: 0 auto; opacity: 0.8; line-height: 1.85; font-size: 1.05rem;">
+            <p style="margin-bottom: 1.2rem;">โฮกัมโดเป็นแอปเพื่อความบันเทิงที่ใช้ AI วิเคราะห์ใบหน้าจากภาพถ่ายเพียงภาพเดียว เพื่อสำรวจเสน่ห์ของคุณตามมาตรฐานความงามของ 138 วัฒนธรรมทั่วโลก การวิเคราะห์ใช้ตัวชี้วัดใบหน้าเชิงปริมาณ 11 ด้าน เช่น สัดส่วนใบหน้า แนวกราม ความเปิดกว้างของดวงตา สัดส่วนริมฝีปาก และความกว้างของแก้ม พร้อมแสดงผลเป็นอันดับประเทศที่ 1 ถึง 10</p>
+            <p style="margin-bottom: 1.2rem;">เหมาะสำหรับผู้ที่อยากรู้ว่าเสน่ห์ของตนโดดเด่นที่สุดที่ไหน และอยากค้นพบตัวเองอย่างสนุกสนาน ผลลัพธ์แบ่งเป็นระดับ: อันดับ 1 แสดงการ์ดภาพ อันดับ 2 ถึง 5 ให้เคล็ดลับเสริมเสน่ห์ และอันดับ 6 ถึง 10 แสดงอันดับโลกแบบรวดเร็ว แชร์ผลผ่านการ์ด 10 ธีม เช่น ไพ่ทาโรต์ โปสเตอร์ภาพยนตร์ บัตรประจำตัว วีซ่า นีออน และสตอรี่บนโซเชียลมีเดียได้</p>
+            <p>นอกจากการวิเคราะห์ โฮกัมโดยังมีฟีเจอร์จับคู่ทั่วโลกเพื่อช่วยให้คุณรู้จักคนที่อาจพัฒนาเป็นความสัมพันธ์จากประเทศที่ตรงกับผลของคุณ แอปดาวน์โหลดฟรีบน iOS และ Android ทดลองบนเว็บได้โดยไม่ต้องติดตั้ง และรองรับ 10 ภาษา ภาพที่ใช้จะถูกลบอัตโนมัติทันทีหลังวิเคราะห์ ไม่มีการจัดเก็บถาวร และการสื่อสารทั้งหมดเข้ารหัสด้วย HTTPS</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">โฮกัมโดในภาพรวม</h2>
+        <p class="section-desc">วิเคราะห์เสน่ห์ทั่วโลกด้วย AI</p>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">138</div>
+                <div class="stat-label">ประเทศที่วิเคราะห์</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">11</div>
+                <div class="stat-label">ตัวชี้วัดใบหน้า</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10</div>
+                <div class="stat-label">ภาษาที่รองรับ</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10</div>
+                <div class="stat-label">รูปแบบการ์ดผลลัพธ์</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">ฟีเจอร์หลัก</h2>
+        <p class="section-desc">ค้นพบเสน่ห์ระดับโลกด้วยภาพถ่ายเพียงภาพเดียว</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(255,92,138,0.18);">🌍</div>
+                <h3>วิเคราะห์เสน่ห์ใน 138 ประเทศ</h3>
+                <p>ค้นพบมาตรฐานความงามที่แตกต่างกันของเกาหลี ญี่ปุ่น สหรัฐอเมริกา ฝรั่งเศส บราซิล และอีกกว่า 130 วัฒนธรรม</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(255,138,174,0.18);">🔬</div>
+                <h3>ตัวชี้วัดใบหน้า 11 ด้าน</h3>
+                <p>วิเคราะห์ตัวชี้วัดเชิงปริมาณ 11 ด้าน เช่น สัดส่วนใบหน้า แนวกราม ความเปิดกว้างของดวงตา สัดส่วนริมฝีปาก และความกว้างของแก้ม</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(255,107,157,0.18);">🥇</div>
+                <h3>ผลลัพธ์ตามระดับ: อันดับ 1 ถึง 10</h3>
+                <p>จัดอันดับประเทศตามคะแนนเสน่ห์ของคุณ อันดับ 1 แสดงการ์ดภาพ อันดับ 2 ถึง 5 ให้เคล็ดลับเสริมเสน่ห์ และอันดับ 6 ถึง 10 แสดงอันดับโลกแบบรวดเร็ว</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(236,72,153,0.18);">💌</div>
+                <h3>บริการจับคู่ทั่วโลก</h3>
+                <p>รู้จักคนที่อาจพัฒนาเป็นความสัมพันธ์จากประเทศที่ตรงกับผลของคุณ ส่งถูกใจให้คนที่สนใจ และเชื่อมต่อเมื่อทั้งสองฝ่ายสนใจตรงกัน</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(168,85,247,0.18);">🎨</div>
+                <h3>การ์ดผลลัพธ์ 10 รูปแบบ</h3>
+                <p>แชร์ผลด้วย 10 ธีมที่ไม่ซ้ำกัน เช่น ไพ่ทาโรต์ โปสเตอร์ภาพยนตร์ บัตรประจำตัว วีซ่า นีออน อันดับ และสตอรี่</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(99,102,241,0.18);">🔒</div>
+                <h3>ปกป้องความเป็นส่วนตัว</h3>
+                <p>ภาพจะถูกลบทันทีหลังวิเคราะห์โดยไม่มีการจัดเก็บถาวร การสื่อสารทั้งหมดเข้ารหัสด้วย HTTPS</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">ตัวอย่างแอป</h2>
+        <p class="section-desc">รับผลภายในเวลาไม่ถึงหนึ่งนาที</p>
+        <div class="screenshots">
+            <div class="screenshot-item"><div class="screenshot-frame"><img src="../images/hogamdo/en/screen1.png" alt="หน้าหลัก" loading="lazy"></div><p class="screenshot-label">หน้าหลัก</p></div>
+            <div class="screenshot-item"><div class="screenshot-frame"><img src="../images/hogamdo/en/screen2.png" alt="กำลังวิเคราะห์" loading="lazy"></div><p class="screenshot-label">กำลังวิเคราะห์</p></div>
+            <div class="screenshot-item"><div class="screenshot-frame"><img src="../images/hogamdo/en/screen3.png" alt="ผลลัพธ์" loading="lazy"></div><p class="screenshot-label">ผลลัพธ์</p></div>
+            <div class="screenshot-item"><div class="screenshot-frame"><img src="../images/hogamdo/en/screen4.png" alt="รายละเอียดประเทศ" loading="lazy"></div><p class="screenshot-label">รายละเอียดประเทศ</p></div>
+            <div class="screenshot-item"><div class="screenshot-frame"><img src="../images/hogamdo/en/screen5.png" alt="จับคู่" loading="lazy"></div><p class="screenshot-label">จับคู่</p></div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">รองรับ 10 ภาษา</h2>
+        <p class="section-desc">ออกแบบสำหรับผู้ใช้ทั่วโลก</p>
+        <div class="langs-box">
+            <p style="opacity:0.7;">แอปรองรับภาษาต่อไปนี้</p>
+            <div class="langs-list">
+                <span class="lang-chip">한국어</span>
+                <span class="lang-chip">English</span>
+                <span class="lang-chip">日本語</span>
+                <span class="lang-chip">中文 (简体)</span>
+                <span class="lang-chip">中文 (繁體)</span>
+                <span class="lang-chip">Tiếng Việt</span>
+                <span class="lang-chip">ไทย</span>
+                <span class="lang-chip">Español</span>
+                <span class="lang-chip">Français</span>
+                <span class="lang-chip">Português (BR)</span>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-top: 0;">
+        <p class="section-desc" style="font-style:italic; max-width:700px; margin:0 auto;">
+            ผลการวิเคราะห์เป็นเนื้อหาเพื่อความบันเทิงและการค้นพบตัวเอง ไม่ใช่การประเมินรูปลักษณ์อย่างเป็นกลาง และไม่ได้สื่อถึงการจัดลำดับความเหนือกว่าทางเชื้อชาติหรือชาติพันธุ์
+        </p>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">คำถามที่พบบ่อย</h2>
+        <p class="section-desc">เรื่องที่คุณอยากรู้เกี่ยวกับโฮกัมโด</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">โฮกัมโดคืออะไร?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">โฮกัมโดเป็นแอปเพื่อความบันเทิงที่ใช้ AI วิเคราะห์ใบหน้าเพื่อสำรวจเสน่ห์ของคุณตามวัฒนธรรมของ 138 ประเทศ รับผลได้ภายในเวลาไม่ถึงหนึ่งนาทีจากภาพถ่ายเพียงภาพเดียว</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">ใช้งานบนอุปกรณ์ใดได้บ้าง?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">โฮกัมโดใช้งานได้บน iOS และ Android ดาวน์โหลดจาก App Store และ Google Play หรือทดลองบนเว็บได้โดยไม่ต้องติดตั้ง</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">โฮกัมโดใช้ฟรีหรือไม่?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">ใช่ โฮกัมโดดาวน์โหลดและใช้งานได้ฟรี</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">ภาพของฉันจะถูกจัดการอย่างไร?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">ภาพของคุณจะถูกลบอัตโนมัติทันทีหลังวิเคราะห์และไม่มีการจัดเก็บถาวร การสื่อสารทั้งหมดเข้ารหัสผ่าน HTTPS</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">การวิเคราะห์เสน่ห์ใน 138 ประเทศคืออะไร?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">ระบบคำนวณคะแนนเสน่ห์ตามมาตรฐานความงามของ 138 วัฒนธรรม เช่น เกาหลี ญี่ปุ่น สหรัฐอเมริกา ฝรั่งเศส และบราซิล แล้วแสดงอันดับประเทศที่ 1 ถึง 10 โดยใช้ตัวชี้วัดใบหน้า 11 ด้าน</p>
+            </details>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">นโยบายความเป็นส่วนตัว</a>
+            <a href="terms.html">ข้อกำหนดการใช้งาน</a>
+            <a href="/en/support.html">ฝ่ายสนับสนุน</a>
+            <a href="mailto:monoappskr@gmail.com">ติดต่อเรา</a>
+        </div>
+        <p class="copyright">© 2026 MonoApps สงวนลิขสิทธิ์</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('active'); });
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        menu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => menu.classList.remove('active')); });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "โฮกัมโด",
+    "description": "ค้นพบว่า 138 ประเทศมองเสน่ห์ของคุณอย่างไรด้วยการวิเคราะห์ใบหน้าจาก AI",
+    "featureList": [
+        "วิเคราะห์เสน่ห์ใน 138 ประเทศ",
+        "ตัวชี้วัดใบหน้า 11 ด้าน",
+        "ผลลัพธ์ตามระดับ: อันดับ 1 ถึง 10",
+        "บริการจับคู่ทั่วโลก",
+        "การ์ดผลลัพธ์ 10 รูปแบบ",
+        "ปกป้องความเป็นส่วนตัว"
+    ],
+    "url": "https://monoapps.kr/th/hogamdo.html",
+    "applicationCategory": "EntertainmentApplication",
+    "operatingSystem": "iOS, Android",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "author": {
+        "@type": "Organization",
+        "name": "MonoApps",
+        "url": "https://monoapps.kr"
+    },
+    "inLanguage": [
+        "ko",
+        "en",
+        "ja",
+        "zh-CN",
+        "zh-TW",
+        "vi",
+        "th",
+        "es",
+        "fr",
+        "pt-BR"
+    ]
+}
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "th",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "โฮกัมโดคืออะไร?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "โฮกัมโดเป็นแอปเพื่อความบันเทิงที่ใช้ AI วิเคราะห์ใบหน้าเพื่อสำรวจเสน่ห์ของคุณตามวัฒนธรรมของ 138 ประเทศ รับผลได้ภายในเวลาไม่ถึงหนึ่งนาทีจากภาพถ่ายเพียงภาพเดียว"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "ใช้งานบนอุปกรณ์ใดได้บ้าง?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "โฮกัมโดใช้งานได้บน iOS และ Android ดาวน์โหลดจาก App Store และ Google Play หรือทดลองบนเว็บได้โดยไม่ต้องติดตั้ง"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "โฮกัมโดใช้ฟรีหรือไม่?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ใช่ โฮกัมโดดาวน์โหลดและใช้งานได้ฟรี"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "ภาพของฉันจะถูกจัดการอย่างไร?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ภาพของคุณจะถูกลบอัตโนมัติทันทีหลังวิเคราะห์และไม่มีการจัดเก็บถาวร การสื่อสารทั้งหมดเข้ารหัสผ่าน HTTPS"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "การวิเคราะห์เสน่ห์ใน 138 ประเทศคืออะไร?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ระบบคำนวณคะแนนเสน่ห์ตามมาตรฐานความงามของ 138 วัฒนธรรม เช่น เกาหลี ญี่ปุ่น สหรัฐอเมริกา ฝรั่งเศส และบราซิล แล้วแสดงอันดับประเทศที่ 1 ถึง 10 โดยใช้ตัวชี้วัดใบหน้า 11 ด้าน"
+            }
+        }
+    ]
+}
+    </script>
+</body>
+</html>

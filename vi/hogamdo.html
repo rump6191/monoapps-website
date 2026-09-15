@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Hogamdo - Phân tích khuôn mặt bằng AI tại 138 quốc gia | MonoApps</title>
+    <meta name="description" content="Khám phá cách 138 quốc gia cảm nhận sức hấp dẫn của bạn qua phân tích khuôn mặt bằng AI.">
+    <meta name="keywords" content="Hogamdo, AI, 138, MonoApps">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hogamdo - Phân tích khuôn mặt bằng AI tại 138 quốc gia">
+    <meta property="og:description" content="Khám phá cách 138 quốc gia cảm nhận sức hấp dẫn của bạn qua phân tích khuôn mặt bằng AI.">
+    <meta property="og:url" content="https://monoapps.kr/vi/hogamdo.html">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="MonoApps">
+    <meta property="og:image" content="https://monoapps.kr/images/hogamdo-icon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hogamdo - Phân tích khuôn mặt bằng AI tại 138 quốc gia">
+    <meta name="twitter:description" content="Khám phá cách 138 quốc gia cảm nhận sức hấp dẫn của bạn qua phân tích khuôn mặt bằng AI.">
+    <meta name="twitter:image" content="https://monoapps.kr/images/hogamdo-icon.png">
+    <link rel="canonical" href="https://monoapps.kr/vi/hogamdo.html">
+    <link rel="alternate" hreflang="ko" href="https://monoapps.kr/hogamdo.html">
+    <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/hogamdo.html">
+    <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/hogamdo.html">
+    <link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/hogamdo.html">
+    <link rel="alternate" hreflang="zh-Hant" href="https://monoapps.kr/zh-Hant/hogamdo.html">
+    <link rel="alternate" hreflang="vi" href="https://monoapps.kr/vi/hogamdo.html">
+    <link rel="alternate" hreflang="th" href="https://monoapps.kr/th/hogamdo.html">
+    <link rel="alternate" hreflang="es" href="https://monoapps.kr/es/hogamdo.html">
+    <link rel="alternate" hreflang="fr" href="https://monoapps.kr/fr/hogamdo.html">
+    <link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/hogamdo.html">
+    <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/hogamdo.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; min-height: 100vh; overflow-x: hidden; }
+        .bg-gradient { position: fixed; width: 150vw; height: 150vh; top: -25vh; left: -25vw; background: conic-gradient(from 180deg at 50% 50%, #FF5C8A, #FF8AAE, #FF6B9D, #FF5C8A); filter: blur(100px); animation: rotate 20s linear infinite; z-index: -1; opacity: 0.45; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        nav { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background: rgba(0,0,0,0.3); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; background: linear-gradient(90deg, #fff, #aaa); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 160px; max-height: calc(100dvh - 100px); overflow-y: auto; backdrop-filter: blur(20px); }
+        .lang-dropdown.active { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .lang-dropdown a:last-child { border-bottom: none; }
+        .lang-dropdown a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-menu { max-height: calc(100dvh - 70px); overflow-y: auto; display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 4rem; text-align: center; }
+        .hero-content { max-width: 700px; }
+        .app-icon { width: 120px; height: 120px; border-radius: 28px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; box-shadow: 0 20px 60px rgba(255, 92, 138, 0.4); overflow: hidden; }
+        .app-icon img { width: 100%; height: 100%; object-fit: contain; border-radius: 24px; }
+        .hero-badge { display: inline-block; padding: 8px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; font-size: 0.85rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.6); }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem; letter-spacing: -2px; }
+        .hero p { font-size: 1.2rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2.5rem; }
+        .store-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .store-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; color: white; text-decoration: none; font-size: 1rem; font-weight: 600; transition: 0.3s; }
+        .store-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .store-btn svg { width: 22px; height: 22px; }
+        .hero-badge.live { color: #23d5ab; background: rgba(35,213,171,0.12); border-color: rgba(35,213,171,0.3); }
+        section { padding: 6rem 2rem; }
+        .section-title { font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 1rem; letter-spacing: -1px; }
+        .section-desc { text-align: center; opacity: 0.6; margin-bottom: 3rem; font-size: 1.1rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+        .feature-card { background: rgba(255,255,255,0.08); padding: 2rem; border-radius: 25px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; backdrop-filter: blur(10px); }
+        .feature-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.12); }
+        .feature-icon { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 1.2rem; }
+        .feature-card h3 { font-size: 1.2rem; margin-bottom: 0.7rem; }
+        .feature-card p { font-size: 0.93rem; opacity: 0.65; line-height: 1.6; }
+        .screenshots { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; overflow-x: auto; padding-bottom: 1rem; }
+        .screenshot-item { text-align: center; flex-shrink: 0; }
+        .screenshot-frame { width: 200px; height: 430px; background: #111; border-radius: 30px; border: 6px solid #222; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.5); transition: 0.3s; }
+        .screenshot-frame:hover { transform: translateY(-10px); box-shadow: 0 35px 70px rgba(255, 92, 138, 0.25); }
+        .screenshot-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .screenshot-label { margin-top: 1rem; font-size: 0.9rem; font-weight: 600; opacity: 0.7; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+        .stat-card { text-align: center; padding: 2.5rem 1.5rem; background: rgba(255,255,255,0.05); border-radius: 25px; border: 1px solid rgba(255,255,255,0.08); }
+        .stat-number { font-size: 3rem; font-weight: 800; background: linear-gradient(90deg, #FF5C8A, #FF8AAE); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
+        .stat-label { font-size: 1rem; opacity: 0.65; }
+        .langs-box { max-width: 800px; margin: 0 auto; padding: 2.5rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 25px; text-align: center; }
+        .langs-list { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
+        .lang-chip { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.9rem; }
+        footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-nav { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .footer-nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: white; }
+        .copyright { font-size: 0.85rem; opacity: 0.4; }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding-top: 100px; }
+            .screenshot-frame { width: 160px; height: 345px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="/en/" class="logo">MonoApps</a>
+        <div class="nav-links">
+            <a href="/en/apps.html">Ứng dụng di động</a>
+            <a href="/en/index.html#services">Dịch vụ web</a>
+            <a href="/en/support.html">Hỗ trợ</a>
+            <a href="/en/news.html">Tin tức</a>
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">VI</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="/hogamdo.html">한국어</a>
+                    <a href="/en/hogamdo.html">English</a>
+                    <a href="/ja/hogamdo.html">日本語</a>
+                    <a href="/zh/hogamdo.html">简体中文</a>
+                    <a href="/zh-Hant/hogamdo.html">繁體中文</a>
+                    <a href="/vi/hogamdo.html" style="color:#FF8AAE;" aria-current="page">Tiếng Việt</a>
+                    <a href="/th/hogamdo.html">ภาษาไทย</a>
+                    <a href="/es/hogamdo.html">Español</a>
+                    <a href="/fr/hogamdo.html">Français</a>
+                    <a href="/pt/hogamdo.html">Português (Brasil)</a>
+                </div>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Trình đơn">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/en/apps.html">Ứng dụng di động</a>
+        <a href="/en/index.html#services">Dịch vụ web</a>
+        <a href="/en/support.html">Hỗ trợ</a>
+        <a href="/en/news.html">Tin tức</a>
+        <div style="border-top:1px solid rgba(255,255,255,0.1); margin-top:0.5rem; padding-top:0.5rem;">
+            <div style="font-size:0.8rem; color:rgba(255,255,255,0.4); padding:0.5rem 0;">Ngôn ngữ</div>
+            <a href="/hogamdo.html">한국어</a>
+            <a href="/en/hogamdo.html">English</a>
+            <a href="/ja/hogamdo.html">日本語</a>
+            <a href="/zh/hogamdo.html">简体中文</a>
+            <a href="/zh-Hant/hogamdo.html">繁體中文</a>
+            <a href="/vi/hogamdo.html" style="color:#FF8AAE;" aria-current="page">Tiếng Việt</a>
+            <a href="/th/hogamdo.html">ภาษาไทย</a>
+            <a href="/es/hogamdo.html">Español</a>
+            <a href="/fr/hogamdo.html">Français</a>
+            <a href="/pt/hogamdo.html">Português (Brasil)</a>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="app-icon"><img src="../images/hogamdo-icon.png" alt="Hogamdo" loading="lazy"></div>
+            <span class="hero-badge live">Đã ra mắt</span>
+            <h1>Hogamdo</h1>
+            <p>Vẻ đẹp của bạn tỏa sáng nhất ở quốc gia nào?<br>Khám phá cách 138 quốc gia cảm nhận sức hấp dẫn của bạn qua phân tích khuôn mặt bằng AI.</p>
+            <div class="store-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.monoappskr.hogamdo" target="_blank" class="store-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                    Google Play
+                </a>
+                <a href="https://apps.apple.com/app/id6767780068" target="_blank" class="store-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    App Store
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section>
+        <h2 class="section-title">Giới thiệu</h2>
+        <div style="max-width: 820px; margin: 0 auto; opacity: 0.8; line-height: 1.85; font-size: 1.05rem;">
+            <p style="margin-bottom: 1.2rem;">Hogamdo là ứng dụng giải trí sử dụng AI để phân tích một bức ảnh và khám phá sức hấp dẫn của bạn theo tiêu chuẩn sắc đẹp của 138 nền văn hóa trên thế giới. Phân tích dựa trên 11 chỉ số định lượng, gồm tỷ lệ khuôn mặt, đường hàm, độ mở mắt, tỷ lệ môi và độ rộng má. Kết quả được trình bày dưới dạng bảng xếp hạng quốc gia từ 1 đến 10.</p>
+            <p style="margin-bottom: 1.2rem;">Ứng dụng dành cho những ai tò mò về nơi sức hút của mình được yêu thích nhất và muốn khám phá bản thân một cách nhẹ nhàng, thú vị. Hạng 1 có thẻ ảnh, hạng 2 đến 5 có mẹo phát huy sức hấp dẫn, hạng 6 đến 10 có bảng xếp hạng toàn cầu nhanh. Chia sẻ kết quả lên mạng xã hội với 10 chủ đề thẻ như Tarot, áp phích phim, thẻ căn cước, thị thực, neon và tin.</p>
+            <p>Ngoài phân tích, Hogamdo còn cung cấp tính năng kết nối toàn cầu để bạn gặp gỡ những người có thể trở thành đối tượng hẹn hò từ các quốc gia phù hợp. Ứng dụng miễn phí tải xuống trên iOS và Android, hỗ trợ dùng thử trên web không cần cài đặt và có 10 ngôn ngữ. Ảnh được tự động xóa ngay sau khi phân tích, không lưu trữ vĩnh viễn. Mọi giao tiếp đều được mã hóa bằng HTTPS.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Hogamdo qua các con số</h2>
+        <p class="section-desc">Phân tích sức hấp dẫn toàn cầu bằng AI</p>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">138</div>
+                <div class="stat-label">Quốc gia được phân tích</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">11</div>
+                <div class="stat-label">Chỉ số khuôn mặt</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Ngôn ngữ hỗ trợ</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Mẫu thẻ kết quả</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Tính năng nổi bật</h2>
+        <p class="section-desc">Khám phá sức hấp dẫn toàn cầu chỉ với một bức ảnh</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(255,92,138,0.18);">🌍</div>
+                <h3>Phân tích sức hấp dẫn tại 138 quốc gia</h3>
+                <p>Khám phá tiêu chuẩn sắc đẹp riêng của Hàn Quốc, Nhật Bản, Mỹ, Pháp, Brazil và hơn 130 nền văn hóa khác.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(255,138,174,0.18);">🔬</div>
+                <h3>11 chỉ số khuôn mặt</h3>
+                <p>Phân tích 11 chỉ số định lượng gồm tỷ lệ khuôn mặt, đường hàm, độ mở mắt, tỷ lệ môi, độ rộng má và nhiều chỉ số khác.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(255,107,157,0.18);">🥇</div>
+                <h3>Kết quả theo cấp: hạng 1 đến 10</h3>
+                <p>Các quốc gia được xếp theo điểm hấp dẫn của bạn. Hạng 1 hiển thị thẻ ảnh, hạng 2 đến 5 cung cấp mẹo phát huy sức hút và hạng 6 đến 10 hiển thị bảng xếp hạng toàn cầu nhanh.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(236,72,153,0.18);">💌</div>
+                <h3>Dịch vụ kết nối toàn cầu</h3>
+                <p>Gặp gỡ những người có thể trở thành đối tượng hẹn hò từ các quốc gia phù hợp với kết quả của bạn. Gửi lượt thích và kết nối khi cả hai cùng quan tâm.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(168,85,247,0.18);">🎨</div>
+                <h3>10 mẫu thẻ kết quả</h3>
+                <p>Chia sẻ kết quả với 10 chủ đề độc đáo: Tarot, áp phích phim, thẻ căn cước, thị thực, neon, bảng xếp hạng, tin và nhiều hơn nữa.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(99,102,241,0.18);">🔒</div>
+                <h3>Bảo vệ quyền riêng tư</h3>
+                <p>Ảnh được xóa ngay sau khi phân tích và không lưu trữ vĩnh viễn. Mọi giao tiếp đều được mã hóa bằng HTTPS.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Xem trước ứng dụng</h2>
+        <p class="section-desc">Nhận kết quả trong chưa đầy một phút</p>
+        <div class="screenshots">
+            <div class="screenshot-item"><div class="screenshot-frame"><img src="../images/hogamdo/en/screen1.png" alt="Trang chủ" loading="lazy"></div><p class="screenshot-label">Trang chủ</p></div>
+            <div class="screenshot-item"><div class="screenshot-frame"><img src="../images/hogamdo/en/screen2.png" alt="Đang phân tích" loading="lazy"></div><p class="screenshot-label">Đang phân tích</p></div>
+            <div class="screenshot-item"><div class="screenshot-frame"><img src="../images/hogamdo/en/screen3.png" alt="Kết quả" loading="lazy"></div><p class="screenshot-label">Kết quả</p></div>
+            <div class="screenshot-item"><div class="screenshot-frame"><img src="../images/hogamdo/en/screen4.png" alt="Chi tiết quốc gia" loading="lazy"></div><p class="screenshot-label">Chi tiết quốc gia</p></div>
+            <div class="screenshot-item"><div class="screenshot-frame"><img src="../images/hogamdo/en/screen5.png" alt="Kết nối" loading="lazy"></div><p class="screenshot-label">Kết nối</p></div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Hỗ trợ 10 ngôn ngữ</h2>
+        <p class="section-desc">Dành cho người dùng trên toàn thế giới</p>
+        <div class="langs-box">
+            <p style="opacity:0.7;">Ứng dụng hỗ trợ các ngôn ngữ sau</p>
+            <div class="langs-list">
+                <span class="lang-chip">한국어</span>
+                <span class="lang-chip">English</span>
+                <span class="lang-chip">日本語</span>
+                <span class="lang-chip">中文 (简体)</span>
+                <span class="lang-chip">中文 (繁體)</span>
+                <span class="lang-chip">Tiếng Việt</span>
+                <span class="lang-chip">ไทย</span>
+                <span class="lang-chip">Español</span>
+                <span class="lang-chip">Français</span>
+                <span class="lang-chip">Português (BR)</span>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-top: 0;">
+        <p class="section-desc" style="font-style:italic; max-width:700px; margin:0 auto;">
+            Kết quả phân tích là nội dung giải trí để vui chơi và khám phá bản thân. Đây không phải đánh giá khách quan về ngoại hình và không thể hiện thứ bậc giữa các chủng tộc hay sắc tộc.
+        </p>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">Câu hỏi thường gặp</h2>
+        <p class="section-desc">Những điều bạn muốn biết về Hogamdo</p>
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Hogamdo là gì?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Hogamdo là ứng dụng giải trí dùng AI phân tích khuôn mặt để khám phá sức hấp dẫn của bạn theo văn hóa của 138 quốc gia. Bạn có thể nhận kết quả trong chưa đầy một phút chỉ với một bức ảnh.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Tôi có thể sử dụng trên thiết bị nào?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Hogamdo hoạt động trên iOS và Android, có trên App Store và Google Play. Bạn cũng có thể dùng thử trực tiếp trên web mà không cần cài đặt.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Hogamdo có miễn phí không?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Có, Hogamdo được tải xuống và sử dụng miễn phí.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Ảnh của tôi được xử lý như thế nào?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Ảnh của bạn được tự động xóa ngay sau khi phân tích và không bao giờ lưu trữ vĩnh viễn. Mọi giao tiếp đều được mã hóa qua HTTPS.</p>
+            </details>
+            <details style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.2rem 1.5rem;">
+                <summary style="font-size: 1.1rem; font-weight: 600; cursor: pointer;">Phân tích sức hấp dẫn tại 138 quốc gia là gì?</summary>
+                <p style="margin-top: 1rem; opacity: 0.72; line-height: 1.75;">Tính năng tính điểm hấp dẫn theo tiêu chuẩn thẩm mỹ của 138 nền văn hóa, gồm Hàn Quốc, Nhật Bản, Mỹ, Pháp và Brazil, rồi xếp hạng quốc gia từ 1 đến 10. Phân tích dựa trên 11 chỉ số khuôn mặt.</p>
+            </details>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="privacy.html">Chính sách quyền riêng tư</a>
+            <a href="terms.html">Điều khoản sử dụng</a>
+            <a href="/en/support.html">Hỗ trợ</a>
+            <a href="mailto:monoappskr@gmail.com">Liên hệ</a>
+        </div>
+        <p class="copyright">© 2026 MonoApps. Bảo lưu mọi quyền.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('active'); });
+        langBtn.addEventListener('click', (e) => { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+        menu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => menu.classList.remove('active')); });
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) menu.classList.remove('active');
+            if (!langDropdown.contains(e.target) && !langBtn.contains(e.target)) langDropdown.classList.remove('active');
+        });
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Hogamdo",
+    "description": "Khám phá cách 138 quốc gia cảm nhận sức hấp dẫn của bạn qua phân tích khuôn mặt bằng AI.",
+    "featureList": [
+        "Phân tích sức hấp dẫn tại 138 quốc gia",
+        "11 chỉ số khuôn mặt",
+        "Kết quả theo cấp: hạng 1 đến 10",
+        "Dịch vụ kết nối toàn cầu",
+        "10 mẫu thẻ kết quả",
+        "Bảo vệ quyền riêng tư"
+    ],
+    "url": "https://monoapps.kr/vi/hogamdo.html",
+    "applicationCategory": "EntertainmentApplication",
+    "operatingSystem": "iOS, Android",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "author": {
+        "@type": "Organization",
+        "name": "MonoApps",
+        "url": "https://monoapps.kr"
+    },
+    "inLanguage": [
+        "ko",
+        "en",
+        "ja",
+        "zh-CN",
+        "zh-TW",
+        "vi",
+        "th",
+        "es",
+        "fr",
+        "pt-BR"
+    ]
+}
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "vi",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Hogamdo là gì?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Hogamdo là ứng dụng giải trí dùng AI phân tích khuôn mặt để khám phá sức hấp dẫn của bạn theo văn hóa của 138 quốc gia. Bạn có thể nhận kết quả trong chưa đầy một phút chỉ với một bức ảnh."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Tôi có thể sử dụng trên thiết bị nào?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Hogamdo hoạt động trên iOS và Android, có trên App Store và Google Play. Bạn cũng có thể dùng thử trực tiếp trên web mà không cần cài đặt."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Hogamdo có miễn phí không?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Có, Hogamdo được tải xuống và sử dụng miễn phí."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Ảnh của tôi được xử lý như thế nào?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ảnh của bạn được tự động xóa ngay sau khi phân tích và không bao giờ lưu trữ vĩnh viễn. Mọi giao tiếp đều được mã hóa qua HTTPS."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Phân tích sức hấp dẫn tại 138 quốc gia là gì?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tính năng tính điểm hấp dẫn theo tiêu chuẩn thẩm mỹ của 138 nền văn hóa, gồm Hàn Quốc, Nhật Bản, Mỹ, Pháp và Brazil, rồi xếp hạng quốc gia từ 1 đến 10. Phân tích dựa trên 11 chỉ số khuôn mặt."
+            }
+        }
+    ]
+}
+    </script>
+</body>
+</html>

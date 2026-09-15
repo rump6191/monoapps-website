@@ -25,7 +25,11 @@
     <link rel="alternate" hreflang="en" href="https://monoapps.kr/en/hogamdo.html">
     <link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/hogamdo.html">
     <link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/hogamdo.html">
+    <link rel="alternate" hreflang="zh-Hant" href="https://monoapps.kr/zh-Hant/hogamdo.html">
+    <link rel="alternate" hreflang="vi" href="https://monoapps.kr/vi/hogamdo.html">
+    <link rel="alternate" hreflang="th" href="https://monoapps.kr/th/hogamdo.html">
     <link rel="alternate" hreflang="es" href="https://monoapps.kr/es/hogamdo.html">
+    <link rel="alternate" hreflang="fr" href="https://monoapps.kr/fr/hogamdo.html">
     <link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/hogamdo.html">
     <link rel="alternate" hreflang="x-default" href="https://monoapps.kr/hogamdo.html">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
@@ -60,7 +64,7 @@
         .nav-links a:hover { color: white; }
         .lang-selector { position: relative; margin-left: 1rem; }
         .lang-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
-        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 120px; backdrop-filter: blur(20px); }
+        .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 5px; min-width: 160px; max-height: calc(100dvh - 100px); overflow-y: auto; backdrop-filter: blur(20px); }
         .lang-dropdown.active { display: block; }
         .lang-dropdown a { display: block; padding: 10px 15px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .lang-dropdown a:last-child { border-bottom: none; }
@@ -68,7 +72,7 @@
 
         .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
         .mobile-menu-btn span { display: block; width: 25px; height: 2px; background: white; margin: 5px 0; }
-        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
+        .mobile-menu { max-height: calc(100dvh - 70px); overflow-y: auto; display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); padding: 2rem; z-index: 99; }
         .mobile-menu.active { display: block; }
         .mobile-menu a { display: block; color: white; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
 
@@ -154,12 +158,16 @@
             <div class="lang-selector">
                 <button class="lang-btn" id="langBtn">KO</button>
                 <div class="lang-dropdown" id="langDropdown">
-                    <a href="hogamdo.html" style="color:#FF8AAE;">한국어</a>
-                    <a href="en/hogamdo.html">English</a>
-                    <a href="ja/hogamdo.html">日本語</a>
-                    <a href="zh/hogamdo.html">中文</a>
-                    <a href="es/hogamdo.html">Español</a>
-                    <a href="pt/hogamdo.html">Português</a>
+                    <a href="/hogamdo.html" style="color:#FF8AAE;" aria-current="page">한국어</a>
+                    <a href="/en/hogamdo.html">English</a>
+                    <a href="/ja/hogamdo.html">日本語</a>
+                    <a href="/zh/hogamdo.html">简体中文</a>
+                    <a href="/zh-Hant/hogamdo.html">繁體中文</a>
+                    <a href="/vi/hogamdo.html">Tiếng Việt</a>
+                    <a href="/th/hogamdo.html">ภาษาไทย</a>
+                    <a href="/es/hogamdo.html">Español</a>
+                    <a href="/fr/hogamdo.html">Français</a>
+                    <a href="/pt/hogamdo.html">Português (Brasil)</a>
                 </div>
             </div>
         </div>
@@ -175,12 +183,16 @@
         <a href="news.html">소식</a>
         <div style="border-top:1px solid rgba(255,255,255,0.1); margin-top:0.5rem; padding-top:0.5rem;">
             <div style="font-size:0.8rem; color:rgba(255,255,255,0.4); padding:0.5rem 0;">언어 선택</div>
-            <a href="hogamdo.html" style="color:#FF8AAE;">한국어</a>
-            <a href="en/hogamdo.html">English</a>
-            <a href="ja/hogamdo.html">日本語</a>
-            <a href="zh/hogamdo.html">中文</a>
-            <a href="es/hogamdo.html">Español</a>
-            <a href="pt/hogamdo.html">Português</a>
+            <a href="/hogamdo.html" style="color:#FF8AAE;" aria-current="page">한국어</a>
+            <a href="/en/hogamdo.html">English</a>
+            <a href="/ja/hogamdo.html">日本語</a>
+            <a href="/zh/hogamdo.html">简体中文</a>
+            <a href="/zh-Hant/hogamdo.html">繁體中文</a>
+            <a href="/vi/hogamdo.html">Tiếng Việt</a>
+            <a href="/th/hogamdo.html">ภาษาไทย</a>
+            <a href="/es/hogamdo.html">Español</a>
+            <a href="/fr/hogamdo.html">Français</a>
+            <a href="/pt/hogamdo.html">Português (Brasil)</a>
         </div>
     </div>
 
