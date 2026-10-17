@@ -270,6 +270,7 @@
     <loc>https://monoapps.kr/petallinone.html</loc>
     <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/petallinone.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/petallinone.html"/>
@@ -283,6 +284,7 @@
     <loc>https://monoapps.kr/en/petallinone.html</loc>
     <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/petallinone.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/petallinone.html"/>
@@ -293,9 +295,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://monoapps.kr/zh/petallinone.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/petallinone.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/petallinone.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/petallinone.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/petallinone.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/petallinone.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/petallinone.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://monoapps.kr/de/petallinone.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monoapps.kr/petallinone.html"/>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://monoapps.kr/ja/petallinone.html</loc>
     <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/petallinone.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/petallinone.html"/>
@@ -309,6 +326,7 @@
     <loc>https://monoapps.kr/es/petallinone.html</loc>
     <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/petallinone.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/petallinone.html"/>
@@ -322,6 +340,7 @@
     <loc>https://monoapps.kr/pt/petallinone.html</loc>
     <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/petallinone.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/petallinone.html"/>
@@ -335,6 +354,7 @@
     <loc>https://monoapps.kr/de/petallinone.html</loc>
     <xhtml:link rel="alternate" hreflang="ko" href="https://monoapps.kr/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://monoapps.kr/en/petallinone.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://monoapps.kr/zh/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://monoapps.kr/ja/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://monoapps.kr/es/petallinone.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://monoapps.kr/pt/petallinone.html"/>
